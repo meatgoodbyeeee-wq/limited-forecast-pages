@@ -5,6 +5,7 @@ import {draftPool} from '../lib/draft-pool.mjs';
 import {predictCards} from '../lib/predict.mjs';
 import {applyAdoptedGih,adoptedGihVersion} from '../lib/adopted-gih.mjs';
 import {applyAdoptedAlsa,adoptedAlsaVersion} from '../lib/adopted-alsa.mjs';
+import {predictDeckColors} from '../lib/deck-color.mjs';
 import {liveForecast} from '../lib/live.mjs';
 const read=name=>JSON.parse(fs.readFileSync(new URL(`../data/${name}.json`,import.meta.url)));
 const current=JSON.parse(fs.readFileSync(new URL('../public/forecast.json',import.meta.url)));
@@ -20,6 +21,6 @@ if(!changed){current.forecast.checked_at=new Date().toISOString();fs.writeFileSy
 const predicted=applyAdoptedAlsa(applyAdoptedGih(predictCards(pool,incumbent)));
 if(!predicted.length||predicted.some(c=>!Number.isFinite(c.gih)||!Number.isFinite(c.alsa)))throw Error('予測値の検証に失敗');
 const policy=read('live-policy').policies.current;
-const forecast=liveForecast({...merged,phase:'PREVIEW',cards:predicted,model_version:`${incumbent.version} + ${adoptedGihVersion} + ${adoptedAlsaVersion}`,checked_at:new Date().toISOString()},null,policy);
+const forecast=liveForecast({...merged,phase:'PREVIEW',cards:predicted,deck_color:predictDeckColors(predicted),model_version:`${incumbent.version} + ${adoptedGihVersion} + ${adoptedAlsaVersion}`,checked_at:new Date().toISOString()},null,policy);
 fs.writeFileSync(new URL('../public/forecast.json',import.meta.url),JSON.stringify({...current,forecast}));
 console.log(`予測更新：${forecast.cards.length}枚`);
