@@ -21,12 +21,15 @@ jobs:
         with:
           repository: meatgoodbyeeee-wq/17lands-limited-forecast-data
           path: image-source
-          sparse-checkout: assets/fra/ja
+          sparse-checkout: |
+            assets/fra/ja
+            live/fra-public-game.json
       - run: mkdir -p public/cards/fra/ja && cp -R image-source/assets/fra/ja/. public/cards/fra/ja/
+      - run: mkdir -p public/live && cp image-source/live/fra-public-game.json public/live/fra-public-game.json
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install --no-audit --no-fund
+      - run: npm ci --no-audit --no-fund
       - run: gunzip -k public/forecast.json.gz
       - run: for file in data/{target,model,adopted-gih-fra,live-policy}.json.gz; do gunzip -k "$file"; done
       - run: node scripts/refresh-forecast.mjs
