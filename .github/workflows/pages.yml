@@ -3,6 +3,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
 permissions:
   contents: read
   pages: write
@@ -26,6 +28,8 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: gunzip -k public/forecast.json.gz
+      - run: for file in data/{target,model,adopted-gih-fra,live-policy}.json.gz; do gunzip -k "$file"; done
+      - run: node scripts/refresh-forecast.mjs
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
