@@ -23,7 +23,7 @@ jobs:
           path: image-source
           sparse-checkout: |
             assets/fra/ja
-            live/fra-public-game.json
+            live
       - run: mkdir -p public/cards/fra/ja && cp -R image-source/assets/fra/ja/. public/cards/fra/ja/
       - run: mkdir -p public/live && cp image-source/live/fra-public-game.json public/live/fra-public-game.json
       - uses: actions/setup-node@v4
