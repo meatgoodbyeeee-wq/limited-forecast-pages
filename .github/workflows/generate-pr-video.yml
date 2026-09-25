@@ -1,0 +1,126 @@
+name: Generate PR video
+
+on:
+  push:
+    branches:
+      - pr-video-host
+    paths:
+      - '.github/workflows/generate-pr-video.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-video:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pr-video-host
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+          python -m pip install --quiet pillow
+
+      - name: Generate video
+        run: |
+          cat > /tmp/make_video.py <<'PY'
+          from PIL import Image, ImageDraw, ImageFont, ImageFilter
+          import os
+
+          W, H = 720, 1280
+          OUT = "/tmp/prslides"
+          os.makedirs(OUT, exist_ok=True)
+          REG = "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
+          BOLD = "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"
+
+          def f(sz, bold=False):
+              return ImageFont.truetype(BOLD if bold else REG, sz)
+
+          def bg():
+              im = Image.new("RGB", (W,H))
+              p = im.load()
+              c1=(8,15,34); c2=(52,20,60); c3=(15,51,74)
+              for y in range(H):
+                  t=y/(H-1)
+                  if t < .55:
+                      a=t/.55
+                      c=tuple(int(c1[i]*(1-a)+c2[i]*a) for i in range(3))
+                  else:
+                      a=(t-.55)/.45
+                      c=tuple(int(c2[i]*(1-a)+c3[i]*a) for i in range(3))
+                  for x in range(W):
+                      p[x,y]=c
+              return im
+
+          def center(draw, text, y, font, fill="white", maxw=620):
+              lines=[]
+              for raw in text.split("\n"):
+                  cur=""
+                  for ch in raw:
+                      if draw.textlength(cur+ch,font=font)>maxw and cur:
+                          lines.append(cur); cur=ch
+                      else:
+                          cur+=ch
+                  lines.append(cur)
+              lh=int(font.size*1.28)
+              for i,line in enumerate(lines):
+                  b=draw.textbbox((0,0),line,font=font)
+                  x=(W-(b[2]-b[0]))/2
+                  draw.text((x,y+i*lh),line,font=font,fill=fill,stroke_width=1,stroke_fill=(0,0,0))
+              return y+len(lines)*lh
+
+          def slide(n,title,subtitle=None,items=None,cta=None):
+              im=bg()
+              d=ImageDraw.Draw(im,"RGBA")
+              for x in range(40,W,80): d.line((x,0,x,H),fill=(255,255,255,14))
+              for y in range(50,H,80): d.line((0,y,W,y),fill=(255,255,255,14))
+              d.rounded_rectangle((45,45,675,100),radius=18,fill=(255,255,255,24),outline=(255,255,255,70),width=1)
+              d.text((70,61),"REALITY FRACTURE / LIMITED",font=f(22,True),fill="white")
+              y=center(d,title,185,f(55,True),maxw=630)
+              if subtitle:
+                  y+=20
+                  y=center(d,subtitle,y,f(29),fill=(230,232,255),maxw=600)
+              if items:
+                  y=max(y+50,480)
+                  for item in items:
+                      d.rounded_rectangle((60,y,660,y+112),radius=22,fill=(10,14,35,190),outline=(255,255,255,55),width=1)
+                      d.ellipse((88,y+42,106,y+60),fill=(255,205,74,255))
+                      d.text((125,y+28),item,font=f(31,True),fill="white")
+                      y+=135
+              if cta:
+                  d.rounded_rectangle((70,1000,650,1148),radius=30,fill=(255,255,255,240))
+                  center(d,cta,1035,f(39,True),fill=(25,27,50),maxw=520)
+              d.text((48,1205),"山辺カフカ / Yamabe Kafka",font=f(22,True),fill=(255,255,255,215))
+              path=f"{OUT}/slide{n}.png"
+              im.save(path)
+              return path
+
+          slides=[
+              slide(1,"発売前に、\nリミテッド環境をAI予測。","FRA リミテッド環境 AI予測｜試験運用版"),
+              slide(2,"何を予測する？",items=["カード別 予測GIH WR","カード別 予測ALSA","Two color 色別勝率"]),
+              slide(3,"過去セットの\n17Lands公開データから","発売前の段階で、FRAの指標を予測。"),
+              slide(4,"プレリ前・環境初期の\n“仮説”を数字で。","実測値ではなく、あくまで発売前予測です。"),
+              slide(5,"FRAを始める前に\n見ておきたいデータ。",cta="noteで公開中"),
+              slide(6,"記事はこちら","FRA リミテッド環境 AI予測\n（試験運用版）",cta="山辺カフカのnoteへ"),
+          ]
+          with open("/tmp/concat.txt","w") as h:
+              for s in slides:
+                  h.write("file '"+s+"'\n")
+                  h.write("duration 3.0\n")
+              h.write("file '"+slides[-1]+"'\n")
+          PY
+
+          python /tmp/make_video.py
+          mkdir -p public
+          ffmpeg -y -f concat -safe 0 -i /tmp/concat.txt -vf "fps=30,format=yuv420p" -c:v libx264 -preset veryfast -crf 30 -movflags +faststart public/FRA_note_PR_video.mp4
+
+      - name: Commit video
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/FRA_note_PR_video.mp4
+          git commit -m "Add FRA note PR video"
+          git push origin pr-video-host
