@@ -3,6 +3,7 @@
 // Always writes the file with stats/errors so a failed source can be diagnosed from the commit.
 import fs from 'node:fs';
 import {gunzipSync} from 'node:zlib';
+import {japaneseLines} from './ja-lines.mjs';
 
 const OUT = new URL('../data/card-text-ja.json', import.meta.url);
 const UA = {'User-Agent': 'Sakiyomi/1.0 (limited forecast research)', Accept: 'application/json'};
@@ -48,11 +49,11 @@ try {
     const labels = refs => (refs || []).map(r => links[r.sys.id]?.label || links[r.sys.id]?.name || '').filter(Boolean);
     for (const e of d.items) {
       const f = e.fields;
-      fra[e.sys.id] = {name: f.name || '', type_parts: {super: labels(f.supertypes), types: labels(f.type), sub: labels(f.subtypes)}, oracle_text: clean(f.rulesText), raw_text: f.rulesText || ''};
+      fra[e.sys.id] = {name: f.name || '', type_parts: {super: labels(f.supertypes), types: labels(f.type), sub: labels(f.subtypes)}, run_on: clean(f.rulesText)};
     }
     await sleep(200);
   }
-  const withText = Object.values(fra).filter(c => c.oracle_text && /[぀-ヿ一-鿿]/.test(c.oracle_text + c.name)).length;
+  const withText = Object.values(fra).filter(c => c.run_on && /[぀-ヿ一-鿿]/.test(c.run_on + c.name)).length;
   out.stats.fra = {cards: Object.keys(fra).length, japanese: withText};
   if (withText < ids.length * 0.5) throw new Error(`locale ${locale} returned Japanese text for only ${withText}/${ids.length} cards`);
   out.fra = fra; out.sources.fra = `${gallery} (Contentful locale ${locale})`;
@@ -80,6 +81,23 @@ try {
     out.scryfall_fra = byName;
   }
 } catch (e) { out.errors.push('scryfall fra: ' + e.message); }
+
+// ---- Final FRA entries: name, Japanese type line, rules text with line breaks
+// Prefer Scryfall's Japanese printed text (official line breaks) once it exists; otherwise rebuild
+// the breaks from the English text; otherwise leave the text out so the page falls back to English.
+{
+  const en = new Map(forecast.cards.map(c => [c.id, c])), sf = out.scryfall_fra || {}, count = {scryfall: 0, aligned: 0, none: 0};
+  const typeLine = ({super: sup = [], types = [], sub = []}) => sup.map(x => x === '伝説' ? '伝説の' : x).join('') + types.join('・') + (sub.length ? ' — ' + sub.join('・') : '');
+  for (const [id, e] of Object.entries(out.fra)) {
+    if (e.run_on === undefined) continue; // kept from a previous run and already final
+    const card = en.get(id), fromSf = card && sf[card.name]?.printed_text;
+    const text = fromSf || (e.run_on ? japaneseLines(e.run_on, card?.oracle_text) : null);
+    count[fromSf ? 'scryfall' : text ? 'aligned' : 'none']++;
+    out.fra[id] = {name: e.name, type_line: typeLine(e.type_parts || {}), oracle_text: text || ''};
+  }
+  out.stats.fra_text = count;
+  delete out.scryfall_fra;
+}
 
 // ---- Past sets: Japanese printed names from Scryfall
 const wanted = {};
