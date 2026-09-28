@@ -3,6 +3,7 @@ import {useState} from 'react';
 import images from '@/data/card-images-ja.json';
 import type {Card} from '@/lib/types';
 import {useLang,type Lang} from '@/lib/i18n';
+import cardTextJa from '@/data/card-text-ja.json';
 
 type ImageEntry={name:string;name_ja?:string;path:string;source_url:string;back_path?:string};
 const catalog=images as Record<string,ImageEntry>;
@@ -16,6 +17,19 @@ export function cardName(card:{name:string;id?:string;set?:string},lang:Lang){
   if(lang==='en')return card.name;
   const entry=card.id&&card.set?japaneseCardImage(card as Pick<Card,'id'|'name'|'set'>):byName.get(card.name)||byName.get(card.name.split(' // ')[0]);
   return entry?.name_ja||card.name;
+}
+type TextJa={name:string;type_line:string;oracle_text:string};
+const fraJa=(cardTextJa as {fra?:Record<string,TextJa>}).fra||{};
+const similarJa=(cardTextJa as {similar?:Record<string,string>}).similar||{};
+/** Contentful mana codes ({oT}, {oCoC}, {o2o(r/g)}) as ordinary symbols ({T}, {C}{C}, {2}{R/G}). */
+export const manaSymbols=(t:string)=>t.replace(/\{((?:o[^o}]+)+)\}/g,(_,codes:string)=>codes.split('o').filter(Boolean).map(c=>'{'+c.replace(/[()]/g,'').toUpperCase()+'}').join(''));
+/** Type line and rules text in the display language (Japanese falls back to English per field). */
+export function cardText(card:Pick<Card,'id'|'type_line'|'oracle_text'>,lang:Lang){
+  const ja=lang==='ja'?fraJa[card.id]:undefined;
+  return {type_line:ja?.type_line||card.type_line,oracle_text:manaSymbols(ja?.oracle_text?ja.oracle_text.replace(/ +（/g,'（'):card.oracle_text||''),ja:!!ja?.oracle_text};
+}
+export function similarName(s:{set:string;name:string},lang:Lang){
+  return lang==='ja'?similarJa[`${s.set}|${s.name}`]||similarJa[`${s.set}|${s.name.split(' // ')[0]}`]||s.name:s.name;
 }
 export function CardArtwork({card}:{card:Card}){
   const {lang,tr}=useLang();
