@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T08:32:36.439Z",
+ "generated_at": "2026-09-28T08:33:27.245Z",
  "sources": {
   "fra": "https://magic.wizards.com/ja/products/reality-fracture/card-image-gallery (Contentful locale ja)",
   "similar": "Scryfall (lang:ja printed_name)"
@@ -34,26 +34,25 @@
   "similar_dft": "34/34",
   "similar_dsk": "29/29",
   "similar_khm": "26/26",
-  "similar_ltr": "47/47"
+  "similar_ltr": "47/47",
+  "similar_otj": "38/38",
+  "similar_vow": "40/40",
+  "similar_dmu": "34/34",
+  "similar_stx": "38/38",
+  "similar_afr": "26/26",
+  "similar_neo": "26/26",
+  "similar_tdm": "27/27",
+  "similar_woe": "29/29",
+  "similar_mkm": "30/30",
+  "similar_blb": "43/43",
+  "similar_mh3": "29/29",
+  "similar_mid": "27/32",
+  "similar_snc": "30/30",
+  "similar_fdn": "40/40",
+  "similar_lci": "27/27",
+  "similar_mom": "29/29"
  },
- "errors": [
-  "similar otj: 429 https://api.scryfall.com/cards/search",
-  "similar vow: 429 https://api.scryfall.com/cards/search",
-  "similar dmu: 429 https://api.scryfall.com/cards/search",
-  "similar stx: 429 https://api.scryfall.com/cards/search",
-  "similar afr: 429 https://api.scryfall.com/cards/search",
-  "similar neo: 429 https://api.scryfall.com/cards/search",
-  "similar tdm: 429 https://api.scryfall.com/cards/search",
-  "similar woe: 429 https://api.scryfall.com/cards/search",
-  "similar mkm: 429 https://api.scryfall.com/cards/search",
-  "similar blb: 429 https://api.scryfall.com/cards/search",
-  "similar mh3: 429 https://api.scryfall.com/cards/search",
-  "similar mid: 429 https://api.scryfall.com/cards/search",
-  "similar snc: 429 https://api.scryfall.com/cards/search",
-  "similar fdn: 429 https://api.scryfall.com/cards/search",
-  "similar lci: 429 https://api.scryfall.com/cards/search",
-  "similar mom: 429 https://api.scryfall.com/cards/search"
- ],
+ "errors": [],
  "fra": {
   "5w87iskMh2ySglp8wDcEqC": {
    "name": "第一対応者、救命少女",
