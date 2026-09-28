@@ -122,5 +122,8 @@ for (const [set, names] of Object.entries(wanted)) {
 }
 if (Object.keys(similar).length) { out.similar = {...out.similar, ...similar}; out.sources.similar = 'Scryfall (lang:ja printed_name)'; }
 
-fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+// Only rewrite when something other than the timestamp changed, so reruns don't create empty commits.
+const {generated_at: _a, ...nextBody} = out, {generated_at: _b, ...prevBody} = previous;
+if (JSON.stringify(nextBody) !== JSON.stringify(prevBody)) fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+else console.log('No changes in Japanese text');
 console.log(JSON.stringify({stats: out.stats, errors: out.errors}, null, 1));
