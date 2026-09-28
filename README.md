@@ -15,3 +15,24 @@ Set Settings → Pages → Source to GitHub Actions. Push to main or manually ru
 
 ## Build
 `npm install && npm run build`
+
+## 予測の幅から外れたカードの理由（deviation notes）
+Public Dataの取り込み後、カード詳細のGIH WR・ALSAの下に「発売前予測・予測の幅（ミント）」と「実測（ピンク）」を表示します。実測が予測の幅の外にあり、件数が1,000以上のカードでは、`public/deviation-notes.json` に書いた理由を表示します（件数の基準は `components/forecast-range.tsx` の `MIN_N`）。
+
+1. 外れたカードと分析材料を一覧にする：
+   `node scripts/deviation-report.mjs public/forecast.json.gz <fra-public-game.json> > report.md`
+   （`fra-public-game.json` はデータリポジトリの `live/` にあります）
+2. `report.md` をもとに理由を書き（AIに分析させても可）、`public/deviation-notes.json` に追加してmainへpushします。
+
+```json
+{
+  "set": "FRA",
+  "cards": {
+    "Card Name": {
+      "gih": {"source": "ai", "data_as_of": "2026-10-05", "written_at": "2026-10-06",
+              "reasons": ["理由1", "理由2", "理由3"]}
+    }
+  }
+}
+```
+`source` は AI による推定なら `"ai"`、人が書いたものなら `"manual"`。カード名は英語名（両面カードは表面の名前でも可）です。
