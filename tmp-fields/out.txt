@@ -1,0 +1,30 @@
+dict 281
+{
+ "name": "Ugin, Eye of the Storms",
+ "mtga_id": 95516,
+ "color": "",
+ "rarity": "mythic",
+ "url": "https://cards.scryfall.io/large/front/6/4/64a5d494-efa1-446b-bebe-2ad36e154376.jpg?1744102946",
+ "url_back": "",
+ "types": [
+  "Legendary Planeswalker - Ugin"
+ ],
+ "layout": "standard",
+ "seen_count": 5750,
+ "avg_seen": 1.0693913,
+ "pick_count": 5525,
+ "avg_pick": 1.0669683,
+ "game_count": 34695,
+ "pool_count": 35568,
+ "play_rate": 0.9754554655870445,
+ "win_rate": 0.58564635,
+ "opening_hand_game_count": 5937,
+ "opening_hand_win_rate": 0.64443322,
+ "drawn_game_count": 9572,
+ "drawn_win_rate": 0.70653991,
+ "ever_drawn_game_count": 15509,
+ "ever_drawn_win_rate": 0.68276485,
+ "never_drawn_game_count": 18637,
+ "never_drawn_win_rate": 0.50002683,
+ "drawn_improvement_win_rate": 0.18273801999999995
+}
