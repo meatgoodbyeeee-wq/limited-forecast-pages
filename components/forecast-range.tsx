@@ -8,6 +8,8 @@ const MINT='#5EEAC4',PINK='#FF5C8A';
 /** Minimum observations before an out-of-range result is called a miss (GIH WR sampling noise is large early on). */
 export const MIN_N:Record<Metric,number>={gih:1000,alsa:1000};
 const f=(n:number,d=2)=>Number.isFinite(n)?n.toFixed(d):'—';
+/** Chart labels: round half up to one decimal (61.18 → 61.2). */
+const r1=(n:number)=>Number.isFinite(n)?(Math.round(n*10)/10).toFixed(1):'—';
 
 export type Deviation={pred:number;range:[number,number];obs:number|null;n:number;live:boolean;status:'preview'|'none'|'pending'|'inside'|'above'|'below'};
 export function deviation(card:Card,t:Metric):Deviation{
@@ -34,20 +36,22 @@ export function ForecastRange({card,metric:t}:{card:Card;metric:Metric}){
  const d=deviation(card,t);
  const xs=[d.range[0],d.range[1],d.pred,...(d.obs!=null?[d.obs]:[])];
  let lo=Math.min(...xs),hi=Math.max(...xs);const pad=Math.max(t==='gih'?1:.4,(hi-lo)*.12);lo-=pad;hi+=pad;
- const x=(v:number)=>`${(v-lo)/(hi-lo)*100}%`;
+ const pos=(v:number)=>(v-lo)/(hi-lo)*100,x=(v:number)=>`${pos(v)}%`;
  const showObs=d.obs!=null&&d.n>0;
  return <div className="mt-3 rounded-lg border border-border bg-background/40 px-4 pt-3 pb-3" aria-label={`${label(t)}：発売前予測 ${f(d.pred)}${unit(t)}、予測の幅 ${f(d.range[0])}–${f(d.range[1])}${unit(t)}${showObs?`、実測 ${f(d.obs!)}${unit(t)}`:''}`}>
   <div className="flex items-center justify-between gap-3">
    <span className="text-xs text-muted-foreground">{d.live?'発売前予測と実測':'発売前予測と予測の幅'}</span>{!card.late_card&&d.live&&pill(t,d)}
   </div>
-  <div className="relative h-16" aria-hidden="true">
+  <div className="relative h-[62px] number" aria-hidden="true">
    <div className="absolute left-0 right-0 top-[30px] h-[2px] rounded" style={{background:'rgba(232,237,244,.12)'}}/>
    <div className="absolute top-[24px] h-[14px] rounded-full" style={{left:x(d.range[0]),width:`calc(${x(d.range[1])} - ${x(d.range[0])})`,background:'rgba(94,234,196,.28)',border:'1.5px solid rgba(94,234,196,.65)'}}/>
-   <span className="absolute top-[4px] -translate-x-1/2 text-[11px] whitespace-nowrap" style={{left:`calc((${x(d.range[0])} + ${x(d.range[1])}) / 2)`,color:MINT}}>予測の幅</span>
+   {d.range.map((v,i)=><span key={i} className="absolute top-[42px] -translate-x-1/2 text-[11px] whitespace-nowrap" style={{left:x(v),color:'rgba(94,234,196,.8)'}}>{r1(v)}{unit(t)}</span>)}
    <span className="absolute top-[24px] size-[14px] -translate-x-1/2 rounded-full" style={{left:x(d.pred),background:MINT,boxShadow:'0 0 0 3px var(--card)'}}/>
+   <span className="absolute top-[2px] -translate-x-1/2 text-xs font-bold whitespace-nowrap" style={{left:x(d.pred),color:MINT}}>{r1(d.pred)}{unit(t)}</span>
    {showObs&&<>
     <span className="absolute top-[20px] size-[22px] -translate-x-1/2 rounded-full" style={{left:x(d.obs!),background:PINK,boxShadow:'0 0 0 3px var(--card)'}}/>
-    <span className="absolute top-[45px] -translate-x-1/2 text-[11px] whitespace-nowrap font-medium" style={{left:x(d.obs!),color:PINK}}>実測</span>
+    {/* if the observed label would overlap the predicted label, drop it below the track */}
+    <span className={'absolute -translate-x-1/2 text-xs font-bold whitespace-nowrap '+(Math.abs(pos(d.obs!)-pos(d.pred))<16?'top-[44px]':'top-0')} style={{left:x(d.obs!),color:PINK}}>{r1(d.obs!)}{unit(t)}</span>
    </>}
   </div>
   <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground number">
