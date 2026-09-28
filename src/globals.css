@@ -138,3 +138,22 @@ body {
 
 :root { --background:#0c1420;--foreground:#e8edf4;--card:#131f2e;--card-foreground:#e8edf4;--popover:#172537;--popover-foreground:#e8edf4;--primary:#76e2c0;--primary-foreground:#09251e;--secondary:#1b2b3d;--secondary-foreground:#e8edf4;--muted:#192737;--muted-foreground:#a9b7c7;--accent:#213448;--accent-foreground:#ffffff;--border:#304055;--input:#304055;--ring:#76e2c0; }
 body{font-family:Arial,"Noto Sans JP",sans-serif} .number{font-variant-numeric:tabular-nums} button,a,input,select{touch-action:manipulation}
+/* Sakiyomi: deck-colour chart */
+.sky-pairs .sky-bar{transform-origin:left center;animation:sky-grow .7s cubic-bezier(.16,1,.3,1) both}
+.sky-pairs .sky-band{animation:sky-fade .5s ease-out both}
+.sky-pairs{--lab:8.25rem;--val:6.5rem;--gap:1rem}
+.sky-pairs .sky-row{display:grid;grid-template-columns:var(--lab) minmax(0,1fr) var(--val);grid-template-areas:"label bar value";column-gap:var(--gap);align-items:center;transition:background-color .15s}
+.sky-pairs .sky-label{grid-area:label}.sky-pairs .sky-track{grid-area:bar}.sky-pairs .sky-value{grid-area:value}
+.sky-pairs .sky-mean,.sky-pairs .sky-mean-tick{position:absolute;border-left:2px dashed rgba(232,237,244,.25);pointer-events:none}
+.sky-pairs .sky-mean{top:0;bottom:-.5rem;left:calc(var(--lab) + var(--gap) + (100% - var(--lab) - var(--val) - 2 * var(--gap)) * var(--p))}
+.sky-pairs .sky-mean-tick{display:none;top:-4px;bottom:-4px;left:calc(100% * var(--p));z-index:1}
+.sky-pairs .sky-mean-label{left:calc(var(--lab) + var(--gap) + (100% - var(--lab) - var(--val) - 2 * var(--gap)) * var(--p));padding-left:8px}
+@media (max-width:639px){
+ .sky-pairs .sky-row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"label value" "bar bar";row-gap:.4rem}
+ .sky-pairs .sky-mean{display:none}.sky-pairs .sky-mean-tick{display:block}
+ .sky-pairs .sky-mean-label{left:calc(100% * var(--p))}
+}
+.sky-pairs .sky-row:hover{background:color-mix(in srgb,var(--accent) 45%,transparent)}
+@keyframes sky-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes sky-fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.sky-pairs .sky-bar,.sky-pairs .sky-band{animation:none}}
