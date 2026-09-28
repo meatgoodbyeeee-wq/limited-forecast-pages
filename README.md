@@ -6,8 +6,8 @@ Existing UI migrated to Vite; frozen forecast exported once using unchanged orig
 - Input card snapshot: 2026-09-20T23:59:27.899Z; 290 cards. Live API could not be reached, so equivalence with later live card edits is unverified.
 - GIH/ALSA values: `public/forecast.json`. The unchanged models run in the scheduled Pages build only when official draft card fields change. The browser only applies the existing observation blending policy to the official Public Game Dataset result after validation.
 - Japanese images are copied from the existing data repository during Actions build.
-- Search, sort, filters, card images, details and CSV/Markdown export retained.
-- The GitHub Actions site build checks the official card gallery once a day at 06:07 JST (GitHub scheduling may be delayed; pushes to main and manual runs also rebuild); visible tabs poll the published JSON every five minutes. The existing data repository checks the Official Public Game Dataset daily. Failed checks retain predictions. Server-side snapshot saving is disabled.
+- Search, sort, filters, card images, details and CSV/Markdown export retained. The server-only features of the original site (saved predictions, manual card refresh) were removed.
+- The GitHub Actions site build checks the official card gallery once a day at 06:07 JST (GitHub scheduling may be delayed; pushes to main and manual runs also rebuild); visible tabs poll the published JSON every five minutes. The existing data repository checks the Official Public Game Dataset daily. Failed checks retain predictions.
 - Original chatgpt.site deployment is unchanged.
 
 ## Deploy
