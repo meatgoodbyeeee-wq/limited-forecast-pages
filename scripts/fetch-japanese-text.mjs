@@ -58,6 +58,29 @@ try {
   out.fra = fra; out.sources.fra = `${gallery} (Contentful locale ${locale})`;
 } catch (e) { out.errors.push('fra: ' + e.message); }
 
+// ---- FRA on Scryfall (Japanese printed text keeps the official line breaks when available)
+try {
+  const sets = (await get('https://api.scryfall.com/sets')).data;
+  const set = sets.find(x => x.name === 'Reality Fracture') || sets.find(x => x.code === 'fra');
+  out.stats.scryfall_fra_set = set ? `${set.code} (${set.released_at}, ${set.card_count} cards)` : 'not found';
+  if (set) {
+    const byName = {};
+    let url = `https://api.scryfall.com/cards/search?q=${encodeURIComponent(`set:${set.code} lang:ja`)}&unique=prints`;
+    while (url) {
+      const d = await get(url).catch(e => { if (String(e.message).startsWith('404')) return {data: [], has_more: false}; throw e; });
+      for (const c of d.data) {
+        const faces = c.card_faces?.length ? c.card_faces : [c];
+        const text = faces.map(f => f.printed_text || '').filter(Boolean).join('\n//\n');
+        if (text && !byName[c.name]) byName[c.name] = {printed_text: text, printed_type_line: faces.map(f => f.printed_type_line || '').filter(Boolean).join(' // ')};
+      }
+      url = d.has_more ? d.next_page : null;
+      await sleep(150);
+    }
+    out.stats.scryfall_fra_ja = Object.keys(byName).length;
+    out.scryfall_fra = byName;
+  }
+} catch (e) { out.errors.push('scryfall fra: ' + e.message); }
+
 // ---- Past sets: Japanese printed names from Scryfall
 const wanted = {};
 for (const c of forecast.cards) for (const s of c.similar || []) (wanted[s.set.toLowerCase()] ||= new Set()).add(s.name);
