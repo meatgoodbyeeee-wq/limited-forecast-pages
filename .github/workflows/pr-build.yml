@@ -13,5 +13,6 @@ jobs:
         with:
           node-version: 22
       - run: npm ci --no-audit --no-fund
+      - run: node --test scripts/card-data.test.mjs
       - run: gunzip -k data/live-policy.json.gz
       - run: npm run build

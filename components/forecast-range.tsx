@@ -14,11 +14,13 @@ const r1=(n:number)=>Number.isFinite(n)?(Math.round(n*10)/10).toFixed(1):'—';
 
 export type Deviation={pred:number;range:[number,number];obs:number|null;n:number;live:boolean;status:'preview'|'none'|'pending'|'inside'|'above'|'below'};
 export function deviation(card:Card,t:Metric):Deviation{
- const live=!!card.phase&&card.phase!=='PREVIEW';
- const pred=live?((t==='gih'?card.pre_release_gih:card.pre_release_alsa)??card[t]):card[t];
+ // Public Data phase, or an observed value from the Card Data snapshot (shown only, forecast unchanged)
+ const phaseLive=!!card.phase&&card.phase!=='PREVIEW';
+ const pred=phaseLive?((t==='gih'?card.pre_release_gih:card.pre_release_alsa)??card[t]):card[t];
  const range=(t==='gih'?card.gih_range:card.alsa_range) as [number,number];
  const obs=(t==='gih'?card.observed_gih:card.observed_alsa)??null;
  const n=(t==='gih'?card.observed_gih_n:card.observed_seen_n)||0;
+ const live=phaseLive||(obs!=null&&n>0);
  const status=!live?'preview':obs==null||!(n>0)?'none':n<MIN_N[t]?'pending':obs>range[1]?'above':obs<range[0]?'below':'inside';
  return {pred,range,obs,n,live,status};
 }
@@ -65,8 +67,9 @@ export function ForecastRange({card,metric:t}:{card:Card;metric:Metric}){
    {showObs&&<span className="inline-flex items-center gap-1.5"><span className="size-2.5 rounded-full" style={{background:PINK}}/>{tr('実測','Observed')} {f(d.obs!)}{u}{tr('（',' (')}{t==='gih'?'#GIH':'#Seen'} {d.n.toLocaleString(lang==='en'?'en-US':'ja-JP')}{tr('）',')')}</span>}
   </div>
   {t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAは数値が小さいほど早く取られたことを示します（グラフは右ほど早い）。','A lower ALSA means the card was taken earlier (further right = earlier).')}</p>}
-  {d.live&&!showObs&&t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAの実測は17Landsのカードデータから1日1回取得します（まだ取得できていません）。','Observed ALSA comes from 17Lands card data once a day (not available yet).')}</p>}
-  {showObs&&t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAの実測は17Landsのカードデータ（発売後28日間）。予測値には反映していません。','Observed ALSA is from 17Lands card data (first 28 days). It is not blended into the forecast.')}</p>}
+  {showObs&&<p className="text-[11px] text-muted-foreground mt-1">{(()=>{const src=t==='gih'?card.observed_gih_source:card.observed_alsa_source;
+   return src?tr(`実測：${src}（${card.observed_window}の累計）。予測値には反映していません。`,`Observed: ${src} (${card.observed_window}, cumulative). Not blended into the forecast.`)
+    :tr('実測：17Lands Public Dataset（CC BY 4.0）','Observed: 17Lands Public Dataset (CC BY 4.0)');})()}</p>}
   {d.status==='pending'&&<p className="text-[11px] text-muted-foreground mt-1">{tr(`件数が${MIN_N[t].toLocaleString()}未満のため、予測の幅から外れたかどうかの判定を保留しています。`,`Fewer than ${MIN_N[t].toLocaleString('en-US')} samples, so it is too early to say whether the value left the forecast range.`)}</p>}
  </div>;
 }
