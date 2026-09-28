@@ -17,6 +17,9 @@ Set Settings → Pages → Source to GitHub Actions. Push to main or manually ru
 ## Build
 `npm install && npm run build`
 
+## 過去の類似カード
+カード詳細の「過去の類似カード」3枚は、22セット（KHM〜TDM）5,611枚から選びます（`data/similar-references.json.gz`）。候補一覧は手動実行の **Build similar-card references** ワークフローで作成：データリポジトリの22セットのカードデータと28日間GIH WR、Scryfallのマナコスト・リンク、17Landsカードデータの28日間ALSA。類似度は予測モデルの特徴量（基本属性・能力・ルールテキストの語句）のコサイン類似度で、表示専用です（予測値には影響しません）。
+
 ## 実測ALSA
 FRAのPublic Datasetが公開された後は、サイトの日次ビルドで17Landsのカードデータ（`/api/card_data`、発売後28日間）からALSAを1日1回取得し（`scripts/fetch-17lands-alsa.mjs` → `public/live/fra-alsa.json`）、カード詳細にピンクの実測点として表示します。予測値（ライブALSA）には反映しません。Public Dataset公開前は取得しません。
 
