@@ -63,7 +63,8 @@ export function ForecastRange({card,metric:t}:{card:Card;metric:Metric}){
    {showObs&&<span className="inline-flex items-center gap-1.5"><span className="size-2.5 rounded-full" style={{background:PINK}}/>{tr('実測','Observed')} {f(d.obs!)}{u}{tr('（',' (')}{t==='gih'?'#GIH':'#Seen'} {d.n.toLocaleString(lang==='en'?'en-US':'ja-JP')}{tr('）',')')}</span>}
   </div>
   {t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAは数値が小さいほど早く取られたことを示します。','A lower ALSA means the card was taken earlier.')}</p>}
-  {d.live&&!showObs&&t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAの実測はまだ取り込まれていません（17LandsのGame DataにはALSAが含まれないため）。','Observed ALSA is not imported yet (17Lands Game Data does not include ALSA).')}</p>}
+  {d.live&&!showObs&&t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAの実測は17Landsのカードデータから1日1回取得します（まだ取得できていません）。','Observed ALSA comes from 17Lands card data once a day (not available yet).')}</p>}
+  {showObs&&t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAの実測は17Landsのカードデータ（発売後28日間）。予測値には反映していません。','Observed ALSA is from 17Lands card data (first 28 days). It is not blended into the forecast.')}</p>}
   {d.status==='pending'&&<p className="text-[11px] text-muted-foreground mt-1">{tr(`件数が${MIN_N[t].toLocaleString()}未満のため、予測の幅から外れたかどうかの判定を保留しています。`,`Fewer than ${MIN_N[t].toLocaleString('en-US')} samples, so it is too early to say whether the value left the forecast range.`)}</p>}
  </div>;
 }
@@ -72,7 +73,8 @@ export function ForecastRange({card,metric:t}:{card:Card;metric:Metric}){
 export function DeviationReason({card,metric:t,notes}:{card:Card;metric:Metric;notes?:DeviationNotes|null}){
  const {lang,tr}=useLang();
  const d=deviation(card,t);
- if(card.late_card||(d.status!=='above'&&d.status!=='below'))return null;
+ // Reasons are written for GIH WR only.
+ if(t==='alsa'||card.late_card||(d.status!=='above'&&d.status!=='below'))return null;
  const note=(notes?.cards?.[card.name]||notes?.cards?.[card.name.split(' // ')[0]])?.[t];
  if(!note?.reasons?.length)return <div className="mt-3 rounded-lg border border-dashed border-border p-4 text-sm text-muted-foreground">{tr('予測の幅から外れました。ずれた理由の分析はまだ掲載されていません。','The observed value left the forecast range. No analysis of why has been posted yet.')}</div>;
  const ai=note.source!=='manual';

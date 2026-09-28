@@ -22,7 +22,7 @@ const rows = [];
 for (const c of forecast.cards) {
   if (c.late_card) continue;
   const o = obsOf(c); if (!o) continue;
-  for (const t of ['gih', 'alsa']) {
+  for (const t of ['gih']) { // reasons are written for GIH WR only
     const obs = o[t], n = o[t + '_n'] || 0, range = c[t + '_range'], pred = c[t];
     if (obs == null || !(n >= MIN_N[t])) continue;
     const gap = obs > range[1] ? obs - range[1] : obs < range[0] ? obs - range[0] : 0;
