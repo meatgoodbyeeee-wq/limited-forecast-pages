@@ -14,7 +14,11 @@ const get = async (url, json = true) => { const r = await fetch(url, {headers: U
 const forecast = JSON.parse(gunzipSync(fs.readFileSync(new URL('../public/forecast.json.gz', import.meta.url)))).forecast;
 const previous = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 const out = {generated_at: new Date().toISOString(), sources: {}, stats: {}, errors: [], fra: previous.fra || {}, similar: previous.similar || {}};
-const clean = s => (s || '').replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&nbsp;/g, ' ').trim();
+const entities = s => s.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&');
+// Paragraph/line tags become newlines; escaped markup (&lt;i&gt;) is decoded first so it is stripped too.
+const clean = s => entities(entities(s || ''))
+  .replace(/<br\s*\/?>/gi, '\n').replace(/<\/(p|div|li)>/gi, '\n').replace(/<[^>]+>/g, '')
+  .replace(/\\([{}])/g, '$1').replace(/\r/g, '').replace(/[ \t]+\n/g, '\n').replace(/\n{2,}/g, '\n').trim();
 
 // ---- FRA: official Japanese text from the gallery's Contentful space
 try {
@@ -43,8 +47,8 @@ try {
     const links = {}; for (const e of d.includes?.Entry || []) links[e.sys.id] = e.fields;
     const labels = refs => (refs || []).map(r => links[r.sys.id]?.label || links[r.sys.id]?.name || '').filter(Boolean);
     for (const e of d.items) {
-      const f = e.fields, main = [...labels(f.supertypes), ...labels(f.type)], sub = labels(f.subtypes);
-      fra[e.sys.id] = {name: f.name || '', type_parts: {main, sub}, oracle_text: clean(f.rulesText)};
+      const f = e.fields;
+      fra[e.sys.id] = {name: f.name || '', type_parts: {super: labels(f.supertypes), types: labels(f.type), sub: labels(f.subtypes)}, oracle_text: clean(f.rulesText), raw_text: f.rulesText || ''};
     }
     await sleep(200);
   }
