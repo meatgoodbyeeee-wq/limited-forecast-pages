@@ -39,7 +39,9 @@ export function ForecastRange({card,metric:t}:{card:Card;metric:Metric}){
  const d=deviation(card,t);
  const xs=[d.range[0],d.range[1],d.pred,...(d.obs!=null?[d.obs]:[])];
  let lo=Math.min(...xs),hi=Math.max(...xs);const pad=Math.max(t==='gih'?1:.4,(hi-lo)*.12);lo-=pad;hi+=pad;
- const pos=(v:number)=>(v-lo)/(hi-lo)*100,x=(v:number)=>`${pos(v)}%`;
+ // ALSA runs right-to-left so that further right = picked earlier (smaller number), like GIH WR's "better" side
+ const pos=(v:number)=>(t==='alsa'?hi-v:v-lo)/(hi-lo)*100,x=(v:number)=>`${pos(v)}%`;
+ const bandL=Math.min(pos(d.range[0]),pos(d.range[1])),bandW=Math.abs(pos(d.range[1])-pos(d.range[0]));
  const showObs=d.obs!=null&&d.n>0;
  return <div className="mt-3 rounded-lg border border-border bg-background/40 px-4 pt-3 pb-3" aria-label={tr(`${label(t)}：発売前予測 ${f(d.pred)}${u}、予測の幅 ${f(d.range[0])}–${f(d.range[1])}${u}${showObs?`、実測 ${f(d.obs!)}${u}`:''}`,`${label(t)}: pre-release forecast ${f(d.pred)}${u}, forecast range ${f(d.range[0])}–${f(d.range[1])}${u}${showObs?`, observed ${f(d.obs!)}${u}`:''}`)}>
   <div className="flex items-center justify-between gap-3">
@@ -47,7 +49,7 @@ export function ForecastRange({card,metric:t}:{card:Card;metric:Metric}){
   </div>
   <div className="relative h-[62px] number" aria-hidden="true">
    <div className="absolute left-0 right-0 top-[30px] h-[2px] rounded" style={{background:'rgba(232,237,244,.12)'}}/>
-   <div className="absolute top-[24px] h-[14px] rounded-full" style={{left:x(d.range[0]),width:`calc(${x(d.range[1])} - ${x(d.range[0])})`,background:'rgba(94,234,196,.28)',border:'1.5px solid rgba(94,234,196,.65)'}}/>
+   <div className="absolute top-[24px] h-[14px] rounded-full" style={{left:`${bandL}%`,width:`${bandW}%`,background:'rgba(94,234,196,.28)',border:'1.5px solid rgba(94,234,196,.65)'}}/>
    {d.range.map((v,i)=><span key={i} className="absolute top-[42px] -translate-x-1/2 text-[11px] whitespace-nowrap" style={{left:x(v),color:'rgba(94,234,196,.8)'}}>{r1(v)}{u}</span>)}
    <span className="absolute top-[24px] size-[14px] -translate-x-1/2 rounded-full" style={{left:x(d.pred),background:MINT,boxShadow:'0 0 0 3px var(--card)'}}/>
    <span className="absolute top-[2px] -translate-x-1/2 text-xs font-bold whitespace-nowrap" style={{left:x(d.pred),color:MINT}}>{r1(d.pred)}{u}</span>
@@ -62,7 +64,7 @@ export function ForecastRange({card,metric:t}:{card:Card;metric:Metric}){
    <span className="inline-flex items-center gap-1.5"><span className="h-2 w-4 rounded-full" style={{background:'rgba(94,234,196,.4)'}}/>{tr('予測の幅','Forecast range')} {f(d.range[0])}–{f(d.range[1])}{u}</span>
    {showObs&&<span className="inline-flex items-center gap-1.5"><span className="size-2.5 rounded-full" style={{background:PINK}}/>{tr('実測','Observed')} {f(d.obs!)}{u}{tr('（',' (')}{t==='gih'?'#GIH':'#Seen'} {d.n.toLocaleString(lang==='en'?'en-US':'ja-JP')}{tr('）',')')}</span>}
   </div>
-  {t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAは数値が小さいほど早く取られたことを示します。','A lower ALSA means the card was taken earlier.')}</p>}
+  {t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAは数値が小さいほど早く取られたことを示します（グラフは右ほど早い）。','A lower ALSA means the card was taken earlier (further right = earlier).')}</p>}
   {d.live&&!showObs&&t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAの実測は17Landsのカードデータから1日1回取得します（まだ取得できていません）。','Observed ALSA comes from 17Lands card data once a day (not available yet).')}</p>}
   {showObs&&t==='alsa'&&<p className="text-[11px] text-muted-foreground mt-1">{tr('ALSAの実測は17Landsのカードデータ（発売後28日間）。予測値には反映していません。','Observed ALSA is from 17Lands card data (first 28 days). It is not blended into the forecast.')}</p>}
   {d.status==='pending'&&<p className="text-[11px] text-muted-foreground mt-1">{tr(`件数が${MIN_N[t].toLocaleString()}未満のため、予測の幅から外れたかどうかの判定を保留しています。`,`Fewer than ${MIN_N[t].toLocaleString('en-US')} samples, so it is too early to say whether the value left the forecast range.`)}</p>}
