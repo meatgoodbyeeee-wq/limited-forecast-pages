@@ -10,7 +10,15 @@ const UA = {'User-Agent': 'Sakiyomi/1.0 (limited forecast research)', Accept: 'a
 const SPACE = 'https://cdn.contentful.com/spaces/s5n2t79q9icq/environments/master';
 const GALLERIES = ['https://magic.wizards.com/ja/products/reality-fracture/card-image-gallery', 'https://magic.wizards.com/en/products/reality-fracture/card-image-gallery'];
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-const get = async (url, json = true) => { const r = await fetch(url, {headers: UA, signal: AbortSignal.timeout(60000)}); if (!r.ok) throw new Error(`${r.status} ${url.split('?')[0]}`); return json ? r.json() : r.text(); };
+// Retries rate limits (429) with backoff, honouring Retry-After.
+const get = async (url, json = true) => {
+  for (let attempt = 0; ; attempt++) {
+    const r = await fetch(url, {headers: UA, signal: AbortSignal.timeout(60000)});
+    if (r.status === 429 && attempt < 5) { await sleep((Number(r.headers.get('retry-after')) || 2 ** attempt * 2) * 1000); continue; }
+    if (!r.ok) throw new Error(`${r.status} ${url.split('?')[0]}`);
+    return json ? r.json() : r.text();
+  }
+};
 
 const forecast = JSON.parse(gunzipSync(fs.readFileSync(new URL('../public/forecast.json.gz', import.meta.url)))).forecast;
 const previous = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -75,7 +83,7 @@ try {
         if (text && !byName[c.name]) byName[c.name] = {printed_text: text, printed_type_line: faces.map(f => f.printed_type_line || '').filter(Boolean).join(' // ')};
       }
       url = d.has_more ? d.next_page : null;
-      await sleep(150);
+      await sleep(500);
     }
     out.stats.scryfall_fra_ja = Object.keys(byName).length;
     out.scryfall_fra = byName;
@@ -115,7 +123,7 @@ for (const [set, names] of Object.entries(wanted)) {
         for (const k of keys) if (names.has(k) && !similar[`${set.toUpperCase()}|${k}`]) { similar[`${set.toUpperCase()}|${k}`] = ja; n++; }
       }
       url = d.has_more ? d.next_page : null;
-      await sleep(150);
+      await sleep(500);
     }
     out.stats[`similar_${set}`] = `${n}/${names.size}`;
   } catch (e) { out.errors.push(`similar ${set}: ${e.message}`); }
@@ -130,7 +138,7 @@ for (const [set, names] of Object.entries(wanted)) for (const name of names) {
     const ja = c && (c.printed_name || c.card_faces.map(f => f.printed_name).filter(Boolean).join(' // '));
     if (ja) similar[key] = ja;
   } catch { /* not printed in Japanese */ }
-  await sleep(150);
+  await sleep(500);
 }
 if (Object.keys(similar).length) { out.similar = {...out.similar, ...similar}; out.sources.similar = 'Scryfall (lang:ja printed_name)'; }
 
