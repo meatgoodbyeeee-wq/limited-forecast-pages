@@ -120,6 +120,18 @@ for (const [set, names] of Object.entries(wanted)) {
     out.stats[`similar_${set}`] = `${n}/${names.size}`;
   } catch (e) { out.errors.push(`similar ${set}: ${e.message}`); }
 }
+// Names the per-set search missed (e.g. some double-faced cards): look them up one by one.
+for (const [set, names] of Object.entries(wanted)) for (const name of names) {
+  const key = `${set.toUpperCase()}|${name}`;
+  if (similar[key] || previous.similar?.[key]) continue;
+  try {
+    const d = await get(`https://api.scryfall.com/cards/search?q=${encodeURIComponent(`!"${name}" lang:ja`)}&unique=prints`);
+    const c = d.data.find(x => x.printed_name || x.card_faces?.some(f => f.printed_name));
+    const ja = c && (c.printed_name || c.card_faces.map(f => f.printed_name).filter(Boolean).join(' // '));
+    if (ja) similar[key] = ja;
+  } catch { /* not printed in Japanese */ }
+  await sleep(150);
+}
 if (Object.keys(similar).length) { out.similar = {...out.similar, ...similar}; out.sources.similar = 'Scryfall (lang:ja printed_name)'; }
 
 // Only rewrite when something other than the timestamp changed, so reruns don't create empty commits.
