@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {gunzipSync} from 'node:zlib';
 import {collectOfficial} from '../lib/official.mjs';
 import {mergeOfficial,signature} from '../lib/refresh.mjs';
 import {draftPool} from '../lib/draft-pool.mjs';
@@ -10,6 +11,9 @@ import {liveForecast} from '../lib/live.mjs';
 const read=name=>JSON.parse(fs.readFileSync(new URL(`../data/${name}.json`,import.meta.url)));
 const current=JSON.parse(fs.readFileSync(new URL('../public/forecast.json',import.meta.url)));
 const original=read('target'),incumbent=read('model');
+// Similar-card candidates: the 22-set reference list when present (data/similar-references.json.gz)
+const refsFile=new URL('../data/similar-references.json.gz',import.meta.url);
+if(fs.existsSync(refsFile))incumbent.references={...incumbent.references,gih:JSON.parse(gunzipSync(fs.readFileSync(refsFile))).cards};
 let incoming;
 try { incoming=await collectOfficial(); }
 catch (error) { console.warn('公式カード情報の確認に失敗。既存の予測を保持:',error.message); process.exit(0); }
