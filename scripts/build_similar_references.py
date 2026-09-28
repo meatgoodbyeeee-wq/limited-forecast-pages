@@ -95,6 +95,13 @@ for code in sets:
     stats[code] = {'cards': len(srows), 'scryfall_missing': miss_sf, 'alsa_missing': miss_al}
     print(code, stats[code], flush=True)
 
-with gzip.open(OUT, 'wt', encoding='utf-8') as f:
-    json.dump({'built_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'sets': sets, 'stats': stats, 'errors': errors, 'cards': refs}, f, ensure_ascii=False)
-print('wrote', OUT, len(refs), 'cards; errors:', errors)
+body = {'sets': sets, 'stats': stats, 'errors': errors, 'cards': refs}
+try:
+    with gzip.open(OUT, 'rt', encoding='utf-8') as f: prev = json.load(f); prev.pop('built_at', None)
+except (FileNotFoundError, ValueError): prev = None
+if prev == body:
+    print('no changes in', OUT)  # keep the file (and its build time) so reruns don't create empty commits
+else:
+    with gzip.open(OUT, 'wt', encoding='utf-8') as f:
+        json.dump({'built_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), **body}, f, ensure_ascii=False)
+    print('wrote', OUT, len(refs), 'cards; errors:', errors)
