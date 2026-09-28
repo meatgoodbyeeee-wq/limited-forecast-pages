@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-28T07:27:15.100Z",
+ "generated_at": "2026-09-28T07:29:23.147Z",
  "sources": {
   "fra": "https://magic.wizards.com/ja/products/reality-fracture/card-image-gallery (Contentful locale ja)",
   "similar": "Scryfall (lang:ja printed_name)"
@@ -22,6 +22,8 @@
    "cards": 290,
    "japanese": 288
   },
+  "scryfall_fra_set": "fra (2026-10-02, 461 cards)",
+  "scryfall_fra_ja": 0,
   "similar_dsk": "125/125",
   "similar_dft": "116/116",
   "similar_fdn": "142/142",
@@ -4747,5 +4749,6 @@
   "BLB|Whiskervale Forerunner": "髭谷の先駆け",
   "BLB|Wick's Patrol": "ウィックの巡回兵",
   "BLB|Ygra, Eater of All": "全てを喰らうもの、イグラ"
- }
+ },
+ "scryfall_fra": {}
 }
