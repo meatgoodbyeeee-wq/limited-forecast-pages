@@ -1,0 +1,42 @@
+name: FRA Card Data (daily)
+# Once a day at about 00:30 JST. The script itself refuses to call 17Lands before
+# 2026-10-13 00:00 JST, calls at most once per JST day, and stops after the 28-day window.
+on:
+  schedule:
+    - cron: '30 15 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: fra-card-data
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      # Public Dataset status as already recorded by the data repository's daily check (no extra 17Lands access)
+      - uses: actions/checkout@v4
+        with:
+          repository: meatgoodbyeeee-wq/17lands-limited-forecast-data
+          path: data-source
+          sparse-checkout: live
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/fetch-card-data.mjs
+        env:
+          PUBLIC_DATASET_STATUS: data-source/live/fra-public-game.json
+      - name: Save snapshot and redeploy the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for f in public/data/fra-actual-card-data.json data/card-data-state.json; do [ -f "$f" ] && git add "$f"; done
+          if git diff --cached --quiet; then echo 'nothing to save'; exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Update FRA Card Data snapshot'
+          git push origin HEAD:${GITHUB_REF_NAME}
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then gh workflow run pages.yml --ref main; fi

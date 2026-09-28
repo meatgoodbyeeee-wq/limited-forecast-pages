@@ -20,8 +20,16 @@ Set Settings → Pages → Source to GitHub Actions. Push to main or manually ru
 ## 過去の類似カード
 カード詳細の「過去の類似カード」3枚は、22セット（KHM〜TDM）5,611枚から選びます（`data/similar-references.json.gz`）。候補一覧は手動実行の **Build similar-card references** ワークフローで作成：データリポジトリの22セットのカードデータと28日間GIH WR、Scryfallのマナコスト・リンク、17Landsカードデータの28日間ALSA。類似度は予測モデルの特徴量（基本属性・能力・ルールテキストの語句）のコサイン類似度で、表示専用です（予測値には影響しません）。
 
-## 実測ALSA
-FRAのPublic Datasetが公開された後は、サイトの日次ビルドで17Landsのカードデータ（`/api/card_data`、発売後28日間）からALSAを1日1回取得し（`scripts/fetch-17lands-alsa.mjs` → `public/live/fra-alsa.json`）、カード詳細にピンクの実測点として表示します。予測値（ライブALSA）には反映しません。Public Dataset公開前は取得しません。
+## 実測値（17Lands Card Data）
+- 取得：`.github/workflows/card-data.yml`（毎日 00:30 JST 頃）→ `scripts/fetch-card-data.mjs` → 判定ロジックは `lib/card-data.mjs`
+- **2026-10-13 00:00 JST（2026-10-12T15:00Z）より前は17Lands APIを呼ばない**（コード側でも判定）
+- 1暦日（JST）につきAPI呼び出しは最大1回（成功・失敗とも `data/card-data-state.json` に記録し、同日の再実行では呼ばない）
+- 期間は発売日 2026-09-29 〜 前日（最長 2026-10-26 の28日間）。28日分を取得し終えたら以後は呼ばない
+- 保存先：`public/data/fra-actual-card-data.json`（取得失敗・空応答では上書きしない）。サイトはこの静的JSONだけを読む
+- 表示：カード詳細のグラフに実測（ピンク）として表示のみ。予測値には反映しない
+- Public Dataset公開後：GIH WRはデータリポジトリがPublic Datasetから集計した値に切り替わる。Game DataにALSAが無いため、ALSAのみCard Dataを継続（止める場合は `lib/card-data.mjs` の `CONTINUE_AFTER_PUBLIC_DATASET` を false）
+- 公開確認はデータリポジトリの日次確認結果（`live/fra-public-game.json`）を読むだけで、追加のアクセスはしない
+- テスト：`node --test scripts/card-data.test.mjs`（時刻とAPIはモック）
 
 ## 予測の幅から外れたカードの理由（deviation notes）
 Public Dataの取り込み後、カード詳細のGIH WR・ALSAの下に「発売前予測・予測の幅（ミント）」と「実測（ピンク）」を表示します。実測が予測の幅の外にあり、件数が1,000以上のカードでは、`public/deviation-notes.json` に書いた理由を表示します（件数の基準は `components/forecast-range.tsx` の `MIN_N`）。
