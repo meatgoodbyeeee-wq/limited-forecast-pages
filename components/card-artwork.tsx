@@ -26,7 +26,7 @@ export const manaSymbols=(t:string)=>t.replace(/\{((?:o[^o}]+)+)\}/g,(_,codes:st
 /** Type line and rules text in the display language (Japanese falls back to English per field). */
 export function cardText(card:Pick<Card,'id'|'type_line'|'oracle_text'>,lang:Lang){
   const ja=lang==='ja'?fraJa[card.id]:undefined;
-  return {type_line:ja?.type_line||card.type_line,oracle_text:manaSymbols(ja?.oracle_text||card.oracle_text||''),ja:!!ja?.oracle_text};
+  return {type_line:ja?.type_line||card.type_line,oracle_text:manaSymbols(ja?.oracle_text?ja.oracle_text.replace(/ +（/g,'（'):card.oracle_text||''),ja:!!ja?.oracle_text};
 }
 export function similarName(s:{set:string;name:string},lang:Lang){
   return lang==='ja'?similarJa[`${s.set}|${s.name}`]||similarJa[`${s.set}|${s.name.split(' // ')[0]}`]||s.name:s.name;
