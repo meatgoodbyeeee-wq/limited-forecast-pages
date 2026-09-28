@@ -4,7 +4,8 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: "*/5 * * * *"
+    # Once a day at 06:07 JST (21:07 UTC), after the data repo's 02:23 JST public-data check.
+    - cron: "7 21 * * *"
 permissions:
   contents: read
   pages: write
