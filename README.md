@@ -17,6 +17,9 @@ Set Settings → Pages → Source to GitHub Actions. Push to main or manually ru
 ## Build
 `npm install && npm run build`
 
+## 実測ALSA
+FRAのPublic Datasetが公開された後は、サイトの日次ビルドで17Landsのカードデータ（`/api/card_data`、発売後28日間）からALSAを1日1回取得し（`scripts/fetch-17lands-alsa.mjs` → `public/live/fra-alsa.json`）、カード詳細にピンクの実測点として表示します。予測値（ライブALSA）には反映しません。Public Dataset公開前は取得しません。
+
 ## 予測の幅から外れたカードの理由（deviation notes）
 Public Dataの取り込み後、カード詳細のGIH WR・ALSAの下に「発売前予測・予測の幅（ミント）」と「実測（ピンク）」を表示します。実測が予測の幅の外にあり、件数が1,000以上のカードでは、`public/deviation-notes.json` に書いた理由を表示します（件数の基準は `components/forecast-range.tsx` の `MIN_N`）。
 
