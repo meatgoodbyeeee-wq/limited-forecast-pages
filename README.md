@@ -8,7 +8,7 @@ Existing UI migrated to Vite; frozen forecast exported once using unchanged orig
 - Japanese images are copied from the existing data repository during Actions build.
 - Japanese / English display toggle (top right; remembered per browser, `?lang=en` also works). Card names come from `data/card-images-ja.json`. Japanese type lines, rules text and past-set similar-card names come from `data/card-text-ja.json`, refreshed by the manual **Fetch Japanese card text** workflow (official Wizards Japanese text; line breaks rebuilt from the English text by `scripts/ja-lines.mjs`, or Scryfall's Japanese printed text once it exists).
 - Search, sort, filters, card images, details and CSV/Markdown export retained. The server-only features of the original site (saved predictions, manual card refresh) were removed.
-- The GitHub Actions site build checks the official card gallery once a day at 06:07 JST (GitHub scheduling may be delayed; pushes to main and manual runs also rebuild); visible tabs poll the published JSON every five minutes. The existing data repository checks the Official Public Game Dataset daily. Failed checks retain predictions.
+- The GitHub Actions site build checks the official card gallery once a day at 06:07 JST (GitHub scheduling may be delayed; pushes to main and manual runs also rebuild); visible tabs re-read the published JSON every 30 minutes. The existing data repository checks the Official Public Game Dataset daily. Failed checks retain predictions.
 - Original chatgpt.site deployment is unchanged.
 
 ## Deploy
