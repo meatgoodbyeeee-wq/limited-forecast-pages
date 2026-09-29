@@ -10,6 +10,9 @@ export function SetPicker({value, onChange}: {value: string; onChange: (code: st
   const root = useRef<HTMLDivElement>(null), id = useId();
   const current = SETS.find(s => s.code === value) || SETS[0];
   const name = (s: SetInfo) => (lang === 'en' ? s.name_en : s.name_ja);
+  const release = (d?: string) => !d ? tr('近日公開', 'Coming soon') : lang === 'en'
+    ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-US', {timeZone: 'UTC', year: 'numeric', month: 'short', day: 'numeric'})
+    : `${+d.slice(0, 4)}/${+d.slice(5, 7)}/${+d.slice(8, 10)}`;
   useEffect(() => {
     if (!open) return;
     const away = (e: MouseEvent) => { if (!root.current?.contains(e.target as Node)) setOpen(false); };
@@ -29,14 +32,14 @@ export function SetPicker({value, onChange}: {value: string; onChange: (code: st
         <span className="sr-only">{tr('セットを選択', 'Choose a set')}</span>
       </button>
     </h1>
-    {open && <ul id={id} role="listbox" aria-label={tr('セット', 'Set')} className="absolute left-0 top-full z-30 mt-2 w-[min(22rem,calc(100vw-2rem))] rounded-xl border border-border bg-popover p-1.5 shadow-2xl">
-      {SETS.map((s, i) => {
+    {open && <ul id={id} role="listbox" aria-label={tr('セット', 'Set')} className="absolute left-0 top-full z-30 mt-2 w-[min(24rem,calc(100vw-2rem))] rounded-xl border border-border bg-popover p-1.5 shadow-2xl">
+      {SETS.map(s => {
         const selected = s.code === current.code;
-        return <li key={s.code || i} role="option" aria-selected={selected} aria-disabled={!s.available}>
+        return <li key={s.code || s.name_en} role="option" aria-selected={selected} aria-disabled={!s.available}>
           <button type="button" disabled={!s.available} onClick={() => { onChange(s.code); setOpen(false); }}
             className={'flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-sm text-left ' + (selected ? 'bg-accent' : s.available ? 'hover:bg-accent/60' : 'opacity-45 cursor-not-allowed')}>
-            <span className="flex items-center gap-3 min-w-0"><span className="font-mono font-bold text-primary w-10 shrink-0">{s.code || '???'}</span><span className="truncate">{name(s)}</span></span>
-            {selected ? <Check className="size-4 text-primary shrink-0"/> : !s.available && <span className="text-xs text-muted-foreground shrink-0">{tr('近日公開', 'Coming soon')}</span>}
+            <span className="flex items-center gap-3 min-w-0"><span className="font-mono font-bold text-primary w-10 shrink-0">{s.code || '—'}</span><span className="truncate">{name(s)}</span></span>
+            {selected ? <Check className="size-4 text-primary shrink-0"/> : !s.available && <span className="text-xs text-muted-foreground shrink-0 number">{release(s.release)}</span>}
           </button>
         </li>;
       })}
