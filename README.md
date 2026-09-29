@@ -18,10 +18,22 @@ Set Settings → Pages → Source to GitHub Actions. Push to main or manually ru
 ## Build
 `npm install && npm run build`
 
+## GIH WR予測モデル（2026-09-29から）
+- バージョン `gih-c3-28set-20260929`（`data/adopted-gih-fra.json.gz`）。作成はデータリポジトリの `research/production_c3/`
+- 学習：28セット（KHM〜TDMの21セット＋EOE・TLA・ECL・TMT・SOS・MSH・HOB。FIN・MH3・FRAの結果は使わない）
+- 特徴量：従来の発売前特徴量＋AIがルールテキストから読み取ったカード効果の特徴（C3。データリポジトリ `research/gih_llm_extract/RUBRIC.md`）
+- モデル：構造化特徴量のExtraTrees 70%＋ルールテキストのTF-IDF/Ridge 30%、学習平均の周りに×1.25（従来と同じ）。3シードの平均
+- 検証：
+  - 28セットのセット単位抜き出し検証：セット内MAE 2.396pp、順位相関 0.562
+  - FIN（未使用だった最終検証用セット）で1回だけ採点：MAE 2.611→2.425pp、順位相関 0.407→0.514（`research/fin_final/`）
+- 切り替え前の予測は `data/archive/forecast-fra-20260929-gih-22set.json.gz`（22セット・C3なし、`gih-github-22set-ensemble-20260923`）
+- モデルを差し替えたときは `node scripts/apply-gih-model.mjs <保存名>` で `public/forecast.json.gz` に反映する（発売前フェーズのみ）。デッキカラー予測もGIH予測から再計算される
+- 新しいセットでは、発売前にそのセットのカード効果の抽出（C3）と再出力が必要
+
 ## 予測の幅（GIH WR）
-- カードごとの幅（名目80%）：`data/gih-range-fra.json`。作成はデータリポジトリの `research/gih_interval/`（`PLAN.md` の事前に決めた判定ルールで6案から選択、結果は `RESULTS.md`）
-- 方法：採用モデルの21セット分の予測誤差（OOF残差）の大きさをExtraTreesで予測し、予測値 ± q·σ とする（正規化コンフォーマル）。予測値そのものは変えない
-- 過去21セットのセット単位抜き出し検証：実測が幅に収まった割合は全体80.2%、レアリティ別79〜81%（旧・一律±3.68ppはコモン89%／神話レア60%）
+- カードごとの幅（名目80%）：`data/gih-range-fra.json`。方法の選択はデータリポジトリの `research/gih_interval/`（`PLAN.md` の事前に決めた判定ルールで6案から選択、結果は `RESULTS.md`）、現行モデル向けの再推定は `research/production_c3/`
+- 方法：採用モデルの28セット分の予測誤差（OOF残差）の大きさをExtraTreesで予測し、予測値 ± q·σ とする（正規化コンフォーマル、方法は従来のM5のまま再推定）。予測値そのものは変えない
+- 28セットのセット単位抜き出し検証：実測が幅に収まった割合は全体80.0%、レアリティ別78.6〜80.2%、平均幅7.67pp（旧モデルの幅は7.99pp。旧・一律±3.68ppはコモン89%／神話レア60%）
 - 公開後にカードのテキストが変わった場合は、レアリティ×タイプ別の表（同ファイルの `fallback`）を使う
 - `scripts/refresh-forecast.mjs` がビルドのたびに `forecast.json` へ反映する（公式カードの確認に失敗した場合も反映）
 - ALSAの幅は従来どおり
