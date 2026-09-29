@@ -5,11 +5,15 @@ import {mergeOfficial,signature} from '../lib/refresh.mjs';
 import {draftPool} from '../lib/draft-pool.mjs';
 import {predictCards} from '../lib/predict.mjs';
 import {applyAdoptedGih,adoptedGihVersion} from '../lib/adopted-gih.mjs';
+import {withGihRange,gihRangeVersion} from '../lib/gih-range.mjs';
 import {applyAdoptedAlsa,adoptedAlsaVersion} from '../lib/adopted-alsa.mjs';
 import {predictDeckColors} from '../lib/deck-color.mjs';
 import {liveForecast} from '../lib/live.mjs';
 const read=name=>JSON.parse(fs.readFileSync(new URL(`../data/${name}.json`,import.meta.url)));
 const current=JSON.parse(fs.readFileSync(new URL('../public/forecast.json',import.meta.url)));
+// Keep the published GIH ranges in sync with data/gih-range-fra.json even if the official check below fails.
+current.forecast.cards=current.forecast.cards.map(withGihRange);current.forecast.gih_range_version=gihRangeVersion;
+fs.writeFileSync(new URL('../public/forecast.json',import.meta.url),JSON.stringify(current));
 const original=read('target'),incumbent=read('model');
 // Similar-card candidates: the 22-set reference list when present (data/similar-references.json.gz)
 const refsFile=new URL('../data/similar-references.json.gz',import.meta.url);
@@ -25,6 +29,6 @@ if(!changed){current.forecast.checked_at=new Date().toISOString();fs.writeFileSy
 const predicted=applyAdoptedAlsa(applyAdoptedGih(predictCards(pool,incumbent)));
 if(!predicted.length||predicted.some(c=>!Number.isFinite(c.gih)||!Number.isFinite(c.alsa)))throw Error('予測値の検証に失敗');
 const policy=read('live-policy').policies.current;
-const forecast=liveForecast({...merged,phase:'PREVIEW',cards:predicted,deck_color:predictDeckColors(predicted),model_version:`${incumbent.version} + ${adoptedGihVersion} + ${adoptedAlsaVersion}`,checked_at:new Date().toISOString()},null,policy);
+const forecast=liveForecast({...merged,phase:'PREVIEW',cards:predicted,deck_color:predictDeckColors(predicted),model_version:`${incumbent.version} + ${adoptedGihVersion} + ${adoptedAlsaVersion}`,gih_range_version:gihRangeVersion,checked_at:new Date().toISOString()},null,policy);
 fs.writeFileSync(new URL('../public/forecast.json',import.meta.url),JSON.stringify({...current,forecast}));
 console.log(`予測更新：${forecast.cards.length}枚`);

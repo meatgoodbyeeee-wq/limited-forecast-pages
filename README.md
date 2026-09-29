@@ -18,6 +18,14 @@ Set Settings → Pages → Source to GitHub Actions. Push to main or manually ru
 ## Build
 `npm install && npm run build`
 
+## 予測の幅（GIH WR）
+- カードごとの幅（名目80%）：`data/gih-range-fra.json`。作成はデータリポジトリの `research/gih_interval/`（`PLAN.md` の事前に決めた判定ルールで6案から選択、結果は `RESULTS.md`）
+- 方法：採用モデルの21セット分の予測誤差（OOF残差）の大きさをExtraTreesで予測し、予測値 ± q·σ とする（正規化コンフォーマル）。予測値そのものは変えない
+- 過去21セットのセット単位抜き出し検証：実測が幅に収まった割合は全体80.2%、レアリティ別79〜81%（旧・一律±3.68ppはコモン89%／神話レア60%）
+- 公開後にカードのテキストが変わった場合は、レアリティ×タイプ別の表（同ファイルの `fallback`）を使う
+- `scripts/refresh-forecast.mjs` がビルドのたびに `forecast.json` へ反映する（公式カードの確認に失敗した場合も反映）
+- ALSAの幅は従来どおり
+
 ## 過去の類似カード
 カード詳細の「過去の類似カード」3枚は、22セット（KHM〜TDM）5,611枚から選びます（`data/similar-references.json.gz`）。候補一覧は手動実行の **Build similar-card references** ワークフローで作成：データリポジトリの22セットのカードデータと28日間GIH WR、Scryfallのマナコスト・リンク、17Landsカードデータの28日間ALSA。類似度は予測モデルの特徴量（基本属性・能力・ルールテキストの語句）のコサイン類似度で、表示専用です（予測値には影響しません）。
 
