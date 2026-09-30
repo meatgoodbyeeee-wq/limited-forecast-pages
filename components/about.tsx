@@ -32,7 +32,9 @@ export function About(){
  useEffect(()=>{document.documentElement.lang=lang;document.title=tr('About me｜山辺カフカ｜サキヨミ™','About me | Yamabe Kafka | Sakiyomi™');window.scrollTo(0,0);},[lang]);
  useEffect(()=>{fetch(BASE+'data/about-feeds.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{if(d&&Array.isArray(d.note)&&Array.isArray(d.youtube))setFeeds(d);}).catch(()=>{});},[]);
  const logo=BASE+(lang==='en'?'sakiyomi-logo-en.svg':'sakiyomi-logo.svg');
- const note=feeds?.note||[],yt=feeds?.youtube||[];
+ const note=feeds?.note||[];
+ // Representative video (self-introduction) shown until the build-time feed provides the latest uploads
+ const yt=feeds?.youtube?.length?feeds.youtube:[{id:'S8uYKN9qAp8',title:'【自己紹介】Vtuber一問一答自己紹介【新人Vtuber/山辺カフカ】',date:''}];
  const back=()=>{location.hash='';};
  return <LangContext.Provider value={lang}><main className="max-w-5xl mx-auto px-4 sm:px-8 pb-16">
   <header className="flex items-center justify-between py-6 border-b border-border gap-4"><a href={BASE} onClick={e=>{e.preventDefault();back();}} className="flex items-center shrink-0" aria-label={tr('サキヨミ™ トップへ戻る','Back to Sakiyomi™')}><img src={logo} alt={tr('サキヨミ™','Sakiyomi™')} className="h-9 sm:h-10 w-auto"/></a>
@@ -55,8 +57,7 @@ export function About(){
 
   <div className="grid gap-6 lg:grid-cols-2">
    <Section title={tr('YouTube','YouTube')} link={more(LINKS.youtube,tr('チャンネルを見る','Open channel'))}>
-    {yt.length?<div className="grid gap-4">{yt.slice(0,2).map(v=><Video key={v.id} id={v.id} title={v.title} tr={tr}/>)}</div>
-     :<p className="text-sm text-muted-foreground leading-6">{tr('動画と配信はYouTubeチャンネルでご覧いただけます。','Videos and live streams are on the YouTube channel.')}</p>}
+    <div className="grid gap-4">{yt.slice(0,2).map(v=><Video key={v.id} id={v.id} title={v.title} tr={tr}/>)}</div>
    </Section>
    <Section title="X" link={more(LINKS.x,tr('Xを見る','Open X'))}><XTimeline tr={tr} lang={lang}/></Section>
    <div className="lg:col-span-2"><Section title="note" link={more(LINKS.note,tr('noteを見る','Open note'))}>
