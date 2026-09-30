@@ -3,8 +3,9 @@ import {ArrowUpRight} from 'lucide-react';
 import {LangContext,makeTr,initialLang,saveLang,type Lang} from '@/lib/i18n';
 
 const BASE=import.meta.env.BASE_URL;
-const LINKS={youtube:'https://youtube.com/@yamabekafka',x:'https://x.com/yamabekafka',note:'https://note.com/yamabekafka',litlink:'https://lit.link/yamabekafka'};
-type Feeds={note:{title:string;url:string;thumbnail:string;date:string}[];youtube:{id:string;title:string;date:string}[]};
+const LINKS={youtube:'https://youtube.com/@yamabekafka',x:'https://x.com/yamabekafka',note:'https://note.com/yamabekafka'};
+type Feeds={note:{title:string;url:string;thumbnail:string;date:string}[];x?:{id:string;text:string;date:string;url:string}[]};
+const VIDEO_ID='lU8HgSY90tM';
 
 function ExtLink({href,children,className=''}:{href:string;children:React.ReactNode;className?:string}){return <a href={href} target="_blank" rel="noreferrer noopener" className={className}>{children}</a>}
 function Section({title,children,link}:{title:string;children:React.ReactNode;link:React.ReactNode}){return <section className="rounded-xl border border-border bg-card p-5 sm:p-6"><div className="flex items-center justify-between gap-3 mb-4"><h2 className="font-semibold">{title}</h2>{link}</div>{children}</section>}
@@ -20,21 +21,18 @@ function Video({id,title,tr}:{id:string;title:string;tr:(a:string,b:string)=>str
 
 /** X: the official timeline widget is loaded only after the visitor asks for it. */
 function XTimeline({tr,lang}:{tr:(a:string,b:string)=>string;lang:Lang}){
- const [on,setOn]=useState(false);
- useEffect(()=>{if(!on)return;const s=document.createElement('script');s.src='https://platform.twitter.com/widgets.js';s.async=true;s.charset='utf-8';document.body.appendChild(s);return()=>{s.remove();};},[on]);
- if(!on)return <div className="rounded-lg border border-dashed border-border p-5 text-sm text-muted-foreground"><p className="leading-6">{tr('最新のポストを表示すると、Xのサーバーに接続します。','Showing the latest posts connects to X\'s servers.')}</p><button type="button" onClick={()=>setOn(true)} className="mt-3 rounded-full border border-primary/60 px-4 py-1.5 text-primary hover:bg-primary/10">{tr('最新のポストを表示','Show latest posts')}</button></div>;
- return <div className="max-h-[560px] overflow-y-auto rounded-lg"><a className="twitter-timeline" data-theme="dark" data-height="540" data-chrome="noheader nofooter transparent" data-lang={lang} href="https://twitter.com/yamabekafka?ref_src=twsrc%5Etfw">Posts by @yamabekafka</a></div>;
+ useEffect(()=>{const s=document.createElement('script');s.src='https://platform.twitter.com/widgets.js';s.async=true;s.charset='utf-8';document.body.appendChild(s);return()=>{s.remove();};},[]);
+ return <div className="max-h-[560px] overflow-y-auto rounded-lg"><a className="twitter-timeline" data-theme="dark" data-height="540" data-chrome="noheader nofooter transparent" data-lang={lang} href="https://twitter.com/yamabekafka?ref_src=twsrc%5Etfw">{tr('@yamabekafka のポストを読み込み中…（表示されない場合は右上の「Xを見る」から）','Loading posts by @yamabekafka… (if nothing appears, use "Open X" above)')}</a></div>;
 }
 
 export function About(){
  const [lang,setLangState]=useState<Lang>(initialLang),[feeds,setFeeds]=useState<Feeds|null>(null);
  const tr=makeTr(lang);
  useEffect(()=>{document.documentElement.lang=lang;document.title=tr('About me｜山辺カフカ｜サキヨミ™','About me | Yamabe Kafka | Sakiyomi™');window.scrollTo(0,0);},[lang]);
- useEffect(()=>{fetch(BASE+'data/about-feeds.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{if(d&&Array.isArray(d.note)&&Array.isArray(d.youtube))setFeeds(d);}).catch(()=>{});},[]);
+ useEffect(()=>{fetch(BASE+'data/about-feeds.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{if(d&&Array.isArray(d.note))setFeeds(d);}).catch(()=>{});},[]);
  const logo=BASE+(lang==='en'?'sakiyomi-logo-en.svg':'sakiyomi-logo.svg');
  const note=feeds?.note||[];
- // Representative video (self-introduction) shown until the build-time feed provides the latest uploads
- const yt=feeds?.youtube?.length?feeds.youtube:[{id:'S8uYKN9qAp8',title:'【自己紹介】Vtuber一問一答自己紹介【新人Vtuber/山辺カフカ】',date:''}];
+ const xposts=feeds?.x||[];
  const back=()=>{location.hash='';};
  return <LangContext.Provider value={lang}><main className="max-w-5xl mx-auto px-4 sm:px-8 pb-16">
   <header className="flex items-center justify-between py-6 border-b border-border gap-4"><a href={BASE} onClick={e=>{e.preventDefault();back();}} className="flex items-center shrink-0" aria-label={tr('サキヨミ™ トップへ戻る','Back to Sakiyomi™')}><img src={logo} alt={tr('サキヨミ™','Sakiyomi™')} className="h-9 sm:h-10 w-auto"/></a>
@@ -57,15 +55,15 @@ export function About(){
       [tr('S-Trad ARENA 第2回優勝/第3回3位','S-Trad ARENA: 1st place (2nd event) / 3rd place (3rd event)')],
      ].map(([t])=><li key={t}>{t}</li>)}</ul>
     </div>
-    <div className="mt-6 flex flex-wrap gap-2.5">{([['YouTube',LINKS.youtube],['X',LINKS.x],['note',LINKS.note],['lit.link',LINKS.litlink]] as const).map(([n,u])=><ExtLink key={n} href={u} className="inline-flex items-center gap-1.5 rounded-full border border-primary/50 px-4 py-1.5 text-sm text-primary hover:bg-primary/10">{n}<ArrowUpRight className="size-3.5"/></ExtLink>)}</div>
+    <div className="mt-6 flex flex-wrap gap-2.5">{([['YouTube',LINKS.youtube],['X',LINKS.x],['note',LINKS.note]] as const).map(([n,u])=><ExtLink key={n} href={u} className="inline-flex items-center gap-1.5 rounded-full border border-primary/50 px-4 py-1.5 text-sm text-primary hover:bg-primary/10">{n}<ArrowUpRight className="size-3.5"/></ExtLink>)}</div>
    </div>
   </section>
 
   <div className="grid gap-6 lg:grid-cols-2">
    <Section title={tr('YouTube','YouTube')} link={more(LINKS.youtube,tr('チャンネルを見る','Open channel'))}>
-    <div className="grid gap-4">{yt.slice(0,2).map(v=><Video key={v.id} id={v.id} title={v.title} tr={tr}/>)}</div>
+    <Video id={VIDEO_ID} title={tr('山辺カフカ 代表動画','Yamabe Kafka featured video')} tr={tr}/>
    </Section>
-   <Section title="X" link={more(LINKS.x,tr('Xを見る','Open X'))}><XTimeline tr={tr} lang={lang}/></Section>
+   <Section title="X" link={more(LINKS.x,tr('Xを見る','Open X'))}>{xposts.length?<ul className="grid gap-3">{xposts.slice(0,3).map(x=><li key={x.id}><ExtLink href={x.url} className="block rounded-lg border border-border bg-background/40 p-3 hover:border-primary/60"><p className="text-sm leading-6 whitespace-pre-wrap break-words">{x.text}</p>{x.date&&<p className="mt-1 text-xs text-muted-foreground number">{x.date}</p>}</ExtLink></li>)}</ul>:<XTimeline tr={tr} lang={lang}/>}</Section>
    <div className="lg:col-span-2"><Section title="note" link={more(LINKS.note,tr('noteを見る','Open note'))}>
     {note.length?<ul className="grid gap-3 sm:grid-cols-3">{note.map(a=><li key={a.url}><ExtLink href={a.url} className="block h-full overflow-hidden rounded-lg border border-border bg-background/40 hover:border-primary/60">{a.thumbnail&&<img src={a.thumbnail} alt="" loading="lazy" referrerPolicy="no-referrer" className="aspect-[1.91/1] w-full object-cover"/>}<div className="p-3"><p className="text-sm font-medium leading-6">{a.title}</p>{a.date&&<p className="mt-1 text-xs text-muted-foreground number">{a.date}</p>}</div></ExtLink></li>)}</ul>
      :<p className="text-sm text-muted-foreground leading-6">{tr('カフカ自身のことを書いた記事は、noteでご覧いただけます。','Articles written about Kafka herself are on note.')}</p>}
@@ -73,6 +71,6 @@ export function About(){
   </div>
 
   <section className="mt-6 rounded-xl border border-border bg-card p-5 sm:p-6 text-sm leading-7 text-muted-foreground"><h2 className="font-semibold text-foreground mb-2">{tr('サキヨミ™について','About Sakiyomi™')}</h2><p>{tr('サキヨミ™は山辺カフカが開発・運営している、非公式のMTGリミテッド研究ツールです。17LandsおよびWizards of the Coastによる承認・保証はありません。','Sakiyomi™ is an unofficial MTG Limited research tool developed and run by Yamabe Kafka. It is not endorsed by 17Lands or Wizards of the Coast.')}</p></section>
-  <footer className="mt-10 pt-6 border-t border-border text-xs text-muted-foreground">© {tr('山辺カフカ','Yamabe Kafka')} · {tr('イラスト・文章の無断転載はご遠慮ください。','Please do not repost the illustration or text without permission.')}</footer>
+  <footer className="mt-10 pt-6 border-t border-border text-xs text-muted-foreground">{tr('山辺カフカ','Yamabe Kafka')} · {tr('イラスト・文章の無断転載はご遠慮ください。','Please do not repost the illustration or text without permission.')}</footer>
  </main></LangContext.Provider>;
 }
