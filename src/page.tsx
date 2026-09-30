@@ -30,11 +30,29 @@ export function castableWith(cost:string,sel:string[],colors:string[]):boolean{
  if(!syms)return colors.every(k=>sel.includes(k));
  return syms.every(x=>{const parts=x.slice(1,-1).toUpperCase().split('/').filter(t=>/^[WUBRG]$/.test(t));return !parts.length||parts.some(t=>sel.includes(t));});
 }
+/** What a land produces, read from its text: "Add {oU} or {oB}", basic land types, "chosen color" (any). {C} = colorless. */
+const BASIC:Record<string,string>={Plains:'W',Island:'U',Swamp:'B',Mountain:'R',Forest:'G'};
+export function landMana(card:{type_line?:string;oracle_text?:string}):{colors:string[];colorless:boolean;any:boolean}|null{
+ if(!/\bLand\b/.test(card.type_line||''))return null;
+ const text=card.oracle_text||'',out=new Set<string>();
+ for(const m of text.matchAll(/Add ((?:\{o?[WUBRGC]\}(?:,? ?(?:or |and )?)?)+)/g))for(const x of m[1].matchAll(/\{o?([WUBRGC])\}/g))out.add(x[1]);
+ for(const [t,k] of Object.entries(BASIC))if(new RegExp('\\b'+t+'\\b').test(card.type_line||''))out.add(k);
+ return {colors:[...out].filter(k=>k!=='C'),colorless:out.has('C'),any:/one mana of (?:the chosen|any) color/.test(text)};
+}
 /** Color filter with several choices. Colors only (e.g. 青+黒): cards that have one of the colors and can be cast with only the chosen colors
- *  (青黒の多色・混成マナで唱えられるカードを含み、他の色が必要なカードは除く). +多色: multicolor cards containing all chosen colors. 無色 with anything else: nothing. */
-export function matchColors(sel:string[],card:{colors:string[];mana_cost?:string}):boolean{
+ *  (青黒の多色・混成マナで唱えられるカードを含み、他の色が必要なカードは除く); lands that produce one of the colors. +多色: multicolor cards
+ *  (dual lands too) containing all chosen colors. 無色: colorless cards and lands that make colorless mana. 無色 with anything else: nothing. */
+export function matchColors(sel:string[],card:{colors:string[];mana_cost?:string;type_line?:string;oracle_text?:string}):boolean{
  if(!sel.length)return true;
- const cc=card.colors,C=sel.includes('C'),M=sel.includes('M'),cols=sel.filter(k=>k!=='C'&&k!=='M');
+ const C=sel.includes('C'),M=sel.includes('M'),cols=sel.filter(k=>k!=='C'&&k!=='M'),land=landMana(card);
+ if(land){
+  if(C)return !M&&!cols.length&&land.colorless;
+  if(M)return land.colors.length>1&&cols.every(k=>land.colors.includes(k));
+  if(land.any)return true;
+  // one color chosen: any land producing it (dual lands too); two or more: lands whose colors are all among the chosen ones
+  return land.colors.some(k=>cols.includes(k))&&(cols.length<2||land.colors.every(k=>cols.includes(k)));
+ }
+ const cc=card.colors;
  if(C)return !M&&!cols.length&&cc.length===0;
  if(M)return cc.length>1&&cols.every(k=>cc.includes(k));
  return cc.some(k=>cols.includes(k))&&castableWith(card.mana_cost||'',cols,cc);
