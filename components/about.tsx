@@ -6,6 +6,9 @@ const BASE=import.meta.env.BASE_URL;
 const LINKS={youtube:'https://youtube.com/@yamabekafka',x:'https://x.com/yamabekafka',note:'https://note.com/yamabekafka'};
 type Feeds={note:{title:string;url:string;thumbnail:string;date:string}[]};
 const VIDEO_ID='lU8HgSY90tM';
+/** note thumbnails are shown only from note's own image host. */
+const safeThumb=(u:string)=>{try{const x=new URL(u);return x.protocol==='https:'&&x.hostname==='assets.st-note.com';}catch{return false;}};
+const safeNote=(u:string)=>{try{const x=new URL(u);return x.protocol==='https:'&&x.hostname==='note.com';}catch{return false;}};
 
 function ExtLink({href,children,className=''}:{href:string;children:React.ReactNode;className?:string}){return <a href={href} target="_blank" rel="noreferrer noopener" className={className}>{children}</a>}
 function Section({title,children,link}:{title:string;children:React.ReactNode;link:React.ReactNode}){return <section className="rounded-xl border border-border bg-card p-5 sm:p-6"><div className="flex items-center justify-between gap-3 mb-4"><h2 className="font-semibold">{title}</h2>{link}</div>{children}</section>}
@@ -20,10 +23,17 @@ function Video({id,title,tr}:{id:string;title:string;tr:(a:string,b:string)=>str
 }
 
 const X_POST='https://x.com/yamabekafka/status/1949074323723137063';
-/** X: a fixed post, embedded with X's official widget (falls back to a plain link if it cannot load). */
+/** X: a fixed post in X's own embed frame. X's code runs inside that cross-origin frame, never on this page. */
+const X_ORIGIN='https://platform.twitter.com',X_ID=X_POST.split('/').pop()!;
 function XPost({tr,lang}:{tr:(a:string,b:string)=>string;lang:Lang}){
- useEffect(()=>{const s=document.createElement('script');s.src='https://platform.twitter.com/widgets.js';s.async=true;s.charset='utf-8';document.body.appendChild(s);return()=>{s.remove();};},[]);
- return <div className="rounded-lg"><blockquote className="twitter-tweet" data-theme="dark" data-lang={lang} data-dnt="true"><a href={X_POST} target="_blank" rel="noreferrer noopener" className="text-primary hover:underline">{tr('このポストをXで見る','View this post on X')}</a></blockquote></div>;
+ const [h,setH]=useState(560);
+ // The frame reports its content height; accept only messages from X's embed origin, with a sane number.
+ useEffect(()=>{const on=(e:MessageEvent)=>{if(e.origin!==X_ORIGIN)return;let d:any=e.data;if(typeof d==='string'){try{d=JSON.parse(d);}catch{return;}}
+  const p=d?.['twttr.embed'];if(p?.method!=='twttr.private.resize')return;const v=Number(p?.params?.[0]?.height);if(Number.isFinite(v)&&v>100&&v<3000)setH(Math.ceil(v));};
+  window.addEventListener('message',on);return()=>window.removeEventListener('message',on);},[]);
+ const src=`${X_ORIGIN}/embed/Tweet.html?${new URLSearchParams({id:X_ID,theme:'dark',dnt:'true',lang})}`;
+ return <div><iframe src={src} title={tr('山辺カフカのXのポスト','Post by Yamabe Kafka on X')} className="w-full max-w-[550px] rounded-lg border-0" style={{height:h,colorScheme:'normal'}} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"/>
+  <p className="mt-2 text-xs"><a href={X_POST} target="_blank" rel="noreferrer noopener" className="text-primary hover:underline">{tr('このポストをXで見る','View this post on X')}</a></p></div>;
 }
 
 export function About(){
@@ -32,7 +42,7 @@ export function About(){
  useEffect(()=>{document.documentElement.lang=lang;document.title=tr('About me｜山辺カフカ｜サキヨミ™','About me | Yamabe Kafka | Sakiyomi™');window.scrollTo(0,0);},[lang]);
  useEffect(()=>{fetch(BASE+'data/about-feeds.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{if(d&&Array.isArray(d.note))setFeeds(d);}).catch(()=>{});},[]);
  const logo=BASE+(lang==='en'?'sakiyomi-logo-en.svg':'sakiyomi-logo.svg');
- const note=feeds?.note||[];
+ const note=(feeds?.note||[]).filter(a=>safeNote(a.url)&&typeof a.title==='string');
  const back=()=>{location.hash='';};
  return <LangContext.Provider value={lang}><main className="max-w-5xl mx-auto px-4 sm:px-8 pb-16">
   <header className="flex items-center justify-between py-6 border-b border-border gap-4"><a href={BASE} onClick={e=>{e.preventDefault();back();}} className="flex items-center shrink-0" aria-label={tr('サキヨミ™ トップへ戻る','Back to Sakiyomi™')}><img src={logo} alt={tr('サキヨミ™','Sakiyomi™')} className="h-9 sm:h-10 w-auto"/></a>
@@ -65,7 +75,7 @@ export function About(){
    </Section>
    <Section title="X" link={more(LINKS.x,tr('Xを見る','Open X'))}><XPost tr={tr} lang={lang}/></Section>
    <div className="lg:col-span-2"><Section title="note" link={more(LINKS.note,tr('noteを見る','Open note'))}>
-    {note.length?<ul className="grid gap-3 sm:grid-cols-3">{note.map(a=><li key={a.url}><ExtLink href={a.url} className="block h-full overflow-hidden rounded-lg border border-border bg-background/40 hover:border-primary/60">{a.thumbnail&&<img src={a.thumbnail} alt="" loading="lazy" referrerPolicy="no-referrer" className="aspect-[1.91/1] w-full object-cover"/>}<div className="p-3"><p className="text-sm font-medium leading-6">{a.title}</p>{a.date&&<p className="mt-1 text-xs text-muted-foreground number">{a.date}</p>}</div></ExtLink></li>)}</ul>
+    {note.length?<ul className="grid gap-3 sm:grid-cols-3">{note.map(a=><li key={a.url}><ExtLink href={a.url} className="block h-full overflow-hidden rounded-lg border border-border bg-background/40 hover:border-primary/60">{safeThumb(a.thumbnail)&&<img src={a.thumbnail} alt="" loading="lazy" referrerPolicy="no-referrer" className="aspect-[1.91/1] w-full object-cover"/>}<div className="p-3"><p className="text-sm font-medium leading-6">{a.title}</p>{a.date&&<p className="mt-1 text-xs text-muted-foreground number">{a.date}</p>}</div></ExtLink></li>)}</ul>
      :<p className="text-sm text-muted-foreground leading-6">{tr('カフカ自身のことを書いた記事は、noteでご覧いただけます。','Articles written about Kafka herself are on note.')}</p>}
    </Section></div>
   </div>
