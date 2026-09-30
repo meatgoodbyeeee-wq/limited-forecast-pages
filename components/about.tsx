@@ -4,7 +4,7 @@ import {LangContext,makeTr,initialLang,saveLang,type Lang} from '@/lib/i18n';
 
 const BASE=import.meta.env.BASE_URL;
 const LINKS={youtube:'https://youtube.com/@yamabekafka',x:'https://x.com/yamabekafka',note:'https://note.com/yamabekafka'};
-type Feeds={note:{title:string;url:string;thumbnail:string;date:string}[];x?:{id:string;text:string;date:string;url:string}[]};
+type Feeds={note:{title:string;url:string;thumbnail:string;date:string}[]};
 const VIDEO_ID='lU8HgSY90tM';
 
 function ExtLink({href,children,className=''}:{href:string;children:React.ReactNode;className?:string}){return <a href={href} target="_blank" rel="noreferrer noopener" className={className}>{children}</a>}
@@ -19,10 +19,11 @@ function Video({id,title,tr}:{id:string;title:string;tr:(a:string,b:string)=>str
   :<button type="button" onClick={()=>setPlay(true)} className="group absolute inset-0 size-full" aria-label={tr(`再生：${title}`,`Play: ${title}`)}><img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" className="size-full object-cover"/><span className="absolute inset-0 grid place-items-center bg-black/20 group-hover:bg-black/10"><span className="grid size-14 place-items-center rounded-full bg-[#FF5C8A] text-white shadow-lg"><svg viewBox="0 0 24 24" className="size-6 ml-0.5" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span></button>}</div><p className="p-3 text-sm leading-6">{title}</p></div>;
 }
 
-/** X: the official timeline widget is loaded only after the visitor asks for it. */
-function XTimeline({tr,lang}:{tr:(a:string,b:string)=>string;lang:Lang}){
+const X_POST='https://x.com/yamabekafka/status/1949074323723137063';
+/** X: a fixed post, embedded with X's official widget (falls back to a plain link if it cannot load). */
+function XPost({tr,lang}:{tr:(a:string,b:string)=>string;lang:Lang}){
  useEffect(()=>{const s=document.createElement('script');s.src='https://platform.twitter.com/widgets.js';s.async=true;s.charset='utf-8';document.body.appendChild(s);return()=>{s.remove();};},[]);
- return <div className="max-h-[560px] overflow-y-auto rounded-lg"><a className="twitter-timeline" data-theme="dark" data-height="540" data-chrome="noheader nofooter transparent" data-lang={lang} href="https://twitter.com/yamabekafka?ref_src=twsrc%5Etfw">{tr('@yamabekafka のポストを読み込み中…（表示されない場合は右上の「Xを見る」から）','Loading posts by @yamabekafka… (if nothing appears, use "Open X" above)')}</a></div>;
+ return <div className="rounded-lg"><blockquote className="twitter-tweet" data-theme="dark" data-lang={lang} data-dnt="true"><a href={X_POST} target="_blank" rel="noreferrer noopener" className="text-primary hover:underline">{tr('このポストをXで見る','View this post on X')}</a></blockquote></div>;
 }
 
 export function About(){
@@ -32,7 +33,6 @@ export function About(){
  useEffect(()=>{fetch(BASE+'data/about-feeds.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{if(d&&Array.isArray(d.note))setFeeds(d);}).catch(()=>{});},[]);
  const logo=BASE+(lang==='en'?'sakiyomi-logo-en.svg':'sakiyomi-logo.svg');
  const note=feeds?.note||[];
- const xposts=feeds?.x||[];
  const back=()=>{location.hash='';};
  return <LangContext.Provider value={lang}><main className="max-w-5xl mx-auto px-4 sm:px-8 pb-16">
   <header className="flex items-center justify-between py-6 border-b border-border gap-4"><a href={BASE} onClick={e=>{e.preventDefault();back();}} className="flex items-center shrink-0" aria-label={tr('サキヨミ™ トップへ戻る','Back to Sakiyomi™')}><img src={logo} alt={tr('サキヨミ™','Sakiyomi™')} className="h-9 sm:h-10 w-auto"/></a>
@@ -61,9 +61,9 @@ export function About(){
 
   <div className="grid gap-6 lg:grid-cols-2">
    <Section title={tr('YouTube','YouTube')} link={more(LINKS.youtube,tr('チャンネルを見る','Open channel'))}>
-    <Video id={VIDEO_ID} title={tr('山辺カフカ 代表動画','Yamabe Kafka featured video')} tr={tr}/>
+    <Video id={VIDEO_ID} title={tr('第2回S−Trad Arena LIVE','S-Trad Arena LIVE #2')} tr={tr}/>
    </Section>
-   <Section title="X" link={more(LINKS.x,tr('Xを見る','Open X'))}>{xposts.length?<ul className="grid gap-3">{xposts.slice(0,3).map(x=><li key={x.id}><ExtLink href={x.url} className="block rounded-lg border border-border bg-background/40 p-3 hover:border-primary/60"><p className="text-sm leading-6 whitespace-pre-wrap break-words">{x.text}</p>{x.date&&<p className="mt-1 text-xs text-muted-foreground number">{x.date}</p>}</ExtLink></li>)}</ul>:<XTimeline tr={tr} lang={lang}/>}</Section>
+   <Section title="X" link={more(LINKS.x,tr('Xを見る','Open X'))}><XPost tr={tr} lang={lang}/></Section>
    <div className="lg:col-span-2"><Section title="note" link={more(LINKS.note,tr('noteを見る','Open note'))}>
     {note.length?<ul className="grid gap-3 sm:grid-cols-3">{note.map(a=><li key={a.url}><ExtLink href={a.url} className="block h-full overflow-hidden rounded-lg border border-border bg-background/40 hover:border-primary/60">{a.thumbnail&&<img src={a.thumbnail} alt="" loading="lazy" referrerPolicy="no-referrer" className="aspect-[1.91/1] w-full object-cover"/>}<div className="p-3"><p className="text-sm font-medium leading-6">{a.title}</p>{a.date&&<p className="mt-1 text-xs text-muted-foreground number">{a.date}</p>}</div></ExtLink></li>)}</ul>
      :<p className="text-sm text-muted-foreground leading-6">{tr('カフカ自身のことを書いた記事は、noteでご覧いただけます。','Articles written about Kafka herself are on note.')}</p>}
