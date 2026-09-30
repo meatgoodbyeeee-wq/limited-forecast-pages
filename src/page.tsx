@@ -24,13 +24,20 @@ const COLORS:Record<Lang,Record<string,string>>={ja:{W:'白',U:'青',B:'黒',R:'
 const PAIRS:Record<Lang,Record<string,string>>={ja:{WU:'白青',WB:'白黒',WR:'白赤',WG:'白緑',UB:'青黒',UR:'青赤',UG:'青緑',BR:'黒赤',BG:'黒緑',RG:'赤緑'},en:{WU:'Azorius',WB:'Orzhov',WR:'Boros',WG:'Selesnya',UB:'Dimir',UR:'Izzet',UG:'Simic',BR:'Rakdos',BG:'Golgari',RG:'Gruul'}};
 const TERM:Record<string,string>={'構造化特徴量':'Structured features','構造化特徴量（AI抽出の効果を含む）':'Structured features (incl. AI-read card effects)','ルールテキスト':'Rules text'};
 const LOGO:Record<Lang,string>={ja:'sakiyomi-logo.svg',en:'sakiyomi-logo-en.svg'};
-/** Color filter with several choices: colors alone = any of them; +多色 = multicolor cards containing all chosen colors; 無色 combined with anything else = nothing. */
-export function matchColors(sel:string[],cardColors:string[]):boolean{
+/** Can the cost be paid using only these colors? Hybrid {W/B} needs either color; generic and X are free. */
+export function castableWith(cost:string,sel:string[],colors:string[]):boolean{
+ const syms=(cost||'').match(/\{[^}]+\}/g);
+ if(!syms)return colors.every(k=>sel.includes(k));
+ return syms.every(x=>{const parts=x.slice(1,-1).toUpperCase().split('/').filter(t=>/^[WUBRG]$/.test(t));return !parts.length||parts.some(t=>sel.includes(t));});
+}
+/** Color filter with several choices. Colors only (e.g. 青+黒): cards that have one of the colors and can be cast with only the chosen colors
+ *  (青黒の多色・混成マナで唱えられるカードを含み、他の色が必要なカードは除く). +多色: multicolor cards containing all chosen colors. 無色 with anything else: nothing. */
+export function matchColors(sel:string[],card:{colors:string[];mana_cost?:string}):boolean{
  if(!sel.length)return true;
- const C=sel.includes('C'),M=sel.includes('M'),cols=sel.filter(k=>k!=='C'&&k!=='M');
- if(C)return !M&&!cols.length&&cardColors.length===0;
- if(M)return cardColors.length>1&&cols.every(k=>cardColors.includes(k));
- return cols.some(k=>cardColors.includes(k));
+ const cc=card.colors,C=sel.includes('C'),M=sel.includes('M'),cols=sel.filter(k=>k!=='C'&&k!=='M');
+ if(C)return !M&&!cols.length&&cc.length===0;
+ if(M)return cc.length>1&&cols.every(k=>cc.includes(k));
+ return cc.some(k=>cols.includes(k))&&castableWith(card.mana_cost||'',cols,cc);
 }
 const f=(n:number,d=1)=>Number.isFinite(n)?n.toFixed(d):'—';
 function download(text:string,name:string,type:string){const url=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
@@ -61,9 +68,9 @@ export default function Home(){
  const cards=data?.forecast.cards||[];
  const hasObs=(t:'gih'|'alsa')=>cards.some(c=>{const d=deviation(c,t);return d.obs!=null&&d.n>0;});
  const errKey=(c:Card,t:'gih'|'alsa')=>{const d=deviation(c,t);if(d.obs==null||!(d.n>0))return -2;return d.n<MIN_N[t]?-1+Math.abs(d.obs-d.pred)/1000:Math.abs(d.obs-d.pred);};
- const filtered=useMemo(()=>cards.filter(c=>(c.name+' '+cardName(c,'ja')+' '+c.oracle_text+' '+c.type_line).toLowerCase().includes(query.toLowerCase())&&(rare==='all'||c.rarity===rare)&&matchColors(color,c.colors)).sort((a,b)=>sort==='gih_err'||sort==='alsa_err'?errKey(b,sort==='gih_err'?'gih':'alsa')-errKey(a,sort==='gih_err'?'gih':'alsa'):sort==='alsa'?a.alsa-b.alsa:sort==='name'?cardName(a,lang).localeCompare(cardName(b,lang),lang):sort==='cmc'?a.cmc-b.cmc:b.gih-a.gih),[cards,query,rare,color,sort,lang]);
+ const filtered=useMemo(()=>cards.filter(c=>(c.name+' '+cardName(c,'ja')+' '+c.oracle_text+' '+c.type_line).toLowerCase().includes(query.toLowerCase())&&(rare==='all'||c.rarity===rare)&&matchColors(color,c)).sort((a,b)=>sort==='gih_err'||sort==='alsa_err'?errKey(b,sort==='gih_err'?'gih':'alsa')-errKey(a,sort==='gih_err'?'gih':'alsa'):sort==='alsa'?a.alsa-b.alsa:sort==='name'?cardName(a,lang).localeCompare(cardName(b,lang),lang):sort==='cmc'?a.cmc-b.cmc:b.gih-a.gih),[cards,query,rare,color,sort,lang]);
  // Average for the current color / rarity filter (the search box does not change it)
- const scale=useMemo(()=>gihScale(cards.filter(c=>(rare==='all'||c.rarity===rare)&&matchColors(color,c.colors))),[cards,rare,color]);
+ const scale=useMemo(()=>gihScale(cards.filter(c=>(rare==='all'||c.rarity===rare)&&matchColors(color,c))),[cards,rare,color]);
  const scopeLabel=[...Object.keys(colors).filter(k=>color.includes(k)).map(k=>colors[k]),rare==='all'?'':rarity[rare]].filter(Boolean).join(tr('・',' · '))||tr('全カード','all cards');
  const vsMean=(c:Card)=>{if(!scale)return '';const d=Math.round((c.gih-scale.mean)*10)/10;return d===0?'±0.0':(d>0?'+':'')+d.toFixed(1);};
  const card=cards.find(c=>c.id===selected)||filtered[0];
