@@ -18,7 +18,7 @@ try {
     const link = https(tag(x, 'link')), d = new Date(tag(x, 'pubDate'));
     return {title: tag(x, 'title'), url: link, thumbnail: https(thumb ? decode(thumb[1]) : ''), date: Number.isNaN(+d) ? '' : d.toISOString().slice(0, 10)};
   }).filter(a => a.title && a.url.startsWith('https://note.com/'));
-} catch (e) { console.log('note feed skipped:', e.message); }
+} catch (e) { console.log('note feed skipped:', e.message); out.note_error = String(e.message).slice(0, 120); }
 try {
   const html = await get(YT_HANDLE);
   const id = (html.match(/"channelId":"(UC[\w-]{22})"/) || html.match(/"externalId":"(UC[\w-]{22})"/) || html.match(/youtube\.com\/channel\/(UC[\w-]{22})/) || html.match(/channel_id=(UC[\w-]{22})/) || [])[1];
@@ -26,7 +26,7 @@ try {
   const xml = await get(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`);
   out.youtube = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].slice(0, 3).map(m => ({
     id: tag(m[1], 'yt:videoId'), title: tag(m[1], 'title'), date: tag(m[1], 'published').slice(0, 10)})).filter(v => /^[\w-]{11}$/.test(v.id));
-} catch (e) { console.log('youtube feed skipped:', e.message); }
+} catch (e) { console.log('youtube feed skipped:', e.message); out.youtube_error = String(e.message).slice(0, 120); }
 mkdirSync('public/data', {recursive: true});
 writeFileSync('public/data/about-feeds.json', JSON.stringify(out));
 console.log(`about feeds: ${out.note.length} note, ${out.youtube.length} youtube`);
