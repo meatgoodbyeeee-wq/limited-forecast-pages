@@ -5,7 +5,7 @@ import {mkdirSync, writeFileSync} from 'node:fs';
 const NOTE_RSS = 'https://note.com/yamabekafka/rss';
 const YT_HANDLE = 'https://www.youtube.com/@yamabekafka';
 const UA = {'User-Agent': 'Sakiyomi/1.0 (about page feed)', 'Accept-Language': 'ja,en;q=0.8'};
-const get = async url => { const r = await fetch(url, {headers: UA, signal: AbortSignal.timeout(20000)}); if (!r.ok) throw new Error(`${url} HTTP ${r.status}`); return r.text(); };
+const get = async url => { const r = await fetch(url, {headers: {...UA, Cookie: 'CONSENT=YES+1; SOCS=CAI'}, signal: AbortSignal.timeout(20000)}); if (!r.ok) throw new Error(`${url} HTTP ${r.status}`); return r.text(); };
 const decode = s => s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").trim();
 const tag = (x, t) => { const m = x.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`)); return m ? decode(m[1]) : ''; };
 const https = u => (typeof u === 'string' && /^https:\/\//.test(u) ? u : '');
@@ -21,7 +21,7 @@ try {
 } catch (e) { console.log('note feed skipped:', e.message); }
 try {
   const html = await get(YT_HANDLE);
-  const id = (html.match(/"channelId":"(UC[\w-]{22})"/) || html.match(/channel_id=(UC[\w-]{22})/) || [])[1];
+  const id = (html.match(/"channelId":"(UC[\w-]{22})"/) || html.match(/"externalId":"(UC[\w-]{22})"/) || html.match(/youtube\.com\/channel\/(UC[\w-]{22})/) || html.match(/channel_id=(UC[\w-]{22})/) || [])[1];
   if (!id) throw new Error('channel id not found');
   const xml = await get(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`);
   out.youtube = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].slice(0, 3).map(m => ({

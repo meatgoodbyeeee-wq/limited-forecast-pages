@@ -40,11 +40,11 @@ export function About(){
     <div role="group" aria-label="表示言語 / Language" className="flex shrink-0 rounded-full border border-border p-0.5 text-xs">{(['ja','en'] as const).map(l=><button key={l} type="button" lang={l} aria-pressed={lang===l} onClick={()=>{setLangState(l);saveLang(l);}} className={'rounded-full px-2.5 py-1 transition-colors '+(lang===l?'bg-primary text-primary-foreground font-semibold':'text-muted-foreground hover:text-foreground')}>{l==='ja'?'日本語':'EN'}</button>)}</div></div></header>
 
   <section className="grid gap-8 py-10 md:grid-cols-[minmax(0,320px)_1fr] md:items-center">
-   <div className="mx-auto w-full max-w-[300px] md:max-w-none"><div className="relative"><div aria-hidden="true" className="absolute inset-x-6 bottom-0 top-16 rounded-[2rem]" style={{background:'radial-gradient(closest-side,rgba(94,234,196,.22),transparent)'}}/><img src={BASE+'kafka-about.webp'} alt={tr('白衣を着てフラスコを掲げる山辺カフカのイラスト','Illustration of Yamabe Kafka in a lab coat holding up a flask')} width={800} height={1123} className="relative w-full h-auto"/></div></div>
+   <div className="mx-auto w-full max-w-[300px] md:max-w-none"><div className="relative"><div aria-hidden="true" className="absolute inset-x-6 bottom-0 top-16 rounded-[2rem]" style={{background:'radial-gradient(closest-side,rgba(94,234,196,.22),transparent)'}}/><img src={BASE+'kafka-about.webp'} alt={tr('白衣を着てフラスコを掲げる山辺カフカのイラスト','Illustration of Yamabe Kafka in a lab coat holding up a flask')} width={640} height={1435} className="relative mx-auto h-auto w-auto max-h-[560px] md:max-h-[620px] max-w-full"/></div></div>
    <div>
     <p className="text-primary text-sm tracking-widest">ABOUT ME</p>
     <h1 className="mt-2 text-3xl sm:text-4xl font-bold">{tr('山辺カフカ','Yamabe Kafka')}</h1>
-    <p className="mt-1 text-sm text-muted-foreground">{tr('ゲームVTuber ／ MTGプレイヤー','Game VTuber / MTG player')} · a little pink, a lot of me.✦✧</p>
+    <p className="mt-1 text-sm text-muted-foreground">{tr('VTuber／カードゲーマー／記事ライター','VTuber / Card gamer / Article writer')}</p>
     <div className="mt-6 space-y-3 leading-7 text-[15px]">
      <p>{tr('見つけてくれて、ありがとう♡ ゲームも、日々のことも。カフカのあれこれ、ここからどうぞ。','Thank you for finding me ♡ Games, everyday life — everything about Kafka starts here.')}</p>
      <p>{tr('マジック：ザ・ギャザリングのリミテッドが好きで、17Landsの公開データを使った発売前予測ツール「サキヨミ™」を作っています。カードを見て、発売前にどれくらい勝てそうかを研究するのがカフカの実験です。','I love Magic: The Gathering Limited, and I build Sakiyomi™, a pre-release forecasting tool based on 17Lands public data. Studying how well a card might perform before release is Kafka\'s experiment.')}</p>
