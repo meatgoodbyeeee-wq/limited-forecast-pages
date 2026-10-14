@@ -1,4 +1,903 @@
 {
-  "set": "FRA",
-  "cards": {}
+ "set": "FRA",
+ "cards": {
+  "Ajani Unrelenting": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "類似カード（Chandra 等）には盤面を作る能力がなく、モデルが強さを低く見積もりました。",
+     "盤面が膠着しやすい環境で、プレインズウォーカーが攻撃から守られて長く残り、能力を使い続けられたと考えられます。"
+    ],
+    "reasons_en": [
+     "The similar cards (e.g. Chandra) have no way to build a board, so the model likely underrated this card.",
+     "In a stalled-board environment, planeswalkers were protected from attacks, stayed on the battlefield longer and kept using their abilities (estimate)."
+    ]
+   }
+  },
+  "Mind Twist": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "リミテッドでは手札破壊は弱いという過去データの傾向にモデルが引っ張られました。",
+     "長期戦で相手が手札にボムや除去を温存しやすい環境だったため、手札を一度に捨てさせる効果の価値が高くなったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model was likely pulled by the historical pattern that discard is weak in Limited.",
+     "In a slow, long-game environment where opponents hold back bombs and removal, making them discard cards all at once became more valuable (estimate)."
+    ]
+   }
+  },
+  "Uldaros Theorix": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "類似カード（Lord Xander など）は効果の再現性が低く、この「墓地の質に応じた大きなリターン」をモデルが評価しきれませんでした。",
+     "遅い環境で、カード差を積み上げる青黒のデッキが勝ちやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The similar cards (e.g. Lord Xander) are less reliable, so the model could not fully value this \"big return depending on the graveyard\".",
+     "In a slow environment, blue-black decks that stack up card advantage likely won more often (estimate)."
+    ]
+   }
+  },
+  "The Theorist, Jace Beleren": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "盤面が膠着しやすい環境で、プレインズウォーカーが攻撃から守られて長く残り、能力を使い続けられたと考えられます。"
+    ],
+    "reasons_en": [
+     "In a stalled-board environment, planeswalkers were protected from attacks, stayed on the battlefield longer and kept using their abilities (estimate)."
+    ]
+   }
+  },
+  "Sublime Epiphany": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "青のコントロール寄りのデッキが環境で機能し、重いインスタントが腐りにくかったと考えられます。",
+     "長期戦になりやすく、重いカードを唱えるまでの時間を確保できたと考えられます。"
+    ],
+    "reasons_en": [
+     "Blue control-leaning decks worked in this environment, and a heavy instant was less likely to be stuck in hand (estimate).",
+     "Games tended to go long, so players had time to reach the mana for heavy cards (estimate)."
+    ]
+   }
+  },
+  "Murmuring Volume": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "5色すべてのマナを出せるため、この環境の多色・混成カードやタッチを支える役割が大きかったと考えられます。",
+     "どのデッキにも入るため使用数も多く（約40,000件）、汎用性の価値をモデルが過小評価しました。"
+    ],
+    "reasons_en": [
+     "It makes all five colors of mana, so it likely played a large role in supporting multicolor and hybrid cards and splashes in this environment (estimate).",
+     "It goes in nearly any deck, so it was played a lot (about 40,000 samples), and the model underrated the value of that versatility."
+    ]
+   }
+  },
+  "Sphinx of False Conclusions": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "この環境は想定より遅く長期戦になりやすかったため、時間をかけて価値を生むカードが強く出たと考えられます。"
+    ],
+    "reasons_en": [
+     "The environment was slower and longer than expected, so cards that generate value over time likely performed strongly (estimate)."
+    ]
+   }
+  },
+  "Sanctum Lurker": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "ジェイス関連カードとの組み合わせで、長期戦に強くなったと考えられます。"
+    ],
+    "reasons_en": [
+     "Combined with Jace-related cards, it likely got stronger in long games (estimate)."
+    ]
+   }
+  },
+  "Lich's Relic": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "類似カード（Poet's Quill など）よりも除去性能が高く、モデルはこの「除去としての価値」を低く見積もりました。"
+    ],
+    "reasons_en": [
+     "It has stronger removal than similar cards (e.g. Poet's Quill), and the model underrated its value as removal."
+    ]
+   }
+  },
+  "Denzilore Fatehold": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "白青の占術・諜報テーマが実際に機能したことが上振れの主因と考えられます。",
+     "遅い環境で、カード差を積み上げる白青のデッキが勝ちやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The white-blue scry/surveil theme actually worked, which is thought to be the main reason for the upside (estimate).",
+     "In a slow environment, white-blue decks that stack up card advantage likely won more often (estimate)."
+    ]
+   }
+  },
+  "Null Summoner": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "青黒の墓地を貯めるデッキでは、追加の1枚として働いたと考えられます。",
+     "遅い環境で、カード差を積み上げる青黒のデッキが勝ちやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "In blue-black decks that fill the graveyard, it likely worked as an extra card (estimate).",
+     "In a slow environment, blue-black decks that stack up card advantage likely won more often (estimate)."
+    ]
+   }
+  },
+  "Garruk, Veiled Butcher": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "盤面が膠着しやすい環境で、プレインズウォーカーが攻撃から守られて長く残り、能力を使い続けられたと考えられます。"
+    ],
+    "reasons_en": [
+     "In a stalled-board environment, planeswalkers were protected from attacks, stayed on the battlefield longer and kept using their abilities (estimate)."
+    ]
+   }
+  },
+  "Fblthp, Impossibly Lost": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "青の軽量アドバンテージ源として安定して働いたと考えられます（件数は約40,000件）。"
+    ],
+    "reasons_en": [
+     "It likely worked steadily as a cheap blue card-advantage source (about 40,000 samples) (estimate)."
+    ]
+   }
+  },
+  "Recursive Recruitment": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "青黒の墓地を貯めるデッキでは再利用時にトークンが大きくなり、類似カードよりも後半の価値が高くなりました。",
+     "遅い環境で、カード差を積み上げる青黒のデッキが勝ちやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "In blue-black graveyard decks the tokens grow when recast, so its late-game value was higher than the similar cards.",
+     "In a slow environment, blue-black decks that stack up card advantage likely won more often (estimate)."
+    ]
+   }
+  },
+  "Craftwork Crusher": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "赤緑の重いデッキでは確実に勝負を決める1枚になり、重さのペナルティをモデルが大きく見すぎました。",
+     "長期戦になりやすく、重いカードを唱えるまでの時間を確保できたと考えられます。"
+    ],
+    "reasons_en": [
+     "In heavy red-green decks it reliably closed games, and the model over-penalized its high cost.",
+     "Games tended to go long, so players had time to reach the mana for heavy cards (estimate)."
+    ]
+   }
+  },
+  "Break Under Pressure": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "この環境はプレインズウォーカーや大型の伝説が多く、通常の勅令より狙い通りの除去になりやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "This environment has many planeswalkers and large legends, so this edict was likely a better-aimed removal spell than usual (estimate)."
+    ]
+   }
+  },
+  "Generous Revival": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "白の平均は下振れ（−1.4pt）でしたが、軽量クリーチャーが多いデッキでは安定して働きました。",
+     "この環境は想定より遅く長期戦になりやすかったため、時間をかけて価値を生むカードが強く出たと考えられます。"
+    ],
+    "reasons_en": [
+     "The white average was below forecast (−1.4pt), but it worked steadily in decks with many cheap creatures.",
+     "The environment was slower and longer than expected, so cards that generate value over time likely performed strongly (estimate)."
+    ]
+   }
+  },
+  "Extended Absence": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "この環境は伝説やプレインズウォーカーが多く、追放除去の価値が過去セットの類似カードより高くなりました。",
+     "長く残って価値を生むプレインズウォーカーや大型カードが強い環境だったため、それらを確実に処理できる除去の価値が上がったと考えられます。"
+    ],
+    "reasons_en": [
+     "This environment has many legends and planeswalkers, so exile removal was worth more than for similar cards in past sets.",
+     "Planeswalkers and large cards that stay and generate value were strong, so removal that reliably answers them became more valuable (estimate)."
+    ]
+   }
+  },
+  "Theorist's Sanctum": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "青のジェイス関連カードとの組み合わせで、土地としては高い勝率になりました。"
+    ],
+    "reasons_en": [
+     "Combined with blue Jace-related cards, it posted a high win rate for a land."
+    ]
+   }
+  },
+  "Shipwreck Marsh": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "青黒の2色土地で、強いカードが多い青黒デッキで多く使われたことが勝率を押し上げたと考えられます。",
+     "土地自体の性能よりも、使われるデッキの強さが反映されやすい点をモデルは考慮していません。"
+    ],
+    "reasons_en": [
+     "A blue-black dual land, likely boosted by being played in the strong blue-black decks (estimate).",
+     "The model does not account for how a land's win rate reflects the strength of the decks it is played in."
+    ]
+   }
+  },
+  "Surveillance Phantasm": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "青の占術・諜報テーマが機能したことで、防衛者の制限が外れやすく、想定より攻撃役として働きました。",
+     "攻撃寄りのデッキが多くない遅い環境で、序盤を止める役割の価値が高くなったと考えられます。"
+    ],
+    "reasons_en": [
+     "The blue scry/surveil theme worked, so the defender restriction was often lifted and it contributed more on offense than expected.",
+     "In a slow environment without many aggressive decks, a creature that holds off early attacks became more valuable (estimate)."
+    ]
+   }
+  },
+  "Academic Ascent": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "ジェイスを活かせないデッキでは価値が小さかったと考えられます。",
+     "盤面が膠着しやすい環境で、一時的な強化では攻撃を通しきれず、カード1枚分の価値を取り返しにくかったと考えられます。",
+     "環境が遅く、小型クリーチャーで攻める白のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "It was likely worth little in decks that cannot take advantage of Jace (estimate).",
+     "In a stalled-board environment, a temporary boost often could not push damage through, making it hard to earn back the card (estimate).",
+     "The environment was slow, and aggressive white decks with small creatures were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Fateshaper Aspirant": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "伝説カードの回収は、回収先が無いと機能しませんでした。",
+     "環境が遅く、小型クリーチャーで攻める白のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "Recovering a legendary card does nothing without a target in the graveyard.",
+     "The environment was slow, and aggressive white decks with small creatures were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Charge the Sanctum": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "赤白の攻撃的なデッキが環境で振るわず、トリックを活かす場面が少なかったと考えられます。",
+     "赤白は最も攻撃寄りの組み合わせで、遅い環境の影響を最も強く受けたと考えられます（赤白のゴールド4枚はすべて予測を下回りました）。",
+     "盤面が膠着しやすい環境で、一時的な強化では攻撃を通しきれず、カード1枚分の価値を取り返しにくかったと考えられます。"
+    ],
+    "reasons_en": [
+     "Aggressive red-white decks did not do well in this environment, so there were few chances to use the trick (estimate).",
+     "Red-white is the most aggressive pairing and was likely hit hardest by the slow environment (all four red-white gold cards fell below forecast) (estimate).",
+     "In a stalled-board environment, a temporary boost often could not push damage through, making it hard to earn back the card (estimate)."
+    ]
+   }
+  },
+  "Budding Insurgent": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "この環境の除去や強力なカードはプレインズウォーカーやクリーチャーが中心で、アーティファクト・エンチャント対策の価値が低かったと考えられます。"
+    ],
+    "reasons_en": [
+     "Removal and strong cards in this environment were mostly planeswalkers and creatures, so answers for artifacts and enchantments were likely worth less (estimate)."
+    ]
+   }
+  },
+  "Gallia, the Merrymaker": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "赤の攻撃的なデッキ全体が環境で苦戦したことが主因と考えられます。",
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。"
+    ],
+    "reasons_en": [
+     "Aggressive red decks as a whole struggled in this environment, which is thought to be the main reason (estimate).",
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate)."
+    ]
+   }
+  },
+  "Yuriko, Hope from the Shadows": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "モデルは類似カード（Staunch Crewmate など）の高い勝率に引っ張られたと考えられます。",
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。"
+    ],
+    "reasons_en": [
+     "The model was likely pulled by the high win rates of similar cards (e.g. Staunch Crewmate).",
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate)."
+    ]
+   }
+  },
+  "Pompous Battlemage": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "序盤の軽量クリーチャーがこの環境では活躍しにくかったと考えられます。",
+     "環境が遅く、序盤から攻める赤のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "Cheap early creatures likely had a hard time making an impact in this environment (estimate).",
+     "The environment was slow, and aggressive red decks were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Yoshimaru, Beloved Companion": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。",
+     "環境が遅く、小型クリーチャーで攻める白のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate).",
+     "The environment was slow, and aggressive white decks with small creatures were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Edgar, Ancient Bloodlord": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。"
+    ],
+    "reasons_en": [
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate)."
+    ]
+   }
+  },
+  "Perfected Theory": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "盤面が膠着しやすい環境で、一時的な強化では攻撃を通しきれず、カード1枚分の価値を取り返しにくかったと考えられます。"
+    ],
+    "reasons_en": [
+     "In a stalled-board environment, a temporary boost often could not push damage through, making it hard to earn back the card (estimate)."
+    ]
+   }
+  },
+  "Woodwork Prodigy": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "3マナ3/3に、毎ターン下準備としてマナを出すトークンを作れますが、マナ加速の価値はこの環境では小さかったと考えられます。"
+    ],
+    "reasons_en": [
+     "It makes a mana-producing token each turn, but mana acceleration was likely worth little in this environment (estimate)."
+    ]
+   }
+  },
+  "Way of the Warlord": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "ジェイス・トークンは盤面で守れないと攻撃で落とされやすく、効果を出す前に失われることが多かったと考えられます（「〜の道」10枚中8枚が予測を下回りました）。",
+     "環境が遅く、序盤から攻める赤のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "Jace tokens are easily killed by attacks unless the board is protected, so they were often lost before their effect mattered (8 of 10 \"Way of\" cards fell below forecast) (estimate).",
+     "The environment was slow, and aggressive red decks were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Predictive Preparations": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "カウンターを活かす仕組みが無いデッキでは弱かったと考えられます。",
+     "環境が遅く、小型クリーチャーで攻める白のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "It was likely weak in decks without a way to use the counters (estimate).",
+     "The environment was slow, and aggressive white decks with small creatures were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Tethermage's Advantage": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "使われるデッキの偏りも影響した可能性があります。",
+     "盤面が膠着しやすい環境で、一時的な強化では攻撃を通しきれず、カード1枚分の価値を取り返しにくかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The bias in which decks played it may also have had an effect.",
+     "In a stalled-board environment, a temporary boost often could not push damage through, making it hard to earn back the card (estimate)."
+    ]
+   }
+  },
+  "Koth, the Geomancer": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。",
+     "環境が遅く、序盤から攻める赤のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate).",
+     "The environment was slow, and aggressive red decks were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Edgar, Moonlit Sovereign": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。"
+    ],
+    "reasons_en": [
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate)."
+    ]
+   }
+  },
+  "Hexhaven Dueling Arena": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "無色マナしか出ず、色マナが必要なデッキでは土地枠を圧迫しました。",
+     "使う人が少ないカードは、多くのドラフターが後回しにしたカードです。他に選択肢がなかった弱めのデッキに入りやすく、勝率が低めに出たと考えられます。"
+    ],
+    "reasons_en": [
+     "It produces only colorless mana, which strained land slots in decks that need colored mana.",
+     "Cards with few samples were passed over by many drafters. They tend to end up in weaker decks with no better options, which likely lowered the win rate (estimate)."
+    ]
+   }
+  },
+  "Whiplash Wordsmith": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "黒赤のデッキでも決め手になりにくいカードでした。",
+     "黒赤の非戦闘ダメージで少しずつ削る戦略は、長期戦で青黒・白青のカード差に押し負けたと考えられます。"
+    ],
+    "reasons_en": [
+     "It was a card that rarely decided games, even in black-red decks.",
+     "Black-red's plan of chipping away with noncombat damage was likely outpaced by the card advantage of blue-black and white-blue in long games (estimate)."
+    ]
+   }
+  },
+  "Mabel, Valley Hero": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "赤白の攻撃的なデッキが環境で振るわなかったと考えられます。",
+     "赤白は最も攻撃寄りの組み合わせで、遅い環境の影響を最も強く受けたと考えられます（赤白のゴールド4枚はすべて予測を下回りました）。",
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。"
+    ],
+    "reasons_en": [
+     "Aggressive red-white decks likely did not do well in this environment (estimate).",
+     "Red-white is the most aggressive pairing and was likely hit hardest by the slow environment (all four red-white gold cards fell below forecast) (estimate).",
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate)."
+    ]
+   }
+  },
+  "Way of the Pyromancer": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "ジェイス・トークンは盤面で守れないと攻撃で落とされやすく、効果を出す前に失われることが多かったと考えられます（「〜の道」10枚中8枚が予測を下回りました）。",
+     "環境が遅く、序盤から攻める赤のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "Jace tokens are easily killed by attacks unless the board is protected, so they were often lost before their effect mattered (8 of 10 \"Way of\" cards fell below forecast) (estimate).",
+     "The environment was slow, and aggressive red decks were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Eardrum Rattler": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "攻撃的な赤のデッキが環境で苦戦したことが主因と考えられます。"
+    ],
+    "reasons_en": [
+     "Aggressive red decks struggled in this environment, which is thought to be the main reason (estimate)."
+    ]
+   }
+  },
+  "Massacre Girl, Most Wanted": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。"
+    ],
+    "reasons_en": [
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate)."
+    ]
+   }
+  },
+  "Command the Stage": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "環境が遅く、序盤から攻める赤のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The environment was slow, and aggressive red decks were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Pia, Aether Ascetic": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。"
+    ],
+    "reasons_en": [
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate)."
+    ]
+   }
+  },
+  "Teyo, Diamondblade Mage": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "類似カード（Nazgûl など）の高い勝率にモデルが引っ張られました。",
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。"
+    ],
+    "reasons_en": [
+     "The model was pulled by the high win rates of similar cards (e.g. Nazgûl).",
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate)."
+    ]
+   }
+  },
+  "Terminal Criticism": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "類似カード（Hero's Downfall）は無条件除去で、この「対象の制限」をモデルが十分に考慮できませんでした。",
+     "使う人が少ないカードは、多くのドラフターが後回しにしたカードです。他に選択肢がなかった弱めのデッキに入りやすく、勝率が低めに出たと考えられます。"
+    ],
+    "reasons_en": [
+     "The similar card (Hero's Downfall) is unconditional removal, and the model did not fully account for this card's targeting restriction.",
+     "Cards with few samples were passed over by many drafters. They tend to end up in weaker decks with no better options, which likely lowered the win rate (estimate)."
+    ]
+   }
+  },
+  "Winter, Team Player": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。",
+     "環境が遅く、序盤から攻める赤のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate).",
+     "The environment was slow, and aggressive red decks were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Roiling Canopy": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "使う人が少ないカードは、多くのドラフターが後回しにしたカードです。他に選択肢がなかった弱めのデッキに入りやすく、勝率が低めに出たと考えられます。"
+    ],
+    "reasons_en": [
+     "Cards with few samples were passed over by many drafters. They tend to end up in weaker decks with no better options, which likely lowered the win rate (estimate)."
+    ]
+   }
+  },
+  "Way of the Mentor": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "ジェイス・トークンは盤面で守れないと攻撃で落とされやすく、効果を出す前に失われることが多かったと考えられます（「〜の道」10枚中8枚が予測を下回りました）。",
+     "環境が遅く、小型クリーチャーで攻める白のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "Jace tokens are easily killed by attacks unless the board is protected, so they were often lost before their effect mattered (8 of 10 \"Way of\" cards fell below forecast) (estimate).",
+     "The environment was slow, and aggressive white decks with small creatures were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Loot, the Anomaly": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "モデルは特殊なルールを正しく評価できず、類似カードの勝率に引っ張られたと考えられます。",
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。"
+    ],
+    "reasons_en": [
+     "The model likely could not value the unusual rules correctly and was pulled by the win rates of similar cards (estimate).",
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate)."
+    ]
+   }
+  },
+  "Ajani Resolute": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "類似カード（The Wandering Emperor など）とは性能の差が大きかったと考えられます。",
+     "使う人が少ないカードは、多くのドラフターが後回しにしたカードです。他に選択肢がなかった弱めのデッキに入りやすく、勝率が低めに出たと考えられます。"
+    ],
+    "reasons_en": [
+     "Its performance was likely much lower than similar cards (e.g. The Wandering Emperor) (estimate).",
+     "Cards with few samples were passed over by many drafters. They tend to end up in weaker decks with no better options, which likely lowered the win rate (estimate)."
+    ]
+   }
+  },
+  "Frostbite Pyromental": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "カード1枚を使って1回の攻撃にしかならない点が、想定より大きく効きました。",
+     "ブロッカーが多く盤面が膠着しやすい環境で、攻撃が通らずドローできない場面が多かったと考えられます。"
+    ],
+    "reasons_en": [
+     "Spending a whole card for a single attack mattered more than expected.",
+     "In an environment full of blockers and stalled boards, there were likely many games where it could not connect and so could not draw (estimate)."
+    ]
+   }
+  },
+  "Rampart Hunter": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "モデルは類似カードの勝率に引っ張られましたが、この環境の4マナ帯は強いカードが多く、相対的に弱かったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model was pulled by similar cards' win rates, but this environment has many strong cards at four mana, so it was relatively weak (estimate)."
+    ]
+   }
+  },
+  "Pyre Rhymer": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "環境が遅く、序盤から攻める赤のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The environment was slow, and aggressive red decks were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Solitary Cell": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "相手のマナ総量3以下のパーマネントを追放できますが、この環境の強いカードは4マナ以上が多く、対象が限られました。",
+     "赤白は最も攻撃寄りの組み合わせで、遅い環境の影響を最も強く受けたと考えられます（赤白のゴールド4枚はすべて予測を下回りました）。"
+    ],
+    "reasons_en": [
+     "It can exile permanents with mana value 3 or less, but many of this environment's strong cards cost four or more, limiting its targets.",
+     "Red-white is the most aggressive pairing and was likely hit hardest by the slow environment (all four red-white gold cards fell below forecast) (estimate)."
+    ]
+   }
+  },
+  "Samut, Tyrant of Naktamun": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。",
+     "使う人が少ないカードは、多くのドラフターが後回しにしたカードです。他に選択肢がなかった弱めのデッキに入りやすく、勝率が低めに出たと考えられます。"
+    ],
+    "reasons_en": [
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate).",
+     "Cards with few samples were passed over by many drafters. They tend to end up in weaker decks with no better options, which likely lowered the win rate (estimate)."
+    ]
+   }
+  },
+  "Emrakul, the Exigent Doom": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "マナ加速の能力を使っても唱えるまで時間がかかり、間に合わない試合が多かったと考えられます。",
+     "引いた試合の勝率（GIH WR）は、唱えられない手札の重さも含めて下がりやすく、モデルは「唱えられれば勝つ」強さを過大評価しました。"
+    ],
+    "reasons_en": [
+     "Even with its mana ability, it takes a long time to cast, and many games likely ended before it came online (estimate).",
+     "GIH WR also falls for the weight of a hand you cannot cast, and the model overrated the strength of \"wins if it resolves\"."
+    ]
+   }
+  },
+  "Yargle, Goliath of Otaria": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "モデルはテキストの無いカードを類似カードの平均に寄せて評価しましたが、実際には性能が大きく劣りました。",
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。",
+     "使う人が少ないカードは、多くのドラフターが後回しにしたカードです。他に選択肢がなかった弱めのデッキに入りやすく、勝率が低めに出たと考えられます。"
+    ],
+    "reasons_en": [
+     "The model evaluated the card with no rules text by pulling it toward the average of similar cards, but it actually performed much worse.",
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate).",
+     "Cards with few samples were passed over by many drafters. They tend to end up in weaker decks with no better options, which likely lowered the win rate (estimate)."
+    ]
+   }
+  },
+  "Flickering Hound": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "類似カード（Salvation Swan など）は単体でも強く、このカードとは性能差が大きかったと考えられます。",
+     "使う人が少ないカードは、多くのドラフターが後回しにしたカードです。他に選択肢がなかった弱めのデッキに入りやすく、勝率が低めに出たと考えられます。"
+    ],
+    "reasons_en": [
+     "The similar card (e.g. Salvation Swan) is strong on its own, and the performance gap with this card was likely large (estimate).",
+     "Cards with few samples were passed over by many drafters. They tend to end up in weaker decks with no better options, which likely lowered the win rate (estimate)."
+    ]
+   }
+  },
+  "Arni, Renowned Champion": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "アンコモンの伝説は特定の条件やデッキで働くものが多く、実際のドラフトでは条件を満たすデッキがそろいにくかったと考えられます（53枚中45枚が予測を下回りました）。",
+     "環境が遅く、序盤から攻める赤のデッキが押し切る前に止められやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "Many uncommon legends work only under specific conditions or in specific decks, and in real drafts it was likely hard to assemble decks that met them (45 of 53 fell below forecast) (estimate).",
+     "The environment was slow, and aggressive red decks were likely stopped before they could finish (estimate)."
+    ]
+   }
+  },
+  "Way of the Necromancer": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-10-14",
+    "data_as_of": "2026-10-13",
+    "reasons": [
+     "ジェイス・トークンは盤面で守れないと攻撃で落とされやすく、効果を出す前に失われることが多かったと考えられます（「〜の道」10枚中8枚が予測を下回りました）。",
+     "使う人が少ないカードは、多くのドラフターが後回しにしたカードです。他に選択肢がなかった弱めのデッキに入りやすく、勝率が低めに出たと考えられます。"
+    ],
+    "reasons_en": [
+     "Jace tokens are easily killed by attacks unless the board is protected, so they were often lost before their effect mattered (8 of 10 \"Way of\" cards fell below forecast) (estimate).",
+     "Cards with few samples were passed over by many drafters. They tend to end up in weaker decks with no better options, which likely lowered the win rate (estimate)."
+    ]
+   }
+  }
+ }
 }

@@ -53,22 +53,7 @@ Set Settings → Pages → Source to GitHub Actions. Push to main or manually ru
 - テスト：`node --test scripts/card-data.test.mjs`（時刻とAPIはモック）
 
 ## 予測の幅から外れたカードの理由（deviation notes）
-Public Dataの取り込み後、カード詳細のGIH WR・ALSAの下に「発売前予測・予測の幅（ミント）」と「実測（ピンク）」を表示します。実測が予測の幅の外にあり、件数が1,000以上のカードでは、`public/deviation-notes.json` に書いた理由を表示します（件数の基準は `components/forecast-range.tsx` の `MIN_N`）。
-
-1. 外れたカードと分析材料を一覧にする：
-   `node scripts/deviation-report.mjs public/forecast.json.gz <fra-public-game.json> > report.md`
-   （`fra-public-game.json` はデータリポジトリの `live/` にあります）
-2. `report.md` をもとに理由を書き（AIに分析させても可）、`public/deviation-notes.json` に追加してmainへpushします。
-
-```json
-{
-  "set": "FRA",
-  "cards": {
-    "Card Name": {
-      "gih": {"source": "ai", "data_as_of": "2026-10-05", "written_at": "2026-10-06",
-              "reasons": ["理由1", "理由2", "理由3"]}
-    }
-  }
-}
-```
-`source` は AI による推定なら `"ai"`、人が書いたものなら `"manual"`。英語表示用に `"reasons_en": [...]` を足すと英語ページではそちらを表示します（無ければ日本語の `reasons`）。カード名は英語名（両面カードは表面の名前でも可）です。
+実測が予測の幅の外にあり、件数が1,000以上のGIH WRでは、`public/deviation-notes.json` の理由を表示します（件数の基準は `components/forecast-range.tsx` の `MIN_N`）。
+- FRAの62枚は2026-10-14時点の実測で作成済み（`source: "ai"`）。各理由に「（AIによる理由）」と表示します。毎日の自動作成はしません。
+- このファイルに無いカードが新たに予測の幅から外れた場合は、理由を書かず「判定保留」と表示します。
+- 理由を追加する場合は、`cards` にカード名で `gih.reasons`（と英訳 `reasons_en`）を書いてmainへpushします。
