@@ -81,12 +81,12 @@ export function DeviationReason({card,metric:t,notes}:{card:Card;metric:Metric;n
  // Reasons are written for GIH WR only.
  if(t==='alsa'||card.late_card||(d.status!=='above'&&d.status!=='below'))return null;
  const note=(notes?.cards?.[card.name]||notes?.cards?.[card.name.split(' // ')[0]])?.[t];
- if(!note?.reasons?.length)return <div className="mt-3 rounded-lg border border-dashed border-border p-4 text-sm text-muted-foreground">{tr('予測の幅から外れました。ずれた理由の分析はまだ掲載されていません。','The observed value left the forecast range. No analysis of why has been posted yet.')}</div>;
+ if(!note?.reasons?.length)return <div className="mt-3 rounded-lg border border-dashed border-border p-4 text-sm text-muted-foreground">{tr('判定保留：予測の幅から外れましたが、ずれた理由はまだ掲載していません。','Pending: the observed value left the forecast range, but no reason for the deviation has been posted yet.')}</div>;
  const ai=note.source!=='manual';
  const reasons=reasonsFor(note,lang);
  return <div className="mt-3 rounded-lg p-4" style={{border:'1.5px solid rgba(94,234,196,.45)',background:'rgba(94,234,196,.06)'}}>
   <h4 className="flex items-center gap-2 font-semibold text-sm" style={{color:MINT}}><svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.3 8.2 8.2 2.3-8.2 2.3-2.3 8.2-2.3-8.2L1.5 12l8.2-2.3z"/></svg>{ai?tr('AIの分析：ずれた理由','AI analysis: why it deviated'):tr('分析メモ：ずれた理由','Analysis: why it deviated')}</h4>
-  <ol className="mt-2 space-y-1.5 text-sm leading-6 list-decimal pl-5" lang={reasons===note.reasons?'ja':'en'}>{reasons.map((r,i)=><li key={i}>{r}</li>)}</ol>
+  <ol className="mt-2 space-y-1.5 text-sm leading-6 list-decimal pl-5" lang={reasons===note.reasons?'ja':'en'}>{reasons.map((r,i)=><li key={i}>{r}{ai&&<span className="ml-1 text-[11px] text-muted-foreground whitespace-nowrap">{tr('（AIによる理由）','(AI-generated reason)')}</span>}</li>)}</ol>
   {(note.data_as_of||note.written_at)&&<p className="mt-2 text-[11px] text-muted-foreground">{note.data_as_of&&tr(`${note.data_as_of}時点の実測をもとに分析`,`Based on data as of ${note.data_as_of}`)}{note.data_as_of&&note.written_at&&' · '}{note.written_at&&tr(`掲載 ${note.written_at}`,`posted ${note.written_at}`)}{ai&&tr(' · AIによる推定で、確定した原因ではありません',' · AI estimate, not a confirmed cause')}</p>}
  </div>;
 }
