@@ -1,0 +1,41 @@
+name: Deviation notes (AI)
+# After each daily Card Data run: draft "why it deviated" notes for cards whose observed GIH WR left the
+# forecast range (n >= 1000). Needs the repository secret ANTHROPIC_API_KEY; without it the job does nothing.
+# Forecasts and models are not touched. Notes are shown on the site labelled as AI estimates.
+on:
+  workflow_run:
+    workflows: ['FRA Card Data (daily)']
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: deviation-notes
+  cancel-in-progress: false
+jobs:
+  notes:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/write-deviation-notes.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Save notes and redeploy the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add public/deviation-notes.json
+          if git diff --cached --quiet; then echo 'nothing to save'; exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Update AI deviation notes'
+          git push origin HEAD:main
+          gh workflow run pages.yml --ref main
