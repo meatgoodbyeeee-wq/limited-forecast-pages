@@ -4,15 +4,19 @@ import {useLang,pt} from '@/lib/i18n';
 type Row={pair:string;rank:number;predicted_wr_pct:number;delta_pp:number;range80:[number,number]};
 
 const MANA:Record<string,string>={W:'#EFE6C8',U:'#4EA8F2',B:'#9A86B4',R:'#F2694F',G:'#43BE78'};
-const MINT='#5EEAC4';
+const MINT='#5EEAC4',PINK='#FF5C8A';
+export type ActualPair={wr_pct:number;games:number};
 const f=(n:number,d=1)=>Number.isFinite(n)?n.toFixed(d):'—';
 
 /** Horizontal bar chart for two-colour pair win-rate forecasts (Sakiyomi feature-2 design). */
-export function DeckColorChart({rows,mean,names}:{rows:Row[];mean:number;names:Record<string,string>}){
+export function DeckColorChart({rows,mean,names,actual}:{rows:Row[];mean:number;names:Record<string,string>;actual?:Record<string,ActualPair>|null}){
  const {lang,tr}=useLang();
  const sorted=[...rows].sort((a,b)=>a.rank-b.rank);
- const lo=Math.floor(Math.min(...sorted.map(r=>r.range80[0])))-1;
- const hi=Math.ceil(Math.max(...sorted.map(r=>r.range80[1])))+1;
+ const obs=(pair:string)=>actual?.[pair]&&Number.isFinite(actual[pair].wr_pct)?actual[pair]:null;
+ const all=sorted.flatMap(r=>[r.range80[0],r.range80[1],...(obs(r.pair)?[obs(r.pair)!.wr_pct]:[])]);
+ const lo=Math.floor(Math.min(...all))-1;
+ const hi=Math.ceil(Math.max(...all))+1;
+ const hasObs=sorted.some(r=>obs(r.pair));
  const pct=(v:number)=>Math.min(100,Math.max(0,(v-lo)/(hi-lo)*100));
  const meanPos={'--p':pct(mean)/100} as CSSProperties;
  return <div className="sky-pairs">
@@ -21,6 +25,7 @@ export function DeckColorChart({rows,mean,names}:{rows:Row[];mean:number;names:R
    <div className="flex items-center gap-4 text-xs text-muted-foreground" aria-hidden="true">
     <span className="flex items-center gap-2"><span style={{width:22,height:10,borderRadius:'2px 5px 5px 2px',background:MINT}}/>{tr('予測勝率','Forecast win rate')}</span>
     <span className="flex items-center gap-2"><span style={{width:22,height:8,borderRadius:4,background:'rgba(94,234,196,.28)'}}/>{tr('80%誤差目安','80% error range')}</span>
+    {hasObs&&<span className="flex items-center gap-2"><span style={{width:12,height:12,borderRadius:'50%',background:PINK}}/>{tr('実測勝率','Observed win rate')}</span>}
    </div>
   </div>
   <ol className="relative" style={meanPos} aria-label={tr(`色組別の予測勝率。2色平均 ${f(mean)}%`,`Forecast win rate by color pair. Two-color mean ${f(mean)}%`)}>
@@ -35,11 +40,13 @@ export function DeckColorChart({rows,mean,names}:{rows:Row[];mean:number;names:R
     <div className="sky-track relative" style={{height:26}} aria-hidden="true">
      <div className="sky-mean-tick"/>
      <div className="sky-band" style={{position:'absolute',top:6,height:14,left:`${pct(r.range80[0])}%`,width:`${pct(r.range80[1])-pct(r.range80[0])}%`,borderRadius:7,background:'rgba(94,234,196,.22)',animationDelay:`${120+i*45}ms`}}/>
+     {obs(r.pair)&&<div style={{position:'absolute',top:3,left:`${pct(obs(r.pair)!.wr_pct)}%`,width:20,height:20,marginLeft:-10,borderRadius:'50%',background:PINK,boxShadow:'0 0 0 3px var(--card)',zIndex:2}}/>}
      <div className="sky-bar" style={{position:'absolute',top:2,height:22,left:0,width:`${pct(r.predicted_wr_pct)}%`,borderRadius:'4px 11px 11px 4px',background:MINT,opacity:.85,animationDelay:`${i*45}ms`}}/>
     </div>
     <div className="sky-value text-right number leading-tight">
      <span className="font-bold text-xl sm:text-2xl" style={{color:'var(--foreground)'}}>{f(r.predicted_wr_pct)}<span className="text-sm text-muted-foreground ml-0.5">%</span></span>
      <div className="text-[11px] text-muted-foreground mt-0.5 whitespace-nowrap">{r.delta_pp>=0?'+':''}{f(r.delta_pp)}{pt(lang)} · {f(r.range80[0])}–{f(r.range80[1])}</div>
+     {obs(r.pair)&&(()=>{const o=obs(r.pair)!,d=o.wr_pct-r.predicted_wr_pct;return <div className="text-[11px] mt-0.5 whitespace-nowrap font-medium" style={{color:PINK}}>{tr('実測','Obs.')} {f(o.wr_pct)}% · {d>=0?'+':''}{f(d)}{pt(lang)}</div>;})()}
     </div>
    </li>})}
   </ol>
