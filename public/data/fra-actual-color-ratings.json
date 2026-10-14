@@ -1,0 +1,58 @@
+{
+ "schema": 1,
+ "source": "17Lands",
+ "source_type": "Color Ratings",
+ "expansion": "FRA",
+ "format": "PremierDraft",
+ "source_url": "https://www.17lands.com/color_ratings/data?expansion=FRA&event_type=PremierDraft&start_date=2026-09-29&end_date=2026-10-13&combine_splash=false",
+ "attribution": "17Lands (17lands.com) Color Ratings",
+ "splash": false,
+ "window_start": "2026-09-29",
+ "window_end": "2026-10-13",
+ "data_date": "2026-10-13",
+ "final": false,
+ "fetched_at": "2026-10-14T10:11:08.115Z",
+ "fetched_date_jst": "2026-10-14",
+ "pairs": {
+  "WU": {
+   "wr_pct": 57.26746800155871,
+   "games": 33361
+  },
+  "UB": {
+   "wr_pct": 55.85769502966955,
+   "games": 36738
+  },
+  "BR": {
+   "wr_pct": 54.16949728260869,
+   "games": 23552
+  },
+  "RG": {
+   "wr_pct": 55.96815178722684,
+   "games": 29515
+  },
+  "WG": {
+   "wr_pct": 54.73252620585619,
+   "games": 25853
+  },
+  "WB": {
+   "wr_pct": 53.73919244139407,
+   "games": 11219
+  },
+  "BG": {
+   "wr_pct": 54.42025766326077,
+   "games": 13506
+  },
+  "UG": {
+   "wr_pct": 51.95215837228485,
+   "games": 7274
+  },
+  "UR": {
+   "wr_pct": 56.06073905029404,
+   "games": 22786
+  },
+  "WR": {
+   "wr_pct": 54.07874700891886,
+   "games": 13791
+  }
+ }
+}
