@@ -9,10 +9,13 @@ export type ActualPair={wr_pct:number;games:number};
 const f=(n:number,d=1)=>Number.isFinite(n)?n.toFixed(d):'—';
 
 /** Horizontal bar chart for two-colour pair win-rate forecasts (Sakiyomi feature-2 design). */
-export function DeckColorChart({rows,mean,names,actual}:{rows:Row[];mean:number;names:Record<string,string>;actual?:Record<string,ActualPair>|null}){
+export function DeckColorChart({rows,mean,names,actual,sort='pred'}:{rows:Row[];mean:number;names:Record<string,string>;actual?:Record<string,ActualPair>|null;sort?:'pred'|'obs'|'err_desc'|'err_asc'}){
  const {lang,tr}=useLang();
- const sorted=[...rows].sort((a,b)=>a.rank-b.rank);
  const obs=(pair:string)=>actual?.[pair]&&Number.isFinite(actual[pair].wr_pct)?actual[pair]:null;
+ // Pairs without an observed value go last for the observed / error orders; ties keep the forecast order.
+ const errOf=(r:Row)=>obs(r.pair)?Math.abs(obs(r.pair)!.wr_pct-r.predicted_wr_pct):null;
+ const key=(r:Row)=>sort==='obs'?(obs(r.pair)?.wr_pct??null):errOf(r);
+ const sorted=[...rows].sort((a,b)=>{if(sort==='pred')return a.rank-b.rank;const x=key(a),y=key(b);if(x==null||y==null)return x==null&&y==null?a.rank-b.rank:x==null?1:-1;return (sort==='err_asc'?x-y:y-x)||a.rank-b.rank;});
  const all=sorted.flatMap(r=>[r.range80[0],r.range80[1],...(obs(r.pair)?[obs(r.pair)!.wr_pct]:[])]);
  const lo=Math.floor(Math.min(...all))-1;
  const hi=Math.ceil(Math.max(...all))+1;
