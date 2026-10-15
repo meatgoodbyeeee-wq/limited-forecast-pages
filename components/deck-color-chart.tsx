@@ -3,7 +3,7 @@ import {useLang,pt} from '@/lib/i18n';
 
 type Row={pair:string;rank:number;predicted_wr_pct:number;delta_pp:number;range80:[number,number]};
 
-const MANA:Record<string,string>={W:'#EFE6C8',U:'#4EA8F2',B:'#9A86B4',R:'#F2694F',G:'#43BE78'};
+export const MANA:Record<string,string>={W:'#EFE6C8',U:'#4EA8F2',B:'#9A86B4',R:'#F2694F',G:'#43BE78'};
 const MINT='#5EEAC4',PINK='#FF5C8A';
 export type ActualPair={wr_pct:number;games:number};
 const f=(n:number,d=1)=>Number.isFinite(n)?n.toFixed(d):'—';
