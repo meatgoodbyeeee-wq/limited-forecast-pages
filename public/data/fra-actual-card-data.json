@@ -4,2335 +4,2335 @@
  "source_type": "Card Data",
  "expansion": "FRA",
  "format": "PremierDraft",
- "source_url": "https://www.17lands.com/api/card_data?expansion=FRA&event_type=PremierDraft&start_date=2026-09-29&end_date=2026-10-18",
+ "source_url": "https://www.17lands.com/api/card_data?expansion=FRA&event_type=PremierDraft&start_date=2026-09-29&end_date=2026-10-19",
  "attribution": "17Lands (17lands.com) Card Data",
  "window_start": "2026-09-29",
- "window_end": "2026-10-18",
- "data_date": "2026-10-18",
+ "window_end": "2026-10-19",
+ "data_date": "2026-10-19",
  "final": false,
- "fetched_at": "2026-10-18T18:15:15.453Z",
- "fetched_date_jst": "2026-10-19",
+ "fetched_at": "2026-10-19T20:40:54.571Z",
+ "fetched_date_jst": "2026-10-20",
  "public_dataset_available": false,
  "cards": [
   {
    "id": "7bI0PcRzkk2ZTgefeSVKCo",
    "name": "Emrakul, the Exigent Doom",
-   "gih": 52.34721,
-   "gih_n": 3387,
-   "alsa": 2.2453619,
-   "seen_n": 5498
+   "gih": 52.136507,
+   "gih_n": 3487,
+   "alsa": 2.2594803,
+   "seen_n": 5696
   },
   {
    "id": "3HAQD1yonKA23EhkP2Hfwo",
    "name": "Academic Ascent",
-   "gih": 52.610274999999994,
-   "gih_n": 9635,
-   "alsa": 7.7104039,
-   "seen_n": 203183
+   "gih": 52.670050999999994,
+   "gih_n": 9850,
+   "alsa": 7.7187352,
+   "seen_n": 210460
   },
   {
    "id": "64xk9oArbBqObSOmkZjRSM",
    "name": "Blossom-Blessed Angel",
-   "gih": 56.084395,
-   "gih_n": 50572,
-   "alsa": 4.9970986,
-   "seen_n": 158202
+   "gih": 56.042325000000005,
+   "gih_n": 52546,
+   "alsa": 4.9909698,
+   "seen_n": 163894
   },
   {
    "id": "7zwnWgc2oP4J0Kcmbx2poO",
    "name": "Campus Crier",
-   "gih": 55.761936999999996,
-   "gih_n": 61698,
-   "alsa": 5.5166493,
-   "seen_n": 173911
+   "gih": 55.740758,
+   "gih_n": 63894,
+   "alsa": 5.5139473,
+   "seen_n": 180071
   },
   {
    "id": "1AdYdIsiGlq6dNtICkGA4G",
    "name": "Enlightened Confidant",
-   "gih": 57.940347,
-   "gih_n": 4962,
-   "alsa": 2.0396747,
-   "seen_n": 5041
+   "gih": 58.018959,
+   "gih_n": 5169,
+   "alsa": 2.0405975,
+   "seen_n": 5222
   },
   {
    "id": "21XISFuIDPHNKjrYzfOA3I",
    "name": "Fateshaper Aspirant",
-   "gih": 52.124931,
-   "gih_n": 19883,
-   "alsa": 6.9969811,
-   "seen_n": 196763
+   "gih": 52.09099700000001,
+   "gih_n": 20660,
+   "alsa": 6.9984693,
+   "seen_n": 203832
   },
   {
    "id": "69JEJGOv5ke8NLdp8IvxcH",
    "name": "Flickering Hound",
-   "gih": 45.584125,
-   "gih_n": 3578,
-   "alsa": 3.864125,
-   "seen_n": 19908
+   "gih": 45.461979,
+   "gih_n": 3669,
+   "alsa": 3.8850191,
+   "seen_n": 20673
   },
   {
    "id": "zIO406uJacZgxyYL5tMCF",
    "name": "Generous Revival",
-   "gih": 57.343714999999996,
-   "gih_n": 22475,
-   "alsa": 4.5450577,
-   "seen_n": 66437
+   "gih": 57.326796,
+   "gih_n": 23455,
+   "alsa": 4.5379698,
+   "seen_n": 68673
   },
   {
    "id": "754dKLWKVPEUfS8kfO48Xi",
    "name": "Germinate Recruits",
-   "gih": 47.991071000000005,
-   "gih_n": 1344,
-   "alsa": 5.2314598,
-   "seen_n": 27292
+   "gih": 48.020528,
+   "gih_n": 1364,
+   "alsa": 5.2458768,
+   "seen_n": 28376
   },
   {
    "id": "2pYLLmTvztHdWqLo6XphC5",
    "name": "Graft Surgeon",
-   "gih": 51.575174000000004,
-   "gih_n": 15903,
-   "alsa": 7.081122,
-   "seen_n": 195619
+   "gih": 51.561829,
+   "gih_n": 16295,
+   "alsa": 7.0899083,
+   "seen_n": 202573
   },
   {
    "id": "5wHXP6TFgZqQfgqqybSLVf",
    "name": "Guiding Hydra",
-   "gih": 57.464108,
-   "gih_n": 13652,
-   "alsa": 1.6082902,
-   "seen_n": 7720
+   "gih": 57.358357000000005,
+   "gih_n": 14120,
+   "alsa": 1.6076281,
+   "seen_n": 8023
   },
   {
    "id": "0L6J4fHJE2u1yiCcVwEZl",
    "name": "Hexhaven Battalion",
-   "gih": 57.622398,
-   "gih_n": 82579,
-   "alsa": 4.3393289,
-   "seen_n": 141049
+   "gih": 57.61645,
+   "gih_n": 85788,
+   "alsa": 4.3258172,
+   "seen_n": 145686
   },
   {
    "id": "5lOh9STU2OnanS2NEsq9wf",
    "name": "Kindred Judgment",
-   "gih": 61.819316,
-   "gih_n": 14434,
-   "alsa": 2.9488787,
-   "seen_n": 14358
+   "gih": 61.79760399999999,
+   "gih_n": 15109,
+   "alsa": 2.9316707,
+   "seen_n": 14796
   },
   {
    "id": "5dZz7O2PjwfQwEcKKFFJg2",
    "name": "Loyal Tutor",
    "gih": null,
-   "gih_n": 277,
-   "alsa": 6.329297,
-   "seen_n": 33942
+   "gih_n": 290,
+   "alsa": 6.3323021,
+   "seen_n": 35233
   },
   {
    "id": "7Ert3SGOU0S4keqPs1eypm",
    "name": "Memory Trap",
-   "gih": 55.92935,
-   "gih_n": 72470,
-   "alsa": 3.2092023,
-   "seen_n": 103670
+   "gih": 55.943163,
+   "gih_n": 75162,
+   "alsa": 3.2088772,
+   "seen_n": 107331
   },
   {
    "id": "2cesSRgvrE9QddG3e7K6pE",
    "name": "Predictive Preparations",
-   "gih": 48.79145,
-   "gih_n": 10012,
-   "alsa": 7.4406021,
-   "seen_n": 199502
+   "gih": 48.769772,
+   "gih_n": 10242,
+   "alsa": 7.4505316,
+   "seen_n": 206809
   },
   {
    "id": "1fejIWqePFNPqcjQhhsLB3",
    "name": "Prophesied End",
-   "gih": 55.4069,
-   "gih_n": 28029,
-   "alsa": 3.1230763,
-   "seen_n": 45744
+   "gih": 55.377257,
+   "gih_n": 28853,
+   "alsa": 3.1223787,
+   "seen_n": 47304
   },
   {
    "id": "4t7oOoLZqtrGwocvJ8H6kj",
    "name": "Refute Destiny",
-   "gih": 53.061223999999996,
-   "gih_n": 2401,
-   "alsa": 7.7014686,
-   "seen_n": 94305
+   "gih": 53.008129999999994,
+   "gih_n": 2460,
+   "alsa": 7.7141514,
+   "seen_n": 97821
   },
   {
    "id": "1WY0Q5EkTi18JwRubxLyAr",
    "name": "Repurposed Enforcer",
-   "gih": 59.802507000000006,
-   "gih_n": 13165,
-   "alsa": 2.0070502,
-   "seen_n": 9787
+   "gih": 59.838097999999995,
+   "gih_n": 13712,
+   "alsa": 2.0074781,
+   "seen_n": 10163
   },
   {
    "id": "2PFrxLGZjAK2WaafNCtYOa",
    "name": "Return to the Light Realms",
-   "gih": 49.601276,
-   "gih_n": 1254,
-   "alsa": 4.339559,
-   "seen_n": 11565
+   "gih": 49.727202,
+   "gih_n": 1283,
+   "alsa": 4.3381319,
+   "seen_n": 11948
   },
   {
    "id": "51HQ48dK15wNrNjLO64zNE",
    "name": "Shatterwing Pegasus",
-   "gih": 53.716139,
-   "gih_n": 30529,
-   "alsa": 6.6957389,
-   "seen_n": 192108
+   "gih": 53.581119,
+   "gih_n": 31694,
+   "alsa": 6.7019028,
+   "seen_n": 199123
   },
   {
    "id": "5iwv1eyO69ZShIMMLJ3uwn",
    "name": "Surgical Precision",
-   "gih": 57.431485,
-   "gih_n": 69145,
-   "alsa": 4.3149252,
-   "seen_n": 141405
+   "gih": 57.41694699999999,
+   "gih_n": 71822,
+   "alsa": 4.3103097,
+   "seen_n": 146357
   },
   {
    "id": "3zKk0ZOcr6OZVboGebf5DV",
    "name": "Unflinching Hortimancer",
-   "gih": 53.931931,
-   "gih_n": 39548,
-   "alsa": 5.2081158,
-   "seen_n": 159392
+   "gih": 53.883639,
+   "gih_n": 40632,
+   "alsa": 5.2104224,
+   "seen_n": 165163
   },
   {
    "id": "3UxvNkhPUZAqpHxkPDdIjY",
    "name": "Your Fate Ends Here",
-   "gih": 57.21185800000001,
-   "gih_n": 34575,
-   "alsa": 3.0193868,
-   "seen_n": 43741
+   "gih": 57.195921999999996,
+   "gih_n": 35805,
+   "alsa": 3.0132956,
+   "seen_n": 45278
   },
   {
    "id": "7mo8ZE818h5oKynkPnaAzk",
    "name": "Countersculpt",
-   "gih": 59.91200800000001,
-   "gih_n": 54323,
-   "alsa": 3.821685,
-   "seen_n": 55015
+   "gih": 59.830183000000005,
+   "gih_n": 56296,
+   "alsa": 3.8034263,
+   "seen_n": 56737
   },
   {
    "id": "1hIuDJFkptxtWMbBi4i7Cb",
    "name": "Cruel Calculations",
-   "gih": 49.570552,
-   "gih_n": 815,
-   "alsa": 6.2858032,
-   "seen_n": 33733
+   "gih": 49.33655,
+   "gih_n": 829,
+   "alsa": 6.2839178,
+   "seen_n": 34989
   },
   {
    "id": "1s9yeBVNbq49DQ6JPLi93O",
    "name": "Cryotheory Adept",
-   "gih": 53.273702,
-   "gih_n": 30409,
-   "alsa": 6.8580141,
-   "seen_n": 194477
+   "gih": 53.218244999999996,
+   "gih_n": 31570,
+   "alsa": 6.8578155,
+   "seen_n": 201562
   },
   {
    "id": "2xgF9Cn9tZjdSa4e0JASFw",
    "name": "Diviner of Victory",
-   "gih": 59.728283999999995,
-   "gih_n": 16267,
-   "alsa": 2.5564085,
-   "seen_n": 13287
+   "gih": 59.627219,
+   "gih_n": 16900,
+   "alsa": 2.5522269,
+   "seen_n": 13786
   },
   {
    "id": "7iFwiCeI8XrTMBU0xgLBon",
    "name": "Divining Duelist",
-   "gih": 55.282545999999996,
-   "gih_n": 26332,
-   "alsa": 6.9026659,
-   "seen_n": 194608
+   "gih": 55.24626,
+   "gih_n": 27410,
+   "alsa": 6.9000953,
+   "seen_n": 201432
   },
   {
    "id": "43xm5ij0zbxQD2phKosbFg",
    "name": "Icy Reception",
-   "gih": 57.853637,
-   "gih_n": 88615,
-   "alsa": 5.2104601,
-   "seen_n": 162943
+   "gih": 57.797200000000004,
+   "gih_n": 92219,
+   "alsa": 5.1920456,
+   "seen_n": 168486
   },
   {
    "id": "4QM1ZfUrhx1fRVEy0XGFm7",
    "name": "Infinite Coursework",
-   "gih": 55.96961700000001,
-   "gih_n": 79913,
-   "alsa": 4.3306117,
-   "seen_n": 142073
+   "gih": 55.96746099999999,
+   "gih_n": 82732,
+   "alsa": 4.3216971,
+   "seen_n": 146983
   },
   {
    "id": "659LYTXO4cqaSSONOBpaFK",
    "name": "Jace's Machinations",
-   "gih": 57.68087200000001,
-   "gih_n": 15135,
-   "alsa": 2.4104051,
-   "seen_n": 12071
+   "gih": 57.681307000000004,
+   "gih_n": 15733,
+   "alsa": 2.402899,
+   "seen_n": 12487
   },
   {
    "id": "6K7E87Yldqz0CqiUZTO8sx",
    "name": "Mindseeker Oculus",
-   "gih": 60.016309,
-   "gih_n": 121407,
-   "alsa": 3.3895259,
-   "seen_n": 105880
+   "gih": 59.96977999999999,
+   "gih_n": 125745,
+   "alsa": 3.3718362,
+   "seen_n": 109005
   },
   {
    "id": "1hZRR2jqtju34l63vTvCQU",
    "name": "Perfected Theory",
-   "gih": 51.99397,
-   "gih_n": 7297,
-   "alsa": 6.624157,
-   "seen_n": 88372
+   "gih": 51.974471,
+   "gih_n": 7521,
+   "alsa": 6.631107,
+   "seen_n": 91555
   },
   {
    "id": "4atYzJut2UR58s15I9DHha",
    "name": "Plan for All Outcomes",
-   "gih": 59.320904,
-   "gih_n": 54013,
-   "alsa": 2.9962765,
-   "seen_n": 41896
+   "gih": 59.230495000000005,
+   "gih_n": 56140,
+   "alsa": 2.9834926,
+   "seen_n": 43314
   },
   {
    "id": "5MljzqPnj7I9Nakf2HatM5",
    "name": "Precise Redaction",
    "gih": null,
-   "gih_n": 313,
-   "alsa": 8.5028088,
-   "seen_n": 98974
+   "gih_n": 328,
+   "alsa": 8.506714,
+   "seen_n": 102472
   },
   {
    "id": "lMub2eaP7E1amklpSDRgb",
    "name": "Protege's Awakening",
-   "gih": 58.574793,
-   "gih_n": 84072,
-   "alsa": 5.264784,
-   "seen_n": 163031
+   "gih": 58.583498,
+   "gih_n": 87709,
+   "alsa": 5.2358375,
+   "seen_n": 167997
   },
   {
    "id": "3coQsAuRpkBoxb2HeeEeI0",
    "name": "Seasoned Cryomancer",
-   "gih": 59.227576000000006,
-   "gih_n": 7949,
-   "alsa": 1.7383571,
-   "seen_n": 4273
+   "gih": 59.25971,
+   "gih_n": 8213,
+   "alsa": 1.7410088,
+   "seen_n": 4421
   },
   {
    "id": "7dBhvmHWrfE0gsCCuLdvPQ",
    "name": "Semester Foreseer",
-   "gih": 53.908128,
-   "gih_n": 47414,
-   "alsa": 5.9878004,
-   "seen_n": 182957
+   "gih": 53.885651,
+   "gih_n": 49078,
+   "alsa": 5.9844205,
+   "seen_n": 189416
   },
   {
    "id": "3mVfPICYiXUYCaUVxqCuy4",
    "name": "Sphinx of False Conclusions",
-   "gih": 64.115222,
-   "gih_n": 18434,
-   "alsa": 1.6023911,
-   "seen_n": 7779
+   "gih": 63.925076999999995,
+   "gih_n": 19113,
+   "alsa": 1.598532,
+   "seen_n": 8038
   },
   {
    "id": "3dYsf7AmgITXEeAnqZgFkT",
    "name": "Sphinx's Approach",
-   "gih": 56.262194,
-   "gih_n": 31778,
-   "alsa": 7.5154187,
-   "seen_n": 199044
+   "gih": 56.185058,
+   "gih_n": 33395,
+   "alsa": 7.4914778,
+   "seen_n": 205816
   },
   {
    "id": "4N0FeZH17fYj1GBO2eH3Tj",
    "name": "Surveillance Phantasm",
-   "gih": 57.359678,
-   "gih_n": 97579,
-   "alsa": 4.8674291,
-   "seen_n": 153895
+   "gih": 57.309548,
+   "gih_n": 101128,
+   "alsa": 4.8546197,
+   "seen_n": 159155
   },
   {
    "id": "7cDrYpDwTS5QdkXomnVhg0",
    "name": "The Theorist, Jace Beleren",
-   "gih": 68.553459,
-   "gih_n": 8586,
-   "alsa": 1.2008704,
-   "seen_n": 2987
+   "gih": 68.595963,
+   "gih_n": 8967,
+   "alsa": 1.2010975,
+   "seen_n": 3098
   },
   {
    "id": "2HLTckp5zpiD5GSr1sURNS",
    "name": "Theorist's Proxy",
-   "gih": 57.267623,
-   "gih_n": 14427,
-   "alsa": 2.9831673,
-   "seen_n": 16159
+   "gih": 57.152402,
+   "gih_n": 14967,
+   "alsa": 2.9829981,
+   "seen_n": 16704
   },
   {
    "id": "0io1bgNAJWAzmMziOHXXq",
    "name": "Undulating Witness",
-   "gih": 55.91015,
-   "gih_n": 84541,
-   "alsa": 5.3031145,
-   "seen_n": 169530
+   "gih": 55.877977,
+   "gih_n": 88049,
+   "alsa": 5.2774116,
+   "seen_n": 175072
   },
   {
    "id": "2Y8lW8IxZvS38v91tj4iIM",
    "name": "Unsummon",
-   "gih": 57.376538,
-   "gih_n": 86504,
-   "alsa": 5.2381714,
-   "seen_n": 165108
+   "gih": 57.34125,
+   "gih_n": 89937,
+   "alsa": 5.2215181,
+   "seen_n": 170749
   },
   {
    "id": "4nOztdyBCKQg3PcJnu7kzI",
    "name": "Variable Chaser",
-   "gih": 57.560162999999996,
-   "gih_n": 13214,
-   "alsa": 2.725706,
-   "seen_n": 14448
+   "gih": 57.564789000000005,
+   "gih_n": 13814,
+   "alsa": 2.7258883,
+   "seen_n": 14972
   },
   {
    "id": "1TNgAqW8mvqwHPDAVu9LsP",
    "name": "Apex Witchstalker",
-   "gih": 55.612413000000004,
-   "gih_n": 75823,
-   "alsa": 5.2611323,
-   "seen_n": 168968
+   "gih": 55.634419,
+   "gih_n": 78899,
+   "alsa": 5.2431763,
+   "seen_n": 174392
   },
   {
    "id": "5zeRaetWPR4svp68oYNOGR",
    "name": "Bloodline Recollector",
-   "gih": 51.68000000000001,
-   "gih_n": 3125,
-   "alsa": 3.1646422,
-   "seen_n": 8315
+   "gih": 51.769496000000004,
+   "gih_n": 3193,
+   "alsa": 3.1818604,
+   "seen_n": 8622
   },
   {
    "id": "1Ogjka7QEYkvL7X81cJZmk",
    "name": "Break Under Pressure",
-   "gih": 59.640899999999995,
-   "gih_n": 45447,
-   "alsa": 2.94857,
-   "seen_n": 42796
+   "gih": 59.622586,
+   "gih_n": 47269,
+   "alsa": 2.9405427,
+   "seen_n": 44183
   },
   {
    "id": "2phGCulknqharBSezBhLPa",
    "name": "Cast Away Doubt",
-   "gih": 53.036561000000006,
-   "gih_n": 19611,
-   "alsa": 7.031512,
-   "seen_n": 195386
+   "gih": 53.033201,
+   "gih_n": 20391,
+   "alsa": 7.0327002,
+   "seen_n": 202323
   },
   {
    "id": "4GdfgMLPyrd2hgpvli0FVD",
    "name": "Dark Matter Manipulator",
-   "gih": 57.543471999999994,
-   "gih_n": 9949,
-   "alsa": 4.1470809,
-   "seen_n": 22627
+   "gih": 57.576637,
+   "gih_n": 10341,
+   "alsa": 4.1533473,
+   "seen_n": 23437
   },
   {
    "id": "77Dqj4t9np4LWYCX1IqEQB",
    "name": "Darklight Phoenix",
-   "gih": 53.44086,
-   "gih_n": 3720,
-   "alsa": 2.3826939,
-   "seen_n": 6125
+   "gih": 53.484770000000005,
+   "gih_n": 3874,
+   "alsa": 2.3887231,
+   "seen_n": 6367
   },
   {
    "id": "2NAxN8TCtSr5K3mjIZhdSs",
    "name": "Extended Absence",
-   "gih": 59.485009,
-   "gih_n": 98060,
-   "alsa": 3.25085,
-   "seen_n": 102061
+   "gih": 59.458427,
+   "gih_n": 102073,
+   "alsa": 3.2403681,
+   "seen_n": 105301
   },
   {
    "id": "7Av8PIQ6QEKjakby6MgU8L",
    "name": "Extrapolate the Impossible",
-   "gih": 48.387097000000004,
-   "gih_n": 558,
-   "alsa": 6.2638754,
-   "seen_n": 33963
+   "gih": 48.312611,
+   "gih_n": 563,
+   "alsa": 6.2746669,
+   "seen_n": 35199
   },
   {
    "id": "6RGGXKbrpW5GdEzsSbHqTW",
    "name": "Last Gasp",
-   "gih": 56.873723,
-   "gih_n": 82699,
-   "alsa": 3.5874005,
-   "seen_n": 116132
+   "gih": 56.900293999999995,
+   "gih_n": 85692,
+   "alsa": 3.5850028,
+   "seen_n": 120396
   },
   {
    "id": "4zdOnHzlVGFaK5FbrGM3OP",
    "name": "Lich's Relic",
-   "gih": 62.818635,
-   "gih_n": 17065,
-   "alsa": 1.6937129,
-   "seen_n": 8430
+   "gih": 62.64127499999999,
+   "gih_n": 17696,
+   "alsa": 1.6888353,
+   "seen_n": 8706
   },
   {
    "id": "01ps6syclnZ8wqYe25ttqG",
    "name": "Multiply by Zero",
-   "gih": 59.084433000000004,
-   "gih_n": 42815,
-   "alsa": 2.5937575,
-   "seen_n": 37453
+   "gih": 59.033595000000005,
+   "gih_n": 44412,
+   "alsa": 2.5900233,
+   "seen_n": 38690
   },
   {
    "id": "1YqmpbGEIaQSUvgJC3uGnN",
    "name": "Overwrite the Multiverse",
-   "gih": 65.758279,
-   "gih_n": 8183,
-   "alsa": 1.6513924,
-   "seen_n": 3950
+   "gih": 65.569144,
+   "gih_n": 8504,
+   "alsa": 1.6491056,
+   "seen_n": 4081
   },
   {
    "id": "01yiF3Bie7XkNBnDmcCbxR",
    "name": "Rampart Hunter",
-   "gih": 47.963378,
-   "gih_n": 5352,
-   "alsa": 8.033308,
-   "seen_n": 202984
+   "gih": 48.047663,
+   "gih_n": 5455,
+   "alsa": 8.0441114,
+   "seen_n": 210354
   },
   {
    "id": "msLNjbIGytCyY5cAHmgbB",
    "name": "Rank Rat",
-   "gih": 55.06517600000001,
-   "gih_n": 56079,
-   "alsa": 5.7780852,
-   "seen_n": 176365
+   "gih": 55.099149999999995,
+   "gih_n": 57892,
+   "alsa": 5.7877633,
+   "seen_n": 182810
   },
   {
    "id": "2kYq1UDIejUuBLr06wX6FI",
    "name": "Rewrite Regrets",
-   "gih": 59.254605000000005,
-   "gih_n": 42179,
-   "alsa": 4.054853,
-   "seen_n": 57882
+   "gih": 59.323652,
+   "gih_n": 44001,
+   "alsa": 4.0295239,
+   "seen_n": 59545
   },
   {
    "id": "5SCq705omR4jWNnp7z5JQo",
    "name": "Rise of the Deathbringer",
-   "gih": 55.77727,
-   "gih_n": 12679,
-   "alsa": 2.2282955,
-   "seen_n": 11288
+   "gih": 55.725074,
+   "gih_n": 13109,
+   "alsa": 2.2273663,
+   "seen_n": 11664
   },
   {
    "id": "SmTxH2Qd9Cl38B16kYot6",
    "name": "Sanctum Lurker",
-   "gih": 61.922573,
-   "gih_n": 16041,
-   "alsa": 1.6494161,
-   "seen_n": 8135
+   "gih": 61.895331,
+   "gih_n": 16662,
+   "alsa": 1.6448509,
+   "seen_n": 8419
   },
   {
    "id": "6yWyPmP0WkhcGn6B42plIw",
    "name": "Screeching Soulbreaker",
-   "gih": 53.771575000000006,
-   "gih_n": 28158,
-   "alsa": 6.2408291,
-   "seen_n": 181552
+   "gih": 53.697141,
+   "gih_n": 29063,
+   "alsa": 6.24803,
+   "seen_n": 188195
   },
   {
    "id": "5V1NoDjWAvXts35cMA5pW9",
    "name": "Silence the Echo",
-   "gih": 52.853322000000006,
-   "gih_n": 48610,
-   "alsa": 5.1755947,
-   "seen_n": 161850
+   "gih": 52.871618,
+   "gih_n": 50233,
+   "alsa": 5.1842825,
+   "seen_n": 167813
   },
   {
    "id": "6UDoGhwf35CBPlFo2m5Z7R",
    "name": "Solve for Disappointment",
-   "gih": 52.75784,
-   "gih_n": 15465,
-   "alsa": 7.3217204,
-   "seen_n": 195185
+   "gih": 52.772538999999995,
+   "gih_n": 15906,
+   "alsa": 7.3318972,
+   "seen_n": 202397
   },
   {
    "id": "7hm542uQ8Tm0dOoPQX4FRN",
    "name": "Terminal Criticism",
-   "gih": 52.190373,
-   "gih_n": 1849,
-   "alsa": 7.8076988,
-   "seen_n": 95106
+   "gih": 52.282377999999994,
+   "gih_n": 1884,
+   "alsa": 7.8193128,
+   "seen_n": 98546
   },
   {
    "id": "2WbywA7HPn6wdGmyAWYFkj",
    "name": "Theoretical Necromancer",
-   "gih": 55.321782,
-   "gih_n": 55752,
-   "alsa": 6.5720261,
-   "seen_n": 189355
+   "gih": 55.35751,
+   "gih_n": 58348,
+   "alsa": 6.5553044,
+   "seen_n": 196015
   },
   {
    "id": "4lIfShNHUQyOmOLR9Qi0in",
    "name": "Void Extrapolator",
-   "gih": 55.619597,
-   "gih_n": 43028,
-   "alsa": 7.1102623,
-   "seen_n": 194645
+   "gih": 55.594617,
+   "gih_n": 44659,
+   "alsa": 7.1098859,
+   "seen_n": 201682
   },
   {
    "id": "6CfKJ0G5TzRVBht2pXJcL3",
    "name": "Vraska's Final Mercy",
-   "gih": 54.508826,
-   "gih_n": 10424,
-   "alsa": 2.4842753,
-   "seen_n": 12846
+   "gih": 54.611111,
+   "gih_n": 10800,
+   "alsa": 2.4934285,
+   "seen_n": 13315
   },
   {
    "id": "7FVGUea9EnsTl1Y6Tg0O6R",
    "name": "Ajani's Anguish",
-   "gih": 56.239058,
-   "gih_n": 12566,
-   "alsa": 1.9135067,
-   "seen_n": 9573
+   "gih": 56.180982,
+   "gih_n": 13040,
+   "alsa": 1.9150136,
+   "seen_n": 9931
   },
   {
    "id": "4tZCwc5wmWPkGMm8DtM3tA",
    "name": "Artifist Acumen",
-   "gih": 49.083572,
-   "gih_n": 5947,
-   "alsa": 8.3090866,
-   "seen_n": 205182
+   "gih": 49.045424999999994,
+   "gih_n": 6076,
+   "alsa": 8.319608,
+   "seen_n": 212770
   },
   {
    "id": "6OURQ6p9ieXfSlsvSnvRUu",
    "name": "Awaken the Inferno",
-   "gih": 55.90214100000001,
-   "gih_n": 71940,
-   "alsa": 4.6209366,
-   "seen_n": 151782
+   "gih": 55.947714000000005,
+   "gih_n": 74743,
+   "alsa": 4.6092137,
+   "seen_n": 156853
   },
   {
    "id": "1jkxvobDvxP9Z0dOiD5L2W",
    "name": "Blazing Crescendo",
-   "gih": 51.689389,
-   "gih_n": 10122,
-   "alsa": 8.0428682,
-   "seen_n": 204324
+   "gih": 51.66714999999999,
+   "gih_n": 10347,
+   "alsa": 8.0517249,
+   "seen_n": 211697
   },
   {
    "id": "aNHlouqO1a4AdvwcDoJ5L",
    "name": "Chandra's Emberling",
-   "gih": 51.557356,
-   "gih_n": 19745,
-   "alsa": 7.0422187,
-   "seen_n": 191550
+   "gih": 51.763729000000005,
+   "gih_n": 20468,
+   "alsa": 7.0532259,
+   "seen_n": 198531
   },
   {
    "id": "6qcSTAUIxz5DTrJs7IXqLz",
    "name": "Command the Stage",
-   "gih": 49.690083,
-   "gih_n": 10648,
-   "alsa": 5.5783256,
-   "seen_n": 74918
+   "gih": 49.758322,
+   "gih_n": 10965,
+   "alsa": 5.5932249,
+   "seen_n": 77844
   },
   {
    "id": "1BrzcBFb7SkHGrJRjP1CYi",
    "name": "Craterclaw Colossus",
-   "gih": 56.951797000000006,
-   "gih_n": 3589,
-   "alsa": 2.928173,
-   "seen_n": 7351
+   "gih": 56.930157,
+   "gih_n": 3694,
+   "alsa": 2.9398318,
+   "seen_n": 7612
   },
   {
    "id": "7LQEGY3ROl962RLo4SriCM",
    "name": "Curse-Marred Demon",
-   "gih": 56.320828999999996,
-   "gih_n": 11383,
-   "alsa": 2.1122286,
-   "seen_n": 10639
+   "gih": 56.362402,
+   "gih_n": 11788,
+   "alsa": 2.1197936,
+   "seen_n": 11044
   },
   {
    "id": "2i6yC0WeocN71c3QsvTJh",
    "name": "Draconic Visitor",
-   "gih": 53.555695,
-   "gih_n": 9534,
-   "alsa": 2.0591012,
-   "seen_n": 10169
+   "gih": 53.443526,
+   "gih_n": 9801,
+   "alsa": 2.0635026,
+   "seen_n": 10535
   },
   {
    "id": "6rhrUvULK909WgGd4uqsbX",
    "name": "Eardrum Rattler",
-   "gih": 49.276348,
-   "gih_n": 10295,
-   "alsa": 8.1764617,
-   "seen_n": 206073
+   "gih": 49.254157,
+   "gih_n": 10525,
+   "alsa": 8.1884332,
+   "seen_n": 213439
   },
   {
    "id": "3Koiz1rMKrQA0DLPWMFKF6",
    "name": "Essence Burn",
-   "gih": 48.257656,
-   "gih_n": 947,
-   "alsa": 7.9793618,
-   "seen_n": 95987
+   "gih": 48.500517,
+   "gih_n": 967,
+   "alsa": 7.9911955,
+   "seen_n": 99381
   },
   {
    "id": "2XfrAG26AQnGO3ONvxNVPR",
    "name": "Face Yourself",
-   "gih": 54.922909,
-   "gih_n": 8237,
-   "alsa": 3.9326698,
-   "seen_n": 20897
+   "gih": 54.945949000000006,
+   "gih_n": 8603,
+   "alsa": 3.9192906,
+   "seen_n": 21596
   },
   {
    "id": "7rp09NHYYZXFX397nDtwjJ",
    "name": "Fulminous Forte",
-   "gih": 56.913201,
-   "gih_n": 36763,
-   "alsa": 2.9893879,
-   "seen_n": 43818
+   "gih": 56.881434,
+   "gih_n": 37979,
+   "alsa": 2.9906493,
+   "seen_n": 45344
   },
   {
    "id": "5R5WIip9BDjtgRMkzEZxJe",
    "name": "Hallway Heckler",
-   "gih": 52.155648,
-   "gih_n": 23566,
-   "alsa": 7.050448,
-   "seen_n": 193962
+   "gih": 52.182507,
+   "gih_n": 24284,
+   "alsa": 7.0604768,
+   "seen_n": 201102
   },
   {
    "id": "3OOq0ro4r8o4Iqy7AheXT3",
    "name": "Heartstring Puller",
-   "gih": 54.665698,
-   "gih_n": 46799,
-   "alsa": 6.0629296,
-   "seen_n": 180853
+   "gih": 54.603194,
+   "gih_n": 48336,
+   "alsa": 6.0691551,
+   "seen_n": 187535
   },
   {
    "id": "7fCYjKuNbdvA0VV2DUujHX",
    "name": "Identity Echo",
    "gih": null,
-   "gih_n": 364,
-   "alsa": 6.1838323,
-   "seen_n": 32769
+   "gih_n": 378,
+   "alsa": 6.1970633,
+   "seen_n": 33984
   },
   {
    "id": "4nUKpGIGiHcFC0cLO7eYQm",
    "name": "Master of Barbs",
-   "gih": 53.168533,
-   "gih_n": 7322,
-   "alsa": 3.2814375,
-   "seen_n": 16835
+   "gih": 53.267931000000004,
+   "gih_n": 7543,
+   "alsa": 3.2949033,
+   "seen_n": 17521
   },
   {
    "id": "2oZf62Upza01G6IfqTbf1M",
    "name": "No Admittance",
-   "gih": 56.729575,
-   "gih_n": 76461,
-   "alsa": 3.3542114,
-   "seen_n": 109014
+   "gih": 56.734436,
+   "gih_n": 79190,
+   "alsa": 3.3539407,
+   "seen_n": 112937
   },
   {
    "id": "1vtyrCY2U0A7TdgmvsFb4A",
    "name": "Pompous Battlemage",
-   "gih": 53.416537,
-   "gih_n": 6410,
-   "alsa": 3.8673167,
-   "seen_n": 20922
+   "gih": 53.423204999999996,
+   "gih_n": 6602,
+   "alsa": 3.876374,
+   "seen_n": 21743
   },
   {
    "id": "AMQdUSA0TrtEdeWFVi3Ko",
    "name": "Pyre Rhymer",
-   "gih": 50.684713,
-   "gih_n": 6280,
-   "alsa": 3.4988501,
-   "seen_n": 18262
+   "gih": 50.657997,
+   "gih_n": 6459,
+   "alsa": 3.5155191,
+   "seen_n": 19041
   },
   {
    "id": "23Z9eE2i4DaGlbgjMBDaM3",
    "name": "Skilled Battlecarver",
-   "gih": 52.902998999999994,
-   "gih_n": 39907,
-   "alsa": 6.5167954,
-   "seen_n": 187670
+   "gih": 52.891197999999996,
+   "gih_n": 41194,
+   "alsa": 6.5226436,
+   "seen_n": 194404
   },
   {
    "id": "3TXol4pgk9OATdQJyTobWd",
    "name": "Stingcaster Mage",
-   "gih": 56.709202999999995,
-   "gih_n": 5172,
-   "alsa": 2.0882993,
-   "seen_n": 5051
+   "gih": 56.700839,
+   "gih_n": 5365,
+   "alsa": 2.086907,
+   "seen_n": 5270
   },
   {
    "id": "2jwtB8FM1GC2exxMOaO7TE",
    "name": "Tether Technician",
-   "gih": 52.464059,
-   "gih_n": 15929,
-   "alsa": 7.5469046,
-   "seen_n": 199991
+   "gih": 52.559043,
+   "gih_n": 16471,
+   "alsa": 7.5560072,
+   "seen_n": 207161
   },
   {
    "id": "3t0kFQmd0TpDolqwKD1Hcf",
    "name": "Violent Echoes",
-   "gih": 59.400813,
-   "gih_n": 38619,
-   "alsa": 2.9036237,
-   "seen_n": 41753
+   "gih": 59.425596999999996,
+   "gih_n": 40146,
+   "alsa": 2.8990091,
+   "seen_n": 43192
   },
   {
    "id": "1o209RwudUeX7QbSB1ZvYb",
    "name": "Wrath of the Bloodmane",
-   "gih": 55.933171,
-   "gih_n": 71825,
-   "alsa": 3.9227791,
-   "seen_n": 127595
+   "gih": 55.853216,
+   "gih_n": 74395,
+   "alsa": 3.9198063,
+   "seen_n": 132130
   },
   {
    "id": "7nNL946Kz9UgLwqhy2194e",
    "name": "Arcane Amphisbaena",
-   "gih": 55.89794,
-   "gih_n": 73212,
-   "alsa": 4.3313504,
-   "seen_n": 143223
+   "gih": 55.810335,
+   "gih_n": 75839,
+   "alsa": 4.327666,
+   "seen_n": 148276
   },
   {
    "id": "3SmHGBKWlXwh914lHA3IQq",
    "name": "Bestial Incursion",
-   "gih": 56.328118,
-   "gih_n": 69926,
-   "alsa": 4.8439614,
-   "seen_n": 156237
+   "gih": 56.341555,
+   "gih_n": 72293,
+   "alsa": 4.837279,
+   "seen_n": 161442
   },
   {
    "id": "1bGXN6CUCC0pfqPnNQ9fp7",
    "name": "Budding Insurgent",
-   "gih": 50.932427999999994,
-   "gih_n": 17374,
-   "alsa": 6.9758065,
-   "seen_n": 194846
+   "gih": 50.892505,
+   "gih_n": 17759,
+   "alsa": 6.9854273,
+   "seen_n": 202021
   },
   {
    "id": "55aoTeerYN3dGdcqKj5F86",
    "name": "Carnivorous Cultivator",
-   "gih": 58.908855,
-   "gih_n": 13857,
-   "alsa": 2.2525244,
-   "seen_n": 11587
+   "gih": 58.836689,
+   "gih_n": 14304,
+   "alsa": 2.2573309,
+   "seen_n": 12004
   },
   {
    "id": "3C9jOUOowb3gV0yB9bWvUK",
    "name": "Compel Brutality",
-   "gih": 54.652916,
-   "gih_n": 67001,
-   "alsa": 4.3410931,
-   "seen_n": 142014
+   "gih": 54.647366,
+   "gih_n": 69222,
+   "alsa": 4.3429142,
+   "seen_n": 147273
   },
   {
    "id": "EgOVmnO8jCQNWv9lCnfh7",
    "name": "Flourishing Grapple",
-   "gih": 44.210526,
-   "gih_n": 760,
-   "alsa": 8.2309838,
-   "seen_n": 96444
+   "gih": 44.343303,
+   "gih_n": 769,
+   "alsa": 8.2408581,
+   "seen_n": 99843
   },
   {
    "id": "vG1ZnMOmXzdT16Vq79BGQ",
    "name": "Gardenize",
    "gih": null,
-   "gih_n": 372,
-   "alsa": 5.8976329,
-   "seen_n": 30840
+   "gih_n": 380,
+   "alsa": 5.9091934,
+   "seen_n": 31936
   },
   {
    "id": "2DjYznMWeDfbETlQSOlO62",
    "name": "Greenhouse Propagator",
-   "gih": 54.397861000000006,
-   "gih_n": 52355,
-   "alsa": 4.464857,
-   "seen_n": 143855
+   "gih": 54.434307000000004,
+   "gih_n": 54146,
+   "alsa": 4.4676879,
+   "seen_n": 149108
   },
   {
    "id": "6MpKKH71ix8PIkI2KwetCZ",
    "name": "Heartwood Crafter",
-   "gih": 56.821918000000004,
-   "gih_n": 32850,
-   "alsa": 3.5369028,
-   "seen_n": 51866
+   "gih": 56.819050000000004,
+   "gih_n": 34015,
+   "alsa": 3.5335783,
+   "seen_n": 53621
   },
   {
    "id": "1YPVhItf9FTyUC2XlLIhJb",
    "name": "Hexhaven Invigorator",
-   "gih": 54.542203,
-   "gih_n": 2796,
-   "alsa": 2.8228814,
-   "seen_n": 7080
+   "gih": 54.596295,
+   "gih_n": 2861,
+   "alsa": 2.8225037,
+   "seen_n": 7341
   },
   {
    "id": "2sW7B8vcAbQKzDwgQHvRaq",
    "name": "Hungering Puppetbeast",
-   "gih": 61.608913,
-   "gih_n": 14631,
-   "alsa": 1.7881539,
-   "seen_n": 8813
+   "gih": 61.7357,
+   "gih_n": 15210,
+   "alsa": 1.7870076,
+   "seen_n": 9113
   },
   {
    "id": "1KI7gUbJxeMs4RSoOEvRgP",
    "name": "Hunter's Axe",
-   "gih": 51.143201000000005,
-   "gih_n": 6648,
-   "alsa": 6.7338256,
-   "seen_n": 87221
+   "gih": 51.237984000000004,
+   "gih_n": 6866,
+   "alsa": 6.7344555,
+   "seen_n": 90418
   },
   {
    "id": "5CpNCmB8CexpfP0Pj5mH9j",
    "name": "Inspired Tethermage",
-   "gih": 51.664781000000005,
-   "gih_n": 32707,
-   "alsa": 6.4525651,
-   "seen_n": 188627
+   "gih": 51.614716,
+   "gih_n": 33814,
+   "alsa": 6.4579374,
+   "seen_n": 195625
   },
   {
    "id": "78Budn5GOm04yJXZ4ERrhC",
    "name": "Omnipresence",
    "gih": null,
    "gih_n": 30,
-   "alsa": 5.6111323,
-   "seen_n": 15720
+   "alsa": 5.6187734,
+   "seen_n": 16321
   },
   {
    "id": "6zZPkXpKpi4P4fEJXuA1E7",
    "name": "Puppet Crafting",
-   "gih": 51.26924699999999,
-   "gih_n": 2403,
-   "alsa": 4.844911,
-   "seen_n": 25624
+   "gih": 51.056051999999994,
+   "gih_n": 2462,
+   "alsa": 4.8490261,
+   "seen_n": 26594
   },
   {
    "id": "1ZNR1IotKdOQsL8a1YSjYq",
    "name": "Restore with Empathy",
-   "gih": 54.927848999999995,
-   "gih_n": 20374,
-   "alsa": 5.790846,
-   "seen_n": 83111
+   "gih": 54.987176000000005,
+   "gih_n": 21445,
+   "alsa": 5.7679334,
+   "seen_n": 85915
   },
   {
    "id": "5pqCWvhVzLY0oI3AbdSy1J",
    "name": "Simulacrum Shaper",
-   "gih": 59.716165,
-   "gih_n": 13529,
-   "alsa": 1.9409938,
-   "seen_n": 9660
+   "gih": 59.762007,
+   "gih_n": 14034,
+   "alsa": 1.939594,
+   "seen_n": 9999
   },
   {
    "id": "3mLlh2dZW0XzdUyfShJBhL",
    "name": "Something Worth Saving",
-   "gih": 56.922603,
-   "gih_n": 45402,
-   "alsa": 6.9553515,
-   "seen_n": 194385
+   "gih": 56.994677,
+   "gih_n": 47529,
+   "alsa": 6.9369018,
+   "seen_n": 201131
   },
   {
    "id": "1sXU1GPyJTOl95XKQ9uQSS",
    "name": "Sureshot Sower",
-   "gih": 53.415819,
-   "gih_n": 41381,
-   "alsa": 6.4328987,
-   "seen_n": 190026
+   "gih": 53.393389,
+   "gih_n": 42627,
+   "alsa": 6.4308177,
+   "seen_n": 196835
   },
   {
    "id": "1nits8MTUmbOC942HGgenf",
    "name": "Tarmogoyf",
-   "gih": 56.785410999999996,
-   "gih_n": 4716,
-   "alsa": 2.6505361,
-   "seen_n": 6902
+   "gih": 56.589147,
+   "gih_n": 4902,
+   "alsa": 2.6503702,
+   "seen_n": 7159
   },
   {
    "id": "2x1IneGosfjbHgd6o4kanM",
    "name": "Tethermage's Advantage",
-   "gih": 50.944882,
-   "gih_n": 5080,
-   "alsa": 8.3707199,
-   "seen_n": 207151
+   "gih": 50.915045000000006,
+   "gih_n": 5191,
+   "alsa": 8.3741697,
+   "seen_n": 214531
   },
   {
    "id": "QwA7P3d38hWjZXaU2PPlT",
    "name": "Verdant Kraken",
-   "gih": 58.132988,
-   "gih_n": 13144,
-   "alsa": 1.7506409,
-   "seen_n": 8582
+   "gih": 58.159211,
+   "gih_n": 13592,
+   "alsa": 1.7518848,
+   "seen_n": 8887
   },
   {
    "id": "XwsiiGuD7T8vt5O8ZtUcR",
    "name": "Vinelasher Adept",
-   "gih": 55.67523,
-   "gih_n": 65548,
-   "alsa": 5.4385377,
-   "seen_n": 172309
+   "gih": 55.663472999999996,
+   "gih_n": 68262,
+   "alsa": 5.4207441,
+   "seen_n": 178277
   },
   {
    "id": "RVpTg0HiztNaboiL1FVlY",
    "name": "Wrecking Gecko",
-   "gih": 54.668731,
-   "gih_n": 32300,
-   "alsa": 6.6468086,
-   "seen_n": 190435
+   "gih": 54.638009,
+   "gih_n": 33592,
+   "alsa": 6.6421483,
+   "seen_n": 196995
   },
   {
    "id": "63my35ShXTsFtP2bgTd1B1",
    "name": "Aerid Konstrari",
-   "gih": 64.695446,
-   "gih_n": 6764,
-   "alsa": 1.7258026,
-   "seen_n": 4143
+   "gih": 64.717627,
+   "gih_n": 7012,
+   "alsa": 1.7250117,
+   "seen_n": 4262
   },
   {
    "id": "40pvsInwq2a57dNvuEWucM",
    "name": "Avatar of Burgeoning Echoes",
-   "gih": 60.357846,
-   "gih_n": 6092,
-   "alsa": 2.3264377,
-   "seen_n": 5269
+   "gih": 60.397745,
+   "gih_n": 6386,
+   "alsa": 2.3147571,
+   "seen_n": 5455
   },
   {
    "id": "5JsAyopuDedjZcFthhssOE",
    "name": "Blessed Ghoul",
-   "gih": 54.196073,
-   "gih_n": 29897,
-   "alsa": 5.9610713,
-   "seen_n": 183849
+   "gih": 54.155798,
+   "gih_n": 31053,
+   "alsa": 5.9602439,
+   "seen_n": 190386
   },
   {
    "id": "4l7GHVCIGPEVMHCVGDVPXP",
    "name": "Bloombrute",
-   "gih": 57.50360799999999,
-   "gih_n": 24948,
-   "alsa": 3.8973195,
-   "seen_n": 53535
+   "gih": 57.450587,
+   "gih_n": 25904,
+   "alsa": 3.8973217,
+   "seen_n": 55445
   },
   {
    "id": "7egJhQ3jQxqxoHdOudqNTW",
    "name": "Charge the Sanctum",
-   "gih": 50.361613000000006,
-   "gih_n": 7190,
-   "alsa": 7.8025359,
-   "seen_n": 203475
+   "gih": 50.379507000000004,
+   "gih_n": 7378,
+   "alsa": 7.8130241,
+   "seen_n": 210824
   },
   {
    "id": "2poiwYjFkcVUpU2WCChrEL",
    "name": "Clash of Elements",
-   "gih": 58.497612,
-   "gih_n": 32668,
-   "alsa": 5.3309715,
-   "seen_n": 75082
+   "gih": 58.51142,
+   "gih_n": 34019,
+   "alsa": 5.3188943,
+   "seen_n": 77637
   },
   {
    "id": "5xa3UHGDm9oXxBJJ4hyjVN",
    "name": "Craftwork Crusher",
-   "gih": 62.190645,
-   "gih_n": 37861,
-   "alsa": 3.4166593,
-   "seen_n": 45320
+   "gih": 62.185855999999994,
+   "gih_n": 39353,
+   "alsa": 3.3979354,
+   "seen_n": 46691
   },
   {
    "id": "5OcrIN4krPTptOYChcPshI",
    "name": "Denzilore Fatehold",
-   "gih": 61.641583,
-   "gih_n": 7907,
-   "alsa": 1.6250945,
-   "seen_n": 3969
+   "gih": 61.591356,
+   "gih_n": 8144,
+   "alsa": 1.6214233,
+   "seen_n": 4089
   },
   {
    "id": "6XHW8FlNM5zlMdOzvdq4r8",
    "name": "Desperate Futurescribe",
-   "gih": 57.826624,
-   "gih_n": 35622,
-   "alsa": 4.2401963,
-   "seen_n": 59289
+   "gih": 57.729862,
+   "gih_n": 36870,
+   "alsa": 4.2314572,
+   "seen_n": 61277
   },
   {
    "id": "11ApfUR9m3Mj473Y42h6wj",
    "name": "Emergency Phytomedic",
-   "gih": 54.404824,
-   "gih_n": 36653,
-   "alsa": 5.4163337,
-   "seen_n": 173445
+   "gih": 54.334189,
+   "gih_n": 37781,
+   "alsa": 5.4252357,
+   "seen_n": 179872
   },
   {
    "id": "4ocLwS2MVTRC4WD1Nt2aKT",
    "name": "Entrust the Spark",
    "gih": null,
-   "gih_n": 193,
-   "alsa": 6.6369218,
-   "seen_n": 35670
+   "gih_n": 207,
+   "alsa": 6.6387612,
+   "seen_n": 36970
   },
   {
    "id": "5sX4NAsuGUngbdAzYnaLkj",
    "name": "Fatehold Charm",
-   "gih": 57.923948,
-   "gih_n": 31531,
-   "alsa": 5.0212903,
-   "seen_n": 71535
+   "gih": 57.903938,
+   "gih_n": 32604,
+   "alsa": 5.0220824,
+   "seen_n": 74086
   },
   {
    "id": "47sfuLAEVm8uuCnRSkfkMI",
    "name": "Fatehold Chronologist",
-   "gih": 56.406164999999994,
-   "gih_n": 86487,
-   "alsa": 4.2604551,
-   "seen_n": 145073
+   "gih": 56.393764000000004,
+   "gih_n": 89861,
+   "alsa": 4.2547823,
+   "seen_n": 150085
   },
   {
    "id": "318z1ECdskbYTdVIqqfMVf",
    "name": "Ferocity of the Hunt",
-   "gih": 52.891839,
-   "gih_n": 27422,
-   "alsa": 5.968213,
-   "seen_n": 183062
+   "gih": 52.855523000000005,
+   "gih_n": 28226,
+   "alsa": 5.9760564,
+   "seen_n": 189696
   },
   {
    "id": "2WAUFOA4beLXtZlo3R0NwX",
    "name": "Frostbite Pyromental",
-   "gih": 50.560184,
-   "gih_n": 3481,
-   "alsa": 5.0956053,
-   "seen_n": 27624
+   "gih": 50.570554,
+   "gih_n": 3593,
+   "alsa": 5.1119707,
+   "seen_n": 28695
   },
   {
    "id": "6pt0iJ70B3Jb6YqDqg8eri",
    "name": "Grim Repriser",
-   "gih": 53.209008000000004,
-   "gih_n": 14210,
-   "alsa": 6.2489939,
-   "seen_n": 83243
+   "gih": 53.167498,
+   "gih_n": 14633,
+   "alsa": 6.2577489,
+   "seen_n": 86270
   },
   {
    "id": "1AG7mLwvPLS5NrJ1WGb5xA",
    "name": "Ingris Stingerquill",
-   "gih": 57.282880999999996,
-   "gih_n": 4387,
-   "alsa": 2.0731012,
-   "seen_n": 4911
+   "gih": 57.376691,
+   "gih_n": 4582,
+   "alsa": 2.0686275,
+   "seen_n": 5100
   },
   {
    "id": "17eamr9q0Jx6bWvB78cSjb",
    "name": "Konstrari Charm",
-   "gih": 56.023480000000006,
-   "gih_n": 14651,
-   "alsa": 6.1380943,
-   "seen_n": 83023
+   "gih": 55.992076999999995,
+   "gih_n": 15145,
+   "alsa": 6.1470004,
+   "seen_n": 86061
   },
   {
    "id": "1GTF4neNvfvkYb0mrwZlF9",
    "name": "Konstrari Improviser",
-   "gih": 54.067414,
-   "gih_n": 60284,
-   "alsa": 4.3716533,
-   "seen_n": 145442
+   "gih": 54.018479,
+   "gih_n": 62449,
+   "alsa": 4.3707747,
+   "seen_n": 150698
   },
   {
    "id": "3cHbMaU0u0qtkDCL5K8Br2",
    "name": "Kwia Vigorbloom",
-   "gih": 62.271772000000006,
-   "gih_n": 6189,
-   "alsa": 1.605648,
-   "seen_n": 3966
+   "gih": 62.174794,
+   "gih_n": 6419,
+   "alsa": 1.6031746,
+   "seen_n": 4095
   },
   {
    "id": "4HQx1KRu1HGGqm2FNrHkL7",
    "name": "Mind Meanderer",
-   "gih": 57.464546999999996,
-   "gih_n": 34905,
-   "alsa": 4.9113369,
-   "seen_n": 69093
+   "gih": 57.377638,
+   "gih_n": 36204,
+   "alsa": 4.8949344,
+   "seen_n": 71384
   },
   {
    "id": "35mcRpZ7Fo3KD4Y1kfDgAQ",
    "name": "Null Summoner",
-   "gih": 62.882355999999994,
-   "gih_n": 18471,
-   "alsa": 2.3401618,
-   "seen_n": 11374
+   "gih": 62.817708,
+   "gih_n": 19200,
+   "alsa": 2.3308072,
+   "seen_n": 11744
   },
   {
    "id": "4Y3nmHJpU2y1PxHYg3WMkE",
    "name": "Paradox Shaper",
-   "gih": 54.991861,
-   "gih_n": 33174,
-   "alsa": 5.6518862,
-   "seen_n": 80083
+   "gih": 54.981688,
+   "gih_n": 34677,
+   "alsa": 5.6381389,
+   "seen_n": 82855
   },
   {
    "id": "rYzRRrhPcHiXoKMI1TnL9",
    "name": "Primal Witchstalker",
-   "gih": 59.163444,
-   "gih_n": 32586,
-   "alsa": 5.3684569,
-   "seen_n": 73341
+   "gih": 59.147744,
+   "gih_n": 33910,
+   "alsa": 5.3486184,
+   "seen_n": 75782
   },
   {
    "id": "7vI2uebT67Q7SciKhRu19A",
    "name": "Proctor of Potential",
-   "gih": 60.254757000000005,
-   "gih_n": 12404,
-   "alsa": 3.1030437,
-   "seen_n": 15343
+   "gih": 60.29730599999999,
+   "gih_n": 12916,
+   "alsa": 3.1043462,
+   "seen_n": 15899
   },
   {
    "id": "3WNAfUbYGesC4XhvfHBd0B",
    "name": "Prudent Fateseer",
-   "gih": 55.752212,
-   "gih_n": 36160,
-   "alsa": 3.9597088,
-   "seen_n": 60857
+   "gih": 55.748737999999996,
+   "gih_n": 37443,
+   "alsa": 3.9536095,
+   "seen_n": 62987
   },
   {
    "id": "75mR8O7cgTMcf2oiWIT81j",
    "name": "Recursive Recruitment",
-   "gih": 60.86319999999999,
-   "gih_n": 52595,
-   "alsa": 3.6589284,
-   "seen_n": 51045
+   "gih": 60.809526000000005,
+   "gih_n": 54674,
+   "alsa": 3.6374538,
+   "seen_n": 52534
   },
   {
    "id": "4Up1Eo0DmaoNooLlYMy19x",
    "name": "Solarium Sentry",
-   "gih": 56.258083000000006,
-   "gih_n": 6959,
-   "alsa": 3.5884288,
-   "seen_n": 18546
+   "gih": 56.059768,
+   "gih_n": 7228,
+   "alsa": 3.5919942,
+   "seen_n": 19311
   },
   {
    "id": "2BpKme5faR6oKC31XmJBiO",
    "name": "Solitary Cell",
-   "gih": 50.705329,
-   "gih_n": 3828,
-   "alsa": 4.6638541,
-   "seen_n": 25007
+   "gih": 50.619156,
+   "gih_n": 3957,
+   "alsa": 4.6791119,
+   "seen_n": 26034
   },
   {
    "id": "6zxnp6jAshvrs7iIUQcRmR",
    "name": "Stingerquill Charm",
-   "gih": 55.295715,
-   "gih_n": 19884,
-   "alsa": 5.0878044,
-   "seen_n": 69894
+   "gih": 55.236299,
+   "gih_n": 20673,
+   "alsa": 5.0869715,
+   "seen_n": 72426
   },
   {
    "id": "616VHndNcFzVDmiKypVy4s",
    "name": "Stingerquill Voxmancer",
-   "gih": 54.220714,
-   "gih_n": 20044,
-   "alsa": 4.446908,
-   "seen_n": 65217
+   "gih": 54.233531,
+   "gih_n": 20751,
+   "alsa": 4.4558648,
+   "seen_n": 67735
   },
   {
    "id": "606zEw5ow82RqZ6kIeGpt1",
    "name": "Stinging Vitriol",
-   "gih": 53.748819999999995,
-   "gih_n": 5295,
-   "alsa": 4.3410255,
-   "seen_n": 22447
+   "gih": 53.595485,
+   "gih_n": 5493,
+   "alsa": 4.34577,
+   "seen_n": 23345
   },
   {
    "id": "1o56Gd6Dn6rT5EyjTifk3y",
    "name": "Tam's Resistance",
-   "gih": 56.23807600000001,
-   "gih_n": 52941,
-   "alsa": 5.6371351,
-   "seen_n": 180654
+   "gih": 56.195851,
+   "gih_n": 55287,
+   "alsa": 5.6229687,
+   "seen_n": 186767
   },
   {
    "id": "3SPfsdrk5Ffj2tANlyN07J",
    "name": "Tenured Tethermage",
-   "gih": 58.741381999999994,
-   "gih_n": 11314,
-   "alsa": 2.6385201,
-   "seen_n": 12731
+   "gih": 58.624788,
+   "gih_n": 11780,
+   "alsa": 2.6370662,
+   "seen_n": 13198
   },
   {
    "id": "3QS1Pd0g7D8qtsbjlc7sja",
    "name": "Theorix Charm",
-   "gih": 57.090127,
-   "gih_n": 34407,
-   "alsa": 5.0825744,
-   "seen_n": 72686
+   "gih": 57.075816,
+   "gih_n": 35586,
+   "alsa": 5.0777698,
+   "seen_n": 75222
   },
   {
    "id": "3dWYnO5iF3wku32B79p4zM",
    "name": "Theorix Metamage",
-   "gih": 54.297335999999994,
-   "gih_n": 45726,
-   "alsa": 6.7271978,
-   "seen_n": 192799
+   "gih": 54.307328,
+   "gih_n": 47721,
+   "alsa": 6.7205658,
+   "seen_n": 199861
   },
   {
    "id": "6gvmaMh8qu2lTLABlZZ4x6",
    "name": "Twinned Vision",
-   "gih": 58.106084,
-   "gih_n": 85442,
-   "alsa": 5.1063839,
-   "seen_n": 163756
+   "gih": 58.052283,
+   "gih_n": 89130,
+   "alsa": 5.0808418,
+   "seen_n": 168774
   },
   {
    "id": "2f3TAXX94XJIIs7phl0wUr",
    "name": "Twisted Fates",
-   "gih": 56.988797999999996,
-   "gih_n": 26335,
-   "alsa": 4.8048926,
-   "seen_n": 67122
+   "gih": 56.949066,
+   "gih_n": 27349,
+   "alsa": 4.8034342,
+   "seen_n": 69595
   },
   {
    "id": "2OcyZ5ibfKhNjhLDATVVhm",
    "name": "Uldaros Theorix",
-   "gih": 69.229913,
-   "gih_n": 8986,
-   "alsa": 1.626185,
-   "seen_n": 3903
+   "gih": 69.251423,
+   "gih_n": 9311,
+   "alsa": 1.6186335,
+   "seen_n": 4025
   },
   {
    "id": "2mtJ0uY7x8P6FY1mvgySx9",
    "name": "Vigorbloom Charm",
-   "gih": 56.670624000000004,
-   "gih_n": 21902,
-   "alsa": 4.743086,
-   "seen_n": 67797
+   "gih": 56.565924,
+   "gih_n": 22632,
+   "alsa": 4.7475741,
+   "seen_n": 70282
   },
   {
    "id": "eVxZHr4AbNLagh6jrrTWk",
    "name": "Vigorbloom Vanguard",
-   "gih": 56.444672,
-   "gih_n": 29280,
-   "alsa": 3.4331459,
-   "seen_n": 53714
+   "gih": 56.357309,
+   "gih_n": 30170,
+   "alsa": 3.4380603,
+   "seen_n": 55659
   },
   {
    "id": "66tvLegghgS0kkUTisH0MU",
    "name": "Vindictive Triumph",
-   "gih": 54.498044,
-   "gih_n": 6136,
-   "alsa": 3.9783974,
-   "seen_n": 20229
+   "gih": 54.49324800000001,
+   "gih_n": 6443,
+   "alsa": 3.9807308,
+   "seen_n": 21018
   },
   {
    "id": "6nsSpy0F1koxSR6xUUqRGL",
    "name": "Warrior's Blades",
-   "gih": 54.725285,
-   "gih_n": 20676,
-   "alsa": 4.7835182,
-   "seen_n": 67165
+   "gih": 54.728314,
+   "gih_n": 21477,
+   "alsa": 4.785042,
+   "seen_n": 69702
   },
   {
    "id": "w4p1Mr7VevyaDJXhAQgXP",
    "name": "Whiplash Wordsmith",
-   "gih": 49.377398,
-   "gih_n": 14857,
-   "alsa": 7.0175372,
-   "seen_n": 194273
+   "gih": 49.372713000000005,
+   "gih_n": 15304,
+   "alsa": 7.0306311,
+   "seen_n": 201331
   },
   {
    "id": "4ZDOVzQS93fgnqXfYi0D0Y",
    "name": "Woodwork Prodigy",
-   "gih": 52.342546999999996,
-   "gih_n": 24674,
-   "alsa": 3.620799,
-   "seen_n": 55195
+   "gih": 52.393105,
+   "gih_n": 25469,
+   "alsa": 3.6214519,
+   "seen_n": 57319
   },
   {
    "id": "0vCZnJs6j9wLVBZXRxRRs",
    "name": "Afterthought Sentry",
-   "gih": 52.93662500000001,
-   "gih_n": 14217,
-   "alsa": 7.8698898,
-   "seen_n": 206256
+   "gih": 53.025175999999995,
+   "gih_n": 14776,
+   "alsa": 7.865679,
+   "seen_n": 213563
   },
   {
    "id": "csS3I1pPWwPcKJveOLIYR",
    "name": "Archive Arbiter",
-   "gih": 55.867607,
-   "gih_n": 24533,
-   "alsa": 5.3363684,
-   "seen_n": 82591
+   "gih": 55.842423,
+   "gih_n": 25486,
+   "alsa": 5.3302955,
+   "seen_n": 85587
   },
   {
    "id": "2Hycax93GHZsqwLEuJlcNL",
    "name": "Codie, Ravenous Codex",
-   "gih": 46.325167,
-   "gih_n": 898,
-   "alsa": 5.8481025,
-   "seen_n": 31699
+   "gih": 46.905537,
+   "gih_n": 921,
+   "alsa": 5.8585345,
+   "seen_n": 32849
   },
   {
    "id": "7JFO3e0BzIByjlx8D18TXz",
    "name": "The Echoverse Fulcrum",
-   "gih": 58.830985999999996,
-   "gih_n": 7100,
-   "alsa": 1.7521226,
-   "seen_n": 4240
+   "gih": 58.69683,
+   "gih_n": 7382,
+   "alsa": 1.7496574,
+   "seen_n": 4378
   },
   {
    "id": "2WFCZ6iXPDyj4bh3GKkmT4",
    "name": "Eye of Jace",
-   "gih": 50.12468799999999,
-   "gih_n": 7218,
-   "alsa": 6.5057765,
-   "seen_n": 88462
+   "gih": 50.04022500000001,
+   "gih_n": 7458,
+   "alsa": 6.5093498,
+   "seen_n": 91713
   },
   {
    "id": "5hDVau0UptgG5DhIXvgYd0",
    "name": "Keeper of the Quiet Hour",
-   "gih": 56.262573,
-   "gih_n": 56670,
-   "alsa": 6.4963682,
-   "seen_n": 195357
+   "gih": 56.191872,
+   "gih_n": 59352,
+   "alsa": 6.481935,
+   "seen_n": 202104
   },
   {
    "id": "5rkRApZkwiNP98fUAHv1Oa",
    "name": "Living Library",
-   "gih": 52.959047000000005,
-   "gih_n": 8229,
-   "alsa": 8.4210592,
-   "seen_n": 208251
+   "gih": 52.979668000000004,
+   "gih_n": 8558,
+   "alsa": 8.4207104,
+   "seen_n": 215766
   },
   {
    "id": "2r8mYaPs0Dt5XjzbyjaaLL",
    "name": "Medic's Kitesail",
-   "gih": 54.354563,
-   "gih_n": 21621,
-   "alsa": 7.1035652,
-   "seen_n": 197267
+   "gih": 54.371864,
+   "gih_n": 22519,
+   "alsa": 7.0952929,
+   "seen_n": 204202
   },
   {
    "id": "2gnXGJHeMgogx3jEH98J4R",
    "name": "Murmuring Volume",
-   "gih": 56.666667000000004,
-   "gih_n": 55590,
-   "alsa": 6.2251409,
-   "seen_n": 185928
+   "gih": 56.630548000000005,
+   "gih_n": 58419,
+   "alsa": 6.1871634,
+   "seen_n": 191640
   },
   {
    "id": "52NjWBUcJKqlMuAdy2McTF",
    "name": "Dedicated Commons",
-   "gih": 52.885839000000004,
-   "gih_n": 22004,
-   "alsa": 6.7503483,
-   "seen_n": 111239
+   "gih": 52.898678,
+   "gih_n": 22838,
+   "alsa": 6.743549,
+   "seen_n": 115098
   },
   {
    "id": "4aX71Lu65JuwsiLzGGKBpa",
    "name": "Deserted Beach",
-   "gih": 55.68118199999999,
-   "gih_n": 8933,
-   "alsa": 4.3116693,
-   "seen_n": 26634
+   "gih": 55.581897000000005,
+   "gih_n": 9280,
+   "alsa": 4.3119382,
+   "seen_n": 27592
   },
   {
    "id": "68vuPm1RRDP6p1VjAOJeZP",
    "name": "Fatehold Annex",
-   "gih": 55.567918999999996,
-   "gih_n": 35049,
-   "alsa": 6.2334882,
-   "seen_n": 107817
+   "gih": 55.609582,
+   "gih_n": 36402,
+   "alsa": 6.2225634,
+   "seen_n": 111694
   },
   {
    "id": "HNxBirUa5aXiugkuBwY4E",
    "name": "Formidable Commons",
-   "gih": 55.657315,
-   "gih_n": 37889,
-   "alsa": 6.4314955,
-   "seen_n": 108460
+   "gih": 55.602101999999995,
+   "gih_n": 39387,
+   "alsa": 6.4165969,
+   "seen_n": 112274
   },
   {
    "id": "2Vd8gM17A8YxqyXABFkKGY",
    "name": "Hall of Echoes",
-   "gih": 53.37326100000001,
-   "gih_n": 5677,
-   "alsa": 4.7715697,
-   "seen_n": 27527
+   "gih": 53.151912,
+   "gih_n": 5806,
+   "alsa": 4.7854167,
+   "seen_n": 28567
   },
   {
    "id": "6WqdeMTwdPjccoEEoQDULQ",
    "name": "Haunted Ridge",
-   "gih": 54.949802999999996,
-   "gih_n": 7869,
-   "alsa": 4.5403421,
-   "seen_n": 28060
+   "gih": 55.035270999999995,
+   "gih_n": 8222,
+   "alsa": 4.5378449,
+   "seen_n": 29066
   },
   {
    "id": "pAITiWY0WKS1mVRDDn4EB",
    "name": "Hexhaven Dueling Arena",
-   "gih": 49.919872,
-   "gih_n": 3744,
-   "alsa": 7.8443167,
-   "seen_n": 97435
+   "gih": 49.987003,
+   "gih_n": 3847,
+   "alsa": 7.8539071,
+   "seen_n": 100970
   },
   {
    "id": "5HoiybVIX8hZyojjiLfSZL",
    "name": "Innovative Commons",
-   "gih": 56.243336,
-   "gih_n": 34701,
-   "alsa": 6.3538758,
-   "seen_n": 108572
+   "gih": 56.071508,
+   "gih_n": 36136,
+   "alsa": 6.3380752,
+   "seen_n": 112333
   },
   {
    "id": "2J7kCwHodme1eJhXvgTIfY",
    "name": "Konstrari Annex",
-   "gih": 54.375966,
-   "gih_n": 32987,
-   "alsa": 6.2383027,
-   "seen_n": 107204
+   "gih": 54.440199,
+   "gih_n": 34289,
+   "alsa": 6.2267561,
+   "seen_n": 110943
   },
   {
    "id": "3mqhZCy4su5QeglSgT0VG",
    "name": "Meticulous Commons",
-   "gih": 54.509143,
-   "gih_n": 27289,
-   "alsa": 6.6610064,
-   "seen_n": 111126
+   "gih": 54.47063,
+   "gih_n": 28430,
+   "alsa": 6.6513436,
+   "seen_n": 115099
   },
   {
    "id": "46h6OWfqJlLScW857kIKWq",
    "name": "Overgrown Farmland",
-   "gih": 52.932594,
-   "gih_n": 6854,
-   "alsa": 4.5261875,
-   "seen_n": 27895
+   "gih": 53.030516000000006,
+   "gih_n": 7111,
+   "alsa": 4.5208211,
+   "seen_n": 28889
   },
   {
    "id": "7dYgaZtxDFZDhkk3TwU9Zu",
    "name": "Rockfall Vale",
-   "gih": 54.96503499999999,
-   "gih_n": 8580,
-   "alsa": 4.3958643,
-   "seen_n": 26936
+   "gih": 55.096143,
+   "gih_n": 8997,
+   "alsa": 4.3902815,
+   "seen_n": 27926
   },
   {
    "id": "4ycH2BNlRja3D2AMLh0Jyy",
    "name": "Roiling Canopy",
-   "gih": 49.061662,
-   "gih_n": 1865,
-   "alsa": 5.4740444,
-   "seen_n": 30687
+   "gih": 49.117342,
+   "gih_n": 1926,
+   "alsa": 5.4837576,
+   "seen_n": 31861
   },
   {
    "id": "M2HDFPtRN9BnQytDvG4xI",
    "name": "Room of Refuge",
-   "gih": 55.797399999999996,
-   "gih_n": 92300,
-   "alsa": 5.0951808,
-   "seen_n": 173617
+   "gih": 55.790828000000005,
+   "gih_n": 95634,
+   "alsa": 5.0834228,
+   "seen_n": 179687
   },
   {
    "id": "3LgP47myneWXQkvCMzXdCB",
    "name": "Shipwreck Marsh",
-   "gih": 57.778853,
-   "gih_n": 12399,
-   "alsa": 4.207896,
-   "seen_n": 25912
+   "gih": 57.818802000000005,
+   "gih_n": 12892,
+   "alsa": 4.2074163,
+   "seen_n": 26806
   },
   {
    "id": "1ZwjoEmoDS1Lb3d7L8RNwE",
    "name": "Stingerquill Annex",
-   "gih": 54.027124,
-   "gih_n": 28904,
-   "alsa": 6.4966951,
-   "seen_n": 109534
+   "gih": 54.052977,
+   "gih_n": 30126,
+   "alsa": 6.4821164,
+   "seen_n": 113288
   },
   {
    "id": "2lONoVBKtW0NjuvMhHIzw4",
    "name": "Theorist's Sanctum",
-   "gih": 57.728407000000004,
-   "gih_n": 16834,
-   "alsa": 2.7930732,
-   "seen_n": 14841
+   "gih": 57.675663,
+   "gih_n": 17562,
+   "alsa": 2.7860163,
+   "seen_n": 15375
   },
   {
    "id": "nfTtWSzeUtfQ9eHnFi62N",
    "name": "Theorix Annex",
-   "gih": 56.596203,
-   "gih_n": 47353,
-   "alsa": 6.0253862,
-   "seen_n": 105845
+   "gih": 56.57657699999999,
+   "gih_n": 49395,
+   "alsa": 6.00912,
+   "seen_n": 109540
   },
   {
    "id": "5DitpRTcsFBteJf5GpX1fv",
    "name": "Transformative Commons",
-   "gih": 56.20438,
-   "gih_n": 36031,
-   "alsa": 6.4423591,
-   "seen_n": 108855
+   "gih": 56.138946999999995,
+   "gih_n": 37482,
+   "alsa": 6.4228228,
+   "seen_n": 112598
   },
   {
    "id": "7c7tMkOAdNEmrW8LWdsAW8",
    "name": "Vigorbloom Annex",
-   "gih": 53.151724,
-   "gih_n": 25843,
-   "alsa": 6.4376315,
-   "seen_n": 109791
+   "gih": 53.216092,
+   "gih_n": 26896,
+   "alsa": 6.4291619,
+   "seen_n": 113717
   },
   {
    "id": "livjfLCIoggT140o7ZDXE",
    "name": "Ajani Resolute",
-   "gih": 52.692744000000005,
-   "gih_n": 3528,
-   "alsa": 2.053267,
-   "seen_n": 5632
+   "gih": 52.803093000000004,
+   "gih_n": 3621,
+   "alsa": 2.060274,
+   "seen_n": 5840
   },
   {
    "id": "343KeVg4Hq9aKEARevJPDY",
    "name": "Danitha, Sword of Hope",
-   "gih": 51.667472000000004,
-   "gih_n": 10345,
-   "alsa": 6.0676941,
-   "seen_n": 81691
+   "gih": 51.729974,
+   "gih_n": 10636,
+   "alsa": 6.0780722,
+   "seen_n": 84678
   },
   {
    "id": "7cbcKRJKvctEusRS33CGJ9",
    "name": "Ghalta the Immovable",
-   "gih": 52.345333000000004,
-   "gih_n": 6417,
-   "alsa": 6.5038042,
-   "seen_n": 85827
+   "gih": 52.245577,
+   "gih_n": 6613,
+   "alsa": 6.5106486,
+   "seen_n": 88885
   },
   {
    "id": "1pfCR0TujmQ9S8bCjUkZr6",
    "name": "Gideon's Memorial",
-   "gih": 50.747208,
-   "gih_n": 6357,
-   "alsa": 3.8455471,
-   "seen_n": 21424
+   "gih": 50.732739,
+   "gih_n": 6619,
+   "alsa": 3.8523402,
+   "seen_n": 22220
   },
   {
    "id": "6LEwwUZDfrE1QcoIhoGTNc",
    "name": "Koth of the Homestead",
-   "gih": 54.354496,
-   "gih_n": 21185,
-   "alsa": 3.5480955,
-   "seen_n": 49225
+   "gih": 54.217862,
+   "gih_n": 21812,
+   "alsa": 3.55684,
+   "seen_n": 51126
   },
   {
    "id": "HIoEt2llUxWzRD9TwUiSb",
    "name": "Liliana the Faultless",
-   "gih": 57.90757,
-   "gih_n": 9023,
-   "alsa": 2.4892453,
-   "seen_n": 13157
+   "gih": 57.807664,
+   "gih_n": 9369,
+   "alsa": 2.4999635,
+   "seen_n": 13685
   },
   {
    "id": "6p6rnfinjCDMZ6NOxhlbKU",
    "name": "Lyra, Archangel of Dawn",
-   "gih": 58.863741000000005,
-   "gih_n": 10825,
-   "alsa": 2.299362,
-   "seen_n": 12069
+   "gih": 58.807805,
+   "gih_n": 11223,
+   "alsa": 2.3022123,
+   "seen_n": 12521
   },
   {
    "id": "5w87iskMh2ySglp8wDcEqC",
    "name": "Rescue Girl, First Responder",
-   "gih": 52.437757,
-   "gih_n": 24059,
-   "alsa": 4.6779884,
-   "seen_n": 66215
+   "gih": 52.435346,
+   "gih_n": 24863,
+   "alsa": 4.6844681,
+   "seen_n": 68665
   },
   {
    "id": "5MXF7kBU8WBanqhtxgRjwV",
    "name": "Saheeli, Consul of Oversight",
-   "gih": 55.260445000000004,
-   "gih_n": 24247,
-   "alsa": 4.039731,
-   "seen_n": 55473
+   "gih": 55.314638,
+   "gih_n": 24997,
+   "alsa": 4.0424598,
+   "seen_n": 57631
   },
   {
    "id": "1y1uAx8oL3qbVEEdEaos6M",
    "name": "Teyo, Lightshield Expert",
-   "gih": 56.259545,
-   "gih_n": 25537,
-   "alsa": 4.076273,
-   "seen_n": 59877
+   "gih": 56.24433,
+   "gih_n": 26456,
+   "alsa": 4.0861964,
+   "seen_n": 62172
   },
   {
    "id": "J7B8KO0ICskxpERiQgnGd",
    "name": "Thalia, the Survivor",
-   "gih": 54.823319999999995,
-   "gih_n": 19074,
-   "alsa": 4.3118903,
-   "seen_n": 62429
+   "gih": 54.772163,
+   "gih_n": 19729,
+   "alsa": 4.318268,
+   "seen_n": 64851
   },
   {
    "id": "ZWSaj3ESS3wGuFQdx5tYL",
    "name": "Tomik, Orzhov Lawmage",
-   "gih": 54.164148999999995,
-   "gih_n": 23174,
-   "alsa": 4.5948185,
-   "seen_n": 66622
+   "gih": 54.04305299999999,
+   "gih_n": 23831,
+   "alsa": 4.6125957,
+   "seen_n": 69341
   },
   {
    "id": "3iGR8M4dTEqrzJVQ8f2fv9",
    "name": "Way of the Healer",
-   "gih": 57.366867,
-   "gih_n": 35904,
-   "alsa": 3.1482169,
-   "seen_n": 43605
+   "gih": 57.354636000000006,
+   "gih_n": 37303,
+   "alsa": 3.1459485,
+   "seen_n": 45242
   },
   {
    "id": "56SeTApCEkocHh73LyW6ah",
    "name": "Way of the Mentor",
-   "gih": 50.343625,
-   "gih_n": 9749,
-   "alsa": 5.462385,
-   "seen_n": 74146
+   "gih": 50.343797,
+   "gih_n": 10035,
+   "alsa": 5.474647,
+   "seen_n": 76914
   },
   {
    "id": "3bn0EKxv8kIUilRY8tF9tU",
    "name": "Yoshimaru, Beloved Companion",
-   "gih": 49.544966,
-   "gih_n": 13955,
-   "alsa": 4.8415065,
-   "seen_n": 67599
+   "gih": 49.563882,
+   "gih_n": 14331,
+   "alsa": 4.8531442,
+   "seen_n": 70130
   },
   {
    "id": "6fJtgDDl4gZhHKm4tLlk25",
    "name": "Yuriko, Blade of the Mighty",
-   "gih": 53.114276000000004,
-   "gih_n": 11656,
-   "alsa": 5.1369685,
-   "seen_n": 70184
+   "gih": 53.088272,
+   "gih_n": 11997,
+   "alsa": 5.1486568,
+   "seen_n": 72886
   },
   {
    "id": "22FMxZx1wUBQIXWkaPlVuV",
    "name": "Arni, Humble Scribe",
-   "gih": 54.43517,
-   "gih_n": 28274,
-   "alsa": 4.9481889,
-   "seen_n": 71336
+   "gih": 54.41051,
+   "gih_n": 29305,
+   "alsa": 4.947964,
+   "seen_n": 73968
   },
   {
    "id": "3rWcRPhY1R5vJr6O9kjykY",
    "name": "Chandra, Chill of Compliance",
-   "gih": 59.202843,
-   "gih_n": 7878,
-   "alsa": 1.8029436,
-   "seen_n": 4892
+   "gih": 59.083088,
+   "gih_n": 8136,
+   "alsa": 1.7999605,
+   "seen_n": 5069
   },
   {
    "id": "6Mlt7guXlD89f8xvYM83pP",
    "name": "Fblthp, Impossibly Lost",
-   "gih": 59.678262000000004,
-   "gih_n": 53584,
-   "alsa": 4.4148807,
-   "seen_n": 60938
+   "gih": 59.731472,
+   "gih_n": 56009,
+   "alsa": 4.3893609,
+   "seen_n": 62731
   },
   {
    "id": "3fvrH1WgOL5ZmG9ficftD3",
    "name": "Geist of Saint Thalia",
-   "gih": 56.861724,
-   "gih_n": 34554,
-   "alsa": 4.0837488,
-   "seen_n": 59977
+   "gih": 56.831876,
+   "gih_n": 36015,
+   "alsa": 4.0806143,
+   "seen_n": 62123
   },
   {
    "id": "3fw5dvAUnVZCKV5lnWwlXF",
    "name": "Hapatra, the Desert Frost",
-   "gih": 53.241617,
-   "gih_n": 17954,
-   "alsa": 5.3117161,
-   "seen_n": 76297
+   "gih": 53.217194,
+   "gih_n": 18541,
+   "alsa": 5.3258887,
+   "seen_n": 79162
   },
   {
    "id": "2Pc8VA6hnbDVsh7tZfiQvS",
    "name": "Jace, Reality Sculptor",
-   "gih": 58.182592,
-   "gih_n": 14097,
-   "alsa": 1.7709099,
-   "seen_n": 8704
+   "gih": 58.111529,
+   "gih_n": 14615,
+   "alsa": 1.772556,
+   "seen_n": 9022
   },
   {
    "id": "22affqlk1QIPZyf58INMlr",
    "name": "Lyra, Tolarian Archangel",
-   "gih": 61.030894,
-   "gih_n": 18353,
-   "alsa": 1.8695652,
-   "seen_n": 9614
+   "gih": 60.997159999999994,
+   "gih_n": 19014,
+   "alsa": 1.8652839,
+   "seen_n": 9932
   },
   {
    "id": "NYBSq1n942QYP8U2We6cu",
    "name": "Proft, Consulting Detective",
-   "gih": 57.462551,
-   "gih_n": 43926,
-   "alsa": 3.6319421,
-   "seen_n": 52470
+   "gih": 57.43779,
+   "gih_n": 45531,
+   "alsa": 3.6236823,
+   "seen_n": 54167
   },
   {
    "id": "7nx6DCh2ZovsLWoKi7Uik9",
    "name": "Ruric Thar, Biomagus",
-   "gih": 55.849485,
-   "gih_n": 31678,
-   "alsa": 3.7394029,
-   "seen_n": 52986
+   "gih": 55.803002,
+   "gih_n": 32914,
+   "alsa": 3.7431678,
+   "seen_n": 54997
   },
   {
    "id": "6B6Iu3esxCTKYypqbOz7eO",
    "name": "Samut, Tyrant of Naktamun",
-   "gih": 47.806841,
-   "gih_n": 2485,
-   "alsa": 5.1956499,
-   "seen_n": 29011
+   "gih": 47.904426,
+   "gih_n": 2553,
+   "alsa": 5.2107731,
+   "seen_n": 30075
   },
   {
    "id": "71ExJyKQYBEpfEViXysu8r",
    "name": "Tetsuko Umezawa, Fugitive",
-   "gih": 54.6875,
-   "gih_n": 24384,
-   "alsa": 5.7571346,
-   "seen_n": 81259
+   "gih": 54.712052,
+   "gih_n": 25265,
+   "alsa": 5.7564793,
+   "seen_n": 84153
   },
   {
    "id": "yN4n3saXLaTeFvQFarYXP",
    "name": "Traxos, Academy Guardian",
-   "gih": 55.754298999999996,
-   "gih_n": 31811,
-   "alsa": 4.3626959,
-   "seen_n": 63505
+   "gih": 55.704984,
+   "gih_n": 32866,
+   "alsa": 4.3631721,
+   "seen_n": 65787
   },
   {
    "id": "641HivQCOqeNAc24SAFYGP",
    "name": "Way of the Cryomancer",
-   "gih": 52.962467999999994,
-   "gih_n": 17958,
-   "alsa": 5.3270341,
-   "seen_n": 73977
+   "gih": 52.93233899999999,
+   "gih_n": 18637,
+   "alsa": 5.3365298,
+   "seen_n": 76751
   },
   {
    "id": "24flJHTthDzlDMy0IGLs0R",
    "name": "Way of the Mind Sculptor",
-   "gih": 57.931982999999995,
-   "gih_n": 45077,
-   "alsa": 3.3454013,
-   "seen_n": 45741
+   "gih": 57.97135599999999,
+   "gih_n": 46711,
+   "alsa": 3.3288247,
+   "seen_n": 47095
   },
   {
    "id": "7CzAM3ftb2eS5bDgjM7LBd",
    "name": "Yargle, Goliath of Otaria",
-   "gih": 47.157894999999996,
-   "gih_n": 1425,
-   "alsa": 7.7804875,
-   "seen_n": 95498
+   "gih": 47.091412999999996,
+   "gih_n": 1444,
+   "alsa": 7.7885377,
+   "seen_n": 99020
   },
   {
    "id": "H9zXrP5gNfpTlRw1nwkod",
    "name": "Yuriko, Hope from the Shadows",
-   "gih": 53.40716,
-   "gih_n": 15893,
-   "alsa": 5.9837222,
-   "seen_n": 84594
+   "gih": 53.481672,
+   "gih_n": 16314,
+   "alsa": 5.9948549,
+   "seen_n": 87850
   },
   {
    "id": "SRn9Q6qYyzYPlNg9l2mFH",
    "name": "Danitha, Spear of Agony",
-   "gih": 50.734714999999994,
-   "gih_n": 15244,
-   "alsa": 5.0639626,
-   "seen_n": 71448
+   "gih": 50.743221999999996,
+   "gih_n": 15675,
+   "alsa": 5.0789435,
+   "seen_n": 74205
   },
   {
    "id": "2vXQxX16MbbkbDanHnLXZy",
    "name": "Gallia, Tragic Host",
-   "gih": 55.34682600000001,
-   "gih_n": 30289,
-   "alsa": 4.8615562,
-   "seen_n": 72087
+   "gih": 55.305425,
+   "gih_n": 31317,
+   "alsa": 4.8613274,
+   "seen_n": 74629
   },
   {
    "id": "2GMDnbW2UC34yxJTD6fieG",
    "name": "Garruk, Veiled Butcher",
-   "gih": 65.911918,
-   "gih_n": 8038,
-   "alsa": 1.4984894,
-   "seen_n": 3972
+   "gih": 65.822329,
+   "gih_n": 8330,
+   "alsa": 1.4965937,
+   "seen_n": 4110
   },
   {
    "id": "4C7cvBCH1YijrWNsu7juNr",
    "name": "Gideon the Oathless",
-   "gih": 59.441261,
-   "gih_n": 13960,
-   "alsa": 2.2172056,
-   "seen_n": 11473
+   "gih": 59.298463999999996,
+   "gih_n": 14454,
+   "alsa": 2.2179077,
+   "seen_n": 11872
   },
   {
    "id": "oGYUKdDZ04rzrVl1OulSW",
    "name": "Liliana the Repentant",
-   "gih": 56.20579300000001,
-   "gih_n": 13431,
-   "alsa": 2.8963242,
-   "seen_n": 16214
+   "gih": 56.266130999999994,
+   "gih_n": 13948,
+   "alsa": 2.8996962,
+   "seen_n": 16789
   },
   {
    "id": "7gqL20kK7zOZl1wzgCvqVC",
    "name": "Loot, the Anomaly",
-   "gih": 48.029197,
-   "gih_n": 3425,
-   "alsa": 7.3888009,
-   "seen_n": 92811
+   "gih": 47.985139,
+   "gih_n": 3499,
+   "alsa": 7.4042053,
+   "seen_n": 96211
   },
   {
    "id": "5ZQTrpjME2Gfq5xDktuGIj",
    "name": "Mabel, Bitter Recluse",
-   "gih": 53.730785000000004,
-   "gih_n": 21403,
-   "alsa": 5.1178907,
-   "seen_n": 74603
+   "gih": 53.781703,
+   "gih_n": 22080,
+   "alsa": 5.1368875,
+   "seen_n": 77392
   },
   {
    "id": "1oXTmASohfNTgaubCKUjsC",
    "name": "Massacre Girl, Most Wanted",
-   "gih": 50.097808,
-   "gih_n": 14825,
-   "alsa": 4.8713468,
-   "seen_n": 67818
+   "gih": 50.003277999999995,
+   "gih_n": 15255,
+   "alsa": 4.8855914,
+   "seen_n": 70458
   },
   {
    "id": "6MWt45jeYA9iT5rwzEypA6",
    "name": "Proft, Sinister Mastermind",
-   "gih": 54.630632999999996,
-   "gih_n": 25828,
-   "alsa": 5.0932809,
-   "seen_n": 74474
+   "gih": 54.624958,
+   "gih_n": 26757,
+   "alsa": 5.1019832,
+   "seen_n": 77248
   },
   {
    "id": "5B1aVZDWx0GR7c92OAU7Yn",
    "name": "Teyo, Diamondblade Mage",
-   "gih": 50.918228,
-   "gih_n": 10945,
-   "alsa": 6.009409,
-   "seen_n": 83537
+   "gih": 50.921228,
+   "gih_n": 11235,
+   "alsa": 6.0285559,
+   "seen_n": 86672
   },
   {
    "id": "4YEfhDhuiXf2E33adoW1nd",
    "name": "Tinybones, Pocket Nuisance",
-   "gih": 55.471521,
-   "gih_n": 23403,
-   "alsa": 4.8512037,
-   "seen_n": 71319
+   "gih": 55.533166,
+   "gih_n": 24317,
+   "alsa": 4.8602391,
+   "seen_n": 74098
   },
   {
    "id": "3gEXa0yrZZMBskpskvAb1T",
    "name": "Way of the Deathbringer",
-   "gih": 51.50756,
-   "gih_n": 11177,
-   "alsa": 5.5940739,
-   "seen_n": 75834
+   "gih": 51.490846000000005,
+   "gih_n": 11470,
+   "alsa": 5.6166694,
+   "seen_n": 78791
   },
   {
    "id": "120nE5l6PDh10RqvHUiedW",
    "name": "Way of the Necromancer",
-   "gih": 44.076164,
-   "gih_n": 2836,
-   "alsa": 7.0996484,
-   "seen_n": 90438
+   "gih": 44.107392000000004,
+   "gih_n": 2868,
+   "alsa": 7.1195348,
+   "seen_n": 93889
   },
   {
    "id": "6j40KM8VxCnHqQkfsr4PTw",
    "name": "Winter, Tormented Loner",
-   "gih": 53.757819,
-   "gih_n": 21422,
-   "alsa": 5.046272,
-   "seen_n": 73284
+   "gih": 53.83991,
+   "gih_n": 22175,
+   "alsa": 5.0555775,
+   "seen_n": 76056
   },
   {
    "id": "1rvD0pusoUDZuVkPnz40Ky",
    "name": "Yargle, Glutton of Urborg",
-   "gih": 45.860927000000004,
-   "gih_n": 604,
-   "alsa": 8.229118,
-   "seen_n": 96291
+   "gih": 46.091205,
+   "gih_n": 614,
+   "alsa": 8.2410005,
+   "seen_n": 99867
   },
   {
    "id": "o2MTvw1YXYEnrn80lHRH8",
    "name": "Ajani Unrelenting",
-   "gih": 73.23642099999999,
-   "gih_n": 8874,
-   "alsa": 1.2634788,
-   "seen_n": 3116
+   "gih": 73.288489,
+   "gih_n": 9217,
+   "alsa": 1.2610191,
+   "seen_n": 3199
   },
   {
    "id": "27JrxXIdyYWyKqHdzg4iT7",
    "name": "Arni, Renowned Champion",
-   "gih": 46.318869,
-   "gih_n": 4102,
-   "alsa": 6.9543926,
-   "seen_n": 88604
+   "gih": 46.275715,
+   "gih_n": 4229,
+   "alsa": 6.9638118,
+   "seen_n": 91936
   },
   {
    "id": "5niZtBBA6SUmKDx6znNInK",
    "name": "Chandra, Torch of Defiance",
-   "gih": 60.299282,
-   "gih_n": 6549,
-   "alsa": 1.4447568,
-   "seen_n": 3557
+   "gih": 60.323767,
+   "gih_n": 6795,
+   "alsa": 1.4416712,
+   "seen_n": 3686
   },
   {
    "id": "6iUqbVRUTNkAq1ITqtDjhq",
    "name": "Gallia, the Merrymaker",
-   "gih": 50.758113,
-   "gih_n": 14114,
-   "alsa": 5.5819529,
-   "seen_n": 78838
+   "gih": 50.828386,
+   "gih_n": 14486,
+   "alsa": 5.6015863,
+   "seen_n": 81699
   },
   {
    "id": "4NNKRfOfuwj3cAe2G2V9w9",
    "name": "Jiang Yanggu, Alone",
-   "gih": 52.858012,
-   "gih_n": 13156,
-   "alsa": 5.9678777,
-   "seen_n": 83369
+   "gih": 52.910757,
+   "gih_n": 13536,
+   "alsa": 5.976677,
+   "seen_n": 86524
   },
   {
    "id": "2iR1aNLutU1ypfkxUjZ5Kz",
    "name": "Kiora of Fire and Ashes",
-   "gih": 61.29720400000001,
-   "gih_n": 42661,
-   "alsa": 2.3589482,
-   "seen_n": 31336
+   "gih": 61.318259,
+   "gih_n": 44225,
+   "alsa": 2.3482972,
+   "seen_n": 32211
   },
   {
    "id": "7dWdTUWildvlc6IXNMpgV6",
    "name": "Koth, the Geomancer",
-   "gih": 51.780677,
-   "gih_n": 17016,
-   "alsa": 4.689555,
-   "seen_n": 67487
+   "gih": 51.723942,
+   "gih_n": 17576,
+   "alsa": 4.7047615,
+   "seen_n": 70167
   },
   {
    "id": "1921LkjXbumPpQHH6TFQ6l",
    "name": "Marwyn, the Clearcutter",
-   "gih": 55.221574,
-   "gih_n": 20061,
-   "alsa": 5.8384412,
-   "seen_n": 82781
+   "gih": 55.171412,
+   "gih_n": 20652,
+   "alsa": 5.8542654,
+   "seen_n": 85841
   },
   {
    "id": "4mYl5mptSC5SzW3MJ9kPSv",
    "name": "Pia, Determined Rebuilder",
-   "gih": 56.454086000000004,
-   "gih_n": 30655,
-   "alsa": 4.2833873,
-   "seen_n": 62741
+   "gih": 56.343942999999996,
+   "gih_n": 31668,
+   "alsa": 4.2899188,
+   "seen_n": 65032
   },
   {
    "id": "21sQpQVWWzfOnrBBABvPp2",
    "name": "Samut, Hazoret's Champion",
-   "gih": 56.305221,
-   "gih_n": 8715,
-   "alsa": 2.9599305,
-   "seen_n": 15548
+   "gih": 56.254144,
+   "gih_n": 9050,
+   "alsa": 2.9678461,
+   "seen_n": 16110
   },
   {
    "id": "2r1e81JGBicHWVD5s1FhWA",
    "name": "Tetsuko Umezawa, Pursuer",
-   "gih": 52.181047,
-   "gih_n": 14626,
-   "alsa": 5.1407623,
-   "seen_n": 71809
+   "gih": 52.186879,
+   "gih_n": 15090,
+   "alsa": 5.1528549,
+   "seen_n": 74574
   },
   {
    "id": "2OFlhAnCYxJINEOdiIshD6",
    "name": "Tomik, Izzet Sparkmage",
-   "gih": 51.346821,
-   "gih_n": 17300,
-   "alsa": 5.0026044,
-   "seen_n": 69881
+   "gih": 51.236493,
+   "gih_n": 17954,
+   "alsa": 5.016393,
+   "seen_n": 72653
   },
   {
    "id": "6XZZySmoxxQHW62w0s3Jf0",
    "name": "Way of the Pyromancer",
-   "gih": 51.698741000000005,
-   "gih_n": 21045,
-   "alsa": 4.2012679,
-   "seen_n": 58365
+   "gih": 51.692322000000004,
+   "gih_n": 21568,
+   "alsa": 4.2220008,
+   "seen_n": 60725
   },
   {
    "id": "6JBxrgSNR3vWI5LqjKtVaP",
    "name": "Way of the Warlord",
-   "gih": 53.376741,
-   "gih_n": 21041,
-   "alsa": 4.2214451,
-   "seen_n": 60480
+   "gih": 53.393163,
+   "gih_n": 21617,
+   "alsa": 4.2473644,
+   "seen_n": 62984
   },
   {
    "id": "7BoE8OIg05BuR8L17V6Doz",
    "name": "Winter, Team Player",
-   "gih": 47.857479000000005,
-   "gih_n": 6371,
-   "alsa": 6.8541704,
-   "seen_n": 89248
+   "gih": 48.103002000000004,
+   "gih_n": 6563,
+   "alsa": 6.8649775,
+   "seen_n": 92592
   },
   {
    "id": "2dlMnshzWOo2dfyDwcSPlP",
    "name": "Edgar, Moonlit Sovereign",
-   "gih": 50.045797,
-   "gih_n": 14193,
-   "alsa": 4.6845344,
-   "seen_n": 66302
+   "gih": 49.917526,
+   "gih_n": 14550,
+   "alsa": 4.7108523,
+   "seen_n": 68944
   },
   {
    "id": "6aE39fIf0YXzbXJ4P7mS4r",
    "name": "Fblthp, Knows the Way",
-   "gih": 57.660047999999996,
-   "gih_n": 37317,
-   "alsa": 3.8870041,
-   "seen_n": 56418
+   "gih": 57.662009000000005,
+   "gih_n": 38717,
+   "alsa": 3.8775216,
+   "seen_n": 58345
   },
   {
    "id": "7o0hjTMVT5Z2jHz68mAFMS",
    "name": "Garruk, Curse Breaker",
-   "gih": 65.58102099999999,
-   "gih_n": 7461,
-   "alsa": 1.4944106,
-   "seen_n": 3936
+   "gih": 65.517687,
+   "gih_n": 7746,
+   "alsa": 1.4930164,
+   "seen_n": 4081
   },
   {
    "id": "6xvbg9nNOrz5S19KKiCgNx",
    "name": "Ghalta the Unstoppable",
-   "gih": 53.37343799999999,
-   "gih_n": 19283,
-   "alsa": 4.0573729,
-   "seen_n": 57501
+   "gih": 53.38074699999999,
+   "gih_n": 19966,
+   "alsa": 4.0597963,
+   "seen_n": 59502
   },
   {
    "id": "1ZOFpcq8mz3ZyMUhtuiHub",
    "name": "Jiang Yanggu, Never Alone",
-   "gih": 55.401353,
-   "gih_n": 28678,
-   "alsa": 4.0474981,
-   "seen_n": 59455
+   "gih": 55.428436000000005,
+   "gih_n": 29631,
+   "alsa": 4.0535121,
+   "seen_n": 61743
   },
   {
    "id": "oAeSKOm0SvpSofHlIVR0i",
    "name": "Loot, the Nexus",
-   "gih": 52.465041,
-   "gih_n": 20953,
-   "alsa": 4.4996424,
-   "seen_n": 65715
+   "gih": 52.442966999999996,
+   "gih_n": 21654,
+   "alsa": 4.5103075,
+   "seen_n": 68251
   },
   {
    "id": "3TOLH91GVNchxAhp5QROez",
    "name": "Marwyn, the Preserver",
-   "gih": 54.188616,
-   "gih_n": 25247,
-   "alsa": 5.3848476,
-   "seen_n": 78509
+   "gih": 54.103576,
+   "gih_n": 26087,
+   "alsa": 5.3920728,
+   "seen_n": 81365
   },
   {
    "id": "36kYnOrl6xMEdItoBKCu1N",
    "name": "Pia, Aether Ascetic",
-   "gih": 49.874428,
-   "gih_n": 6769,
-   "alsa": 6.7638059,
-   "seen_n": 89744
+   "gih": 49.829206,
+   "gih_n": 7026,
+   "alsa": 6.7671521,
+   "seen_n": 93035
   },
   {
    "id": "6rcCFanvi95Fc1nd3gd0YV",
    "name": "Ruric Thar, Magecrusher",
-   "gih": 54.531068000000005,
-   "gih_n": 24012,
-   "alsa": 4.0969392,
-   "seen_n": 58449
+   "gih": 54.486895999999994,
+   "gih_n": 24839,
+   "alsa": 4.1023983,
+   "seen_n": 60626
   },
   {
    "id": "5gMkskrNqKXd7aOJbIBuLn",
    "name": "Titanbones, Towering Heart",
-   "gih": 52.086822,
-   "gih_n": 15526,
-   "alsa": 4.5786078,
-   "seen_n": 64173
+   "gih": 51.999253,
+   "gih_n": 16056,
+   "alsa": 4.5852561,
+   "seen_n": 66658
   },
   {
    "id": "2Ner66o65BhFl29j54KvE5",
    "name": "Way of the Paradox",
-   "gih": 56.424746999999996,
-   "gih_n": 23534,
-   "alsa": 4.4763526,
-   "seen_n": 65483
+   "gih": 56.428718,
+   "gih_n": 24445,
+   "alsa": 4.468455,
+   "seen_n": 67697
   },
   {
    "id": "7GLLpPealdPbZQfjfNKVYi",
    "name": "Way of the Wildspeaker",
-   "gih": 54.68448,
-   "gih_n": 29491,
-   "alsa": 3.2993656,
-   "seen_n": 47133
+   "gih": 54.716111,
+   "gih_n": 30364,
+   "alsa": 3.3117909,
+   "seen_n": 49004
   },
   {
    "id": "7szC7LkmxtItSH7bDmkbZg",
    "name": "Yoshimaru, Scrappy Stray",
-   "gih": 54.061647,
-   "gih_n": 25273,
-   "alsa": 4.1602072,
-   "seen_n": 62363
+   "gih": 54.080577,
+   "gih_n": 26087,
+   "alsa": 4.1642416,
+   "seen_n": 64673
   },
   {
    "id": "5KNlewWNvJncO4o4Ac5trq",
    "name": "Edgar, Ancient Bloodlord",
-   "gih": 52.876683,
-   "gih_n": 9212,
-   "alsa": 6.485978,
-   "seen_n": 84938
+   "gih": 52.893347,
+   "gih_n": 9470,
+   "alsa": 6.5001135,
+   "seen_n": 88086
   },
   {
    "id": "4ozKigwiKgfNPIj4Y1pehz",
    "name": "Hapatra, the Desert Fang",
-   "gih": 59.242119,
-   "gih_n": 40191,
-   "alsa": 4.221704,
-   "seen_n": 58321
+   "gih": 59.234067,
+   "gih_n": 41753,
+   "alsa": 4.2068048,
+   "seen_n": 60105
   },
   {
    "id": "5Ptiqs88EALICfVG0fgFCl",
    "name": "Karn, Gilded Guardian",
-   "gih": 52.09854000000001,
-   "gih_n": 1096,
-   "alsa": 6.1376696,
-   "seen_n": 33900
+   "gih": 52.497809,
+   "gih_n": 1141,
+   "alsa": 6.1509692,
+   "seen_n": 35133
   },
   {
    "id": "3jA5koQ6d1Mk8sSJuJMEb",
    "name": "Kiora of Salt and Sand",
-   "gih": 53.973375999999995,
-   "gih_n": 12395,
-   "alsa": 6.4059432,
-   "seen_n": 84837
+   "gih": 53.777984999999994,
+   "gih_n": 12864,
+   "alsa": 6.4054583,
+   "seen_n": 87903
   },
   {
    "id": "6wNmh5sA8RWzk71Y2aX3xQ",
    "name": "Mabel, Valley Hero",
-   "gih": 50.871714999999995,
-   "gih_n": 11529,
-   "alsa": 5.8318598,
-   "seen_n": 76686
+   "gih": 50.842318,
+   "gih_n": 11872,
+   "alsa": 5.8404987,
+   "seen_n": 79479
   },
   {
    "id": "N5gg4F6noYEvnjEgAjD2n",
    "name": "Saheeli, Jewel of Avishkar",
-   "gih": 56.882797,
-   "gih_n": 32465,
-   "alsa": 4.3519646,
-   "seen_n": 59631
+   "gih": 56.940863,
+   "gih_n": 33735,
+   "alsa": 4.3441789,
+   "seen_n": 61715
   },
   {
    "id": "6QcUCUaFQeSddN5ToJYHJ0",
    "name": "Tam, the Possibility",
    "gih": null,
-   "gih_n": 166,
-   "alsa": 6.4891052,
-   "seen_n": 35751
+   "gih_n": 167,
+   "alsa": 6.495089,
+   "seen_n": 37060
   },
   {
    "id": "4mJWapp0OTYJY9am4J7rVC",
    "name": "Vraska, Soul of Stone",
-   "gih": 53.160083,
-   "gih_n": 4810,
-   "alsa": 4.6989081,
-   "seen_n": 25919
+   "gih": 53.232544000000004,
+   "gih_n": 5027,
+   "alsa": 4.7104422,
+   "seen_n": 26910
   },
   {
    "id": "3fR7zpxwQDq5ne4YdiDTuy",
    "name": "Vraska, the Cutting Glare",
-   "gih": 62.622064,
-   "gih_n": 15156,
-   "alsa": 2.8001447,
-   "seen_n": 13820
+   "gih": 62.57505799999999,
+   "gih_n": 15821,
+   "alsa": 2.7920487,
+   "seen_n": 14287
   },
   {
    "id": "1uJUI3r4afmMIWSNIWlC4U",
    "name": "Karn, Argent Defender",
-   "gih": 48.359787999999995,
-   "gih_n": 945,
-   "alsa": 5.7853424,
-   "seen_n": 32270
+   "gih": 49.092742,
+   "gih_n": 992,
+   "alsa": 5.7963274,
+   "seen_n": 33382
   },
   {
    "id": "4sDw85hczTmzgzaeqlWSGh",
    "name": "Traxos, Scourge Eternal",
-   "gih": 51.723147999999995,
-   "gih_n": 10446,
-   "alsa": 6.2672591,
-   "seen_n": 89344
+   "gih": 51.777262,
+   "gih_n": 10775,
+   "alsa": 6.2790087,
+   "seen_n": 92567
   },
   {
    "id": "2fcXebVvfitzyrRn40HGGS",
    "name": "Eye of Ugin",
    "gih": null,
    "gih_n": 5,
-   "alsa": 5.2643375,
-   "seen_n": 3034
+   "alsa": 5.2658905,
+   "seen_n": 3178
   },
   {
    "id": "7F2PSFKgdFt3W3BEn0gqeJ",
    "name": "Austere Command",
-   "gih": 62.059034999999994,
-   "gih_n": 1389,
-   "alsa": 2.0588235,
-   "seen_n": 1020
+   "gih": 61.814346,
+   "gih_n": 1422,
+   "alsa": 2.0606061,
+   "seen_n": 1056
   },
   {
    "id": "3HCWsIrUaZ452EPAa2JtMO",
    "name": "Flesh Duplicate",
-   "gih": 56.623681000000005,
-   "gih_n": 853,
-   "alsa": 3.7974624,
-   "seen_n": 2128
+   "gih": 56.299659000000005,
+   "gih_n": 881,
+   "alsa": 3.7950595,
+   "seen_n": 2186
   },
   {
    "id": "3UMNyipZjHPeGEvAHpLkEt",
    "name": "Consign to Memory",
    "gih": null,
-   "gih_n": 31,
-   "alsa": 7.1828877,
-   "seen_n": 3740
+   "gih_n": 32,
+   "alsa": 7.152703,
+   "seen_n": 3903
   },
   {
    "id": "a2wtVX3AxRbppK1FvItjB",
    "name": "Sublime Epiphany",
-   "gih": 67.111535,
-   "gih_n": 2098,
-   "alsa": 1.8497984,
-   "seen_n": 992
+   "gih": 67.064768,
+   "gih_n": 2177,
+   "alsa": 1.8435973,
+   "seen_n": 1023
   },
   {
    "id": "3HmPdLDlPCQLQICwaE8vE3",
    "name": "Consider",
-   "gih": 56.669360999999995,
-   "gih_n": 1237,
-   "alsa": 5.0173449,
-   "seen_n": 2998
+   "gih": 56.382146,
+   "gih_n": 1277,
+   "alsa": 5.0189528,
+   "seen_n": 3113
   },
   {
    "id": "HaxxU3G2a9bAJpPSqzFXV",
    "name": "Necrodominance",
    "gih": null,
-   "gih_n": 101,
-   "alsa": 4.8642599,
-   "seen_n": 2770
+   "gih_n": 106,
+   "alsa": 4.8922114,
+   "seen_n": 2876
   },
   {
    "id": "2OEk60qFM8Cu4aU3VieIYy",
    "name": "Mind Twist",
-   "gih": 64.46578600000001,
-   "gih_n": 1666,
-   "alsa": 1.8871473,
-   "seen_n": 957
+   "gih": 64.75315699999999,
+   "gih_n": 1742,
+   "alsa": 1.8725986,
+   "seen_n": 989
   },
   {
    "id": "1Zy1zzCYdzZ7LaDq4pgMqR",
    "name": "Splinter Twin",
-   "gih": 62.63644000000001,
-   "gih_n": 1191,
-   "alsa": 2.6666667,
-   "seen_n": 1380
+   "gih": 62.76595700000001,
+   "gih_n": 1222,
+   "alsa": 2.6582278,
+   "seen_n": 1422
   },
   {
    "id": "6a1uYz4LT49NjnfASJ4f16",
    "name": "Root Maze",
    "gih": null,
    "gih_n": 9,
-   "alsa": 6.5318498,
-   "seen_n": 3595
+   "alsa": 6.5407447,
+   "seen_n": 3706
   }
  ]
 }
