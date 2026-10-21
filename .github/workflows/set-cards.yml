@@ -1,0 +1,48 @@
+name: Collect set cards
+# Reads the revealed cards of a set that is not out yet (TRK) from Wizards' official card gallery into data/<code>/target.json.gz.
+# GitHub Actions only: the cloud sandbox cannot reach Wizards. The daily run is at 05:37 JST, before the 06:07 JST site build.
+# Failures keep the stored cards (see data/<code>/collect-state.json for the reason and the gallery used).
+on:
+  schedule:
+    - cron: '37 20 * * *'
+  workflow_dispatch:
+    inputs:
+      set:
+        description: 'Set code (see lib/set-config.mjs)'
+        default: 'TRK'
+  push:
+    paths:
+      - 'scripts/collect-set-cards.mjs'
+      - 'lib/official.mjs'
+      - 'lib/set-config.mjs'
+      - '.github/workflows/set-cards.yml'
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: set-cards
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SET_CODE: ${{ inputs.set || 'TRK' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/collect-set-cards.mjs "$SET_CODE"
+      - name: Save the cards and redeploy the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          dir="data/$(echo "$SET_CODE" | tr A-Z a-z)"
+          git add "$dir/target.json.gz" "$dir/collect-state.json" 2>/dev/null || true
+          if git diff --cached --quiet; then echo 'nothing to save'; exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Update $SET_CODE card list"
+          git push origin HEAD:${GITHUB_REF_NAME}
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then gh workflow run pages.yml --ref main; fi

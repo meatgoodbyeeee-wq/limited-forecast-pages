@@ -34,6 +34,14 @@ jobs:
       - run: gunzip -k public/forecast.json.gz
       - run: for file in data/{target,model,adopted-gih-fra,live-policy}.json.gz; do gunzip -k "$file"; done
       - run: node scripts/refresh-forecast.mjs
+      # Other sets: built only once the adopted GIH files from the data repository are in data/<code>/, and only for sets
+      # marked available in lib/set-config.mjs (that flag is the publishing switch).
+      - name: Build forecasts for other sets
+        run: |
+          for f in data/*/adopted-gih.json.gz; do
+            [ -f "$f" ] || continue
+            node scripts/build-set-forecast.mjs "$(basename "$(dirname "$f")" | tr a-z A-Z)"
+          done
       - run: node scripts/fetch-about-feeds.mjs || true
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
