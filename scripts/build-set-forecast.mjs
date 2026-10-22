@@ -34,13 +34,13 @@ const incumbent = readGz(url('../data/model.json.gz'));
 const refs = url('../data/similar-references.json.gz');
 if (fs.existsSync(refs)) incumbent.references = {...incumbent.references, gih: readGz(refs).cards};
 
-let apply = cards => cards, gihVersion = 'first-stage-only (no adopted GIH file)', rangeVersion = null;
+let apply = cards => cards, gihVersion = 'first-stage-only (no adopted GIH file)', rangeVersion = null, preliminary = false;
 if (fs.existsSync(adoptedPath) && fs.existsSync(rangePath)) {
   const adopted = readGz(adoptedPath), range = JSON.parse(fs.readFileSync(rangePath, 'utf8'));
   if (adopted.set && adopted.set !== code) throw Error(`adopted file is for ${adopted.set}, not ${code}`);
   if (range.gih_model_version !== adopted.version) throw Error('range file and adopted file belong to different model versions');
   const gr = makeGihRange(range), ad = makeAdoptedGih(adopted, gr.withGihRange);
-  apply = ad.applyAdoptedGih; gihVersion = ad.adoptedGihVersion; rangeVersion = gr.gihRangeVersion;
+  apply = ad.applyAdoptedGih; gihVersion = ad.adoptedGihVersion; rangeVersion = gr.gihRangeVersion; preliminary = adopted.preliminary === true;
 }
 const predicted = applyAdoptedAlsa(apply(predictCards(pool, incumbent)));
 if (!predicted.length || predicted.some(x => !Number.isFinite(x.gih) || !Number.isFinite(x.alsa))) throw Error('予測値の検証に失敗');
@@ -48,7 +48,7 @@ const adoptedCount = predicted.filter(x => x.gih_model_version === gihVersion).l
 const policy = readGz(url('../data/live-policy.json.gz')).policies.current;
 const {cards: _cards, ...meta} = target;
 const forecast = liveForecast({...meta, phase: 'PREVIEW', cards: predicted, deck_color: predictDeckColors(predicted),
-  model_version: `${incumbent.version} + ${gihVersion} + ${adoptedAlsaVersion}`, gih_range_version: rangeVersion, checked_at: new Date().toISOString(),
+  model_version: `${incumbent.version} + ${gihVersion} + ${adoptedAlsaVersion}`, gih_range_version: rangeVersion, ...(preliminary ? {preliminary: true} : {}), checked_at: new Date().toISOString(),
   adopted_gih_cards: adoptedCount, first_stage_cards: predicted.length - adoptedCount}, null, policy);
 const summary = readGz(opt('summary-from') || url('../public/forecast.json.gz')).summary;
 fs.writeFileSync(out, JSON.stringify({forecast, snapshots: [], summary}));

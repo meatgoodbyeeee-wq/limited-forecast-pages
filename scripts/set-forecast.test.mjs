@@ -52,3 +52,16 @@ test('build-set-forecast: an unpublished set builds nothing and exits cleanly', 
   assert.equal(r.status, 0);
   assert.match(r.stdout, /not published/);
 });
+
+test('adopted GIH: per-model wording is used when the file has texts, and the default wording is unchanged without them', () => {
+  const {withGihRange} = makeGihRange(rangeFile);
+  const plain = makeAdoptedGih(adoptedFile, withGihRange).applyAdoptedGih([card()])[0];
+  assert.match(plain.note, /AIが読み取ったカード効果を含む/);
+  assert.equal(plain.gih_reason[0].label, '構造化特徴量（AI抽出の効果を含む）');
+  const texts = {structured_label: 'L', summary: 'S', note: 'N'};
+  const custom = makeAdoptedGih({...adoptedFile, texts}, withGihRange).applyAdoptedGih([card()])[0];
+  assert.equal(custom.note, 'N');
+  assert.equal(custom.gih_explanation.summary, 'S');
+  assert.equal(custom.gih_reason[0].label, 'L');
+  assert.equal(custom.gih, plain.gih);
+});

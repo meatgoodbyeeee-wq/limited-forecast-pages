@@ -1,0 +1,1376 @@
+{
+ "version": "gih-range-m5-b10-28set-20260929-trk-preview",
+ "set": "TRK",
+ "method": "M5 normalized conformal (method unchanged from research/gih_interval): ExtraTrees predicts |residual| of the final GIH model; range = pred ± q·sigma",
+ "target_coverage": 0.8,
+ "fin_used": false,
+ "mh3_used": false,
+ "gih_model_version": "gih-b10-28set-20260929-trk-preview",
+ "training_sets": [
+  "AFR",
+  "BLB",
+  "BRO",
+  "DFT",
+  "DMU",
+  "DSK",
+  "ECL",
+  "EOE",
+  "FDN",
+  "HOB",
+  "KHM",
+  "LCI",
+  "LTR",
+  "MID",
+  "MKM",
+  "MOM",
+  "MSH",
+  "NEO",
+  "ONE",
+  "OTJ",
+  "SNC",
+  "SOS",
+  "STX",
+  "TDM",
+  "TLA",
+  "TMT",
+  "VOW",
+  "WOE"
+ ],
+ "q": 1.598678,
+ "sigma_floor": 0.5,
+ "loso": {
+  "coverage": 0.7993,
+  "coverage_by_rarity": {
+   "common": 0.7962,
+   "uncommon": 0.8011,
+   "rare": 0.8009,
+   "mythic": 0.8029
+  },
+  "coverage_by_type": {
+   "creature": 0.7988,
+   "spell": 0.8048,
+   "other_permanent": 0.7965,
+   "land": 0.7918
+  },
+  "per_set_coverage_min_max": [
+   0.6436,
+   0.8855
+  ],
+  "mean_width": 7.138,
+  "mean_interval_score": 9.8959
+ },
+ "loso_fallback_m4": {
+  "coverage": 0.8033,
+  "coverage_by_rarity": {
+   "common": 0.8017,
+   "uncommon": 0.8015,
+   "rare": 0.8068,
+   "mythic": 0.809
+  },
+  "coverage_by_type": {
+   "creature": 0.8019,
+   "spell": 0.8011,
+   "other_permanent": 0.7937,
+   "land": 0.8383
+  },
+  "per_set_coverage_min_max": [
+   0.6383,
+   0.8797
+  ],
+  "mean_width": 7.1173,
+  "mean_interval_score": 10.0125
+ },
+ "fallback_note": "M4 rarity x type radius (FRA 'land' rarity counts as common); used when a card's text no longer matches this file",
+ "fallback": {
+  "common": {
+   "creature": 2.7675,
+   "spell": 3.0547,
+   "other_permanent": 3.086,
+   "land": 1.9013
+  },
+  "uncommon": {
+   "creature": 3.256,
+   "spell": 3.5982,
+   "other_permanent": 4.4483,
+   "land": 3.581
+  },
+  "rare": {
+   "creature": 4.4069,
+   "spell": 4.9086,
+   "other_permanent": 5.5149,
+   "land": 3.1448
+  },
+  "mythic": {
+   "creature": 4.3836,
+   "spell": 6.1515,
+   "other_permanent": 5.2987,
+   "land": 4.6907
+  }
+ },
+ "cards": [
+  {
+   "id": "6TTYU2AKKnZkWsEzgfUJIe",
+   "name": "70,000 Light-Years from Home",
+   "oracle_text": "Exile target creature or Spacecraft. Its controller may search their library for a basic land card, reveal it, put it into their hand, then shuffle.",
+   "type_line": "Sorcery",
+   "mana_cost": "{W}{1}",
+   "radius": 3.921
+  },
+  {
+   "id": "3WcVv3rBMsbRBPIhIHHBb9",
+   "name": "Command Decision",
+   "oracle_text": "Choose one —\r\n• Destroy target creature with power 4 or greater.\r\n• Draw a card.",
+   "type_line": "Sorcery",
+   "mana_cost": "{W}{1}",
+   "radius": 3.6819
+  },
+  {
+   "id": "M6oE5WUToOpu61gkd0Oxr",
+   "name": "DOT-7 Repair Squad",
+   "oracle_text": "Flying\r\n{o1oW}: Untap target creature. Activate only as a sorcery and only once each turn.",
+   "type_line": "Artifact Creature — Robot",
+   "mana_cost": "{W}{3}",
+   "radius": 2.6736
+  },
+  {
+   "id": "20WROlDZDs1yMCBcjqEDQW",
+   "name": "Emergency Medical Hologram",
+   "oracle_text": "When this creature enters, put a +1/+1 counter on target creature. You gain 1 life.",
+   "type_line": "Artifact Creature — Illusion Doctor",
+   "mana_cost": "{W}",
+   "radius": 3.1024
+  },
+  {
+   "id": "2cKjpqJirXNf5nAebHyC2P",
+   "name": "Federation Field Medic",
+   "oracle_text": "Vigilance\r\nWhen this creature enters, choose one —\r\n• Put a +1/+1 counter on target creature. It gains vigilance until end of turn.\r\n• Draw a card if you control a permanent with a counter on it.",
+   "type_line": "Creature — Human Doctor",
+   "mana_cost": "{W}{3}",
+   "radius": 2.7025
+  },
+  {
+   "id": "1PR6vxcpU7xGKZBoRwBmVR",
+   "name": "Free Borg Revolutionaries",
+   "oracle_text": "When this creature enters, creatures you control get +1/+1 until end of turn.\r\nBasic landcycling {o2} ({o2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+   "type_line": "Artifact Creature — Borg Rebel",
+   "mana_cost": "{W}{W}{3}",
+   "radius": 2.636
+  },
+  {
+   "id": "5uHXzXuL57zuTBhGKPmCJO",
+   "name": "Malfunctioning Holodeck",
+   "oracle_text": "Ward {o2} (Whenever this artifact becomes the target of a spell or ability an opponent controls, counter it unless that player pays {o2}.)\r\nWhen this artifact enters, exile target nonland permanent an opponent controls until this artifact leaves the battlefield.",
+   "type_line": "Artifact",
+   "mana_cost": "{W}{2}",
+   "radius": 2.4469
+  },
+  {
+   "id": "bu53FaWC1YewJrhwo3jDw",
+   "name": "Picard, Leading by Example",
+   "oracle_text": "{o1}, {oT}: Another target creature gets +X/+X until end of turn, where X is Picard's power. Activate only as a sorcery.",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{W}{1}",
+   "radius": 3.3113
+  },
+  {
+   "id": "19zduqYDNswmRO0ljZDqpL",
+   "name": "Cloistered Telepath",
+   "oracle_text": "Flash\r\nWhen this creature enters, draw a card, then discard a card.",
+   "type_line": "Creature — Talosian Advisor",
+   "mana_cost": "{U}{1}",
+   "radius": 2.8023
+  },
+  {
+   "id": "5yGTmyIs6P2zi399lZdPUg",
+   "name": "Dominion Saboteur",
+   "oracle_text": "You may have this creature enter as a copy of any artifact or creature on the battlefield, except it isn't legendary. If you do, it enters with additional counters on it equal to the same number and kinds of counters the copied permanent has on it.",
+   "type_line": "Creature — Shapeshifter",
+   "mana_cost": "{U}{4}",
+   "radius": 3.2609
+  },
+  {
+   "id": "4auDyusdbyTF8UqDcZ8Zyv",
+   "name": "Federation Probe",
+   "oracle_text": "Flying\r\nWhen this creature enters, choose one —\r\n• Target creature gets +1/+1 until end of turn.\r\n• Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+   "type_line": "Artifact Creature — Construct",
+   "mana_cost": "{U}",
+   "radius": 2.9198
+  },
+  {
+   "id": "61bdLTmh8wJWJ3dQcSbFII",
+   "name": "Guidance Failure",
+   "oracle_text": "This spell costs {o1} less to cast if it targets an attacking creature.\r\nTarget creature or Spacecraft's owner puts it on their choice of the top or bottom of their library.",
+   "type_line": "Instant",
+   "mana_cost": "{U}{3}",
+   "radius": 2.1484
+  },
+  {
+   "id": "5GyIHOw4va5sWG79p5eiVt",
+   "name": "Humpback Whales",
+   "oracle_text": "Vigilance, ward {o2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {o2}.)\r\nBasic landcycling {o2} ({o2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+   "type_line": "Creature — Whale",
+   "mana_cost": "{U}{U}{4}",
+   "radius": 2.5104
+  },
+  {
+   "id": "zt0ZhUynQ391nD23gV5uJ",
+   "name": "Marooned",
+   "oracle_text": "Enchant artifact or creature\r\nWhen this Aura enters, you may pay {o3}. If you do, tap enchanted permanent.\r\nEnchanted permanent doesn't untap during its controller's untap step and can't be beamed up.",
+   "type_line": "Enchantment — Aura",
+   "mana_cost": "{U}",
+   "radius": 3.0943
+  },
+  {
+   "id": "4bto28Lt7OGlxLVpyelDwq",
+   "name": "Assault Drone",
+   "oracle_text": "Artifact creatures you control get +1/+0.",
+   "type_line": "Artifact Creature — Borg",
+   "mana_cost": "{B}{3}",
+   "radius": 3.3204
+  },
+  {
+   "id": "2soNjspoveX59D4gmw534o",
+   "name": "Automated Warfare System",
+   "oracle_text": "Flying\r\nWhenever this creature attacks, you may sacrifice another creature or artifact. If you do, draw a card.",
+   "type_line": "Artifact Creature — Construct",
+   "mana_cost": "{B}{2}",
+   "radius": 2.5306
+  },
+  {
+   "id": "5WoEo8yuIlgDVLBKPINbjS",
+   "name": "Bat'leth",
+   "oracle_text": "When this Equipment enters, target creature an opponent controls gets -2/-2 until end of turn.\r\nEquipped creature gets +2/+0.\r\nEquip {o2} ({o2}: Attach to target creature you control. Equip only as a sorcery.)",
+   "type_line": "Artifact — Equipment",
+   "mana_cost": "{B}{2}",
+   "radius": 3.9599
+  },
+  {
+   "id": "3z8Znrp6rHSujfeoADxQrU",
+   "name": "Battle-Scarred Survivalist",
+   "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\r\nWhenever another creature dies, put a +1/+1 counter on this creature. This ability triggers only once each turn.",
+   "type_line": "Creature — Klingon Scout",
+   "mana_cost": "{B}{1}",
+   "radius": 2.8826
+  },
+  {
+   "id": "4d9PgCdu6FWSrL8GIDe95Y",
+   "name": "Cha'DIch Investigator",
+   "oracle_text": "When this creature enters, create a 2/1 red Klingon Warrior creature token with haste.",
+   "type_line": "Creature — Klingon Warrior",
+   "mana_cost": "{B}{4}",
+   "radius": 2.5332
+  },
+  {
+   "id": "5z2xMglr5IBj5UTMQ2fhIh",
+   "name": "Collective Drone",
+   "oracle_text": "Collective Drone's power is equal to the number of artifact creatures you control.",
+   "type_line": "Artifact Creature — Borg",
+   "mana_cost": "{B}{1}",
+   "radius": 3.338
+  },
+  {
+   "id": "7v5txiqYHMYN8pF7O723vk",
+   "name": "Eject the Warp Core",
+   "oracle_text": "Kicker—Sacrifice an artifact or creature. (You may sacrifice an artifact or creature in addition to any other costs as you cast this spell.)\r\nTarget creature gets -2/-2 until end of turn. If this spell was kicked, that creature gets -6/-6 until end of turn instead.",
+   "type_line": "Instant",
+   "mana_cost": "{B}{1}",
+   "radius": 2.2781
+  },
+  {
+   "id": "2f2LYKEOSpc3On4TLfYuPD",
+   "name": "A Good Day to Die",
+   "oracle_text": "Target creature gets +2/+0 until end of turn. When that creature dies this turn, you draw a card.",
+   "type_line": "Instant",
+   "mana_cost": "{B}",
+   "radius": 3.4834
+  },
+  {
+   "id": "5tWVpuLnVJVLRYxlhqwM6z",
+   "name": "He's Dead, Jim",
+   "oracle_text": "Destroy target creature. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+   "type_line": "Instant",
+   "mana_cost": "{B}{3}",
+   "radius": 2.2402
+  },
+  {
+   "id": "4gFPh2sXRbcI6cpBSeqUCV",
+   "name": "Hive Mind Coprocessor",
+   "oracle_text": "Artifact creatures you control have \"Whenever this creature deals combat damage to a player, you may pay 1 life. If you do, draw a card.\"",
+   "type_line": "Artifact Creature — Borg",
+   "mana_cost": "{B}{4}",
+   "radius": 3.153
+  },
+  {
+   "id": "1t3TUQMhQtQkVabEyh6XYw",
+   "name": "Organic Avulsion Unit",
+   "oracle_text": "{o2}: Artifact creatures you control gain menace until end of turn. (A creature with menace can't be blocked except by two or more creatures.)",
+   "type_line": "Artifact Creature — Borg",
+   "mana_cost": "{B}{2}",
+   "radius": 3.2539
+  },
+  {
+   "id": "6IDixh06o1yzoHi56wsEem",
+   "name": "Relentless Drednok",
+   "oracle_text": "Lifelink\r\n{o2oB}, Exile this card from your graveyard: You draw a card and lose 1 life.",
+   "type_line": "Artifact Creature — Robot",
+   "mana_cost": "{B}",
+   "radius": 3.0067
+  },
+  {
+   "id": "4Fly83USDJnjAHWS7tn9rW",
+   "name": "Cantankerous Captain",
+   "oracle_text": "At the beginning of combat on your turn, target creature you control gets +1/+0 until end of turn. Then that creature gains menace until end of turn if creatures you control have total power 8 or greater. (It can't be blocked except by two or more creatures.)",
+   "type_line": "Creature — Tellarite Officer",
+   "mana_cost": "{R}{2}",
+   "radius": 2.7035
+  },
+  {
+   "id": "Yf3vMXIvWex8kbMbLDD4V",
+   "name": "Captain's Tutelage",
+   "oracle_text": "Flash\r\nEnchant creature\r\nWhen this Aura enters, enchanted creature gains first strike until end of turn.\r\nEnchanted creature gets +2/+0.",
+   "type_line": "Enchantment — Aura",
+   "mana_cost": "{R}{1}",
+   "radius": 3.1442
+  },
+  {
+   "id": "GNzOLbrEmgoix7LaOyGXe",
+   "name": "Horta",
+   "oracle_text": "Trample\r\nBasic landcycling {o2} ({o2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+   "type_line": "Creature — Elemental",
+   "mana_cost": "{R}{R}{4}",
+   "radius": 2.1893
+  },
+  {
+   "id": "NpJ2Bgwinh9syaegOGHEq",
+   "name": "Khaaaaaaaaaaaannn!",
+   "oracle_text": "Khaaaaaaaaaaaannn! deals twice X damage to target creature. If that creature would die this turn, exile it instead.",
+   "type_line": "Instant",
+   "mana_cost": "{R}{X}",
+   "radius": 2.723
+  },
+  {
+   "id": "2b1SzaOIMzFOdeK4j4orrV",
+   "name": "La'An Noonien-Singh, Security",
+   "oracle_text": "Whenever you attack while creatures you control have total power 8 or greater, target creature can't block this turn.",
+   "type_line": "Legendary Creature — Human Soldier",
+   "mana_cost": "{R}{R}{2}",
+   "radius": 3.2947
+  },
+  {
+   "id": "4zh9ig1a7ECmxu0fNJUQln",
+   "name": "Munitions Enthusiast",
+   "oracle_text": "Trample\r\nWhen this creature dies, it deals 1 damage to any target.",
+   "type_line": "Creature — Klingon Warrior",
+   "mana_cost": "{R}{1}",
+   "radius": 3.0698
+  },
+  {
+   "id": "5vI2Ysg4kNUqeJ2wSNaroz",
+   "name": "Perils of the Past",
+   "oracle_text": "Choose one —\r\n• Use the Relic — Target creature gets +3/+2 until end of turn.\r\n• Destroy the Relic — Destroy target artifact.",
+   "type_line": "Instant",
+   "mana_cost": "{R}{1}",
+   "radius": 3.2496
+  },
+  {
+   "id": "23Am8kcaPpVBp6fiq3dRq7",
+   "name": "Planetary Patrol",
+   "oracle_text": "Landfall — Whenever a land you control enters, this creature gets +1/+1 until end of turn.",
+   "type_line": "Creature — Scout",
+   "mana_cost": "{R}{1}",
+   "radius": 2.5863
+  },
+  {
+   "id": "Eotx765LMO9el4OgxXz3o",
+   "name": "Plasma Cascade",
+   "oracle_text": "Plasma Cascade deals 3 damage to any target. You may discard a card. If you do, draw a card.",
+   "type_line": "Instant",
+   "mana_cost": "{R}{2}",
+   "radius": 2.2478
+  },
+  {
+   "id": "5jhyBBJoI5xe59viSBySxg",
+   "name": "Reckless Impulse",
+   "oracle_text": "Exile the top two cards of your library. Until the end of your next turn, you may play those cards.",
+   "type_line": "Sorcery",
+   "mana_cost": "{R}{1}",
+   "radius": 3.8594
+  },
+  {
+   "id": "5TcKREEkje1CmTY3XysCJJ",
+   "name": "Cold-Blooded Crew",
+   "oracle_text": "When this creature enters, put two +1/+1 counters on target creature.\r\nThis creature can't be blocked by creatures with power 2 or less.\r\nBasic landcycling {o2} ({o2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+   "type_line": "Creature — Gorn Warrior",
+   "mana_cost": "{G}{G}{4}",
+   "radius": 2.6042
+  },
+  {
+   "id": "TRijBCnqSJOOQVUAUbM5c",
+   "name": "Common Goal",
+   "oracle_text": "One or two target creatures you control each deal damage equal to their power to target creature an opponent controls.",
+   "type_line": "Sorcery",
+   "mana_cost": "{G}{1}",
+   "radius": 2.9887
+  },
+  {
+   "id": "73Z2t4blFBhxRpD6yNYCcn",
+   "name": "Dathon and Picard at El-Adrel",
+   "oracle_text": "Choose one —\r\n• Temba, His Arms Wide — Target creature gets +3/+3 and gains trample until end of turn.\r\n• Shaka, When the Walls Fell — Each opponent sacrifices a nontoken artifact or enchantment of their choice.",
+   "type_line": "Instant",
+   "mana_cost": "{G}{2}",
+   "radius": 3.3162
+  },
+  {
+   "id": "5AZg0k5HWhsyDH7d1huY56",
+   "name": "Dominion Supervisor",
+   "oracle_text": "When this creature enters, put a +1/+1 counter on target creature.\r\nCreatures you control with counters on them have trample.",
+   "type_line": "Creature — Vorta Doctor",
+   "mana_cost": "{G}{2}",
+   "radius": 2.2887
+  },
+  {
+   "id": "6R07nUV2Hg2GxK6mJcfHBJ",
+   "name": "First Contact",
+   "oracle_text": "Mill four cards. You may put a permanent card from among them into your hand. If this spell is the first spell you've cast this game, you gain 2 life. (To mill four cards, put the top four cards of your library into your graveyard.)",
+   "type_line": "Instant",
+   "mana_cost": "{G}{1}",
+   "radius": 3.3792
+  },
+  {
+   "id": "5JVTGJbhpN2K8y2PXEVrZR",
+   "name": "I'm a Doctor, Not a . . .",
+   "oracle_text": "Put a +1/+1 counter on target creature you control. Untap it. Until end of turn, it gets +1/+1 and becomes a Doctor. (It loses all other creature types.)",
+   "type_line": "Instant",
+   "mana_cost": "{G}",
+   "radius": 2.639
+  },
+  {
+   "id": "49zFw5nDsqN99Lw7QH86El",
+   "name": "Moopsy",
+   "oracle_text": "Deathtouch\r\n{o2}: This creature gains reach until end of turn.",
+   "type_line": "Creature — Beast",
+   "mana_cost": "{G}",
+   "radius": 2.6283
+  },
+  {
+   "id": "77IUSfx0XrcJLYorUsbHzf",
+   "name": "Mugato",
+   "oracle_text": "Reach, vigilance, deathtouch",
+   "type_line": "Creature — Ape Beast",
+   "mana_cost": "{G}{G}{3}",
+   "radius": 2.8903
+  },
+  {
+   "id": "7hl9Cb6uZ0xV37CNbfDS3V",
+   "name": "Cybernetic Specialist",
+   "oracle_text": "When this creature enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\r\n{o1}, {oT}: Put target card from your graveyard on the bottom of your library.",
+   "type_line": "Artifact Creature — Human Scientist",
+   "mana_cost": "{2}",
+   "radius": 2.1525
+  },
+  {
+   "id": "1PuUzNOnB40Ocd2Fjm5e5X",
+   "name": "Open Communications",
+   "oracle_text": "Draw a card.\r\nBeam me up {o2oU} (You may cast this card from your graveyard for {o2oU} if you also return a creature you control to its owner's hand. Then exile this spell.)",
+   "type_line": "Sorcery",
+   "mana_cost": "{U}",
+   "radius": 3.7916
+  },
+  {
+   "id": "34PxlxnIzCQrrHG2E2idRx",
+   "name": "General Chang, Cold Warrior",
+   "oracle_text": "{o1}, Sacrifice a creature: Put a +1/+1 counter on each Klingon you control.",
+   "type_line": "Legendary Creature — Klingon Warrior Officer",
+   "mana_cost": "{B}",
+   "radius": 4.5675
+  },
+  {
+   "id": "5gDcZrh2OfTz7GjesfCgDo",
+   "name": "Hallowed Fountain",
+   "oracle_text": "({oT}: Add {oW} or {oU}.)\r\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+   "type_line": "Land — Plains Island",
+   "mana_cost": "",
+   "radius": 2.5954
+  },
+  {
+   "id": "41qCK1MfEIrTSUySSrNm3b",
+   "name": "Blood Crypt",
+   "oracle_text": "({oT}: Add {oB} or {oR}.)\r\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+   "type_line": "Land — Swamp Mountain",
+   "mana_cost": "",
+   "radius": 2.6227
+  },
+  {
+   "id": "7oatLSKQEBEjz0X3ryOS90",
+   "name": "Godless Shrine",
+   "oracle_text": "({oT}: Add {oW} or {oB}.)\r\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+   "type_line": "Land — Plains Swamp",
+   "mana_cost": "",
+   "radius": 2.5976
+  },
+  {
+   "id": "1VRlpVKYsvdU9CryfDER1N",
+   "name": "Overgrown Tomb",
+   "oracle_text": "({oT}: Add {oB} or {oG}.)\r\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+   "type_line": "Land — Swamp Forest",
+   "mana_cost": "",
+   "radius": 2.5976
+  },
+  {
+   "id": "7vRsvg5OpGMAM4v02cKjzG",
+   "name": "Sacred Foundry",
+   "oracle_text": "({oT}: Add {oR} or {oW}.)\r\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+   "type_line": "Land — Mountain Plains",
+   "mana_cost": "",
+   "radius": 2.5976
+  },
+  {
+   "id": "5bHyYKBAxziuJdNQdrG4np",
+   "name": "Breeding Pool",
+   "oracle_text": "({oT}: Add {oG} or {oU}.)\r\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+   "type_line": "Land — Forest Island",
+   "mana_cost": "",
+   "radius": 2.5976
+  },
+  {
+   "id": "60tAXdyTaw43YmT3uGNYcS",
+   "name": "Brad Boimler, Eager Ensign",
+   "oracle_text": "Lifelink\r\nWhenever Brad Boimler becomes tapped, until end of turn, if one or more counters would be put on a permanent you control, that many plus one of each of those kinds of counters are put on that permanent instead.",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{W}{1}",
+   "radius": 3.1372
+  },
+  {
+   "id": "5MMSP2XyzdBcOVVflNWQx8",
+   "name": "Dr. Beverly Crusher",
+   "oracle_text": "If you gaining life causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time.\r\nWhenever you gain life, put a +1/+1 counter on Dr. Crusher.",
+   "type_line": "Legendary Creature — Human Doctor",
+   "mana_cost": "{W}{2}",
+   "radius": 4.8324
+  },
+  {
+   "id": "5NlejP3UDTWP0hSi9uAxlU",
+   "name": "Set Phasers to . . .",
+   "oracle_text": "Choose one —\r\n• Stun — Tap target creature and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\r\n• Kill — This spell deals 3 damage to target attacking creature.",
+   "type_line": "Instant",
+   "mana_cost": "{W}",
+   "radius": 2.4004
+  },
+  {
+   "id": "1JvP8yJBq59gYBjrbjVdsu",
+   "name": "Consider the Prime Directive",
+   "oracle_text": "Choose one —\r\n• Interfere — Counter target spell unless its controller pays {o3}.\r\n• Observe — Tap up to one target creature and put a stun counter on it. Draw a card. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+   "type_line": "Instant",
+   "mana_cost": "{U}{2}",
+   "radius": 2.4637
+  },
+  {
+   "id": "69mNObgzOXtkPzHyuFvrBk",
+   "name": "Highly Illogical",
+   "oracle_text": "Kicker {o1oU} (You may pay an additional {o1oU} as you cast this spell.)\r\nCounter target spell with mana value 2 or less. If this spell was kicked, instead counter target spell.",
+   "type_line": "Instant",
+   "mana_cost": "{U}{1}",
+   "radius": 4.3851
+  },
+  {
+   "id": "20z5ptKDx9cbmiEsD6xwQA",
+   "name": "Hoshi Sato, Exolinguist",
+   "oracle_text": "Federation — When Hoshi Sato enters, look at the top X cards of your library, where X is the number of creature types among non-Borg creatures you control. Put one of them into your hand and the rest on the bottom of your library in a random order.",
+   "type_line": "Legendary Creature — Human Scientist",
+   "mana_cost": "{U}{4}",
+   "radius": 3.5533
+  },
+  {
+   "id": "7vTRqQvhWD94toGI1J9tn",
+   "name": "In the Pale Moonlight",
+   "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\r\nI — Each opponent sacrifices a nontoken creature of their choice.\r\nII — Investigate. (Create a Clue token. It's an artifact with \"{o2}, Sacrifice this token: Draw a card.\")\r\nIII — You may sacrifice an artifact or creature. If you do, create two 2/2 black Romulan creature tokens.",
+   "type_line": "Enchantment — Saga",
+   "mana_cost": "{B}{B}{3}",
+   "radius": 3.7366
+  },
+  {
+   "id": "1CAaZgKYMTqcmjr44WNUwx",
+   "name": "Salt Vampire",
+   "oracle_text": "Lifelink\r\nWhen this creature enters, look at target opponent's hand. You may choose a nonland card from it. If you do, that player exiles that card, then draws a card.",
+   "type_line": "Creature — Vampire Shapeshifter",
+   "mana_cost": "{B}{1}",
+   "radius": 4.0686
+  },
+  {
+   "id": "3siv12iDSh3MoQgAfLYrOk",
+   "name": "Beckett Mariner, Impetuous Ensign",
+   "oracle_text": "First strike\r\nReckless Behavior — Whenever Beckett Mariner becomes tapped, put a promotion counter on her. Then if there are three or more promotion counters on her, remove those counters and she deals 2 damage to each opponent.",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{R}{1}",
+   "radius": 3.9511
+  },
+  {
+   "id": "nv4ll82hpkQsKHaB4wrzL",
+   "name": "Captain James T. Kirk",
+   "oracle_text": "Whenever Captain Kirk enters or attacks, choose one. If you have no cards in hand, choose one or more instead.\r\n• Discard a card, then draw a card.\r\n• Create a 1/1 red Officer creature token.\r\n• Creatures you control get +1/+0 until end of turn.",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{R}{2}",
+   "radius": 4.0979
+  },
+  {
+   "id": "7If9zVytAsA3LuysHONOxe",
+   "name": "Amok Time",
+   "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\r\nI — Target creature you control fights up to one target creature an opponent controls.\r\nII — You gain 3 life.\r\nIII — Return target creature card from your graveyard to your hand.",
+   "type_line": "Enchantment — Saga",
+   "mana_cost": "{G}{2}",
+   "radius": 4.0982
+  },
+  {
+   "id": "9kxCOR1ZMBo7DfcQbDaDs",
+   "name": "Captain Kathryn Janeway",
+   "oracle_text": "You may play an additional land on each of your turns.\r\nWhenever Captain Janeway or another creature you control enters, that creature explores. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on the creature, then put the card back or put it into your graveyard.)",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{G}{3}",
+   "radius": 4.3775
+  },
+  {
+   "id": "3veMa8gAIxPIv2ePDBbaF",
+   "name": "Crystalline Entity",
+   "oracle_text": "Flying\r\nWhen this creature enters, if you cast it, destroy all nonartifact creatures.",
+   "type_line": "Artifact Creature — Elemental",
+   "mana_cost": "{8}",
+   "radius": 4.6784
+  },
+  {
+   "id": "1MeVTPlvedz3qPrin8FvfB",
+   "name": "Seven of Nine",
+   "oracle_text": "Whenever you face a dilemma, draw a card. (You face a dilemma as you choose one or more modes for a spell or ability.)",
+   "type_line": "Legendary Artifact Creature — Human Scientist",
+   "mana_cost": "{B}{U}{2}",
+   "radius": 3.3818
+  },
+  {
+   "id": "35n2wtlIATZnFkiiDE6tGG",
+   "name": "Saavik, Stoic Student",
+   "oracle_text": "Flash\r\nFederation — When Saavik enters, she deals X damage to target attacking or blocking creature an opponent controls, where X is the number of creature types among non-Borg creatures you control.",
+   "type_line": "Legendary Creature — Vulcan Advisor",
+   "mana_cost": "{W}{4}",
+   "radius": 3.8359
+  },
+  {
+   "id": "6xBXN1n0T6c3JTSdPnzWmv",
+   "name": "Shields Up!",
+   "oracle_text": "Target artifact or creature you control gains hexproof and indestructible until end of turn. If it's a creature, put a +1/+1 counter on it. (It can't be the target of spells or abilities your opponents control. Damage and effects that say \"destroy\" don't destroy it.)",
+   "type_line": "Instant",
+   "mana_cost": "{W}{1}",
+   "radius": 3.1104
+  },
+  {
+   "id": "7FPqpjcUi5DI8Y74Oe2YyO",
+   "name": "Shuttle Ace",
+   "oracle_text": "During your turn, this creature has flying.\r\nWhenever this creature becomes tapped, you gain 2 life.",
+   "type_line": "Creature — Kelpien Pilot",
+   "mana_cost": "{W}{4}",
+   "radius": 2.4608
+  },
+  {
+   "id": "cE1HTkm0kqYhnhN7oSzwZ",
+   "name": "Tactical Officer",
+   "oracle_text": "Whenever you attack while creatures you control have total power 8 or greater, put a +1/+1 counter on this creature. Untap it.",
+   "type_line": "Creature — Human Officer",
+   "mana_cost": "{W}{1}",
+   "radius": 2.6351
+  },
+  {
+   "id": "209Qa5uHoSG236MllZwf0J",
+   "name": "V'Ger, the Intruder",
+   "oracle_text": "Flying\r\nWhenever V'Ger enters or attacks, choose one —\r\n• Look at target opponent's hand, then draw a card.\r\n• Creatures your opponents control get -1/-0 until your next turn.",
+   "type_line": "Legendary Artifact Creature — Construct",
+   "mana_cost": "{U}{6}",
+   "radius": 2.9132
+  },
+  {
+   "id": "76A7H1TXfbDO7nn2hycOlk",
+   "name": "Resistance Is Futile",
+   "oracle_text": "Choose one —\r\n• Destroy target nonartifact creature.\r\n• Return target artifact creature card with mana value 3 or less from your graveyard to the battlefield.",
+   "type_line": "Sorcery",
+   "mana_cost": "{B}{1}",
+   "radius": 3.3887
+  },
+  {
+   "id": "78IBRRueelq1WeTqyApv9e",
+   "name": "Rogue Artificial Intelligence",
+   "oracle_text": "When this creature enters, choose one —\r\n• You gain 3 life.\r\n• Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\r\nBasic landcycling {o2} ({o2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+   "type_line": "Artifact Creature — Construct",
+   "mana_cost": "{B}{B}{4}",
+   "radius": 2.3378
+  },
+  {
+   "id": "ll7KJCJ0sUqfF3MhBG2WV",
+   "name": "Silicate Surveyor",
+   "oracle_text": "Reach\r\nWhen this creature enters, exile the top card of your library. Until the end of your next turn, you may play that card.",
+   "type_line": "Creature — Tholian Scout",
+   "mana_cost": "{R}{4}",
+   "radius": 2.8754
+  },
+  {
+   "id": "7lOe97uts8mpS4NLTXcBZq",
+   "name": "Saurian Explorer",
+   "oracle_text": "Landfall — Whenever a land you control enters, this creature gets +2/+2 until end of turn.\r\n{o6}: Create a tapped Planet land token named New Planet with \"{oT}: Add one mana of any color.\" Activate only as a sorcery.",
+   "type_line": "Creature — Dinosaur Scout",
+   "mana_cost": "{G}{3}",
+   "radius": 2.7238
+  },
+  {
+   "id": "1PppQbI1qsIcDemNvnVogO",
+   "name": "Support Mission",
+   "oracle_text": "Whenever a creature you control enters, put a quest counter on this enchantment. Put a +1/+1 counter on that creature. If this enchantment has five or more quest counters on it, instead put two +1/+1 counters on that creature.",
+   "type_line": "Enchantment",
+   "mana_cost": "{G}{2}",
+   "radius": 4.7171
+  },
+  {
+   "id": "4pyBG4l6gqhSXZ3v9UHjyE",
+   "name": "Syndicate Liquidators",
+   "oracle_text": "Trample\r\nLandfall — Whenever a land you control enters, put two +1/+1 counters on target creature you control.",
+   "type_line": "Creature — Orion Pirate",
+   "mana_cost": "{G}{4}",
+   "radius": 3.0002
+  },
+  {
+   "id": "2pui0C8CMach9j9hsVio3M",
+   "name": "Xenobotanist",
+   "oracle_text": "{oT}: Add one mana of any color.",
+   "type_line": "Creature — Vulcan Scientist",
+   "mana_cost": "{G}{1}",
+   "radius": 2.5705
+  },
+  {
+   "id": "4v7I2njoM7rtDG10lcTZ6x",
+   "name": "Xindi Surveyors",
+   "oracle_text": "Landfall — Whenever a land you control enters, put a +1/+1 counter on this creature.",
+   "type_line": "Creature — Xindi Scientist",
+   "mana_cost": "{G}{2}",
+   "radius": 2.5498
+  },
+  {
+   "id": "TQdoSmyCdfJpXjyP8X7QO",
+   "name": "Captain Michael Burnham",
+   "oracle_text": "Trample\r\nLandfall — Whenever a land you control enters, Captain Burnham deals 1 damage to each opponent. If this is the second time this ability has resolved this turn, put a +1/+1 counter on Captain Burnham.",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{2}{R}",
+   "radius": 4.0674
+  },
+  {
+   "id": "oTMYetWR1u3LHEgXlj20m",
+   "name": "Captain Benjamin Sisko",
+   "oracle_text": "At the beginning of your end step, create a 1/1 red Officer creature token for each dilemma you've faced this turn.\r\n{o2oWoUoBoRoG}, {oT}: Exile the top five cards of your library. You may cast any number of spells with mana value less than or equal to the number of Officers you control from among those cards without paying their mana costs.",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{1}{W}",
+   "radius": 3.9613
+  },
+  {
+   "id": "iz3pdNDVCbJel63rVbXyi",
+   "name": "Captain Jean-Luc Picard",
+   "oracle_text": "Other creatures you control get +1/+1.\r\nWhenever you cast a creature or Spacecraft spell, create a 1/1 red Officer creature token.\r\nTap seven untapped Officers you control: Search your library for a Spacecraft card, put it onto the battlefield with seven charge counters on it, then shuffle.",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{2}{W}",
+   "radius": 4.6392
+  },
+  {
+   "id": "isqAM7Gksh0RZAX9tPdgJ",
+   "name": "Captain Jonathan Archer",
+   "oracle_text": "When Captain Archer enters, create Porthos, a legendary 1/1 green Dog creature token.\r\nFederation — {oG}, {oT}: Target creature you control gets +X/+X until end of turn, where X is the number of creature types among non-Borg creatures you control. Activate only as a sorcery.",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{2}{G}",
+   "radius": 4.0437
+  },
+  {
+   "id": "3mpP643ynE32dgVM7mSHnL",
+   "name": "Constable Odo",
+   "oracle_text": "When Constable Odo enters, choose one —\r\n• Tap target creature an opponent controls. Put two stun counters on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\r\n• Investigate twice. (To investigate, create a Clue token. It's an artifact with \"{o2}, Sacrifice this token: Draw a card.\")",
+   "type_line": "Legendary Creature — Shapeshifter Detective",
+   "mana_cost": "{3}{W/U}{W/U}",
+   "radius": 2.9152
+  },
+  {
+   "id": "7iI0SDdp6YnDMPM73HJqgh",
+   "name": "Bajor",
+   "oracle_text": "This land enters tapped.\r\nWhen this land enters, you gain 1 life.\r\n{oT}: Add {oR} or {oW}.",
+   "type_line": "Land — Planet",
+   "mana_cost": "",
+   "radius": 2.2644
+  },
+  {
+   "id": "6auyRoLCMR3MLbgseZxZdn",
+   "name": "Cleveland Booker, Empath",
+   "oracle_text": "Landfall — Whenever a land you control enters, create a 2/2 red and green Worm creature token with \"This token can't block.\"\r\n{o8}: Creatures you control get +2/+0 until end of turn.",
+   "type_line": "Legendary Creature — Kwejian Rogue",
+   "mana_cost": "{2}{R/G}{R/G}",
+   "radius": 3.4099
+  },
+  {
+   "id": "6aTnxX1aJw51QK2wU5ePDR",
+   "name": "Cardassia Prime",
+   "oracle_text": "This land enters tapped.\r\nWhen this land enters, you gain 1 life.\r\n{oT}: Add {oW} or {oB}.",
+   "type_line": "Land — Planet",
+   "mana_cost": "",
+   "radius": 2.2644
+  },
+  {
+   "id": "4P6RITC5VvSsqx5ZIrhjbN",
+   "name": "D'Vana Tendi, Optimistic Ensign",
+   "oracle_text": "{oT}: Untap another target permanent.\r\n{o3}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+   "type_line": "Legendary Creature — Orion Scientist",
+   "mana_cost": "{1}{G/U}{G/U}",
+   "radius": 3.0653
+  },
+  {
+   "id": "4OsKhpPt67jDvXiQoh0reZ",
+   "name": "Borg Cube",
+   "oracle_text": "Affinity for artifact creatures\r\nWhenever this Spacecraft enters or attacks, assimilate a creature card exiled with it. If you can't, exile up to one target creature. (To assimilate a card, put it onto the battlefield under your control with a +1/+1 counter. It's a Borg artifact creature and loses all other creature types.)\r\nStation\r\n12+ | Artifact creatures you control have flying.",
+   "type_line": "Artifact — Spacecraft",
+   "mana_cost": "{5}{W}{B}",
+   "radius": 5.093
+  },
+  {
+   "id": "3Jup5XyDZtw8ceeANAbn28",
+   "name": "Captain Pike, Fullness of Time",
+   "oracle_text": "Strange new worlds — Captain Pike's power and toughness are each equal to the number of differently named lands you control.\r\nYou may look at the top card of your library any time.\r\nYou may play lands from the top of your library.",
+   "type_line": "Legendary Creature — Human Officer Scout",
+   "mana_cost": "{1}{G}{G}",
+   "radius": 4.3549
+  },
+  {
+   "id": "2D6JCmFqqvFRA8ncF4yeLd",
+   "name": "Bristly Bill, Spine Sower",
+   "oracle_text": "Landfall — Whenever a land you control enters, put a +1/+1 counter on target creature.\r\n{o3oGoG}: Double the number of +1/+1 counters on each creature you control.",
+   "type_line": "Legendary Creature — Plant Druid",
+   "mana_cost": "{1}{G}",
+   "radius": 4.508
+  },
+  {
+   "id": "17dhnPbUxKDVpKxXQEsnTK",
+   "name": "Andoria",
+   "oracle_text": "This land enters tapped.\r\nWhen this land enters, you gain 1 life.\r\n{oT}: Add {oU} or {oR}.",
+   "type_line": "Land — Planet",
+   "mana_cost": "",
+   "radius": 2.2644
+  },
+  {
+   "id": "7bCSCicIZaZFRYfOccwBTB",
+   "name": "Sheoldred, the Apocalypse",
+   "oracle_text": "Deathtouch\r\nWhenever you draw a card, you gain 2 life.\r\nWhenever an opponent draws a card, they lose 2 life.",
+   "type_line": "Legendary Creature — Phyrexian Praetor",
+   "mana_cost": "{B}{B}{2}",
+   "radius": 5.0351
+  },
+  {
+   "id": "5oYmMkbzWVbnZBmDsbTfJp",
+   "name": "Watery Grave",
+   "oracle_text": "({oT}: Add {oU} or {oB}.)\r\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+   "type_line": "Land — Island Swamp",
+   "mana_cost": "",
+   "radius": 2.6131
+  },
+  {
+   "id": "5lRnmOneKN0JCtqanki3f4",
+   "name": "Stomping Ground",
+   "oracle_text": "({oT}: Add {oR} or {oG}.)\r\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+   "type_line": "Land — Mountain Forest",
+   "mana_cost": "",
+   "radius": 2.5976
+  },
+  {
+   "id": "19CWR6oAyoxw0x7NlDuris",
+   "name": "Temple Garden",
+   "oracle_text": "({oT}: Add {oG} or {oW}.)\r\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+   "type_line": "Land — Forest Plains",
+   "mana_cost": "",
+   "radius": 2.5954
+  },
+  {
+   "id": "24woowW8wIvYQ8exKpD5gk",
+   "name": "Steam Vents",
+   "oracle_text": "({oT}: Add {oU} or {oR}.)\r\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+   "type_line": "Land — Island Mountain",
+   "mana_cost": "",
+   "radius": 2.6131
+  },
+  {
+   "id": "01sWMue1wNupVGBXWYy5MB",
+   "name": "The City on the Edge of Forever",
+   "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\r\nI — All artifacts and creatures phase out. Create a 0/1 white Human creature token with \"Permanents can't phase in.\" (Treat phased-out permanents and anything attached to them as though they don't exist.)\r\nII — You draw two cards and each player loses 2 life.\r\nIII — Sacrifice a creature token. If you do, you gain 5 life.",
+   "type_line": "Enchantment — Saga",
+   "mana_cost": "{B}{W}{3}",
+   "radius": 4.7554
+  },
+  {
+   "id": "3AZDd7TLfTjlhOpPptBLXH",
+   "name": "U.S.S. Enterprise-D, Galaxy-Class",
+   "oracle_text": "Whenever one or more charge counters are put on U.S.S. Enterprise-D for the first time each turn, exile the top card of your library. You may play that card this turn.\r\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 7+.)\r\n7+ | Flying, vigilance",
+   "type_line": "Legendary Artifact — Spacecraft",
+   "mana_cost": "{3}",
+   "radius": 5.3839
+  },
+  {
+   "id": "qlXLIihUJ36i8zVjqXgKd",
+   "name": "Orion",
+   "oracle_text": "This land enters tapped.\r\nWhen this land enters, you gain 1 life.\r\n{oT}: Add {oR} or {oG}.",
+   "type_line": "Land — Planet",
+   "mana_cost": "",
+   "radius": 2.2644
+  },
+  {
+   "id": "q1ipHF9BqisEV2L9NhrNe",
+   "name": "Kenrith, the Returned King",
+   "oracle_text": "{oR}: All creatures gain trample and haste until end of turn.\r\n{o1oG}: Put a +1/+1 counter on target creature.\r\n{o2oW}: Target player gains 5 life.\r\n{o3oU}: Target player draws a card.\r\n{o4oB}: Put target creature card from a graveyard onto the battlefield under its owner's control.",
+   "type_line": "Legendary Creature — Human Noble",
+   "mana_cost": "{4}{W}",
+   "radius": 4.5581
+  },
+  {
+   "id": "598j02uVNowpQA4qVo6jjj",
+   "name": "Peace in Our Time",
+   "oracle_text": "At the beginning of combat on each player's turn, that player may draw a card. If they do, they can't attack this turn and you put a peace counter on this enchantment.\r\nAt the beginning of your upkeep, if this enchantment has twelve or more peace counters on it, you win the game.",
+   "type_line": "Enchantment",
+   "mana_cost": "{3}{W}",
+   "radius": 6.3384
+  },
+  {
+   "id": "NJKc81RnrZLRmK5uuOcWC",
+   "name": "Hit It!",
+   "oracle_text": "Creatures you control have haste.\r\nWhen this enchantment enters, look at the top five cards of your library. Put a land card from among them onto the battlefield tapped and the rest into your graveyard.",
+   "type_line": "Enchantment",
+   "mana_cost": "{1}{R}{G}",
+   "radius": 6.4055
+  },
+  {
+   "id": "jE3KEuFCKURcQT7N6KZmL",
+   "name": "Khan, Vengeful Heart",
+   "oracle_text": "When Khan enters, you may sacrifice another creature or artifact. If you do, draw two cards.\r\nYou may cast this card from exile.",
+   "type_line": "Legendary Creature — Human Warrior",
+   "mana_cost": "{2}{B}{B}",
+   "radius": 4.4094
+  },
+  {
+   "id": "EmAGTyiCLKVQgjOfZQsCv",
+   "name": "Mr. Spock, Science Officer",
+   "oracle_text": "If you would draw a card, draw two cards instead.",
+   "type_line": "Legendary Creature — Vulcan Human Scientist",
+   "mana_cost": "{2}{U}{U}",
+   "radius": 5.0224
+  },
+  {
+   "id": "4DWPqHcAPT5csPL3cwwEGM",
+   "name": "Nyota Uhura, Communications",
+   "oracle_text": "Hailing Frequencies — As Nyota Uhura enters, choose a number between 0 and 10.\r\nOpen a Channel — Whenever an opponent casts a spell with mana value equal to the chosen number, you draw a card.",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{2}{U}",
+   "radius": 4.9944
+  },
+  {
+   "id": "7t78H61Qjcmbh2Y9hXQPFH",
+   "name": "Hemmer, Fixing What Is Broken",
+   "oracle_text": "During your turn, Spacecraft you control have hexproof. (They can't be the targets of spells or abilities your opponents control.)\r\nWhenever Hemmer becomes tapped, draw a card, then discard a card.",
+   "type_line": "Legendary Creature — Aenar Artificer",
+   "mana_cost": "{W}{U}",
+   "radius": 3.2325
+  },
+  {
+   "id": "7EgLVbMlhOtvPWncF1JOqP",
+   "name": "Phlox, Unorthodox Doctor",
+   "oracle_text": "Trample\r\nWhenever a creature you control with a counter on it deals combat damage to a player, draw a card.",
+   "type_line": "Legendary Creature — Denobulan Doctor",
+   "mana_cost": "{2}{G}{W}",
+   "radius": 3.9839
+  },
+  {
+   "id": "70i4YHGUsc1ELCnbw5ZVZS",
+   "name": "Lieutenant Commander Data",
+   "oracle_text": "Whenever a player casts a noncreature spell, put a +1/+1 counter on Lieutenant Commander Data.\r\n{o1}, Remove three counters from among creatures you control: Draw a card.",
+   "type_line": "Legendary Artifact Creature — Android Scientist",
+   "mana_cost": "{2}{U}",
+   "radius": 4.9953
+  },
+  {
+   "id": "6UcH5ZOtYDNlq10pn1PRbF",
+   "name": "Locutus, the One Who Speaks",
+   "oracle_text": "Artifact creatures you control get +1/+1.\r\n{oWoB}, Discard this card: It deals 2 damage to target creature. You gain 2 life.",
+   "type_line": "Legendary Artifact Creature — Borg",
+   "mana_cost": "{W}{B}",
+   "radius": 3.1197
+  },
+  {
+   "id": "43vfQZrM4d0cl5TO5TzAKY",
+   "name": "Kobayashi Maru Scenario",
+   "oracle_text": "At the beginning of your upkeep, choose one that hasn't been chosen —\r\n• Hail — Return up to one target creature an opponent controls with mana value 3 or less to its owner's hand.\r\n• Sensors — Draw two cards.\r\n• Transport — Create two 1/1 red Officer creature tokens.\r\n• Abandon Ship — You lose the game.",
+   "type_line": "Enchantment",
+   "mana_cost": "{1}{U}{U}",
+   "radius": 6.1206
+  },
+  {
+   "id": "3cxAXEvNiZM7qbwNSrKoBB",
+   "name": "Lt. Cmdr. Geordi La Forge",
+   "oracle_text": "If you would put one or more charge counters on an artifact you control, put twice that many charge counters on that artifact instead.",
+   "type_line": "Legendary Creature — Human Artificer",
+   "mana_cost": "{2}{U}",
+   "radius": 5.0076
+  },
+  {
+   "id": "6b6k1u5F1phKPx0yAdlid8",
+   "name": "Federation Outpost",
+   "oracle_text": "This land enters tapped unless you control two or more other lands.\r\nWhen this land enters untapped, choose one —\r\n• You gain 2 life.\r\n• Surveil 1.\r\n{oT}: Add {oW}.",
+   "type_line": "Land",
+   "mana_cost": "",
+   "radius": 2.1307
+  },
+  {
+   "id": "5ze7WzrGxI8f2jVevKwDxm",
+   "name": "Live Long and Prosper",
+   "oracle_text": "This spell can't be countered.\r\nDouble your life total. Draw cards equal to the number of cards in your hand. You have no maximum hand size until your next turn.",
+   "type_line": "Sorcery",
+   "mana_cost": "{5}{W}{U}",
+   "radius": 6.011
+  },
+  {
+   "id": "5TxH8vqalW27zRWZl5YGZV",
+   "name": "D-7 Battle Cruiser",
+   "oracle_text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)\r\n3+ | At the beginning of combat on your turn, create a 2/1 red Klingon Warrior creature token with haste. Sacrifice it at the beginning of the next end step.\r\n8+ | Flying",
+   "type_line": "Artifact — Spacecraft",
+   "mana_cost": "{1}{R}",
+   "radius": 5.0313
+  },
+  {
+   "id": "5qFlDCojYz2G6ZoTVLcK54",
+   "name": "Kirk, Commanding Officer",
+   "oracle_text": "Whenever you attack while creatures you control have total power 8 or greater, exile the top card of your library. You may play that card this turn.\r\n{o2}, Sacrifice Kirk: Destroy target artifact or enchantment.",
+   "type_line": "Legendary Creature — Human Officer",
+   "mana_cost": "{1}{R}{W}",
+   "radius": 2.8423
+  },
+  {
+   "id": "4NLR0pYe8IyctdAX2vzPlG",
+   "name": "Engineered Explosives",
+   "oracle_text": "Sunburst (This artifact enters with a charge counter on it for each color of mana spent to cast it.)\r\n{o2}, Sacrifice this artifact: Destroy each nonland permanent with mana value equal to the number of charge counters on this artifact.",
+   "type_line": "Artifact",
+   "mana_cost": "{X}",
+   "radius": 4.3916
+  },
+  {
+   "id": "4kWj042tAfcvYEbPXOUCTF",
+   "name": "Prosper, Tome-Bound",
+   "oracle_text": "Deathtouch\r\nAt the beginning of your end step, exile the top card of your library. Until the end of your next turn, you may play that card.\r\nWhenever you play a card from exile, create a Treasure token.",
+   "type_line": "Legendary Creature — Tiefling Warlock",
+   "mana_cost": "{2}{B}{R}",
+   "radius": 4.4347
+  },
+  {
+   "id": "4JzntGeJTAqa9SLWY9bkww",
+   "name": "L'Rell, Fierce Visionary",
+   "oracle_text": "At the beginning of combat on your turn, create a 2/1 red Klingon Warrior creature token with haste. Sacrifice it at the beginning of the next end step.\r\n{o2}, Sacrifice another creature or artifact: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+   "type_line": "Legendary Creature — Klingon Warrior",
+   "mana_cost": "{1}{B}{R}",
+   "radius": 2.8571
+  },
+  {
+   "id": "38uBuHRuU98zAZwTSqHNDc",
+   "name": "Deep Space Scan",
+   "oracle_text": "Strange new worlds — Draw X cards, where X is the number of differently named lands you control. You have no maximum hand size until your next turn.",
+   "type_line": "Sorcery",
+   "mana_cost": "{4}{U}{U}",
+   "radius": 5.885
+  },
+  {
+   "id": "2Y1cLPkyB6YjR1A204SZkC",
+   "name": "Earth, Sector 001",
+   "oracle_text": "This land enters tapped.\r\nWhen this land enters, you gain 1 life.\r\n{oT}: Add {oG} or {oU}.",
+   "type_line": "Land — Planet",
+   "mana_cost": "",
+   "radius": 2.2644
+  },
+  {
+   "id": "2WsxdfakGRnsspMa5Xby9m",
+   "name": "Lore, Positronic Provocateur",
+   "oracle_text": "When Lore enters, choose one —\r\n• Target creature gets +1/+0 until end of turn and can't be blocked this turn.\r\n• Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+   "type_line": "Legendary Artifact Creature — Android Rogue",
+   "mana_cost": "{1}{U/B}{U/B}",
+   "radius": 2.9982
+  },
+  {
+   "id": "2uj9OowWegDn5BB7uS05nF",
+   "name": "Minamo, School at Water's Edge",
+   "oracle_text": "{oT}: Add {oU}.\r\n{oU}, {oT}: Untap target legendary permanent.",
+   "type_line": "Legendary Land",
+   "mana_cost": "",
+   "radius": 3.1668
+  },
+  {
+   "id": "2KXIF65Vpes5ZJuX1UzAVe",
+   "name": "Gray and Adira, Forever Joined",
+   "oracle_text": "At the beginning of combat on your turn, if you've cast a noncreature spell this turn, create a token that's a copy of target creature you control, except it isn't legendary. It gains haste until end of turn. Sacrifice it at the beginning of the next end step.",
+   "type_line": "Legendary Creature — Trill Human Officer",
+   "mana_cost": "{2}{U/R}{U/R}",
+   "radius": 3.337
+  },
+  {
+   "id": "19lv4yU4BcJNrBb3GIOjpm",
+   "name": "Gowron, Eager for Battle",
+   "oracle_text": "Whenever another creature dies, put a +1/+1 counter on Gowron.\r\nSacrifice another creature: Gowron gains trample until end of turn. If you sacrificed a Klingon this way, you draw a card and lose 1 life.",
+   "type_line": "Legendary Creature — Klingon Warrior",
+   "mana_cost": "{2}{B}{R}",
+   "radius": 3.8961
+  },
+  {
+   "id": "24OgZzVAyWQq3E8n3bie0G",
+   "name": "Daniels, Temporal Agent",
+   "oracle_text": "When Daniels enters, return target creature card from your graveyard to your hand.\r\n{o2}, Put this card from your graveyard on the bottom of your library: You gain 2 life.",
+   "type_line": "Legendary Creature — Human Advisor",
+   "mana_cost": "{2}{B/G}{B/G}",
+   "radius": 2.7746
+  },
+  {
+   "id": "1Z58XHHaSRtx6zvBRjSHA5",
+   "name": "Ferenginar",
+   "oracle_text": "This land enters tapped.\r\nWhen this land enters, you gain 1 life.\r\n{oT}: Add {oB} or {oG}.",
+   "type_line": "Land — Planet",
+   "mana_cost": "",
+   "radius": 2.2644
+  },
+  {
+   "id": "1SajhWAUeA4qZ1sXSxHkbz",
+   "name": "Dal R'El, Augment Orphan",
+   "oracle_text": "Landfall — Whenever a land you control enters, add {oR} or {oG}.\r\n{o3}, Sacrifice a land: Draw a card.",
+   "type_line": "Legendary Creature — Human Mutant Rogue",
+   "mana_cost": "{1}{R}{G}",
+   "radius": 3.0169
+  },
+  {
+   "id": "1AGs8CoSTFOvsoyz0kYn83",
+   "name": "Dr. Joseph M'Benga",
+   "oracle_text": "Other creatures you control with counters on them have hexproof.\r\nIf you would put one or more counters on a creature you control, put twice that many of each of those kinds of counters on that creature instead.",
+   "type_line": "Legendary Creature — Human Doctor",
+   "mana_cost": "{2}{G}{G}",
+   "radius": 4.9179
+  },
+  {
+   "id": "yHqTrSlMQNaDn81vnd9Qw",
+   "name": "The Traveler",
+   "oracle_text": "Reach, vigilance\r\nStrange new worlds — The Traveler's power is equal to the number of differently named lands you control.",
+   "type_line": "Legendary Creature — Scout",
+   "mana_cost": "{G}{U}",
+   "radius": 3.1242
+  },
+  {
+   "id": "5utRkJTFBiGjDxB3YJ1Wbx",
+   "name": "The Unicomplex",
+   "oracle_text": "This land enters tapped unless you control two or more other lands.\r\nWhen this land enters untapped, choose one —\r\n• Put target creature card from your graveyard on top of your library.\r\n• Surveil 1.\r\n{oT}: Add {oB}.",
+   "type_line": "Land",
+   "mana_cost": "",
+   "radius": 2.2035
+  },
+  {
+   "id": "p6jwvsAEbsx9k6Ecb6GB1",
+   "name": "Starfleet Academy",
+   "oracle_text": "{oT}: Add {oC}.\r\nFederation — {o5}, {oT}: Choose a color. Add an amount of mana of that color equal to the number of creature types among non-Borg creatures you control.",
+   "type_line": "Legendary Land",
+   "mana_cost": "",
+   "radius": 2.9298
+  },
+  {
+   "id": "OJ8iiiJ6HNeyWYZQaULwz",
+   "name": "Worf, Honor-Bound Warrior",
+   "oracle_text": "Whenever you attack while creatures you control have total power 8 or greater, double Worf's power until end of turn.\r\nTap two untapped artifacts and/or creatures you control: Put a +1/+1 counter on Worf. Activate only as a sorcery.",
+   "type_line": "Legendary Creature — Klingon Warrior Officer",
+   "mana_cost": "{R/W}{R/W}",
+   "radius": 3.3044
+  },
+  {
+   "id": "7zjtEj7N6cEemZ4t0hLC9O",
+   "name": "Quark's Bar",
+   "oracle_text": "This land enters tapped unless you control two or more other lands.\r\nWhen this land enters untapped, choose one —\r\n• This land deals 1 damage to each opponent.\r\n• Surveil 1.\r\n{oT}: Add {oR}.",
+   "type_line": "Land",
+   "mana_cost": "",
+   "radius": 2.1713
+  },
+  {
+   "id": "7qxWSGATDzy2OD1ZBBPTaX",
+   "name": "Zero, Incorporeal Sensate",
+   "oracle_text": "Lifelink\r\nWhen Zero enters, look at target opponent's hand. You may exile a nonland card from it. For as long as that card remains exiled, its owner may play it. A spell cast this way costs {o2} more to cast.",
+   "type_line": "Legendary Artifact Creature — Medusan Scientist",
+   "mana_cost": "{1}{W/B}{W/B}",
+   "radius": 3.0098
+  },
+  {
+   "id": "7hntXVpD2T3SWcJay94cwu",
+   "name": "The Doctor, EMH",
+   "oracle_text": "When The Doctor enters, put a +1/+1 counter on target creature. Then put a +1/+1 counter on each creature you control with a counter on it.",
+   "type_line": "Legendary Artifact Creature — Illusion Doctor",
+   "mana_cost": "{3}{G/W}{G/W}",
+   "radius": 3.0889
+  },
+  {
+   "id": "7EpIvuWfyjj5mAgyHoJkPb",
+   "name": "Spock, Always Your Friend",
+   "oracle_text": "When Spock enters, look at the top four cards of your library. You may reveal a noncreature, nonland card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+   "type_line": "Legendary Creature — Vulcan Human Scientist",
+   "mana_cost": "{U}{R}",
+   "radius": 4.2883
+  },
+  {
+   "id": "1HuMqectPPY2Yx4mR9r7HX",
+   "name": "Troubling Tribbles",
+   "oracle_text": "This creature can't block.\r\nAt the beginning of your upkeep, create a token that's a copy of this creature.",
+   "type_line": "Creature — Tribble",
+   "mana_cost": "{2}{W}",
+   "radius": 5.8713
+  },
+  {
+   "id": "1goBWY8lqxzF0c9CvENF9Q",
+   "name": "The Duras Sisters",
+   "oracle_text": "When The Duras Sisters die, create a 2/1 red Klingon Warrior creature token with haste.",
+   "type_line": "Legendary Creature — Klingon Warrior",
+   "mana_cost": "{B/R}{B/R}",
+   "radius": 3.2127
+  },
+  {
+   "id": "77kMsRXfhZkg4UmRmzVhWQ",
+   "name": "U.S.S. Enterprise-A, Free Spirit",
+   "oracle_text": "Ward {o2}\r\nWhen U.S.S. Enterprise-A enters, create three 1/1 red Officer creature tokens.\r\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 6+.)\r\n6+ | Flying, lifelink",
+   "type_line": "Legendary Artifact — Spacecraft",
+   "mana_cost": "{3}{W}{W}",
+   "radius": 4.9354
+  },
+  {
+   "id": "6yauIxVFIEU2Fon6y71KuL",
+   "name": "Romulan Bird-of-Prey",
+   "oracle_text": "Cloaking Device — As long as this Spacecraft isn't a creature, it has hexproof.\r\nWhenever you cast a noncreature spell, if this Spacecraft isn't a creature, put two charge counters on it.\r\nStation\r\n8+ | Flying",
+   "type_line": "Artifact — Spacecraft",
+   "mana_cost": "{1}{U}",
+   "radius": 5.4006
+  },
+  {
+   "id": "6wABUK9B2k3LoRC7FCYmYf",
+   "name": "Seven of Nine, Unassimilated",
+   "oracle_text": "At the beginning of your first main phase, draw a card. Then discard a card unless you control five or more differently named lands.\r\n{o6oU}: Seven of Nine's base power and toughness become 7/9. Activate only if you control seven or more differently named lands.",
+   "type_line": "Legendary Artifact Creature — Human Officer",
+   "mana_cost": "{1}{U}",
+   "radius": 4.9264
+  },
+  {
+   "id": "6MgIABMjVHoK1Xhepm6lGj",
+   "name": "Vulcan",
+   "oracle_text": "This land enters tapped.\r\nWhen this land enters, you gain 1 life.\r\n{oT}: Add {oW} or {oU}.",
+   "type_line": "Land — Planet",
+   "mana_cost": "",
+   "radius": 2.2644
+  },
+  {
+   "id": "6mcfuSX5GydNNgtujnZGDN",
+   "name": "U.S.S. Discovery, at Black Alert",
+   "oracle_text": "Whenever U.S.S. Discovery enters or attacks, discover 5. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)\r\nStation\r\n6+ | Flying",
+   "type_line": "Legendary Artifact — Spacecraft",
+   "mana_cost": "{3}{G}{G}",
+   "radius": 4.3122
+  },
+  {
+   "id": "5dgBFDIScKPd8UeO4Oye1T",
+   "name": "Q, Stacking the Deck",
+   "oracle_text": "When Q enters, shuffle your library, then exile cards from the top of your library until you exile a nonland card. That nonland card gains \"Exile a card from your hand: Create a copy of this card. You may cast the copy. Activate only during your turn and only if this card is exiled.\"",
+   "type_line": "Legendary Creature — Q",
+   "mana_cost": "{2}{R}{R}",
+   "radius": 3.924
+  },
+  {
+   "id": "5aDwM5llyx5noqFoCTfGvA",
+   "name": "Worf, Intelligence Contractor",
+   "oracle_text": "When Worf enters, for each opponent, gain control of up to one target creature that player controls with mana value 3 or less until end of turn. Untap those creatures. Until end of turn, they become Warriors in addition to their other types and gain haste.",
+   "type_line": "Legendary Creature — Klingon Warrior Spy",
+   "mana_cost": "{2}{R}",
+   "radius": 4.4262
+  },
+  {
+   "id": "2cFiuA6BbPiLNNh6mIBkX1",
+   "name": "Replicator",
+   "oracle_text": "When this artifact enters, create a Food token. (It's an artifact with \"{o2}, {oT}, Sacrifice this token: You gain 3 life.\")\r\n{o2}, {oT}: Create a tapped token that's a copy of target token you control.",
+   "type_line": "Artifact",
+   "mana_cost": "{2}",
+   "radius": 6.2124
+  },
+  {
+   "id": "4iZxBniS7BmVDGGPHAk8E6",
+   "name": "Quark, Humble Proprietor",
+   "oracle_text": "You can't sacrifice Treasure tokens.\r\nAt the beginning of each upkeep, create a Treasure token. (It's an artifact with \"{oT}, Sacrifice this token: Add one mana of any color.\")",
+   "type_line": "Legendary Creature — Ferengi Rogue",
+   "mana_cost": "{2}{R}",
+   "radius": 5.187
+  },
+  {
+   "id": "4etKCvQLZXvfjH9HUaIZW5",
+   "name": "Vash, Freelance Archaeologist",
+   "oracle_text": "At the beginning of your upkeep, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\r\nWhenever a card leaves your graveyard, draw a card. This ability triggers only once each turn.",
+   "type_line": "Legendary Creature — Human Rogue Scientist",
+   "mana_cost": "{1}{B}{G}",
+   "radius": 3.1057
+  },
+  {
+   "id": "4Bl4R3muoKQp9WLEv9369z",
+   "name": "U.S.S. Reliant, From Hell's Heart",
+   "oracle_text": "Whenever U.S.S. Reliant enters or deals combat damage to a player, return target creature card with mana value 4 or less from your graveyard to the battlefield with a finality counter on it.\r\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 10+.)\r\n10+ | Flying",
+   "type_line": "Legendary Artifact — Spacecraft",
+   "mana_cost": "{2}{B}{B}",
+   "radius": 4.8575
+  },
+  {
+   "id": "45pj05W3qdbxPARxOj1ZrK",
+   "name": "Risa",
+   "oracle_text": "This land enters tapped.\r\nWhen this land enters, you gain 1 life.\r\n{oT}: Add {oG} or {oW}.",
+   "type_line": "Land — Planet",
+   "mana_cost": "",
+   "radius": 2.2644
+  },
+  {
+   "id": "3VS4SuAyaTx5LJvtLdL7VS",
+   "name": "Romulus",
+   "oracle_text": "This land enters tapped.\r\nWhen this land enters, you gain 1 life.\r\n{oT}: Add {oU} or {oB}.",
+   "type_line": "Land — Planet",
+   "mana_cost": "",
+   "radius": 2.2644
+  },
+  {
+   "id": "3JBSLxkkhJFEHDtutrQOlU",
+   "name": "Qo'noS",
+   "oracle_text": "This land enters tapped.\r\nWhen this land enters, you gain 1 life.\r\n{oT}: Add {oB} or {oR}.",
+   "type_line": "Land — Planet",
+   "mana_cost": "",
+   "radius": 2.2644
+  },
+  {
+   "id": "20qIfIr7qXGRtn5PPZMAsO",
+   "name": "Tricorder",
+   "oracle_text": "Equipped creature gets +1/+1.\r\nWhenever equipped creature attacks, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\r\nEquip {o1} ({o1}: Attach to target creature you control. Equip only as a sorcery.)",
+   "type_line": "Artifact — Equipment",
+   "mana_cost": "{1}",
+   "radius": 3.3007
+  },
+  {
+   "id": "1WfIG8MXqg2qPGqhVCphDw",
+   "name": "The Holodeck",
+   "oracle_text": "Once during each of your turns, you may play a permanent card you own from outside the game or from your graveyard.",
+   "type_line": "Legendary Artifact",
+   "mana_cost": "{7}",
+   "radius": 6.0021
+  },
+  {
+   "id": "1ptJ5OhyVExurzvS3NSiKY",
+   "name": "The Wrath of Khan",
+   "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\r\nI — This Saga deals 4 damage to target creature an opponent controls. At the beginning of the next combat this turn, gain control of that creature until end of turn. Untap it. It gains haste until end of turn.\r\nII — You may exile a card from your hand. If you do, draw a card.\r\nIII — Each opponent sacrifices a nontoken permanent of their choice.",
+   "type_line": "Enchantment — Saga",
+   "mana_cost": "{2}{R}",
+   "radius": 4.5148
+  },
+  {
+   "id": "630IRgsEwy9a8xtWAIORzR",
+   "name": "Deep Space 9",
+   "oracle_text": "When Deep Space 9 enters and at the beginning of your upkeep, exile the top four cards of your library. Put all permanent cards exiled this way onto the battlefield.\r\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery.)\r\n9+ | Creatures you control get +3/+3.",
+   "type_line": "Legendary Artifact — Spacecraft",
+   "mana_cost": "{9}",
+   "radius": 5.6274
+  }
+ ]
+}
