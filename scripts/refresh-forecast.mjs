@@ -18,6 +18,8 @@ const original=read('target'),incumbent=read('model');
 // Similar-card candidates: the 22-set reference list when present (data/similar-references.json.gz)
 const refsFile=new URL('../data/similar-references.json.gz',import.meta.url);
 if(fs.existsSync(refsFile))incumbent.references={...incumbent.references,gih:JSON.parse(gunzipSync(fs.readFileSync(refsFile))).cards};
+const labelsFile=new URL('../data/similar-labels.json.gz',import.meta.url);
+if(fs.existsSync(labelsFile))incumbent.similar_labels=JSON.parse(gunzipSync(fs.readFileSync(labelsFile)));
 let incoming;
 try { incoming=await collectOfficial(); }
 catch (error) { console.warn('公式カード情報の確認に失敗。既存の予測を保持:',error.message); process.exit(0); }

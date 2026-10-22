@@ -109,7 +109,12 @@ try {
 
 // ---- Past sets: Japanese printed names from Scryfall
 const wanted = {};
+// Every card of the similar-card candidate list (any forecast, FRA or a preview set, can show any of them), plus what the FRA forecast shows now.
+const refsFile = new URL('../data/similar-references.json.gz', import.meta.url);
+const refCards = fs.existsSync(refsFile) ? JSON.parse(gunzipSync(fs.readFileSync(refsFile))).cards : [];
+for (const c of refCards) (wanted[c.set.toLowerCase()] ||= new Set()).add(c.name);
 for (const c of forecast.cards) for (const s of c.similar || []) (wanted[s.set.toLowerCase()] ||= new Set()).add(s.name);
+const shown = new Set(forecast.cards.flatMap(c => (c.similar || []).map(s => `${s.set.toLowerCase()}|${s.name}`)));
 const similar = {};
 for (const [set, names] of Object.entries(wanted)) {
   try {
@@ -132,6 +137,7 @@ for (const [set, names] of Object.entries(wanted)) {
 for (const [set, names] of Object.entries(wanted)) for (const name of names) {
   const key = `${set.toUpperCase()}|${name}`;
   if (similar[key] || previous.similar?.[key]) continue;
+  if (!shown.has(`${set}|${name}`)) continue; // one-by-one lookups only for names on display
   try {
     const d = await get(`https://api.scryfall.com/cards/search?q=${encodeURIComponent(`!"${name}" lang:ja`)}&unique=prints`);
     const c = d.data.find(x => x.printed_name || x.card_faces?.some(f => f.printed_name));

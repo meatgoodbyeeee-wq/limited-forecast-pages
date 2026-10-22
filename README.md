@@ -39,7 +39,7 @@ Set Settings → Pages → Source to GitHub Actions. Push to main or manually ru
 - ALSAの幅は従来どおり
 
 ## 過去の類似カード
-カード詳細の「過去の類似カード」3枚は、22セット（KHM〜TDM）5,611枚から選びます（`data/similar-references.json.gz`）。候補一覧は手動実行の **Build similar-card references** ワークフローで作成：データリポジトリの22セットのカードデータと28日間GIH WR、Scryfallのマナコスト・リンク、17Landsカードデータの28日間ALSA。類似度は予測モデルの特徴量（基本属性・能力・ルールテキストの語句）のコサイン類似度で、表示専用です（予測値には影響しません）。
+カード詳細の「過去の類似カード」3枚は、22セット（KHM〜TDM）5,611枚から選びます（`data/similar-references.json.gz`）。候補一覧は手動実行の **Build similar-card references** ワークフローで作成：データリポジトリの22セットのカードデータと28日間GIH WR、Scryfallのマナコスト・リンク、17Landsカードデータの28日間ALSA。類似度は「予測モデルの特徴量（基本属性・能力・ルールテキストの語句）のコサイン類似度＋0.5×AIが読み取ったカード効果・強さのラベル（C3〜C5・C9）のコサイン類似度」で、土地／クリーチャー／その他の区分が同じでマナ総量の差が2以内の候補から選びます（`data/similar-labels.json.gz`、`lib/predict.mjs` の `similarCardsLabelled`。ラベルのないカードは従来の順位付け）。方式はデータリポジトリ `research/similar_cards`（PLAN.md・RESULTS.md）で事前登録して評価し、他セットの類似3枚の実測GIH WR平均と自カードの実測の誤差が従来比で約0.09pp（4%）小さくなりました。表示専用で、予測値には影響しません。
 
 ## 実測値（17Lands Card Data）
 - 取得：`.github/workflows/card-data.yml`（毎日 00:30 JST 頃）→ `scripts/fetch-card-data.mjs` → 判定ロジックは `lib/card-data.mjs`
