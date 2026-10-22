@@ -16,6 +16,7 @@ on:
       - 'scripts/collect-set-cards.mjs'
       - 'lib/official.mjs'
       - 'lib/set-config.mjs'
+      - 'scripts/fetch-set-images.mjs'
       - '.github/workflows/set-cards.yml'
 permissions:
   contents: write
@@ -35,12 +36,15 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/collect-set-cards.mjs "$SET_CODE"
+      # Card images are downloaded here, ahead of time, and stored in the repository (the site never hot-links Wizards).
+      - run: node scripts/fetch-set-images.mjs "$SET_CODE"
+        if: env.SET_CODE != 'FRA'
       - name: Save the cards and redeploy the site
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           dir="data/$(echo "$SET_CODE" | tr A-Z a-z)"
-          git add "$dir/target.json.gz" "$dir/collect-state.json" 2>/dev/null || true
+          git add "$dir/target.json.gz" "$dir/collect-state.json" "$dir/card-images.json" "$dir/images" 2>/dev/null || true
           if git diff --cached --quiet; then echo 'nothing to save'; exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
