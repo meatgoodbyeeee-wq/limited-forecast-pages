@@ -20,7 +20,9 @@ try {
 const out = {}, log = {downloaded: 0, kept: 0, failed: [], japanese: 0};
 for (const c of cards) {
   const j = ja.get(c.id), useJa = !!(j?.image && j.image !== c.image), url = useJa ? j.image : c.image, lang = useJa ? 'ja' : 'en';
-  if (!url) { log.failed.push(c.name); continue; }
+  // Only official https images, and only ids that are plain file-name characters (the id becomes the file name).
+  const host = (() => { try { const u = new URL(url); return u.protocol === 'https:' ? u.hostname : ''; } catch { return ''; } })();
+  if (!url || host !== 'media.wizards.com' || !/^[A-Za-z0-9]{10,40}$/.test(c.id)) { log.failed.push(`${c.name}: image URL or id not allowed`); continue; }
   const file = new URL(`${c.id}.webp`, imgDir), prev = old[c.id];
   if (prev && prev.image_url === url && fs.existsSync(file)) { out[c.id] = prev; log.kept++; if (lang === 'ja') log.japanese++; continue; }
   try {
