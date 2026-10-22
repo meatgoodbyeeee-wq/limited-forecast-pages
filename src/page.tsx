@@ -8,7 +8,7 @@ import {Dialog,DialogClose,DialogContent,DialogHeader,DialogTitle,DialogDescript
 import {Table,TableBody,TableCell,TableHead,TableHeader,TableRow} from '@/components/ui/table';
 import {ArrowDownToLine,Search,ArrowUpRight,ChevronRight,X} from 'lucide-react';
 import livePolicy from '@/data/live-policy.json';
-import {liveForecast,validateObservations} from '@/lib/live.mjs';
+import {forecastWithObservations,validateObservations} from '@/lib/live.mjs';
 import {CardArtwork,cardName,cardText,similarName} from '@/components/card-artwork';
 import {LangContext,makeTr,useLang,initialLang,saveLang,unit,pt,time,type Lang} from '@/lib/i18n';
 import {DeckColorChart,MANA} from '@/components/deck-color-chart';
@@ -90,9 +90,7 @@ export default function Home(){
  if(live)try{const res=await fetch(import.meta.env.BASE_URL+'live/fra-public-game.json',{cache:'no-store'});
   if(res.ok){const result=await res.json();const url='https://17lands-public.s3.amazonaws.com/analysis_data/game_data/game_data_public.FRA.PremierDraft.csv.gz';
    const o=result.observations;if(result.status==='available'&&result.dataset_url===url&&o?.sources?.game?.url===url&&Object.keys(o.sources).join(',')==='game'&&o.cards?.every((c:any)=>c.alsa==null&&!(c.alsa_n>0))&&validateObservations(o)&&o.cards.some((c:any)=>c.gih_n>0)){
-    { // Observed data is attached to each card (observed_*, errors) but never replaces the pre-release forecast in the headline values.
-    const lf=liveForecast(d.forecast,o,livePolicy.policies.current);d.forecast={...lf,phase:'PREVIEW',cards:lf.cards.map((c:any)=>({...c,phase:'PREVIEW',gih:c.pre_release_gih,alsa:c.pre_release_alsa}))};}
-    d.live_status={check:{checked_at:result.checked_at},sync:{error:false}};
+    d.forecast=forecastWithObservations(d.forecast,o,livePolicy.policies.current);d.live_status={check:{checked_at:result.checked_at},sync:{error:false}};
    }else if(result.checked_at)d.live_status={check:{checked_at:result.checked_at},sync:{error:result.status==='error'}};
   }
  }catch{ /* Dataset check failures retain the last valid prediction. */ }
