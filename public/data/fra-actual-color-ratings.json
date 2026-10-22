@@ -4,55 +4,55 @@
  "source_type": "Color Ratings",
  "expansion": "FRA",
  "format": "PremierDraft",
- "source_url": "https://www.17lands.com/color_ratings/data?expansion=FRA&event_type=PremierDraft&start_date=2026-09-29&end_date=2026-10-21&combine_splash=false",
+ "source_url": "https://www.17lands.com/color_ratings/data?expansion=FRA&event_type=PremierDraft&start_date=2026-09-29&end_date=2026-10-22&combine_splash=false",
  "attribution": "17Lands (17lands.com) Color Ratings",
  "splash": false,
  "window_start": "2026-09-29",
- "window_end": "2026-10-21",
- "data_date": "2026-10-21",
+ "window_end": "2026-10-22",
+ "data_date": "2026-10-22",
  "final": false,
- "fetched_at": "2026-10-21T19:30:19.599Z",
- "fetched_date_jst": "2026-10-22",
+ "fetched_at": "2026-10-22T19:22:26.754Z",
+ "fetched_date_jst": "2026-10-23",
  "pairs": {
   "WU": {
-   "wr_pct": 57.15502152419698,
-   "games": 42278
+   "wr_pct": 57.1074686299023,
+   "games": 43194
   },
   "UB": {
-   "wr_pct": 55.64152726793134,
-   "games": 45493
+   "wr_pct": 55.58524968210522,
+   "games": 46399
   },
   "BR": {
-   "wr_pct": 54.18361017299607,
-   "games": 29018
+   "wr_pct": 54.21162665227948,
+   "games": 29656
   },
   "RG": {
-   "wr_pct": 55.93613041900455,
-   "games": 35823
+   "wr_pct": 55.93653059543745,
+   "games": 36427
   },
   "WG": {
-   "wr_pct": 54.549210283789364,
-   "games": 31467
+   "wr_pct": 54.54573798091913,
+   "games": 32074
   },
   "WB": {
-   "wr_pct": 53.85907265425338,
-   "games": 13695
+   "wr_pct": 53.81969327791314,
+   "games": 13954
   },
   "BG": {
-   "wr_pct": 54.43100775193799,
-   "games": 16125
+   "wr_pct": 54.34081645069051,
+   "games": 16437
   },
   "UG": {
-   "wr_pct": 51.679787116088264,
-   "games": 9019
+   "wr_pct": 51.59852109612875,
+   "games": 9196
   },
   "UR": {
-   "wr_pct": 56.16621043026602,
-   "games": 28494
+   "wr_pct": 56.24677956786095,
+   "games": 29111
   },
   "WR": {
-   "wr_pct": 54.12965983928464,
-   "games": 16551
+   "wr_pct": 54.09719337803358,
+   "games": 16853
   }
  }
 }
