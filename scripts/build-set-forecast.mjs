@@ -33,6 +33,8 @@ if (!pool.length) throw Error('公開カードが0枚です');
 const incumbent = readGz(url('../data/model.json.gz'));
 const refs = url('../data/similar-references.json.gz');
 if (fs.existsSync(refs)) incumbent.references = {...incumbent.references, gih: readGz(refs).cards};
+const simLabels = url('../data/similar-labels.json.gz');
+if (fs.existsSync(simLabels)) incumbent.similar_labels = readGz(simLabels);
 
 let apply = cards => cards, gihVersion = 'first-stage-only (no adopted GIH file)', rangeVersion = null, preliminary = false;
 if (fs.existsSync(adoptedPath) && fs.existsSync(rangePath)) {
