@@ -109,7 +109,7 @@ export default function Home(){
  const narrow=useNarrow(),showObsGih=hasObs('gih'),showObsAlsa=hasObs('alsa');
  const filtered=useMemo(()=>cards.filter(c=>(c.name+' '+cardName(c,'ja')+' '+c.oracle_text+' '+c.type_line).toLowerCase().includes(query.toLowerCase())&&(rare==='all'||c.rarity===rare)&&matchColors(color,c)).sort((a,b)=>sort==='gih_err'||sort==='alsa_err'?errKey(b,sort==='gih_err'?'gih':'alsa')-errKey(a,sort==='gih_err'?'gih':'alsa'):sort==='alsa'?a.alsa-b.alsa:sort==='gih_obs'||sort==='alsa_obs'?(()=>{const t=sort==='gih_obs'?'gih':'alsa',x=obsOf(a,t),y=obsOf(b,t);return x==null||y==null?(x==null?1:0)-(y==null?1:0):t==='gih'?y-x:x-y;})():b.gih-a.gih),[cards,query,rare,color,sort,lang]);
  // Average for the current color / rarity filter (the search box does not change it)
- const scale=useMemo(()=>gihScale(cards.filter(c=>(rare==='all'||c.rarity===rare)&&matchColors(color,c))),[cards,rare,color]);
+ const scale=useMemo(()=>gihScale(cards.filter(c=>(rare==='all'||c.rarity===rare)&&matchColors(color,c)),live),[cards,rare,color,live]);
  const scopeLabel=[...Object.keys(colors).filter(k=>color.includes(k)).map(k=>colors[k]),rare==='all'?'':rarity[rare]].filter(Boolean).join(tr('・',' · '))||tr('全カード','all cards');
  const vsMean=(c:Card)=>{if(!scale)return '';const d=Math.round((c.gih-scale.mean)*10)/10;return d===0?'±0.0':(d>0?'+':'')+d.toFixed(1);};
  const card=cards.find(c=>c.id===selected)||filtered[0];
