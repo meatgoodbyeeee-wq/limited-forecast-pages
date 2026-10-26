@@ -1,5 +1,5 @@
 name: Collect set cards
-# (preview branch trk-b10-preview: collection also runs on pushes that touch this file)
+# (preview branch trk-b10-preview: collection also runs on pushes that touch this file; re-run 2026-10-26 for new previews)
 # Reads the revealed cards of a set that is not out yet (TRK) from Wizards' official card gallery into data/<code>/target.json.gz.
 # GitHub Actions only: the cloud sandbox cannot reach Wizards. The daily run is at 05:37 JST, before the 06:07 JST site build.
 # Failures keep the stored cards (see data/<code>/collect-state.json for the reason and the gallery used).
