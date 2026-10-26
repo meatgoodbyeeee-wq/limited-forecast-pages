@@ -1,11 +1,11 @@
 {
- "checked_at": "2026-10-22T23:13:40.912Z",
+ "checked_at": "2026-10-26T01:43:14.764Z",
  "set": "TRK",
- "stored_before": 158,
+ "stored_before": 170,
  "ok": true,
  "gallery": "https://magic.wizards.com/en/products/star-trek/card-image-gallery",
- "entry_count": 421,
- "cards": 170,
- "added": 12,
- "changed": 0
+ "entry_count": 450,
+ "cards": 186,
+ "added": 16,
+ "changed": 59
 }
