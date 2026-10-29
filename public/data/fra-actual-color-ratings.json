@@ -4,55 +4,55 @@
  "source_type": "Color Ratings",
  "expansion": "FRA",
  "format": "PremierDraft",
- "source_url": "https://www.17lands.com/color_ratings/data?expansion=FRA&event_type=PremierDraft&start_date=2026-09-29&end_date=2026-10-20&combine_splash=false",
+ "source_url": "https://www.17lands.com/color_ratings/data?expansion=FRA&event_type=PremierDraft&start_date=2026-09-29&end_date=2026-10-26&combine_splash=false",
  "attribution": "17Lands (17lands.com) Color Ratings",
  "splash": false,
  "window_start": "2026-09-29",
- "window_end": "2026-10-20",
- "data_date": "2026-10-20",
- "final": false,
- "fetched_at": "2026-10-20T19:30:54.232Z",
- "fetched_date_jst": "2026-10-21",
+ "window_end": "2026-10-26",
+ "data_date": "2026-10-26",
+ "final": true,
+ "fetched_at": "2026-10-27T20:11:47.085Z",
+ "fetched_date_jst": "2026-10-28",
  "pairs": {
   "WU": {
-   "wr_pct": 57.132442284325634,
-   "games": 41150
+   "wr_pct": 57.07860489328475,
+   "games": 48025
   },
   "UB": {
-   "wr_pct": 55.685675110701524,
-   "games": 44489
+   "wr_pct": 55.52032061633042,
+   "games": 51401
   },
   "BR": {
-   "wr_pct": 54.1408928634548,
-   "games": 28291
+   "wr_pct": 54.3842393896042,
+   "games": 33552
   },
   "RG": {
-   "wr_pct": 55.93287940514515,
-   "games": 35101
+   "wr_pct": 55.8704966660751,
+   "games": 39443
   },
   "WG": {
-   "wr_pct": 54.5672765018814,
-   "games": 30828
+   "wr_pct": 54.41906373378455,
+   "games": 35460
   },
   "WB": {
-   "wr_pct": 53.98704489613581,
-   "games": 13431
+   "wr_pct": 53.845153741142816,
+   "games": 15383
   },
   "BG": {
-   "wr_pct": 54.39677946911561,
-   "games": 15898
+   "wr_pct": 54.120940649496085,
+   "games": 17860
   },
   "UG": {
-   "wr_pct": 51.61033344713781,
-   "games": 8787
+   "wr_pct": 51.482643457139964,
+   "games": 9881
   },
   "UR": {
-   "wr_pct": 56.128638598758116,
-   "games": 27861
+   "wr_pct": 56.10106051154086,
+   "games": 32060
   },
   "WR": {
-   "wr_pct": 54.184074711231254,
-   "games": 16276
+   "wr_pct": 54.05230868582499,
+   "games": 18582
   }
  }
 }

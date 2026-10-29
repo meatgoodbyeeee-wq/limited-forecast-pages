@@ -52,6 +52,12 @@ Set Settings → Pages → Source to GitHub Actions. Push to main or manually ru
 - 公開確認はデータリポジトリの日次確認結果（`live/fra-public-game.json`）を読むだけで、追加のアクセスはしない
 - テスト：`node --test scripts/card-data.test.mjs`（時刻とAPIはモック）
 
+## 主表示は常に発売前予測（決定事項）
+- 表のGIH WR・ALSA、平均との差、予測の幅、並び順、CSV・Markdownは、発売後も**常に発売前予測**を表示する。列名は「予測GIH WR」「予測ALSA」。
+- 実測（Public Datasetから集計したGIH WR、Card DataのALSA）は、各カードの `observed_*` として別列・ピンクの丸・カード詳細の比較グラフにだけ出す。予測に混ぜた値（旧「ライブGIH WR」）は表示しない。
+- 実装は `lib/live.mjs` の `forecastWithObservations`（混ぜた値は計算するが表示に使わない）。`scripts/live.test.mjs` が、実測が大量にあっても主表示が予測のままであることを検証する。
+- 経緯：2026-10-23、Public Dataset公開（10/19）後に主表示が自動でほぼ実測の「ライブ」値に切り替わっていた（混ぜる係数 K=100 では重み約99%）。上のDataset節の「GIH WRは…切り替わる」は、この決定により**表示には適用しない**。
+
 ## 予測の幅から外れたカードの理由（deviation notes）
 実測が予測の幅の外にあり、件数が1,000以上のGIH WRでは、`public/deviation-notes.json` の理由を表示します（件数の基準は `components/forecast-range.tsx` の `MIN_N`）。
 - FRAの62枚は2026-10-14時点の実測で作成済み（`source: "ai"`）。各理由に「（AIによる理由）」と表示します。毎日の自動作成はしません。

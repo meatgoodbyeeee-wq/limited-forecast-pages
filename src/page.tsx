@@ -8,7 +8,7 @@ import {Dialog,DialogClose,DialogContent,DialogHeader,DialogTitle,DialogDescript
 import {Table,TableBody,TableCell,TableHead,TableHeader,TableRow} from '@/components/ui/table';
 import {ArrowDownToLine,Search,ArrowUpRight,ChevronRight,X} from 'lucide-react';
 import livePolicy from '@/data/live-policy.json';
-import {liveForecast,validateObservations} from '@/lib/live.mjs';
+import {forecastWithObservations,validateObservations} from '@/lib/live.mjs';
 import {CardArtwork,cardName,cardText,similarName} from '@/components/card-artwork';
 import {LangContext,makeTr,useLang,initialLang,saveLang,unit,pt,time,type Lang} from '@/lib/i18n';
 import {DeckColorChart,MANA} from '@/components/deck-color-chart';
@@ -90,7 +90,7 @@ export default function Home(){
  if(live)try{const res=await fetch(import.meta.env.BASE_URL+'live/fra-public-game.json',{cache:'no-store'});
   if(res.ok){const result=await res.json();const url='https://17lands-public.s3.amazonaws.com/analysis_data/game_data/game_data_public.FRA.PremierDraft.csv.gz';
    const o=result.observations;if(result.status==='available'&&result.dataset_url===url&&o?.sources?.game?.url===url&&Object.keys(o.sources).join(',')==='game'&&o.cards?.every((c:any)=>c.alsa==null&&!(c.alsa_n>0))&&validateObservations(o)&&o.cards.some((c:any)=>c.gih_n>0)){
-    d.forecast=liveForecast(d.forecast,o,livePolicy.policies.current);d.live_status={check:{checked_at:result.checked_at},sync:{error:false}};
+    d.forecast=forecastWithObservations(d.forecast,o,livePolicy.policies.current);d.live_status={check:{checked_at:result.checked_at},sync:{error:false}};
    }else if(result.checked_at)d.live_status={check:{checked_at:result.checked_at},sync:{error:result.status==='error'}};
   }
  }catch{ /* Dataset check failures retain the last valid prediction. */ }
@@ -109,7 +109,7 @@ export default function Home(){
  const narrow=useNarrow(),showObsGih=hasObs('gih'),showObsAlsa=hasObs('alsa');
  const filtered=useMemo(()=>cards.filter(c=>(c.name+' '+cardName(c,'ja')+' '+c.oracle_text+' '+c.type_line).toLowerCase().includes(query.toLowerCase())&&(rare==='all'||c.rarity===rare)&&matchColors(color,c)).sort((a,b)=>sort==='gih_err'||sort==='alsa_err'?errKey(b,sort==='gih_err'?'gih':'alsa')-errKey(a,sort==='gih_err'?'gih':'alsa'):sort==='alsa'?a.alsa-b.alsa:sort==='gih_obs'||sort==='alsa_obs'?(()=>{const t=sort==='gih_obs'?'gih':'alsa',x=obsOf(a,t),y=obsOf(b,t);return x==null||y==null?(x==null?1:0)-(y==null?1:0):t==='gih'?y-x:x-y;})():b.gih-a.gih),[cards,query,rare,color,sort,lang]);
  // Average for the current color / rarity filter (the search box does not change it)
- const scale=useMemo(()=>gihScale(cards.filter(c=>(rare==='all'||c.rarity===rare)&&matchColors(color,c))),[cards,rare,color]);
+ const scale=useMemo(()=>gihScale(cards.filter(c=>(rare==='all'||c.rarity===rare)&&matchColors(color,c)),live),[cards,rare,color,live]);
  const scopeLabel=[...Object.keys(colors).filter(k=>color.includes(k)).map(k=>colors[k]),rare==='all'?'':rarity[rare]].filter(Boolean).join(tr('・',' · '))||tr('全カード','all cards');
  const vsMean=(c:Card)=>{if(!scale)return '';const d=Math.round((c.gih-scale.mean)*10)/10;return d===0?'±0.0':(d>0?'+':'')+d.toFixed(1);};
  const card=cards.find(c=>c.id===selected)||filtered[0];
