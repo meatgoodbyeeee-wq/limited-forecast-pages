@@ -4,4 +4,5 @@ dist/
 # TRK predictions stay out of the public repository until the user publishes them (kept locally, preview via a private artifact)
 data/trk/adopted-gih.json.gz
 data/trk/gih-range.json
+data/trk/gih-reasons.json
 public/forecast-trk.json

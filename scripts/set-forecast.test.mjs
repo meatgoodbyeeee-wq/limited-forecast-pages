@@ -65,3 +65,15 @@ test('adopted GIH: per-model wording is used when the file has texts, and the de
   assert.equal(custom.gih_reason[0].label, 'L');
   assert.equal(custom.gih, plain.gih);
 });
+
+test('adopted GIH: a reasons file of the same model version adds the plain-language reason; another version is refused', () => {
+  const {withGihRange} = makeGihRange(rangeFile);
+  const reasons = {version: 'g1', cards: [{id: 'a', name: 'Test Card', ja: '飛行を持つから、平均より高い勝率が見込まれる。', en: 'It has flying, so it is expected to do better than average.'}]};
+  const withReason = makeAdoptedGih(adoptedFile, withGihRange, reasons).applyAdoptedGih([card()])[0];
+  assert.deepEqual(withReason.gih_reason_text, {ja: reasons.cards[0].ja, en: reasons.cards[0].en});
+  assert.equal(withReason.gih, 58);
+  assert.equal(makeAdoptedGih(adoptedFile, withGihRange).applyAdoptedGih([card()])[0].gih_reason_text, undefined);
+  const renamed = {...reasons, cards: [{...reasons.cards[0], name: 'Old Name'}]};
+  assert.equal(makeAdoptedGih(adoptedFile, withGihRange, renamed).applyAdoptedGih([card()])[0].gih_reason_text, undefined);
+  assert.throws(() => makeAdoptedGih(adoptedFile, withGihRange, {...reasons, version: 'g0'}), /different model versions/);
+});

@@ -5,7 +5,9 @@
 // repository: research/production_c3/export_gih_c3_28set.py --set <CODE>). Without the adopted files the first-stage model is used and
 // the forecast is marked as such; that forecast must not be published (the set stays available:false in lib/set-config.mjs,
 // which also makes this script build nothing; BUILD_UNPUBLISHED=1 overrides that for local checks).
-// Options: --target <gz> --adopted <gz> --range <json> --out <json> --summary-from <forecast.json.gz>
+// Optional data/<code>/gih-reasons.json (research/trk_preview/reasons_b11g.py, same model version): one plain-language reason per card,
+// shown instead of the numeric breakdown. Like the adopted files it stays out of the public repository until the set is published.
+// Options: --target <gz> --adopted <gz> --range <json> --reasons <json> --out <json> --summary-from <forecast.json.gz>
 import fs from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {draftPool} from '../lib/draft-pool.mjs';
@@ -25,7 +27,7 @@ if (!cfg.available && !process.env.BUILD_UNPUBLISHED) { console.log(`${code} is 
 const c = code.toLowerCase(), url = p => new URL(p, import.meta.url);
 const readGz = p => JSON.parse(gunzipSync(fs.readFileSync(p)));
 const targetPath = opt('target') || url(`../data/${c}/target.json.gz`), adoptedPath = opt('adopted') || url(`../data/${c}/adopted-gih.json.gz`),
-  rangePath = opt('range') || url(`../data/${c}/gih-range.json`), out = opt('out') || url(`../public/${cfg.forecast}`);
+  rangePath = opt('range') || url(`../data/${c}/gih-range.json`), reasonsPath = opt('reasons') || url(`../data/${c}/gih-reasons.json`), out = opt('out') || url(`../public/${cfg.forecast}`);
 if (!fs.existsSync(targetPath)) throw Error(`カード一覧がありません: ${targetPath}（Collect set cards を先に実行してください）`);
 
 const target = readGz(targetPath), pool = draftPool(target.cards);
@@ -41,7 +43,8 @@ if (fs.existsSync(adoptedPath) && fs.existsSync(rangePath)) {
   const adopted = readGz(adoptedPath), range = JSON.parse(fs.readFileSync(rangePath, 'utf8'));
   if (adopted.set && adopted.set !== code) throw Error(`adopted file is for ${adopted.set}, not ${code}`);
   if (range.gih_model_version !== adopted.version) throw Error('range file and adopted file belong to different model versions');
-  const gr = makeGihRange(range), ad = makeAdoptedGih(adopted, gr.withGihRange);
+  const reasons = fs.existsSync(reasonsPath) ? JSON.parse(fs.readFileSync(reasonsPath, 'utf8')) : null;
+  const gr = makeGihRange(range), ad = makeAdoptedGih(adopted, gr.withGihRange, reasons);
   apply = ad.applyAdoptedGih; gihVersion = ad.adoptedGihVersion; rangeVersion = gr.gihRangeVersion; preliminary = adopted.preliminary === true;
 }
 const predicted = applyAdoptedAlsa(apply(predictCards(pool, incumbent)));
