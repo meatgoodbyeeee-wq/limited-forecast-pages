@@ -1,58 +1,17 @@
 {
- "checked_at": "2026-10-30T22:21:01.637Z",
+ "checked_at": "2026-10-30T22:21:34.825Z",
  "set": "TRK",
  "stored_before": 311,
  "ok": true,
  "gallery": "https://magic.wizards.com/en/products/star-trek/card-image-gallery",
  "entry_count": 1323,
  "skipped_counts": {
-  "future": 122,
-  "nonBooster": 747,
+  "future": 0,
+  "nonBooster": 821,
   "noDraft": 27
  },
  "skipped_sample": {
-  "future": [
-   "B'Elanna Torres, Scrapper@2027-10-28T07:00:00.000Z",
-   "Alhammarret's Archive@2027-10-28T07:00:00.000Z",
-   "Beverly Crusher, Ship's Doctor@2027-10-28T07:00:00.000Z",
-   "Battlefield Forge@2027-10-28T07:00:00.000Z",
-   "Arcum Dagsson@2027-10-28T07:00:00.000Z",
-   "Ambassador K'Ehleyr@2027-10-28T07:00:00.000Z",
-   "Academy Instructor@2027-10-28T07:00:00.000Z",
-   "Desolate Lighthouse@2027-10-28T07:00:00.000Z",
-   "Captain Sisay@2027-10-28T07:00:00.000Z",
-   "Fractured Identity@2027-10-28T07:00:00.000Z",
-   "Data, Professor of Humanities@2027-10-28T07:00:00.000Z",
-   "Howling Mine@2027-10-28T07:00:00.000Z",
-   "David and Carol Marcus, Creators@2027-10-28T07:00:00.000Z",
-   "Scorched Geyser@2027-10-28T07:00:00.000Z",
-   "David and Carol Marcus, Creators@2027-10-28T07:00:00.000Z",
-   "Grand Crescendo@2027-10-28T07:00:00.000Z",
-   "Reg Barclay, Fidgety Fantasist@2027-10-28T07:00:00.000Z",
-   "Dr. Leonard \"Bones\" McCoy@2027-10-28T07:00:00.000Z",
-   "Cmdr. Troi, Outgoing Empath@2027-10-28T07:00:00.000Z",
-   "Loot, Exuberant Explorer@2027-10-28T07:00:00.000Z",
-   "Dr. Pulaski, Cynical Clinician@2027-10-28T07:00:00.000Z",
-   "Genesis Device@2027-10-28T07:00:00.000Z",
-   "Mogis, God of Slaughter@2027-10-28T07:00:00.000Z",
-   "Decree of Pain@2027-10-28T07:00:00.000Z",
-   "Sisay, Weatherlight Captain@2027-10-28T07:00:00.000Z",
-   "Dathon, His Heart Open@2027-10-28T07:00:00.000Z",
-   "Geordi La Forge, Innovator@2027-10-28T07:00:00.000Z",
-   "Sarcophagus, Ship of the Dead@2027-10-28T07:00:00.000Z",
-   "Jhoira, Weatherlight Captain@2027-10-28T07:00:00.000Z",
-   "Julian Bashir, Frontier Doctor@2027-10-28T07:00:00.000Z",
-   "MACO Strike Team@2027-10-28T07:00:00.000Z",
-   "Dr. Leonard \"Bones\" McCoy@2027-10-28T07:00:00.000Z",
-   "Loran of the Third Path@2027-10-28T07:00:00.000Z",
-   "MACO Strike Team@2027-10-28T07:00:00.000Z",
-   "Kes, Evolving Telepath@2027-10-28T07:00:00.000Z",
-   "Drivnod, Carnage Dominus@2027-10-28T07:00:00.000Z",
-   "Shizo, Death's Storehouse@2027-10-28T07:00:00.000Z",
-   "Glittering Massif@2027-10-28T07:00:00.000Z",
-   "Scotty, Chief Engineer@2027-10-28T07:00:00.000Z",
-   "Dr. Leonard \"Bones\" McCoy@2027-10-28T07:00:00.000Z"
-  ],
+  "future": [],
   "nonBooster": [
    "Chief Kyle, Transporter Tech [Commander Decks|Collector's Edition Commander Decks|Landing Party Commander Deck|Landing Party Collector's Edition]",
    "Beast Token // Tribble Token [Collector's Edition Commander Decks|Landing Party Collector's Edition]",
@@ -125,7 +84,7 @@
    "Treasure Token"
   ]
  },
- "cards": 311,
- "added": 0,
- "changed": 0
+ "cards": 336,
+ "added": 25,
+ "changed": 14
 }
