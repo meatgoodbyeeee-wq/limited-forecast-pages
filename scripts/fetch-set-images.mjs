@@ -15,7 +15,7 @@ const cards = JSON.parse(gunzipSync(fs.readFileSync(new URL('target.json.gz', di
 const old = fs.existsSync(manifest) ? JSON.parse(fs.readFileSync(manifest, 'utf8')) : {};
 let ja = new Map(), jaState = {gallery: cfg.galleries_ja?.[0] || null, read: false, cards: 0, with_own_image: 0, error: null};
 try {
-  if (cfg.galleries_ja?.length) { const jc = (await collectOfficial(code, cfg.galleries_ja)).cards; ja = new Map(jc.map(c => [c.id, c])); jaState.read = true; jaState.cards = jc.length; }
+  if (cfg.galleries_ja?.length) { const jc = (await collectOfficial(code, cfg.galleries_ja, {language: 'ja'})).cards; ja = new Map(jc.map(c => [c.id, c])); jaState.read = true; jaState.cards = jc.length; }
 } catch (e) { jaState.error = e.message; console.warn('Japanese gallery not read, English images only:', e.message); }
 const out = {}, log = {downloaded: 0, kept: 0, failed: [], japanese: 0};
 for (const c of cards) {
