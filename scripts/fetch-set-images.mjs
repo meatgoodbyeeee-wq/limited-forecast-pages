@@ -13,10 +13,10 @@ const lower = code.toLowerCase(), dir = new URL(`../data/${lower}/`, import.meta
 fs.mkdirSync(imgDir, {recursive: true});
 const cards = JSON.parse(gunzipSync(fs.readFileSync(new URL('target.json.gz', dir)))).cards;
 const old = fs.existsSync(manifest) ? JSON.parse(fs.readFileSync(manifest, 'utf8')) : {};
-let ja = new Map();
+let ja = new Map(), jaState = {gallery: cfg.galleries_ja?.[0] || null, read: false, cards: 0, with_own_image: 0, error: null};
 try {
-  if (cfg.galleries_ja?.length) ja = new Map((await collectOfficial(code, cfg.galleries_ja)).cards.map(c => [c.id, c]));
-} catch (e) { console.warn('Japanese gallery not read, English images only:', e.message); }
+  if (cfg.galleries_ja?.length) { const jc = (await collectOfficial(code, cfg.galleries_ja)).cards; ja = new Map(jc.map(c => [c.id, c])); jaState.read = true; jaState.cards = jc.length; }
+} catch (e) { jaState.error = e.message; console.warn('Japanese gallery not read, English images only:', e.message); }
 const out = {}, log = {downloaded: 0, kept: 0, failed: [], japanese: 0};
 for (const c of cards) {
   const j = ja.get(c.id), useJa = !!(j?.image && j.image !== c.image), url = useJa ? j.image : c.image, lang = useJa ? 'ja' : 'en';
@@ -35,6 +35,8 @@ for (const c of cards) {
     log.downloaded++; if (useJa) log.japanese++;
   } catch (e) { log.failed.push(`${c.name}: ${e.message}`); if (prev) out[c.id] = prev; }
 }
+jaState.with_own_image = [...ja.values()].filter(j => { const c = cards.find(x => x.id === j.id); return c && j.image && j.image !== c.image; }).length;
+fs.writeFileSync(new URL('ja-state.json', dir), JSON.stringify({checked_at: new Date().toISOString(), ...jaState, names_ja: log.japanese}, null, 1) + '\n');
 fs.writeFileSync(manifest, JSON.stringify(out, null, 1) + '\n');
 console.log(JSON.stringify({set: code, cards: cards.length, ...log, failed: log.failed.length, failed_list: log.failed.slice(0, 10)}));
 if (log.failed.length > cards.length / 2) process.exit(1);
