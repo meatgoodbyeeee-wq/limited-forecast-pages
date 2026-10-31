@@ -35,6 +35,10 @@ for (const c of cards) {
     log.downloaded++; if (useJa) log.japanese++;
   } catch (e) { log.failed.push(`${c.name}: ${e.message}`); if (prev) out[c.id] = prev; }
 }
+jaState.unmatched = cards.filter(c => !(ja.get(c.id)?.image && ja.get(c.id).image !== c.image)).map(c => {
+  const j = ja.get(c.id), sameNum = [...ja.values()].filter(x => String(x.collector_number) === String(c.collector_number)).map(x => ({id: x.id, name: x.name, same_image: x.image === c.image}));
+  return {id: c.id, name: c.name, number: c.collector_number, in_ja_by_id: !!j, ja_name: j?.name, same_image: j ? j.image === c.image : null, ja_same_number: sameNum.slice(0, 4)};
+});
 jaState.with_own_image = [...ja.values()].filter(j => { const c = cards.find(x => x.id === j.id); return c && j.image && j.image !== c.image; }).length;
 fs.writeFileSync(new URL('ja-state.json', dir), JSON.stringify({checked_at: new Date().toISOString(), ...jaState, names_ja: log.japanese}, null, 1) + '\n');
 fs.writeFileSync(manifest, JSON.stringify(out, null, 1) + '\n');
