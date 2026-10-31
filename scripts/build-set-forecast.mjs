@@ -51,7 +51,7 @@ const predicted = applyAdoptedAlsa(apply(predictCards(pool, incumbent)));
 if (!predicted.length || predicted.some(x => !Number.isFinite(x.gih) || !Number.isFinite(x.alsa))) throw Error('予測値の検証に失敗');
 const adoptedCount = predicted.filter(x => x.gih_model_version === gihVersion).length;
 const policy = readGz(url('../data/live-policy.json.gz')).policies.current;
-const {cards: _cards, ...meta} = target;
+const {cards: _cards, skipped: _skipped, ...meta} = target;  // `skipped` is a collection diagnostic, not part of the published forecast
 const forecast = liveForecast({...meta, phase: 'PREVIEW', cards: predicted, deck_color: predictDeckColors(predicted),
   model_version: `${incumbent.version} + ${gihVersion} + ${adoptedAlsaVersion}`, gih_range_version: rangeVersion, ...(preliminary ? {preliminary: true} : {}), checked_at: new Date().toISOString(),
   adopted_gih_cards: adoptedCount, first_stage_cards: predicted.length - adoptedCount}, null, policy);

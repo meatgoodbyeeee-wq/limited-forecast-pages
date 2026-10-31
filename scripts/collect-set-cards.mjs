@@ -22,7 +22,8 @@ try {
   const merged = mergeOfficial(old, incoming), pool = draftPool(merged.cards);
   const before = new Map(old.cards.map(c => [c.name, c]));
   const added = pool.filter(c => !before.has(c.name)).length, changed = pool.filter(c => before.has(c.name) && signature(c) !== signature(before.get(c.name))).length;
-  fs.writeFileSync(file, gzipSync(JSON.stringify({...merged, cards: pool})));
+  const {skipped: _skipped, ...mergedMeta} = merged;  // diagnostic list, logged in collect-state.json only
+  fs.writeFileSync(file, gzipSync(JSON.stringify({...mergedMeta, cards: pool})));
   Object.assign(log, {ok: true, gallery: incoming.source, entry_count: incoming.entry_count, skipped_counts: Object.fromEntries(Object.entries(incoming.skipped||{}).map(([k,v])=>[k,v.length])), skipped_sample: Object.fromEntries(Object.entries(incoming.skipped||{}).map(([k,v])=>[k,v.slice(0,40)])), cards: pool.length, added, changed});
 } catch (e) {
   Object.assign(log, {ok: false, error: e.message});
