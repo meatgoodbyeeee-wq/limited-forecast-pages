@@ -66,7 +66,7 @@ Set Settings → Pages → Source to GitHub Actions. Push to main or manually ru
 
 ## 新しいセットの追加（スター・トレック＝TRK が最初の例）
 セット一覧は `lib/set-config.mjs` が唯一の定義（画面のセット選択・ビルドスクリプトの両方が読む）。`available: false` の間は選択肢に出ず、予測ファイルもビルドされない（公開スイッチ）。
-1. **カード一覧**：Actions の **Collect set cards**（毎日05:37 JST、手動実行も可）が公式ギャラリーから `data/<code>/target.json.gz` を作る。取得の成否・使ったギャラリーは `data/<code>/collect-state.json`
+1. **カード一覧**：Actions の **Collect set cards**（手動実行。TRK は全カード公開済みのため2026-10-31 に毎日の自動実行を止めた。次のセットでは `schedule` を戻す）が公式ギャラリーから `data/<code>/target.json.gz` を作る。取得の成否・使ったギャラリーは `data/<code>/collect-state.json`
 2. **予測の生成（データリポジトリ）**：`research/newset/newset.py` でカード効果の抽出（C3）、`research/production_c3/export_gih_c3_28set.py --set <CODE>` で GIH予測と幅を出力 → `data/<code>/adopted-gih.json.gz` と `data/<code>/gih-range.json` に置く
 3. **ビルド**：`scripts/build-set-forecast.mjs <CODE>` が `public/forecast-<code>.json` を作る（Deploy Pages が `data/<code>/adopted-gih.json.gz` のあるセットで自動実行）。ALSA・デッキカラー・類似カードは FRA と同じ処理
 4. **公開**：確認後、`lib/set-config.mjs` の `available` を `true` にする。確認だけしたいときは `?set=TRK&preview=1`（ローカルでは `BUILD_UNPUBLISHED=1` でビルド）

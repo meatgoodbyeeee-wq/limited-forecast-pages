@@ -53,7 +53,7 @@ const adoptedCount = predicted.filter(x => x.gih_model_version === gihVersion).l
 const policy = readGz(url('../data/live-policy.json.gz')).policies.current;
 const {cards: _cards, skipped: _skipped, ...meta} = target;  // `skipped` is a collection diagnostic, not part of the published forecast
 const forecast = liveForecast({...meta, phase: 'PREVIEW', cards: predicted, deck_color: predictDeckColors(predicted),
-  model_version: `${incumbent.version} + ${gihVersion} + ${adoptedAlsaVersion}`, gih_range_version: rangeVersion, ...(preliminary ? {preliminary: true} : {}), checked_at: new Date().toISOString(),
+  model_version: `${incumbent.version} + ${gihVersion} + ${adoptedAlsaVersion}`, gih_range_version: rangeVersion, ...(preliminary ? {preliminary: true} : {}), checked_at: meta.retrieved_at || new Date().toISOString(),  // when the official cards were last collected (not the build time)
   adopted_gih_cards: adoptedCount, first_stage_cards: predicted.length - adoptedCount}, null, policy);
 const summary = readGz(opt('summary-from') || url('../public/forecast.json.gz')).summary;
 fs.writeFileSync(out, JSON.stringify({forecast, snapshots: [], summary}));
