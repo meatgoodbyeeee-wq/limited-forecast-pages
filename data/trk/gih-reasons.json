@@ -6,14 +6,14 @@
   {
    "id": "6TTYU2AKKnZkWsEzgfUJIe",
    "name": "70,000 Light-Years from Home",
-   "ja": "条件なくクリーチャーを追放できAIの評価は特に高い一方、相手に基本土地を与える欠点とソーサリーの遅さがあるため、平均並みの勝率と予測される。",
-   "en": "Unconditional creature exile that the AI rates very highly, but it hands the opponent a basic land, is sorcery-speed and does little else, so it is forecast around average."
+   "ja": "条件なくクリーチャーを追放できる一方、相手に基本土地を与える欠点とソーサリーの遅さがあるため、平均並みの勝率と予測される。",
+   "en": "Unconditional creature exile, but it hands the opponent a basic land, is sorcery-speed and does little else, so it is forecast around average."
   },
   {
    "id": "3WcVv3rBMsbRBPIhIHHBb9",
    "name": "Command Decision",
-   "ja": "パワーの大きいクリーチャーの破壊かドローを選べる柔軟さでAIの評価が高いため、平均をやや上回る勝率が見込まれる。",
-   "en": "Flexible: it either destroys a big creature or draws a card, and the AI rates it highly, so a slightly above-average win rate is expected."
+   "ja": "パワーの大きいクリーチャーの破壊かドローを選べる柔軟さがあり、平均をやや上回る勝率が見込まれる。",
+   "en": "Flexible: it either destroys a big creature or draws a card, so a slightly above-average win rate is expected."
   },
   {
    "id": "M6oE5WUToOpu61gkd0Oxr",
@@ -24,8 +24,8 @@
   {
    "id": "20WROlDZDs1yMCBcjqEDQW",
    "name": "Emergency Medical Hologram",
-   "ja": "軽く出せる一方、強化カウンターと少しのライフ回復だけの小粒な効果でAIの評価が低いため、平均をやや下回る見込み。",
-   "en": "Cheap to cast, but it only adds a counter and a little life, and the AI rates it low, so it is expected slightly below average."
+   "ja": "軽く出せる一方、強化カウンターと少しのライフ回復だけの小粒な効果にとどまるため、平均をやや下回る見込み。",
+   "en": "Cheap to cast, but it only adds a counter and a little life, so it is expected slightly below average."
   },
   {
    "id": "2cKjpqJirXNf5nAebHyC2P",
@@ -42,8 +42,8 @@
   {
    "id": "5uHXzXuL57zuTBhGKPmCJO",
    "name": "Malfunctioning Holodeck",
-   "ja": "相手の土地以外のパーマネントを追放できる効率の良い除去でAIの評価も高いため、平均をやや上回る勝率が見込まれる。",
-   "en": "Efficient removal that exiles any nonland permanent an opponent controls, and the AI rates it highly, so a slightly above-average win rate is expected."
+   "ja": "相手の土地以外のパーマネントを追放できる効率の良い除去であるため、平均をやや上回る勝率が見込まれる。",
+   "en": "Efficient removal that exiles any nonland permanent an opponent controls, so a slightly above-average win rate is expected."
   },
   {
    "id": "bu53FaWC1YewJrhwo3jDw",
@@ -54,8 +54,8 @@
   {
    "id": "19zduqYDNswmRO0ljZDqpL",
    "name": "Cloistered Telepath",
-   "ja": "軽く瞬速で出せて手札も整えられる一方、AIの評価が低いため、平均並みの勝率と予測される。",
-   "en": "Cheap with flash and it filters your hand when it enters, but the AI rates it low, so it is forecast around average."
+   "ja": "軽く瞬速で出せて手札も整えられるが、平均並みの勝率と予測される。",
+   "en": "Cheap with flash and it filters your hand when it enters, but it is forecast around average."
   },
   {
    "id": "5yGTmyIs6P2zi399lZdPUg",
@@ -66,8 +66,8 @@
   {
    "id": "4auDyusdbyTF8UqDcZ8Zyv",
    "name": "Federation Probe",
-   "ja": "軽い飛行クリーチャーで出たときに小さな効果もある一方、AIの評価が低いため、平均をやや下回ると予測される。",
-   "en": "A cheap flyer with a small bonus when it enters, but the AI rates it low, so it is forecast slightly below average."
+   "ja": "軽い飛行クリーチャーで出たときに小さな効果もあるが、平均をやや下回ると予測される。",
+   "en": "A cheap flyer with a small bonus when it enters, but it is forecast slightly below average."
   },
   {
    "id": "61bdLTmh8wJWJ3dQcSbFII",
@@ -120,8 +120,8 @@
   {
    "id": "5z2xMglr5IBj5UTMQ2fhIh",
    "name": "Collective Drone",
-   "ja": "軽いものの、パワーがアーティファクト・クリーチャーの数に依存して効率が低くAIの評価も低いため、平均をやや下回る見込み。",
-   "en": "Cheap, but its power depends on how many artifact creatures you control, making it inefficient, and the AI rates it low, so it is expected slightly below average."
+   "ja": "軽いものの、パワーがアーティファクト・クリーチャーの数に依存して効率が低いため、平均をやや下回る見込み。",
+   "en": "Cheap, but its power depends on how many artifact creatures you control, making it inefficient, so it is expected slightly below average."
   },
   {
    "id": "7v5txiqYHMYN8pF7O723vk",
@@ -132,14 +132,14 @@
   {
    "id": "2f2LYKEOSpc3On4TLfYuPD",
    "name": "A Good Day to Die",
-   "ja": "小さな強化と死亡時のドローだけでAIの評価が特に低く効率も悪いため、平均を大きく下回る見込み。",
-   "en": "Just a small pump plus a card if the creature dies; inefficient and rated very low by the AI, so it is expected well below average."
+   "ja": "小さな強化と死亡時のドローだけで効率も悪く、平均を大きく下回る見込み。",
+   "en": "Just a small pump plus a card if the creature dies, and inefficient, so it is expected well below average."
   },
   {
    "id": "5tWVpuLnVJVLRYxlhqwM6z",
    "name": "He's Dead, Jim",
-   "ja": "条件なくクリーチャーを破壊できるインスタント除去でAIの評価が高いため、平均をやや上回る勝率が見込まれる。",
-   "en": "Unconditional instant-speed creature removal that the AI rates highly, so a slightly above-average win rate is expected."
+   "ja": "条件なくクリーチャーを破壊できるインスタント除去のため、平均をやや上回る勝率が見込まれる。",
+   "en": "Unconditional instant-speed creature removal, so a slightly above-average win rate is expected."
   },
   {
    "id": "4gFPh2sXRbcI6cpBSeqUCV",
@@ -156,20 +156,20 @@
   {
    "id": "6IDixh06o1yzoHi56wsEem",
    "name": "Relentless Drednok",
-   "ja": "軽い絆魂持ちで墓地からカードを引ける一方、AIの評価が低いため、平均並みの勝率と予測される。",
-   "en": "A cheap lifelinker that can later draw a card from the graveyard, but the AI rates it low, so it is forecast around average."
+   "ja": "軽い絆魂持ちで墓地からカードを引けるが、平均並みの勝率と予測される。",
+   "en": "A cheap lifelinker that can later draw a card from the graveyard, but it is forecast around average."
   },
   {
    "id": "4Fly83USDJnjAHWS7tn9rW",
    "name": "Cantankerous Captain",
-   "ja": "毎ターン味方を小さく強化できるものの、AIの評価が低いため、平均をやや下回る見込み。",
-   "en": "It gives a creature a small boost each combat, but the AI rates it low, so it is expected slightly below average."
+   "ja": "毎ターン味方を小さく強化できる程度で、平均をやや下回る見込み。",
+   "en": "It only gives a creature a small boost each combat, so it is expected slightly below average."
   },
   {
    "id": "Yf3vMXIvWex8kbMbLDD4V",
    "name": "Captain's Tutelage",
-   "ja": "クリーチャーを強化するだけのオーラで盤面に体を増やせず、AIの評価も特に低いため、平均を大きく下回る見込み。",
-   "en": "An Aura that only pumps a creature and adds no body, rated very low by the AI, so it is expected well below average."
+   "ja": "クリーチャーを強化するだけのオーラで盤面に体を増やせないため、平均を大きく下回る見込み。",
+   "en": "An Aura that only pumps a creature and adds no body, so it is expected well below average."
   },
   {
    "id": "GNzOLbrEmgoix7LaOyGXe",
@@ -180,8 +180,8 @@
   {
    "id": "NpJ2Bgwinh9syaegOGHEq",
    "name": "Khaaaaaaaaaaaannn!",
-   "ja": "X火力で大型クリーチャーも追放できAIの評価が特に高い一方、効果は単一のため、平均をやや上回る勝率が見込まれる。",
-   "en": "Scalable damage that can exile even a large creature and is rated very highly by the AI, though it does only that, so a slightly above-average win rate is expected."
+   "ja": "X火力で大型クリーチャーも追放できる一方、効果は単一のため、平均をやや上回る勝率が見込まれる。",
+   "en": "Scalable damage that can exile even a large creature, though it does only that, so a slightly above-average win rate is expected."
   },
   {
    "id": "2b1SzaOIMzFOdeK4j4orrV",
@@ -204,8 +204,8 @@
   {
    "id": "23Am8kcaPpVBp6fiq3dRq7",
    "name": "Planetary Patrol",
-   "ja": "軽く出せる一方、土地が出たターンしか強くならずAIの評価も低いため、平均をやや下回ると予測される。",
-   "en": "Cheap, but it only gets bigger on turns a land enters and the AI rates it low, so it is forecast slightly below average."
+   "ja": "軽く出せるものの、土地が出たターンしか強くならず、平均をやや下回ると予測される。",
+   "en": "Cheap, but it only gets bigger on turns a land enters, so it is forecast slightly below average."
   },
   {
    "id": "Eotx765LMO9el4OgxXz3o",
@@ -216,8 +216,8 @@
   {
    "id": "5jhyBBJoI5xe59viSBySxg",
    "name": "Reckless Impulse",
-   "ja": "ライブラリーの上を追放して使えるだけのソーサリーでAIの評価が低いため、平均を大きく下回る見込み。",
-   "en": "A sorcery that only lets you play cards exiled from the top of your library, rated low by the AI, so it is expected well below average."
+   "ja": "ライブラリーの上を追放して使えるだけのソーサリーのため、平均を大きく下回る見込み。",
+   "en": "A sorcery that only lets you play cards exiled from the top of your library, so it is expected well below average."
   },
   {
    "id": "5TcKREEkje1CmTY3XysCJJ",
@@ -228,8 +228,8 @@
   {
    "id": "TRijBCnqSJOOQVUAUbM5c",
    "name": "Common Goal",
-   "ja": "自軍のクリーチャーで相手のクリーチャーにダメージを与える効率の良い除去でAIの評価も高めのため、平均並みの勝率と予測される。",
-   "en": "Efficient removal that has your creatures deal damage to an opposing creature, and the AI rates it fairly well, so it is forecast around average."
+   "ja": "自軍のクリーチャーで相手のクリーチャーにダメージを与える効率の良い除去だが、平均並みの勝率と予測される。",
+   "en": "Efficient removal that has your creatures deal damage to an opposing creature, but it is forecast around average."
   },
   {
    "id": "73Z2t4blFBhxRpD6yNYCcn",
@@ -252,8 +252,8 @@
   {
    "id": "5JVTGJbhpN2K8y2PXEVrZR",
    "name": "I'm a Doctor, Not a . . .",
-   "ja": "軽く使えるインスタントだが、AIの評価が低く、強化と起き上がり程度の効果にとどまるため、平均をやや下回ると予測される。",
-   "en": "A cheap instant, but the AI grade is low and it only offers a small pump and untap, so it is forecast slightly below average."
+   "ja": "軽く使えるインスタントだが、強化と起き上がり程度の効果にとどまるため、平均をやや下回ると予測される。",
+   "en": "A cheap instant, but it only offers a small pump and untap, so it is forecast slightly below average."
   },
   {
    "id": "49zFw5nDsqN99Lw7QH86El",
@@ -264,20 +264,20 @@
   {
    "id": "77IUSfx0XrcJLYorUsbHzf",
    "name": "Mugato",
-   "ja": "到達・警戒・接死を備えた大型で、AIの評価もマナ効率も非常に高いため、平均をやや上回る勝率が見込まれる。",
-   "en": "A large body with reach, vigilance and deathtouch, with a very high AI grade and excellent mana efficiency, so a slightly above-average win rate is expected."
+   "ja": "到達・警戒・接死を備えた大型で、マナ効率も非常に高いため、平均をやや上回る勝率が見込まれる。",
+   "en": "A large body with reach, vigilance and deathtouch and excellent mana efficiency, so a slightly above-average win rate is expected."
   },
   {
    "id": "7hl9Cb6uZ0xV37CNbfDS3V",
    "name": "Cybernetic Specialist",
-   "ja": "軽いアーティファクト・クリーチャーだが、AIの評価が低く、墓地のカードを戻す程度の地味な能力のため、平均をやや下回る見込み。",
-   "en": "A cheap artifact creature, but the AI grade is low and its ability only puts graveyard cards back, so it is expected slightly below average."
+   "ja": "軽いアーティファクト・クリーチャーだが、墓地のカードを戻す程度の地味な能力のため、平均をやや下回る見込み。",
+   "en": "A cheap artifact creature, but its ability only puts graveyard cards back, so it is expected slightly below average."
   },
   {
    "id": "1PuUzNOnB40Ocd2Fjm5e5X",
    "name": "Open Communications",
-   "ja": "軽いマナでカードを引けるものの、AIの評価が非常に低いため、平均を大きく下回る勝率と予測される。",
-   "en": "It draws a card cheaply, but the AI grade is very low, so a win rate well below average is forecast."
+   "ja": "軽いマナでカードを引けるものの、平均を大きく下回る勝率と予測される。",
+   "en": "It draws a card cheaply, but a win rate well below average is still forecast."
   },
   {
    "id": "34PxlxnIzCQrrHG2E2idRx",
@@ -336,8 +336,8 @@
   {
    "id": "5NlejP3UDTWP0hSi9uAxlU",
    "name": "Set Phasers to . . .",
-   "ja": "軽いマナで攻撃してきたクリーチャーを焼くか麻痺させて止められ、AIの評価も高いため、平均並みの勝率と予測される。",
-   "en": "For little mana it can burn an attacking creature or tap it down with a stun counter, and the AI grade is high, so an average win rate is forecast."
+   "ja": "軽いマナで攻撃してきたクリーチャーを焼くか麻痺させて止められるため、平均並みの勝率と予測される。",
+   "en": "For little mana it can burn an attacking creature or tap it down with a stun counter, so an average win rate is forecast."
   },
   {
    "id": "1JvP8yJBq59gYBjrbjVdsu",
@@ -348,8 +348,8 @@
   {
    "id": "69mNObgzOXtkPzHyuFvrBk",
    "name": "Highly Illogical",
-   "ja": "軽い打ち消し呪文として使える一方、AIの評価が低いため、平均並みの勝率にとどまると予測される。",
-   "en": "It works as a cheap counterspell, but the AI grade is low, so it is forecast to stay around average."
+   "ja": "軽い打ち消し呪文として使えるが、平均並みの勝率にとどまると予測される。",
+   "en": "It works as a cheap counterspell, but it is forecast to stay around average."
   },
   {
    "id": "20z5ptKDx9cbmiEsD6xwQA",
@@ -360,8 +360,8 @@
   {
    "id": "7vTRqQvhWD94toGI1J9tn",
    "name": "In the Pale Moonlight",
-   "ja": "相手に生け贄を強い、手掛かりやトークンも生み出す多機能な英雄譚でAIの評価も高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "A versatile Saga that forces a sacrifice and also makes a Clue and creature tokens, with a high AI grade, so a win rate well above average is expected."
+   "ja": "相手に生け贄を強い、手掛かりやトークンも生み出す多機能な英雄譚のため、平均を大きく上回る勝率が見込まれる。",
+   "en": "A versatile Saga that forces a sacrifice and also makes a Clue and creature tokens, so a win rate well above average is expected."
   },
   {
    "id": "1CAaZgKYMTqcmjr44WNUwx",
@@ -378,32 +378,32 @@
   {
    "id": "nv4ll82hpkQsKHaB4wrzL",
    "name": "Captain James T. Kirk",
-   "ja": "出たときや攻撃時にトークン生成や全体強化を選べて盤面を広げやすく、AIの評価も非常に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "Whenever it enters or attacks it can make a token or pump your team, widening the board, and the AI grade is very high, so a win rate well above average is expected."
+   "ja": "出たときや攻撃時にトークン生成や全体強化を選べて盤面を広げやすいため、平均を大きく上回る勝率が見込まれる。",
+   "en": "Whenever it enters or attacks it can make a token or pump your team, widening the board, so a win rate well above average is expected."
   },
   {
    "id": "7If9zVytAsA3LuysHONOxe",
    "name": "Amok Time",
-   "ja": "格闘で除去し、ライフ回復と墓地回収まで続く英雄譚でAIの評価も高いため、平均を大きく上回る勝率と予測される。",
-   "en": "A Saga that removes a creature by fighting, then gains life and returns a creature card, with a high AI grade, so a win rate well above average is forecast."
+   "ja": "格闘で除去し、ライフ回復と墓地回収まで続く英雄譚のため、平均を大きく上回る勝率と予測される。",
+   "en": "A Saga that removes a creature by fighting, then gains life and returns a creature card, so a win rate well above average is forecast."
   },
   {
    "id": "9kxCOR1ZMBo7DfcQbDaDs",
    "name": "Captain Kathryn Janeway",
-   "ja": "出るクリーチャーすべてに探検させ、土地も追加で置ける伝説でAIの評価が非常に高いため、平均を大きく上回る見込み。",
-   "en": "A legend that makes every creature you play explore and lets you play extra lands, with a very high AI grade, so it is expected well above average."
+   "ja": "出るクリーチャーすべてに探検させ、土地も追加で置ける伝説のため、平均を大きく上回る見込み。",
+   "en": "A legend that makes every creature you play explore and lets you play extra lands, so it is expected well above average."
   },
   {
    "id": "3veMa8gAIxPIv2ePDBbaF",
    "name": "Crystalline Entity",
-   "ja": "唱えて出せば非アーティファクトのクリーチャーをすべて破壊する飛行の大型でAIの評価も非常に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "A large flyer that destroys all nonartifact creatures when cast, with a very high AI grade, so a win rate well above average is expected."
+   "ja": "唱えて出せば非アーティファクトのクリーチャーをすべて破壊する飛行の大型のため、平均を大きく上回る勝率が見込まれる。",
+   "en": "A large flyer that destroys all nonartifact creatures when cast, so a win rate well above average is expected."
   },
   {
    "id": "1MeVTPlvedz3qPrin8FvfB",
    "name": "Seven of Nine",
-   "ja": "AIの評価は高い一方、重いうえにマナに対するサイズが小さく、出たときの効果もないため、平均をやや下回る見込み。",
-   "en": "The AI grade is high, but it is expensive, small for its cost and has no enter-the-battlefield effect, so it is expected slightly below average."
+   "ja": "重いうえにマナに対するサイズが小さく、出たときの効果もないため、平均をやや下回る見込み。",
+   "en": "It is expensive, small for its cost and has no enter-the-battlefield effect, so it is expected slightly below average."
   },
   {
    "id": "35n2wtlIATZnFkiiDE6tGG",
@@ -414,8 +414,8 @@
   {
    "id": "6xBXN1n0T6c3JTSdPnzWmv",
    "name": "Shields Up!",
-   "ja": "軽いマナで味方を守れるが、AIの評価が低いため、平均をやや下回る見込み。",
-   "en": "It protects your creature for little mana, but the AI grade is low, so it is expected slightly below average."
+   "ja": "軽いマナで味方を守れるが、平均をやや下回る見込み。",
+   "en": "It protects your creature for little mana, but it is expected slightly below average."
   },
   {
    "id": "7FPqpjcUi5DI8Y74Oe2YyO",
@@ -432,14 +432,14 @@
   {
    "id": "209Qa5uHoSG236MllZwf0J",
    "name": "V'Ger, the Intruder",
-   "ja": "飛行の大型で、出たときや攻撃時にドローか相手の弱体化を選べ、AIの評価も高いため、平均をやや上回る勝率が見込まれる。",
-   "en": "A large flyer that draws a card or weakens the opponent's creatures whenever it enters or attacks, with a high AI grade, so a slightly above-average win rate is expected."
+   "ja": "飛行の大型で、出たときや攻撃時にドローか相手の弱体化を選べるため、平均をやや上回る勝率が見込まれる。",
+   "en": "A large flyer that draws a card or weakens the opponent's creatures whenever it enters or attacks, so a slightly above-average win rate is expected."
   },
   {
    "id": "76A7H1TXfbDO7nn2hycOlk",
    "name": "Resistance Is Futile",
-   "ja": "軽いマナで非アーティファクトのクリーチャーを破壊でき、AIの評価が非常に高い一方、ソーサリーのため、平均をやや上回る見込み。",
-   "en": "Cheap removal that destroys a nonartifact creature with a very high AI grade, though it is sorcery-speed, so it is expected slightly above average."
+   "ja": "軽いマナで非アーティファクトのクリーチャーを破壊できる一方、ソーサリーのため、平均をやや上回る見込み。",
+   "en": "Cheap removal that destroys a nonartifact creature, though it is sorcery-speed, so it is expected slightly above average."
   },
   {
    "id": "78IBRRueelq1WeTqyApv9e",
@@ -462,14 +462,14 @@
   {
    "id": "1PppQbI1qsIcDemNvnVogO",
    "name": "Support Mission",
-   "ja": "AIの評価は高い一方、クリーチャーを強化し続けるエンチャントで効果が出るまで時間がかかるため、平均並みと予測される。",
-   "en": "The AI grade is high, but it is an enchantment that grows creatures over time and is slow to pay off, so it is forecast around average."
+   "ja": "クリーチャーを強化し続けるエンチャントだが、効果が出るまで時間がかかるため、平均並みと予測される。",
+   "en": "It is an enchantment that grows creatures over time and is slow to pay off, so it is forecast around average."
   },
   {
    "id": "4pyBG4l6gqhSXZ3v9UHjyE",
    "name": "Syndicate Liquidators",
-   "ja": "土地が出るたびに味方を大きく強化できるトランプル持ちでAIの評価も高い一方、重いため、平均をやや上回る見込み。",
-   "en": "A trampler that puts counters on your creatures with each land drop, with a high AI grade, though it is expensive, so it is expected slightly above average."
+   "ja": "土地が出るたびに味方を大きく強化できるトランプル持ちだが、重いため、平均をやや上回る見込み。",
+   "en": "A trampler that puts counters on your creatures with each land drop, though it is expensive, so it is expected slightly above average."
   },
   {
    "id": "2pui0C8CMach9j9hsVio3M",
@@ -498,20 +498,20 @@
   {
    "id": "iz3pdNDVCbJel63rVbXyi",
    "name": "Captain Jean-Luc Picard",
-   "ja": "AIの評価が非常に高く、軽いマナで全体強化とクリーチャー呪文ごとのトークン生成を両立するため、平均を大きく上回る勝率が見込まれる。",
-   "en": "The AI grades it very highly, and it is a cheap creature that pumps your team and makes a token with each creature spell, so it should be well above average."
+   "ja": "軽いマナで全体強化とクリーチャー呪文ごとのトークン生成を両立するため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It is a cheap creature that pumps your team and makes a token with each creature spell, so it should be well above average."
   },
   {
    "id": "isqAM7Gksh0RZAX9tPdgJ",
    "name": "Captain Jonathan Archer",
-   "ja": "戦場に出たとき伝説の犬トークンも生み、軽いマナで複数の体を並べられる上にAIの評価も高いため、平均を大きく上回る見込み。",
-   "en": "It brings a legendary Dog token with it, putting multiple bodies on the board for little mana, and the AI rates it highly, so it should be well above average."
+   "ja": "戦場に出たとき伝説の犬トークンも生み、軽いマナで複数の体を並べられるため、平均を大きく上回る見込み。",
+   "en": "It brings a legendary Dog token with it, putting multiple bodies on the board for little mana, so it should be well above average."
   },
   {
    "id": "3mpP643ynE32dgVM7mSHnL",
    "name": "Constable Odo",
-   "ja": "AIの評価が高く、戦場に出たときに相手クリーチャーを長く寝かせるか手掛かりを複数得るかを選べるため、平均を大きく上回ると予測される。",
-   "en": "The AI rates it highly, and its enters trigger flexibly either locks down an opposing creature or makes multiple Clues, so it is forecast well above average."
+   "ja": "戦場に出たときに相手クリーチャーを長く寝かせるか手掛かりを複数得るかを選べるため、平均を大きく上回ると予測される。",
+   "en": "Its enters trigger flexibly either locks down an opposing creature or makes multiple Clues, so it is forecast well above average."
   },
   {
    "id": "7iI0SDdp6YnDMPM73HJqgh",
@@ -522,8 +522,8 @@
   {
    "id": "6auyRoLCMR3MLbgseZxZdn",
    "name": "Cleveland Booker, Empath",
-   "ja": "土地が出るたびに攻撃役のワーム・トークンを生み、マナ効率良く盤面を広げられる上にAIの評価も高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It makes an attacking Worm token every time a land enters, building a board efficiently, and the AI rates it highly, so it should be well above average."
+   "ja": "土地が出るたびに攻撃役のワーム・トークンを生み、マナ効率良く盤面を広げられるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It makes an attacking Worm token every time a land enters and builds a board efficiently, so it should be well above average."
   },
   {
    "id": "6aTnxX1aJw51QK2wU5ePDR",
@@ -534,26 +534,26 @@
   {
    "id": "4P6RITC5VvSsqx5ZIrhjbN",
    "name": "D'Vana Tendi, Optimistic Ensign",
-   "ja": "AIの評価が低く、戦場に出たときの効果も持たない地味な起動型能力中心のクリーチャーのため、平均をやや下回る見込み。",
-   "en": "The AI grades it low, and it is a modest creature built around activated abilities with no enters trigger, so it should be slightly below average."
+   "ja": "戦場に出たときの効果も持たない地味な起動型能力中心のクリーチャーのため、平均をやや下回る見込み。",
+   "en": "It is a modest creature built around activated abilities with no enters trigger, so it should be slightly below average."
   },
   {
    "id": "4OsKhpPt67jDvXiQoh0reZ",
    "name": "Borg Cube",
-   "ja": "AIの評価が非常に高く、出るたびや攻撃のたびにクリーチャーを追放・奪取するなど単体で多くの仕事をこなすため、平均を大きく上回る見込み。",
-   "en": "The AI rates it very highly, and it does a lot on its own, exiling or stealing a creature whenever it enters or attacks, so it should be well above average."
+   "ja": "出るたびや攻撃のたびにクリーチャーを追放・奪取するなど単体で多くの仕事をこなすため、平均を大きく上回る見込み。",
+   "en": "It does a lot on its own, exiling or stealing a creature whenever it enters or attacks, so it should be well above average."
   },
   {
    "id": "3Jup5XyDZtw8ceeANAbn28",
    "name": "Captain Pike, Fullness of Time",
-   "ja": "ライブラリーの上の土地をプレイできAIの評価も高い一方、戦場に出たときの効果を持たないため、平均をやや上回る程度と予測される。",
-   "en": "It lets you play lands off the top of your library and the AI rates it highly, but it has no enters trigger, so it is forecast only slightly above average."
+   "ja": "ライブラリーの上の土地をプレイできる一方、戦場に出たときの効果を持たないため、平均をやや上回る程度と予測される。",
+   "en": "It lets you play lands off the top of your library, but it has no enters trigger, so it is forecast only slightly above average."
   },
   {
    "id": "2D6JCmFqqvFRA8ncF4yeLd",
    "name": "Bristly Bill, Spine Sower",
-   "ja": "AIの評価が非常に高く、土地が出るたびにカウンターを置き、各クリーチャーのカウンターを倍増もできるため、平均を大きく上回る見込み。",
-   "en": "The AI grades it very highly; it adds a counter whenever a land enters and can double the counters on each of your creatures, so it should be well above average."
+   "ja": "土地が出るたびにカウンターを置き、各クリーチャーのカウンターを倍増もできるため、平均を大きく上回る見込み。",
+   "en": "It adds a counter whenever a land enters and can double the counters on each of your creatures, so it should be well above average."
   },
   {
    "id": "17dhnPbUxKDVpKxXQEsnTK",
@@ -564,8 +564,8 @@
   {
    "id": "7bCSCicIZaZFRYfOccwBTB",
    "name": "Sheoldred, the Apocalypse",
-   "ja": "AIの評価が非常に高く、接死を持つ大型で相手がカードを引くたびにライフを失わせるため、平均を大きく上回る勝率が見込まれる。",
-   "en": "The AI rates it very highly: a large deathtouch body that drains the opponent every time they draw, so it should be well above average."
+   "ja": "接死を持つ大型で相手がカードを引くたびにライフを失わせるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "A large deathtouch body that drains the opponent every time they draw, so it should be well above average."
   },
   {
    "id": "5oYmMkbzWVbnZBmDsbTfJp",
@@ -600,8 +600,8 @@
   {
    "id": "3AZDd7TLfTjlhOpPptBLXH",
    "name": "U.S.S. Enterprise-D, Galaxy-Class",
-   "ja": "AIの評価が高く追加のカードも使える一方、ステーションで飛行クリーチャーになるまで時間がかかるため、平均並みの勝率と予測される。",
-   "en": "The AI rates it highly and it generates extra cards, but stationing it into a flying creature is slow, so it is forecast around average."
+   "ja": "追加のカードも使えるものの、ステーションで飛行クリーチャーになるまで時間がかかるため、平均並みの勝率と予測される。",
+   "en": "It generates extra cards, but stationing it into a flying creature is slow, so it is forecast around average."
   },
   {
    "id": "qlXLIihUJ36i8zVjqXgKd",
@@ -612,32 +612,32 @@
   {
    "id": "q1ipHF9BqisEV2L9NhrNe",
    "name": "Kenrith, the Returned King",
-   "ja": "AIの評価が非常に高く、トランプル付与やドロー、ライフ回復など多彩な起動型能力を使い分けられるため、平均を大きく上回る見込み。",
-   "en": "The AI rates it very highly, and its many activated abilities, from granting trample to drawing and gaining life, give it great flexibility, so it should be well above average."
+   "ja": "トランプル付与やドロー、ライフ回復など多彩な起動型能力を使い分けられるため、平均を大きく上回る見込み。",
+   "en": "Its many activated abilities, from granting trample to drawing and gaining life, give it great flexibility, so it should be well above average."
   },
   {
    "id": "598j02uVNowpQA4qVo6jjj",
    "name": "Peace in Our Time",
-   "ja": "AIの評価が低く、重いマナで効果が出るまでも遅く、盤面にクリーチャーを加えないため、平均を大きく下回る勝率が見込まれる。",
-   "en": "The AI grades it low, and it is expensive, very slow to matter, and adds no creatures, so it should be well below average."
+   "ja": "重いマナで効果が出るまでも遅く、盤面にクリーチャーを加えないため、平均を大きく下回る勝率が見込まれる。",
+   "en": "It is expensive, very slow to matter, and adds no creatures, so it should be well below average."
   },
   {
    "id": "NJKc81RnrZLRmK5uuOcWC",
    "name": "Hit It!",
-   "ja": "戦場に出たときに土地を出せる一方、クリーチャーでないエンチャントでAIの評価も低いため、平均を大きく下回ると予測される。",
-   "en": "It puts a land onto the battlefield when it enters, but it is a non-creature enchantment the AI grades low, so it is forecast well below average."
+   "ja": "戦場に出たときに土地を出せるが、クリーチャーでないエンチャントであるため、平均を大きく下回ると予測される。",
+   "en": "It puts a land onto the battlefield when it enters, but it is a non-creature enchantment, so it is forecast well below average."
   },
   {
    "id": "jE3KEuFCKURcQT7N6KZmL",
    "name": "Khan, Vengeful Heart",
-   "ja": "AIの評価が高く、マナ効率の良い攻撃的なサイズを持つクリーチャーのため、平均をやや上回る勝率が見込まれる。",
-   "en": "The AI rates it highly, and it is an aggressive body with efficient stats for its cost, so it should be slightly above average."
+   "ja": "マナ効率の良い攻撃的なサイズを持つクリーチャーのため、平均をやや上回る勝率が見込まれる。",
+   "en": "It is an aggressive body with efficient stats for its cost, so it should be slightly above average."
   },
   {
    "id": "EmAGTyiCLKVQgjOfZQsCv",
    "name": "Mr. Spock, Science Officer",
-   "ja": "引くカードを倍にする強力な効果でAIの評価が非常に高く、マナ効率の良い頑丈な体も持つため、平均を大きく上回る見込み。",
-   "en": "Doubling every draw earns it a very high AI grade, and it has a sturdy, efficient body, so it should be well above average."
+   "ja": "引くカードを倍にする強力な効果に加え、マナ効率の良い頑丈な体も持つため、平均を大きく上回る見込み。",
+   "en": "Doubling every draw is powerful, and it also has a sturdy, efficient body, so it should be well above average."
   },
   {
    "id": "4DWPqHcAPT5csPL3cwwEGM",
@@ -654,26 +654,26 @@
   {
    "id": "7EgLVbMlhOtvPWncF1JOqP",
    "name": "Phlox, Unorthodox Doctor",
-   "ja": "AIの評価が高くトランプル持ちでマナ効率も良い一方、マナがやや重く効果が出るまで遅いため、平均並みの勝率と予測される。",
-   "en": "The AI rates it highly and it is an efficient trampler, but it is fairly expensive and slow to pay off, so it is forecast around average."
+   "ja": "トランプル持ちでマナ効率も良い一方、マナがやや重く効果が出るまで遅いため、平均並みの勝率と予測される。",
+   "en": "It is an efficient trampler, but it is fairly expensive and slow to pay off, so it is forecast around average."
   },
   {
    "id": "70i4YHGUsc1ELCnbw5ZVZS",
    "name": "Lieutenant Commander Data",
-   "ja": "AIの評価が高く、非クリーチャー呪文のたびに成長し、長期戦ではドローにもつながるため、平均を大きく上回る勝率が見込まれる。",
-   "en": "The AI rates it highly; it grows with every noncreature spell and turns into card draw in long games, so it should be well above average."
+   "ja": "非クリーチャー呪文のたびに成長し、長期戦ではドローにもつながるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It grows with every noncreature spell and turns into card draw in long games, so it should be well above average."
   },
   {
    "id": "6UcH5ZOtYDNlq10pn1PRbF",
    "name": "Locutus, the One Who Speaks",
-   "ja": "AIの評価が高く、アーティファクト・クリーチャーを強化しつつ捨てて除去にも使え、軽いマナで出せるため、平均を大きく上回る見込み。",
-   "en": "The AI rates it highly; it is a cheap anthem for artifact creatures that can also be discarded as removal, so it should be well above average."
+   "ja": "アーティファクト・クリーチャーを強化しつつ捨てて除去にも使え、軽いマナで出せるため、平均を大きく上回る見込み。",
+   "en": "It is a cheap anthem for artifact creatures that can also be discarded as removal, so it should be well above average."
   },
   {
    "id": "43vfQZrM4d0cl5TO5TzAKY",
    "name": "Kobayashi Maru Scenario",
-   "ja": "トークン生成やドローなど多くの効果を持つ一方、最後は敗北に至りAIの評価が極めて低いため、平均を大きく下回る勝率が見込まれる。",
-   "en": "It offers tokens, card draw and more, but it ends in losing the game and the AI grades it extremely low, so it should be well below average."
+   "ja": "トークン生成やドローなど多くの効果を持つ一方、最後は敗北に至るため、平均を大きく下回る勝率が見込まれる。",
+   "en": "It offers tokens, card draw and more, but it ends in losing the game, so it should be well below average."
   },
   {
    "id": "3cxAXEvNiZM7qbwNSrKoBB",
@@ -690,14 +690,14 @@
   {
    "id": "5ze7WzrGxI8f2jVevKwDxm",
    "name": "Live Long and Prosper",
-   "ja": "重いソーサリーでAIの評価が低く、盤面に何も加えずマナ効率も悪いため、平均を大きく下回る勝率が見込まれる。",
-   "en": "An expensive sorcery the AI grades low that adds nothing to the board and is inefficient, so it should be well below average."
+   "ja": "重いソーサリーで、盤面に何も加えずマナ効率も悪いため、平均を大きく下回る勝率が見込まれる。",
+   "en": "An expensive sorcery that adds nothing to the board and is inefficient, so it should be well below average."
   },
   {
    "id": "5TxH8vqalW27zRWZl5YGZV",
    "name": "D-7 Battle Cruiser",
-   "ja": "AIの評価が非常に高く毎ターン速攻トークンを生む一方、条件を満たすまで遅く無駄になりやすいため、平均を大きく上回る程度と予測される。",
-   "en": "The AI rates it very highly and it makes a hasty token each turn, though it is slow to get going and can be wasted, so it is forecast well above average."
+   "ja": "毎ターン速攻トークンを生むものの、条件を満たすまで遅く無駄になりやすいため、平均を大きく上回る程度と予測される。",
+   "en": "It makes a hasty token each turn, though it is slow to get going and can be wasted, so it is forecast well above average."
   },
   {
    "id": "5qFlDCojYz2G6ZoTVLcK54",
@@ -708,20 +708,20 @@
   {
    "id": "4NLR0pYe8IyctdAX2vzPlG",
    "name": "Engineered Explosives",
-   "ja": "AIの評価が低く、盤面にクリーチャーを加えない効率の悪いアーティファクトのため、平均を大きく下回る見込み。",
-   "en": "The AI grades it low, and it is an inefficient artifact that adds no creatures to the board, so it should be well below average."
+   "ja": "盤面にクリーチャーを加えない効率の悪いアーティファクトのため、平均を大きく下回る見込み。",
+   "en": "It is an inefficient artifact that adds no creatures to the board, so it should be well below average."
   },
   {
    "id": "4kWj042tAfcvYEbPXOUCTF",
    "name": "Prosper, Tome-Bound",
-   "ja": "AIの評価が非常に高く、毎ターン追加のカードと宝物をもたらす多機能さがある一方、打点は低いため、平均を大きく上回る見込み。",
-   "en": "The AI rates it very highly and it generates extra cards and Treasures every turn, though it applies little pressure itself, so it should be well above average."
+   "ja": "毎ターン追加のカードと宝物をもたらす多機能さがあり、打点は低いものの、平均を大きく上回る見込み。",
+   "en": "It generates extra cards and Treasures every turn, though it applies little pressure itself, so it should be well above average."
   },
   {
    "id": "4JzntGeJTAqa9SLWY9bkww",
    "name": "L'Rell, Fierce Visionary",
-   "ja": "AIの評価が高く、毎ターン速攻のトークンを生み出してマナ効率良く攻撃できるため、平均を大きく上回る勝率が見込まれる。",
-   "en": "The AI rates it highly, and it efficiently makes a hasty attacking token every turn, so it should be well above average."
+   "ja": "毎ターン速攻のトークンを生み出してマナ効率良く攻撃できるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It efficiently makes a hasty attacking token every turn, so it should be well above average."
   },
   {
    "id": "38uBuHRuU98zAZwTSqHNDc",
@@ -744,8 +744,8 @@
   {
    "id": "2uj9OowWegDn5BB7uS05nF",
    "name": "Minamo, School at Water's Edge",
-   "ja": "青マナを出す土地として手軽に置けるものの、AIの評価が特に低いため、平均をやや下回る勝率と予測される。",
-   "en": "It is an easy-to-play land that taps for blue, but the AI rates it very low, so a slightly below-average win rate is expected."
+   "ja": "青マナを出す土地として手軽に置けるものの、平均をやや下回る勝率と予測される。",
+   "en": "It is an easy-to-play land that taps for blue, but a slightly below-average win rate is expected."
   },
   {
    "id": "2KXIF65Vpes5ZJuX1UzAVe",
@@ -756,8 +756,8 @@
   {
    "id": "19lv4yU4BcJNrBb3GIOjpm",
    "name": "Gowron, Eager for Battle",
-   "ja": "AIの評価が高く、他のクリーチャーが死ぬたびに大きくなる効率の良い本体のため、やや重いものの平均を大きく上回る見込み。",
-   "en": "The AI rates it highly and it is an efficient body that grows whenever another creature dies, so despite being somewhat costly it should be well above average."
+   "ja": "他のクリーチャーが死ぬたびに大きくなる効率の良い本体で、やや重いものの平均を大きく上回る見込み。",
+   "en": "It is an efficient body that grows whenever another creature dies, so despite being somewhat costly it should be well above average."
   },
   {
    "id": "24OgZzVAyWQq3E8n3bie0G",
@@ -780,8 +780,8 @@
   {
    "id": "1AGs8CoSTFOvsoyz0kYn83",
    "name": "Dr. Joseph M'Benga",
-   "ja": "AIの評価が高い一方、カウンターを置く手段がないと効果が無駄になりやすいため、平均をやや上回る程度と予測される。",
-   "en": "The AI rates it highly, but its effects are easily wasted without ways to put counters on creatures, so it is expected to be only slightly above average."
+   "ja": "カウンターを置く手段がないと効果が無駄になりやすいため、平均をやや上回る程度と予測される。",
+   "en": "Its effects are easily wasted without ways to put counters on creatures, so it is expected to be only slightly above average."
   },
   {
    "id": "yHqTrSlMQNaDn81vnd9Qw",
@@ -798,8 +798,8 @@
   {
    "id": "p6jwvsAEbsx9k6Ecb6GB1",
    "name": "Starfleet Academy",
-   "ja": "無色マナを出す土地として扱いやすいが、AIの評価が特に低く、マナ能力の見返りも小さいため、平均をやや下回る見込み。",
-   "en": "It is an easy land that taps for colorless, but the AI rates it very low and its expensive ability gives little return, so it should be slightly below average."
+   "ja": "無色マナを出す土地として扱いやすいが、マナ能力の見返りが小さいため、平均をやや下回る見込み。",
+   "en": "It is an easy land that taps for colorless, but its expensive ability gives little return, so it should be slightly below average."
   },
   {
    "id": "OJ8iiiJ6HNeyWYZQaULwz",
@@ -834,20 +834,20 @@
   {
    "id": "1HuMqectPPY2Yx4mR9r7HX",
    "name": "Troubling Tribbles",
-   "ja": "アップキープごとに自身のコピーを生み出せるものの、AIの評価が低いため、平均をやや下回る勝率と予測される。",
-   "en": "It makes a copy of itself every upkeep, but the AI rates it low, so a slightly below-average win rate is expected."
+   "ja": "アップキープごとに自身のコピーを生み出せるものの、平均をやや下回る勝率と予測される。",
+   "en": "It makes a copy of itself every upkeep, but a slightly below-average win rate is expected."
   },
   {
    "id": "1goBWY8lqxzF0c9CvENF9Q",
    "name": "The Duras Sisters",
-   "ja": "マナ効率が良く、死亡時に速攻持ちのトークンを残すうえAIの評価も高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It is mana-efficient, leaves a hasty token behind when it dies, and the AI rates it highly, so a win rate well above average is expected."
+   "ja": "マナ効率が良く、死亡時に速攻持ちのトークンを残すため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It is mana-efficient and leaves a hasty token behind when it dies, so a win rate well above average is expected."
   },
   {
    "id": "77kMsRXfhZkg4UmRmzVhWQ",
    "name": "U.S.S. Enterprise-A, Free Spirit",
-   "ja": "AIの評価が特に高く、戦場に出たときに複数のトークンを生み、飛行と絆魂も得られるため、平均を大きく上回る見込み。",
-   "en": "The AI rates it very highly; it creates several tokens on entering and can gain flying and lifelink, so it should be well above average."
+   "ja": "戦場に出たときに複数のトークンを生み、飛行と絆魂も得られるため、平均を大きく上回る見込み。",
+   "en": "It creates several tokens on entering and can gain flying and lifelink, so it should be well above average."
   },
   {
    "id": "6yauIxVFIEU2Fon6y71KuL",
@@ -858,8 +858,8 @@
   {
    "id": "6wABUK9B2k3LoRC7FCYmYf",
    "name": "Seven of Nine, Unassimilated",
-   "ja": "AIの評価が高く、軽いマナで出せて毎ターンカードを引ける本体のため、平均を大きく上回る勝率が見込まれる。",
-   "en": "The AI rates it highly, and it is a cheap body that draws a card every turn, so a win rate well above average is expected."
+   "ja": "軽いマナで出せて毎ターンカードを引ける本体のため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It is a cheap body that draws a card every turn, so a win rate well above average is expected."
   },
   {
    "id": "6MgIABMjVHoK1Xhepm6lGj",
@@ -870,14 +870,14 @@
   {
    "id": "6mcfuSX5GydNNgtujnZGDN",
    "name": "U.S.S. Discovery, at Black Alert",
-   "ja": "AIの評価が特に高く、戦場に出たときや攻撃時に呪文をただで唱えられるため、平均を大きく上回る勝率が見込まれる。",
-   "en": "The AI rates it very highly, and it casts a free spell when it enters or attacks, so a win rate well above average is expected."
+   "ja": "戦場に出たときや攻撃時に呪文をただで唱えられるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It casts a free spell when it enters or attacks, so a win rate well above average is expected."
   },
   {
    "id": "5dgBFDIScKPd8UeO4Oye1T",
    "name": "Q, Stacking the Deck",
-   "ja": "AIの評価が特に高く、戦場に出たときに追放した呪文を繰り返しコピーして唱えられるため、平均を大きく上回る見込み。",
-   "en": "The AI rates it very highly, and its enter ability exiles a spell you can copy and cast repeatedly, so it should be well above average."
+   "ja": "戦場に出たときに追放した呪文を繰り返しコピーして唱えられるため、平均を大きく上回る見込み。",
+   "en": "Its enter ability exiles a spell you can copy and cast repeatedly, so it should be well above average."
   },
   {
    "id": "5aDwM5llyx5noqFoCTfGvA",
@@ -888,26 +888,26 @@
   {
    "id": "2cFiuA6BbPiLNNh6mIBkX1",
    "name": "Replicator",
-   "ja": "トークンを複製するサポート役で単体では働きにくく、AIの評価も低いため、平均を大きく下回る勝率が見込まれる。",
-   "en": "A support piece that copies tokens and does little on its own, and the AI rates it low, so a win rate well below average is expected."
+   "ja": "トークンを複製するサポート役で単体では働きにくいため、平均を大きく下回る勝率が見込まれる。",
+   "en": "A support piece that copies tokens and does little on its own, so a win rate well below average is expected."
   },
   {
    "id": "4iZxBniS7BmVDGGPHAk8E6",
    "name": "Quark, Humble Proprietor",
-   "ja": "毎アップキープに宝物を生み出し、AIの評価が高いため、平均をやや上回る勝率と予測される。",
-   "en": "It creates a Treasure every upkeep and the AI rates it highly, so a slightly above-average win rate is expected."
+   "ja": "毎アップキープに宝物を生み出すため、平均をやや上回る勝率と予測される。",
+   "en": "It creates a Treasure every upkeep, so a slightly above-average win rate is expected."
   },
   {
    "id": "4etKCvQLZXvfjH9HUaIZW5",
    "name": "Vash, Freelance Archaeologist",
-   "ja": "AIの評価が高く、毎ターン諜報しつつ墓地のカードが離れるとドローできる効率の良い本体のため、平均をやや上回る見込み。",
-   "en": "The AI rates it highly; it is an efficient body that surveils each turn and draws when a card leaves your graveyard, so it should be slightly above average."
+   "ja": "毎ターン諜報しつつ墓地のカードが離れるとドローできる効率の良い本体のため、平均をやや上回る見込み。",
+   "en": "It is an efficient body that surveils each turn and draws when a card leaves your graveyard, so it should be slightly above average."
   },
   {
    "id": "4Bl4R3muoKQp9WLEv9369z",
    "name": "U.S.S. Reliant, From Hell's Heart",
-   "ja": "AIの評価が特に高く、戦場に出たときに墓地のクリーチャーを戦場に戻せる一方、対象がないと無駄になりやすいため、平均を大きく上回る見込み。",
-   "en": "The AI rates it very highly and it returns a creature from your graveyard to the battlefield on entering, though that can be wasted without a target; it should be well above average."
+   "ja": "戦場に出たときに墓地のクリーチャーを戦場に戻せる一方、対象がないと無駄になりやすいが、平均を大きく上回る見込み。",
+   "en": "It returns a creature from your graveyard to the battlefield on entering, though that can be wasted without a target; it should be well above average."
   },
   {
    "id": "45pj05W3qdbxPARxOj1ZrK",
@@ -930,8 +930,8 @@
   {
    "id": "20qIfIr7qXGRtn5PPZMAsO",
    "name": "Tricorder",
-   "ja": "軽いものの、小さな修整を与えるだけの装備品で除去に弱く、AIの評価も低いため、平均を大きく下回る見込み。",
-   "en": "It is cheap, but it is an Equipment giving only a small bonus that loses value to removal, and the AI rates it low, so it should be well below average."
+   "ja": "軽いものの、小さな修整を与えるだけの装備品で除去に弱いため、平均を大きく下回る見込み。",
+   "en": "It is cheap, but it is an Equipment giving only a small bonus that loses value to removal, so it should be well below average."
   },
   {
    "id": "1WfIG8MXqg2qPGqhVCphDw",
@@ -942,8 +942,8 @@
   {
    "id": "1ptJ5OhyVExurzvS3NSiKY",
    "name": "The Wrath of Khan",
-   "ja": "AIの評価が特に高く、除去・ドロー・生け贄の強要と多彩な効果を単独でこなすため、平均を大きく上回る勝率が見込まれる。",
-   "en": "The AI rates it very highly, and on its own it delivers removal, card filtering and a forced sacrifice, so a win rate well above average is expected."
+   "ja": "除去・ドロー・生け贄の強要と多彩な効果を単独でこなすため、平均を大きく上回る勝率が見込まれる。",
+   "en": "On its own it delivers removal, card filtering and a forced sacrifice, so a win rate well above average is expected."
   },
   {
    "id": "630IRgsEwy9a8xtWAIORzR",
@@ -960,26 +960,26 @@
   {
    "id": "6N0x0gvNfEmfFBTSEspYgP",
    "name": "Antagonist Incorporator",
-   "ja": "軽い本体で、戦闘ダメージを与えるたびにトークンを増やせ、AIの評価も高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "A cheap body that can add a token each time your artifact creatures deal combat damage, and the AI rates it highly, so a win rate well above average is expected."
+   "ja": "軽い本体で、戦闘ダメージを与えるたびにトークンを増やせるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "A cheap body that can add a token each time your artifact creatures deal combat damage, so a win rate well above average is expected."
   },
   {
    "id": "4bD3HomLmqHkTXShrj720h",
    "name": "Death Is Irrelevant",
-   "ja": "アーティファクト向けのエンチャントである点はやや弱みだが、AIの評価が高く墓地のクリーチャーを毎ターン奪えるため、平均を大きく上回る勝率が見込まれる。",
-   "en": "Being an artifact-focused enchantment is a slight drawback, but it steals a creature from a graveyard every turn and the AI grades it highly, so a well above-average win rate is expected."
+   "ja": "アーティファクト向けのエンチャントである点はやや弱みだが、墓地のクリーチャーを毎ターン奪えるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "Being an artifact-focused enchantment is a slight drawback, but it steals a creature from a graveyard every turn, so a well above-average win rate is expected."
   },
   {
    "id": "YhruH1vcfs2sd2QwWGeNe",
    "name": "Test of Conviction",
-   "ja": "軽いソーサリーでAIの評価もやや高い一方、戦場に出て働く能力を持たないため、平均並みの勝率と予測される。",
-   "en": "A cheap sorcery that the AI grades fairly well, but it has no lasting on-battlefield effect, so an average win rate is forecast."
+   "ja": "軽いソーサリーだが、戦場に出て働く能力を持たないため、平均並みの勝率と予測される。",
+   "en": "A cheap sorcery, but it has no lasting on-battlefield effect, so an average win rate is forecast."
   },
   {
    "id": "Jg2KzlFN0r6GwN6aedW4K",
    "name": "Test of Courage",
-   "ja": "軽いインスタントではあるが、AIの評価が低く、モード選択式の効果も伸び悩むため、平均をやや下回る見込み。",
-   "en": "It is a cheap instant, but the AI grades it low and its modal effects hold it back, so a slightly below-average win rate is expected."
+   "ja": "軽いインスタントではあるが、モード選択式の効果も伸び悩むため、平均をやや下回る見込み。",
+   "en": "It is a cheap instant, but its modal effects hold it back, so a slightly below-average win rate is expected."
   },
   {
    "id": "GbaFJMqR5vrwkAFSjRfsl",
@@ -990,20 +990,20 @@
   {
    "id": "fSYfBloMU3s5fMFVG5mhI",
    "name": "Energize",
-   "ja": "軽いマナで相手のクリーチャーを手札に戻せる一方、AIの評価は平凡なため、平均並みの勝率が見込まれる。",
-   "en": "It cheaply bounces an opposing creature, but the AI grade is only middling, so an average win rate is expected."
+   "ja": "軽いマナで相手のクリーチャーを手札に戻せるため、平均並みの勝率が見込まれる。",
+   "en": "It cheaply bounces an opposing creature, so an average win rate is expected."
   },
   {
    "id": "1e71OLPjWk3HlHOlpvUtE6",
    "name": "Mirror Universe Intrusion",
-   "ja": "効果は相手クリーチャーのコピーを作ることだけに絞られるが、AIの評価が高いため、平均をやや上回る勝率が見込まれる。",
-   "en": "Its effect is limited to copying an opposing creature, but the AI grades it highly, so a slightly above-average win rate is expected."
+   "ja": "効果は相手クリーチャーのコピーを作ることだけに絞られるが、平均をやや上回る勝率が見込まれる。",
+   "en": "Its effect is limited to copying an opposing creature, but a slightly above-average win rate is still expected."
   },
   {
    "id": "7e3cWX4epXT7X04enyn3Zd",
    "name": "Elim Garak, Simple Tailor",
-   "ja": "威迫を持ちAIの評価も高い一方、モードを選ぶ機会がないとドレインが起きにくいため、平均をやや上回る見込み。",
-   "en": "It has menace and a high AI grade, though its drain often goes unused without modal spells, so a slightly above-average result is expected."
+   "ja": "威迫を持つものの、モードを選ぶ機会がないとドレインが起きにくいため、平均をやや上回る見込み。",
+   "en": "It has menace, though its drain often goes unused without modal spells, so a slightly above-average result is expected."
   },
   {
    "id": "3VE6IBUjnipwZhs28w9cSG",
@@ -1020,26 +1020,26 @@
   {
    "id": "3FyBnZq1MXdWp2IQ1GB5bv",
    "name": "There's Coffee in that Nebula",
-   "ja": "軽いマナで手札を探せるが、AIの評価が平凡で盤面にクリーチャーを残さないため、平均をやや下回る見込み。",
-   "en": "It cheaply digs for a card, but its AI grade is middling and it adds no creature to the board, so a slightly below-average result is expected."
+   "ja": "軽いマナで手札を探せるが、盤面にクリーチャーを残さないため、平均をやや下回る見込み。",
+   "en": "It cheaply digs for a card, but it adds no creature to the board, so a slightly below-average result is expected."
   },
   {
    "id": "1M3Fq9OZEkwvXjk1TejcZf",
    "name": "Command Subadjunct",
-   "ja": "軽い攻撃役ではあるが、AIの評価が低く、警戒を与える能力もアーティファクト頼みのため、平均をやや下回る見込み。",
-   "en": "A cheap attacker, but the AI grades it low and its vigilance grant depends on artifacts, so a slightly below-average win rate is expected."
+   "ja": "軽い攻撃役ではあるが、警戒を与える能力もアーティファクト頼みのため、平均をやや下回る見込み。",
+   "en": "A cheap attacker, but its vigilance grant depends on artifacts, so a slightly below-average win rate is expected."
   },
   {
    "id": "3lRyKmEhqQL5PYOOJZZX8M",
    "name": "Excalbian Gamemaster",
-   "ja": "大型の本体と登場時の複数のトークンでマナ効率が高く、AIの評価も非常に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "A big body plus several tokens on entry make it very mana-efficient, and the AI grades it extremely highly, so a well above-average win rate is expected."
+   "ja": "大型の本体と登場時の複数のトークンでマナ効率が非常に高いため、平均を大きく上回る勝率が見込まれる。",
+   "en": "A big body plus several tokens on entry make it very mana-efficient, so a well above-average win rate is expected."
   },
   {
    "id": "3gHC3YslEfnNt5XFuIGxuO",
    "name": "Primary Unimatrix Adjunct",
-   "ja": "AIの評価は高い一方、本体が小さく攻撃強化の能力もアーティファクト頼みのため、平均並みの勝率と予測される。",
-   "en": "The AI grades it highly, but its body is small and its combat boost depends on artifacts, so an average win rate is forecast."
+   "ja": "本体が小さく攻撃強化の能力もアーティファクト頼みのため、平均並みの勝率と予測される。",
+   "en": "Its body is small and its combat boost depends on artifacts, so an average win rate is forecast."
   },
   {
    "id": "31K7vqHeWdNlpeI1kHaEld",
@@ -1050,20 +1050,20 @@
   {
    "id": "JMnNeveOePyRdKx0XBbX1",
    "name": "Data, New Life",
-   "ja": "軽いマナで出せるが、パワーのない小型でAIの評価も低いため、平均をやや下回る見込み。",
-   "en": "It is cheap, but it is a tiny body with no power and a low AI grade, so a slightly below-average result is expected."
+   "ja": "軽いマナで出せるが、パワーのない小型のため、平均をやや下回る見込み。",
+   "en": "It is cheap, but it is a tiny body with no power, so a slightly below-average result is expected."
   },
   {
    "id": "5NPCQJ8UHJN7tieCuUtat9",
    "name": "Ensign Pavel Chekov",
-   "ja": "登場時に相手の土地を奪って使えるが、AIの評価が低く重さに見合う体格もないため、平均をやや下回る見込み。",
-   "en": "It lets you play an opponent's exiled land on entry, but the AI grades it low and its body is weak for the cost, so a slightly below-average result is expected."
+   "ja": "登場時に相手の土地を奪って使えるが、重さに見合う体格もないため、平均をやや下回る見込み。",
+   "en": "It lets you play an opponent's exiled land on entry, but its body is weak for the cost, so a slightly below-average result is expected."
   },
   {
    "id": "35PrXVpLK5tWw5bDDXpx0",
    "name": "Those Old Scientists",
-   "ja": "カードの入れ替えや回収はできるものの、AIの評価が低く盤面に影響しないエンチャントのため、平均を大きく下回る見込み。",
-   "en": "It filters and recurs cards, but it is a low-graded enchantment that does not affect the board, so a well below-average win rate is expected."
+   "ja": "カードの入れ替えや回収はできるものの、盤面に影響しないエンチャントのため、平均を大きく下回る見込み。",
+   "en": "It filters and recurs cards, but it is an enchantment that does not affect the board, so a well below-average win rate is expected."
   },
   {
    "id": "5EXWUh0fHAzH9pjwlzbLng",
@@ -1080,20 +1080,20 @@
   {
    "id": "5GlkFiDcaMdAEpfMh2Khna",
    "name": "Georgiou, Terran Emperor",
-   "ja": "毎ターンのドローに加え、ライフが尽きると大量のトークンを生むうえAIの評価も高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It draws every turn, makes a swarm of tokens once your life runs out, and has a high AI grade, so a well above-average win rate is expected."
+   "ja": "毎ターンのドローに加え、ライフが尽きると大量のトークンを生むため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It draws every turn and makes a swarm of tokens once your life runs out, so a well above-average win rate is expected."
   },
   {
    "id": "k6gVjekb4GujjxHlBe0NU",
    "name": "Storied Veteran",
-   "ja": "軽い攻撃役で墓地からも唱えられるが、AIの評価が低く、墓地から出すと最後は追放される制約もあるため、平均をやや下回る見込み。",
-   "en": "A cheap attacker you can recast from the graveyard, but its AI grade is low and the recast copy is exiled when it dies, so a slightly below-average result is expected."
+   "ja": "軽い攻撃役で墓地からも唱えられるが、墓地から出すと最後は追放される制約もあるため、平均をやや下回る見込み。",
+   "en": "A cheap attacker you can recast from the graveyard, but the recast copy is exiled when it dies, so a slightly below-average result is expected."
   },
   {
    "id": "1YbgrT70nS8FehgJ3L7NXu",
    "name": "Test of Loyalty",
-   "ja": "軽いソーサリーで墓地のクリーチャー回収などができるが、AIの評価が低く盤面に残らないため、平均をやや下回る見込み。",
-   "en": "A cheap sorcery that can return a creature card from the graveyard, but its AI grade is low and it leaves nothing on the board, so a slightly below-average result is expected."
+   "ja": "軽いソーサリーで墓地のクリーチャー回収などができるが、盤面に残らないため、平均をやや下回る見込み。",
+   "en": "A cheap sorcery that can return a creature card from the graveyard, but it leaves nothing on the board, so a slightly below-average result is expected."
   },
   {
    "id": "7IaZepEmkdApVWnNBtxWyn",
@@ -1110,8 +1110,8 @@
   {
    "id": "4BWfKnTG5hoVkoTxR7rL7p",
    "name": "Year of Hell",
-   "ja": "双方にドローとダメージを与えるだけの英雄譚で、盤面に影響せずAIの評価も非常に低いため、平均を大きく下回る見込み。",
-   "en": "A Saga that only gives both players cards and damage, with no board impact and a very low AI grade, so a well below-average win rate is expected."
+   "ja": "双方にドローとダメージを与えるだけの英雄譚で、盤面に影響しないため、平均を大きく下回る見込み。",
+   "en": "A Saga that only gives both players cards and damage, with no board impact, so a well below-average win rate is expected."
   },
   {
    "id": "3FUkA05coRH6f0wXThOsxx",
@@ -1122,8 +1122,8 @@
   {
    "id": "Rrdgsy6aOaWyGIsJypwce",
    "name": "Erica Ortegas, Plucky Pilot",
-   "ja": "速攻を持つが、重いマナに対して本体の効率が低く、AIの評価も平凡なため、平均を大きく下回る見込み。",
-   "en": "It has haste, but its body is inefficient for its high cost and its AI grade is middling, so a well below-average win rate is expected."
+   "ja": "速攻を持つが、重いマナに対して本体の効率が低いため、平均を大きく下回る見込み。",
+   "en": "It has haste, but its body is inefficient for its high cost, so a well below-average win rate is expected."
   },
   {
    "id": "6aU9jKW61x72eXIxNnWSe3",
@@ -1134,26 +1134,26 @@
   {
    "id": "5HXHItjxSsZVh72iwvVz05",
    "name": "Grand Nagus Zek",
-   "ja": "宝物を生みつつ育つ点でAIの評価はやや高い一方、登場時の能力がないため、平均並みの勝率と予測される。",
-   "en": "The AI grades it fairly well as it grows by making Treasures, but it has no enter trigger, so an average win rate is forecast."
+   "ja": "宝物を生みつつ育つ点は強みだが、登場時の能力がないため、平均並みの勝率と予測される。",
+   "en": "It grows while making Treasures, but it has no enter trigger, so an average win rate is forecast."
   },
   {
    "id": "5A3WnHacjRugxdEC2dd0sI",
    "name": "Final Frontier",
-   "ja": "土地を探すだけのマナ補助で盤面に影響せず、AIの評価も低いため、平均を大きく下回る見込み。",
-   "en": "It only fetches a land for mana support with no board impact, and the AI grades it low, so a well below-average win rate is expected."
+   "ja": "土地を探すだけのマナ補助で盤面に影響しないため、平均を大きく下回る見込み。",
+   "en": "It only fetches a land for mana support with no board impact, so a well below-average win rate is expected."
   },
   {
    "id": "4wRbeH5Te91Iok6wlhyVGR",
    "name": "Branching Timeline",
-   "ja": "非常に重いソーサリーで、マナに対する見返りが乏しくAIの評価も非常に低いため、平均を大きく下回る見込み。",
-   "en": "A very expensive sorcery with poor return for its cost and a very low AI grade, so a well below-average win rate is expected."
+   "ja": "非常に重いソーサリーで、マナに対する見返りが乏しいため、平均を大きく下回る見込み。",
+   "en": "A very expensive sorcery with poor return for its cost, so a well below-average win rate is expected."
   },
   {
    "id": "4qZvhOgaeqhPlLA2NPOU0q",
    "name": "Anthropological Mission",
-   "ja": "非クリーチャー呪文を重ねないと機能しない遅いエンチャントで、AIの評価も低いため、平均を大きく下回る見込み。",
-   "en": "A slow enchantment that only works after many noncreature spells, with a low AI grade, so a well below-average win rate is expected."
+   "ja": "非クリーチャー呪文を重ねないと機能しない遅いエンチャントのため、平均を大きく下回る見込み。",
+   "en": "A slow enchantment that only works after many noncreature spells, so a well below-average win rate is expected."
   },
   {
    "id": "2otVxLOjRmqKLX1hv5UxTW",
@@ -1176,20 +1176,20 @@
   {
    "id": "1q204n5Ko01qIR5uNHnUbc",
    "name": "Armus, Skin of Evil",
-   "ja": "威迫を持つ大型で、手札からの除去にも使えるうえAIの評価が非常に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "A large menace creature that can also be discarded as removal, with a very high AI grade, so a well above-average win rate is expected."
+   "ja": "威迫を持つ大型で、手札からの除去にも使えるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "A large menace creature that can also be discarded as removal, so a well above-average win rate is expected."
   },
   {
    "id": "okfIbVOwRNo1I1xxs6Bfp",
    "name": "Kira Nerys, Firebrand",
-   "ja": "軽いマナで大きなトランプル持ちを出せ、後続も強化できるうえAIの評価も高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "A cheap, large trampler that also pumps creatures entering after it, with a high AI grade, so a well above-average win rate is expected."
+   "ja": "軽いマナで大きなトランプル持ちを出せ、後続も強化できるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "A cheap, large trampler that also pumps creatures entering after it, so a well above-average win rate is expected."
   },
   {
    "id": "Z1ugTVaJE1hUJ49cqg59Y",
    "name": "Jett Reno, Problem Solver",
-   "ja": "AIの評価は平凡だが、軽いマナで序盤から展開できるため、平均をやや上回る勝率が見込まれる。",
-   "en": "Its AI grade is middling, but it is cheap enough to deploy early, so a slightly above-average win rate is expected."
+   "ja": "軽いマナで序盤から展開できるため、平均をやや上回る勝率が見込まれる。",
+   "en": "It is cheap enough to deploy early, so a slightly above-average win rate is expected."
   },
   {
    "id": "u8fkT4yAG2zLMzJGEwnl5",
@@ -1200,8 +1200,8 @@
   {
    "id": "7npvmcnuJUcExgcpKXsuhF",
    "name": "Jake Sisko, War Correspondent",
-   "ja": "AIの評価は平凡だが、軽いマナで土地を置くたびにライフや手がかりを得られるため、平均をやや上回る勝率が見込まれる。",
-   "en": "Its AI grade is middling, but it is cheap and gains life or a Clue as lands enter, so a slightly above-average win rate is expected."
+   "ja": "軽いマナで土地を置くたびにライフや手がかりを得られるため、平均をやや上回る勝率が見込まれる。",
+   "en": "It is cheap and gains life or a Clue as lands enter, so a slightly above-average win rate is expected."
   },
   {
    "id": "7hbFlLMc8GeuLR6ZWe93ty",
@@ -1218,8 +1218,8 @@
   {
    "id": "2FTIOc3cGeekmz1UP3teGO",
    "name": "Jadzia Dax, Living Legacy",
-   "ja": "毎ターン成長しながらマナを生み出す伝説のクリーチャーで、AIによる評価も高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "A legendary creature that grows each turn while producing mana, and its AI grade is high, so it is expected to win well above average."
+   "ja": "毎ターン成長しながらマナを生み出す伝説のクリーチャーのため、平均を大きく上回る勝率が見込まれる。",
+   "en": "A legendary creature that grows each turn while producing mana, so it is expected to win well above average."
   },
   {
    "id": "6atVNcPClZboJcYoKNeW4n",
@@ -1230,8 +1230,8 @@
   {
    "id": "64MXN8Vd525Ta66O4qt5d0",
    "name": "Lwaxana Troi, Charming Guest",
-   "ja": "AIの評価が非常に低く、軽いクリーチャーである点では補いきれないため、平均を大きく下回る勝率が見込まれる。",
-   "en": "Its AI grade is very low, which its cheap creature body can't make up for, so its win rate is expected to be well below average."
+   "ja": "軽いクリーチャーである点では補いきれないため、平均を大きく下回る勝率が見込まれる。",
+   "en": "Its cheap creature body can't make up for its weaknesses, so its win rate is expected to be well below average."
   },
   {
    "id": "5K6G80X2TCVw3ajRHuG2lB",
@@ -1242,8 +1242,8 @@
   {
    "id": "57MxrWoKQN2kzkcDJaxRyl",
    "name": "Subspace Anomaly",
-   "ja": "生け贄で複数のクリーチャー・トークンを出せる土地だが、AIの評価が低いため、平均をやや下回る見込み。",
-   "en": "A land that can be sacrificed for multiple creature tokens, but its AI grade is low, so it is expected to land slightly below average."
+   "ja": "生け贄で複数のクリーチャー・トークンを出せる土地だが、平均をやや下回る見込み。",
+   "en": "A land that can be sacrificed for multiple creature tokens, but it is still expected to land slightly below average."
   },
   {
    "id": "4NJdQujbj8aaRwkk7ypBuR",
@@ -1254,14 +1254,14 @@
   {
    "id": "4L2vOgofmab9rmnS0euN3U",
    "name": "Khan, Despot by Design",
-   "ja": "AIによる評価が高く、トランプルと相手の盤面全体を焼く登場時能力も持つため、平均を大きく上回る勝率が見込まれる。",
-   "en": "Its AI grade is high, and it has trample plus an on-entry ping that hits the opponent and all their creatures, so it is expected to win well above average."
+   "ja": "トランプルと相手の盤面全体を焼く登場時能力を持つため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It has trample plus an on-entry ping that hits the opponent and all their creatures, so it is expected to win well above average."
   },
   {
    "id": "4HyRVclDv9sNtCpwKujcdo",
    "name": "Subcommander T'Pol",
-   "ja": "戦場に出たときに能力を打ち消すか対象をタップして麻痺させられ、AIの評価も高いため、平均をやや上回る見込み。",
-   "en": "On entering it counters an ability or taps and stuns a target, and its AI grade is high, so it should do slightly better than average."
+   "ja": "戦場に出たときに能力を打ち消すか対象をタップして麻痺させられるため、平均をやや上回る見込み。",
+   "en": "On entering it counters an ability or taps and stuns a target, so it should do slightly better than average."
   },
   {
    "id": "4BoMN3Ob0nNDmJI99g0sc7",
@@ -1278,26 +1278,26 @@
   {
    "id": "3km4NbcZ9WPqZU6N1mEhgY",
    "name": "Kai Winn, Faithless Leader",
-   "ja": "AIの評価は低いものの、軽いマナで出せるクリーチャーのため、差し引きで平均並みの勝率と予測される。",
-   "en": "Its AI grade is low, but it is a cheap creature, so overall it is forecast to perform about average."
+   "ja": "軽いマナで出せるクリーチャーであり、平均並みの勝率と予測される。",
+   "en": "It is a cheap creature, and it is forecast to perform about average."
   },
   {
    "id": "3hnPPMfIOOEijcy5ItN5Sh",
    "name": "Planetary Bombardment",
-   "ja": "AIの評価が高い効率的な軽い火力だが、ソーサリーでしか撃てないため、平均並みの勝率と予測される。",
-   "en": "An efficient, cheap burn spell with a high AI grade, but it is sorcery-speed only, so it is forecast to perform about average."
+   "ja": "効率的な軽い火力だが、ソーサリーでしか撃てないため、平均並みの勝率と予測される。",
+   "en": "An efficient, cheap burn spell, but it is sorcery-speed only, so it is forecast to perform about average."
   },
   {
    "id": "3ai2bThkdbHZJOLuZ2APDN",
    "name": "The Caretaker",
-   "ja": "AIによる評価が非常に高いが、マナ総量が重く誘発にも条件が必要なため、平均をやや上回る程度と予測される。",
-   "en": "Its AI grade is very high, but it is very expensive and its trigger needs a condition, so it is forecast only slightly above average."
+   "ja": "マナ総量が重く誘発にも条件が必要なため、平均をやや上回る程度と予測される。",
+   "en": "It is very expensive and its trigger needs a condition, so it is forecast only slightly above average."
   },
   {
    "id": "2pzqcAk9cianNZLozxPWTu",
    "name": "Tell Me What You See",
-   "ja": "登場時にドローか相手のライフ減少を得られる軽いカードだが、AIの評価が低くクリーチャーでもないため、平均をやや下回る見込み。",
-   "en": "A cheap card that draws or drains on entering, but its AI grade is low and it isn't a creature, so it is expected to fall slightly below average."
+   "ja": "登場時にドローか相手のライフ減少を得られる軽いカードだが、クリーチャーでもないため、平均をやや下回る見込み。",
+   "en": "A cheap card that draws or drains on entering, but it isn't a creature, so it is expected to fall slightly below average."
   },
   {
    "id": "27RitrpDNw0rQiA7jLVobi",
@@ -1326,14 +1326,14 @@
   {
    "id": "5QBlRiiIvA6D5Gyu1FrNZn",
    "name": "Enterprise NX-01",
-   "ja": "戦場に出たときに相手のクリーチャーをタップして麻痺させられ、AIの評価も高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It taps and stuns an opposing creature on entering, and its AI grade is high, so it is expected to win well above average."
+   "ja": "戦場に出たときに相手のクリーチャーをタップして麻痺させられるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It taps and stuns an opposing creature on entering, so it is expected to win well above average."
   },
   {
    "id": "5O7XS9xjLlZN3QUtNye9Lj",
    "name": "Holo-Engineer",
-   "ja": "登場時に同じサイズのトークンを生み出しマナ効率が抜群で、AIの評価も非常に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It brings an equally sized token on entering for outstanding mana efficiency, and its AI grade is very high, so it is expected to win well above average."
+   "ja": "登場時に同じサイズのトークンを生み出しマナ効率が抜群のため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It brings an equally sized token on entering for outstanding mana efficiency, so it is expected to win well above average."
   },
   {
    "id": "4RLI9WU0YTLBkx6HhPXW0H",
@@ -1344,8 +1344,8 @@
   {
    "id": "4AMFK4B7e0j6t1YrMxZu16",
    "name": "Deanna Troi, Psychic Counsel",
-   "ja": "後続のクリーチャーを強化する軽く効率的なクリーチャーで、AIの評価も非常に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "A cheap, efficient creature that makes your later creatures bigger, with a very high AI grade, so it is expected to win well above average."
+   "ja": "後続のクリーチャーを強化する軽く効率的なクリーチャーであるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "A cheap, efficient creature that makes your later creatures bigger, so it is expected to win well above average."
   },
   {
    "id": "2pjHWvvL3oHZZltfMoFPTN",
@@ -1368,26 +1368,26 @@
   {
    "id": "1V0kqTImEpD5LLuLeNL5TD",
    "name": "Nog, Ambitious Cadet",
-   "ja": "軽い威迫持ちで、成長すると諜報や追加の土地プレイも得られ、AIの評価も高いため、平均を大きく上回る見込み。",
-   "en": "A cheap menace creature that grows into surveil and extra land drops, with a high AI grade, so it is expected to win well above average."
+   "ja": "軽い威迫持ちで、成長すると諜報や追加の土地プレイも得られるため、平均を大きく上回る見込み。",
+   "en": "A cheap menace creature that grows into surveil and extra land drops, so it is expected to win well above average."
   },
   {
    "id": "632FJmgchH7U5y9FiFl8JM",
    "name": "U.S.S. Excelsior, Cutting Edge",
-   "ja": "戦場に出たときにタップ状態のクリーチャーを破壊でき、大きな本体も持ちAIの評価が非常に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It destroys a tapped creature on entering and adds a large body, with a very high AI grade, so it is expected to win well above average."
+   "ja": "戦場に出たときにタップ状態のクリーチャーを破壊でき、大きな本体も持つため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It destroys a tapped creature on entering and adds a large body, so it is expected to win well above average."
   },
   {
    "id": "3ATLjqcvwECZAQfDEcsCE8",
    "name": "Sela, Tal Shiar Paradox",
-   "ja": "攻撃のたびに墓地のカードを追放してトークンを生み出せ、AIの評価も非常に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "Each attack can exile a graveyard card and produce a token, and its AI grade is very high, so it is expected to win well above average."
+   "ja": "攻撃のたびに墓地のカードを追放してトークンを生み出せるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "Each attack can exile a graveyard card and produce a token, so it is expected to win well above average."
   },
   {
    "id": "4v6ZY0OqdQ8feeoYf1CheL",
    "name": "Overflow Submatrix",
-   "ja": "AIの評価が高く効率の良いクリーチャーだが、能力には墓地のアーティファクト・クリーチャーが必要なため、平均をやや上回る程度と予測される。",
-   "en": "An efficient body with a high AI grade, but its ability needs artifact creatures in the graveyard, so it is forecast only slightly above average."
+   "ja": "効率の良いクリーチャーだが、能力には墓地のアーティファクト・クリーチャーが必要なため、平均をやや上回る程度と予測される。",
+   "en": "An efficient body, but its ability needs artifact creatures in the graveyard, so it is forecast only slightly above average."
   },
   {
    "id": "3J8pU0EkMBi2P8yZdjlrN4",
@@ -1404,26 +1404,26 @@
   {
    "id": "4iZhL6jhi6CC2VpDnoOQiD",
    "name": "Will Riker, First in the Field",
-   "ja": "AIの評価は高いものの、マナ総量が重く戦場に出たときの効果もないため、平均並みの勝率と予測される。",
-   "en": "Its AI grade is high, but it is expensive and has no on-entry effect, so it is forecast to perform about average."
+   "ja": "マナ総量が重く戦場に出たときの効果もないため、平均並みの勝率と予測される。",
+   "en": "It is expensive and has no on-entry effect, so it is forecast to perform about average."
   },
   {
    "id": "TKK7ICZE9iNdZpYbucXV6",
    "name": "Brazen Bluff",
-   "ja": "AIの評価が非常に低く、効果が出るまで遅いうえ盤面への影響も乏しいため、平均を大きく下回る勝率が見込まれる。",
-   "en": "Its AI grade is very low, it is slow to have an effect and does little for the board, so it is expected to win well below average."
+   "ja": "効果が出るまで遅いうえ盤面への影響も乏しいため、平均を大きく下回る勝率が見込まれる。",
+   "en": "It is slow to have an effect and does little for the board, so it is expected to win well below average."
   },
   {
    "id": "j3iPTbMq845bWQn15P3pf",
    "name": "Artificial Anomaly",
-   "ja": "AIの評価が低く、生け贄にしても小さなライフ移動とタップ状態の土地が得られるだけのため、平均をやや下回る見込み。",
-   "en": "Its AI grade is low, and sacrificing it only yields a small life drain and a tapped land, so it is expected slightly below average."
+   "ja": "生け贄にしても小さなライフ移動とタップ状態の土地が得られるだけのため、平均をやや下回る見込み。",
+   "en": "Sacrificing it only yields a small life drain and a tapped land, so it is expected slightly below average."
   },
   {
    "id": "3nerzDFHzS9ERHAbuyr6hg",
    "name": "Sarek, Federation Ambassador",
-   "ja": "AIの評価が低く、マナ総量が重いうえ効果が出るまで時間がかかるため、平均をやや下回る見込み。",
-   "en": "Its AI grade is low, and it is expensive and slow to take effect, so it is expected to fall slightly below average."
+   "ja": "マナ総量が重いうえ効果が出るまで時間がかかるため、平均をやや下回る見込み。",
+   "en": "It is expensive and slow to take effect, so it is expected to fall slightly below average."
   },
   {
    "id": "7vUkyrREBpYuxIl6x14Ird",
@@ -1434,8 +1434,8 @@
   {
    "id": "4ZwyRHnbhWjTgjUzUDGngo",
    "name": "Infinite Diversity",
-   "ja": "AIの評価が非常に低く、極めて重いうえ盤面に何も残さず効率が悪いため、平均を大きく下回る勝率が見込まれる。",
-   "en": "Its AI grade is very low, and it is extremely expensive and inefficient, adding nothing to the board, so it is expected to win well below average."
+   "ja": "極めて重いうえ盤面に何も残さず効率が悪いため、平均を大きく下回る勝率が見込まれる。",
+   "en": "It is extremely expensive and inefficient, adding nothing to the board, so it is expected to win well below average."
   },
   {
    "id": "7JO1yY7Qu7fBLobEhvBcKG",
@@ -1452,8 +1452,8 @@
   {
    "id": "78s2VQvNRXm9CxHwTqKYzG",
    "name": "Stable Wormhole",
-   "ja": "攻撃するたびに土地を増やすだけの遅いエンチャントで、AIの評価も低いため、平均を大きく下回る見込み。",
-   "en": "A slow enchantment that only adds lands when you attack, with a low AI grade, so it is expected to fall well below average."
+   "ja": "攻撃するたびに土地を増やすだけの遅いエンチャントのため、平均を大きく下回る見込み。",
+   "en": "A slow enchantment that only adds lands when you attack, so it is expected to fall well below average."
   },
   {
    "id": "76uh2tFoMNYelxiH7Ke6Fn",
@@ -1464,56 +1464,56 @@
   {
    "id": "6xamYtFY5U5vldK55blVFC",
    "name": "Isolinear Processor",
-   "ja": "アーティファクトにしか使えないマナを出すクリーチャーでない置物で、AIの評価も非常に低いため、平均を大きく下回る見込み。",
-   "en": "A non-creature artifact whose mana only works for artifacts, with a very low AI grade, so it is expected to fall well below average."
+   "ja": "アーティファクトにしか使えないマナを出すクリーチャーでない置物のため、平均を大きく下回る見込み。",
+   "en": "A non-creature artifact whose mana only works for artifacts, so it is expected to fall well below average."
   },
   {
    "id": "61DfxokC0KNignEJRT0vvn",
    "name": "Wesley Crusher, Starfleet Cadet",
-   "ja": "瞬速で出て複数の効果を選べる柔軟さと手札の入れ替えを持ち、AIの評価も高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It offers flexible modal effects, including card filtering, and has a high AI grade, so a win rate well above average is expected."
+   "ja": "瞬速で出て複数の効果を選べる柔軟さと手札の入れ替えを持つため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It offers flexible modal effects, including card filtering, so a win rate well above average is expected."
   },
   {
    "id": "1JDdniN7TtVz78cDa6J6kI",
    "name": "Federation Resupply",
-   "ja": "特定のカードを探してくるだけで盤面に影響せず、AIの評価も非常に低いため、平均を大きく下回る勝率と予測される。",
-   "en": "It only tutors a specific card without affecting the board and has a very low AI grade, so a win rate well below average is forecast."
+   "ja": "特定のカードを探してくるだけで盤面に影響しないため、平均を大きく下回る勝率と予測される。",
+   "en": "It only tutors a specific card without affecting the board, so a win rate well below average is forecast."
   },
   {
    "id": "3pQA3ExFUf3yt0hRrPCduQ",
    "name": "Encounter the Unknown",
-   "ja": "全体火力とカードを得るモードを選べる呪文としてAIの評価が高い一方、クリーチャーを残さないため、平均をやや上回る見込み。",
-   "en": "A modal spell offering either a sweeper or extra cards earns a high AI grade, but it leaves no creatures behind, so it should be slightly above average."
+   "ja": "全体火力とカードを得るモードを選べる呪文だが、クリーチャーを残さないため、平均をやや上回る見込み。",
+   "en": "A modal spell offering either a sweeper or extra cards, but it leaves no creatures behind, so it should be slightly above average."
   },
   {
    "id": "3SV3SY66ZZjZdFdOgvcNhu",
    "name": "Transporter Malfunction",
-   "ja": "任意の対象を焼ける火力で墓地から再利用もでき、AIの評価が特に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "Burn that can hit any target and be recast from the graveyard, with an especially high AI grade, so a win rate well above average is expected."
+   "ja": "任意の対象を焼ける火力で墓地から再利用もできるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "Burn that can hit any target and be recast from the graveyard, so a win rate well above average is expected."
   },
   {
    "id": "3DUJ0jhVv4X9sq3IHGL2zm",
    "name": "Rok-Tahk, Budding Scientist",
-   "ja": "大型の本体に加えて破壊されないトークンも生み、マナに見合うサイズでAIの評価も高いため、平均を大きく上回る見込み。",
-   "en": "A large, mana-efficient body that also creates an indestructible token, backed by a high AI grade, so it should be well above average."
+   "ja": "大型の本体に加えて破壊されないトークンも生み、マナに見合うサイズのため、平均を大きく上回る見込み。",
+   "en": "A large, mana-efficient body that also creates an indestructible token, so it should be well above average."
   },
   {
    "id": "30RPByLRS5vmEdvGxijwdD",
    "name": "U.S.S. Voyager, Lone Wanderer",
-   "ja": "戦場に出たときに土地を戦場に出す能力を持ち、AIの評価も高いため、平均をやや上回る勝率と予測される。",
-   "en": "Its enters-the-battlefield ability puts lands onto the battlefield and it has a high AI grade, so a slightly above-average win rate is forecast."
+   "ja": "戦場に出たときに土地を戦場に出す能力を持つため、平均をやや上回る勝率と予測される。",
+   "en": "Its enters-the-battlefield ability puts lands onto the battlefield, so a slightly above-average win rate is forecast."
   },
   {
    "id": "2vzk9p09o0Z5g2e5UdApIU",
    "name": "Red Alert!",
-   "ja": "その場限りで自軍のパワーを上げるだけの呪文で、AIの評価が低いため、平均を大きく下回る見込み。",
-   "en": "A spell that merely pumps your team's power for a turn, with a low AI grade, so it is expected to fall well below average."
+   "ja": "その場限りで自軍のパワーを上げるだけの呪文であるため、平均を大きく下回る見込み。",
+   "en": "A spell that merely pumps your team's power for a turn, so it is expected to fall well below average."
   },
   {
    "id": "7vA1Wg8gmb0uNc655XXrRS",
    "name": "Fugitive Listener",
-   "ja": "出たときに相手に手札を捨てさせる能力を持つ一方、AIの評価は低いため、平均並みの勝率と予測される。",
-   "en": "It makes the opponent discard when it enters, but its AI grade is low, so an average win rate is forecast."
+   "ja": "出たときに相手に手札を捨てさせる能力を持つものの、効果は限定的で、平均並みの勝率と予測される。",
+   "en": "It makes the opponent discard when it enters, but an average win rate is forecast."
   },
   {
    "id": "6Pq2IM24DGkoRFpHKWinkn",
@@ -1548,8 +1548,8 @@
   {
    "id": "4rRvdlqkLMMPpbpS4RDmuB",
    "name": "Gaseous Anomaly",
-   "ja": "カードを引くまでに大量のマナが必要な遅い土地で、AIの評価も低いため、平均をやや下回る見込み。",
-   "en": "A slow land that needs a lot of mana before it draws cards, with a low AI grade, so it should be slightly below average."
+   "ja": "カードを引くまでに大量のマナが必要な遅い土地のため、平均をやや下回る見込み。",
+   "en": "A slow land that needs a lot of mana before it draws cards, so it should be slightly below average."
   },
   {
    "id": "4IBc7pTY05kwYGQmYZpEV2",
@@ -1560,20 +1560,20 @@
   {
    "id": "4BpE50AAulblV4uUuwwZmC",
    "name": "Andromedan Automatons",
-   "ja": "出たときに同名カードを探せる一方、AIの評価が低いため、平均をやや下回る見込み。",
-   "en": "It can search for copies of itself when it enters, but its AI grade is low, so it should be slightly below average."
+   "ja": "出たときに同名カードを探せるが、平均をやや下回る見込み。",
+   "en": "It can search for copies of itself when it enters, but it should still be slightly below average."
   },
   {
    "id": "40AlHT3UcMPSo5KVdwQIva",
    "name": "Astute Terraformer",
-   "ja": "軽いクリーチャーだが、強化能力は異なる土地を揃えないと重く、AIの評価も低いため、平均をやや下回る勝率と予測される。",
-   "en": "A cheap creature, but its pump is expensive without varied lands and its AI grade is low, so a slightly below-average win rate is forecast."
+   "ja": "軽いクリーチャーだが、強化能力は異なる土地を揃えないと重いため、平均をやや下回る勝率と予測される。",
+   "en": "A cheap creature, but its pump is expensive without varied lands, so a slightly below-average win rate is forecast."
   },
   {
    "id": "35BbK7K0fbhnhnJv7DmWnV",
    "name": "Gul Dukat, Colonial Prefect",
-   "ja": "威迫を持つ大型でAIの評価が特に高い一方、出たときの能力を持たないため、平均をやや上回る見込み。",
-   "en": "A large menace creature with an especially high AI grade, though it has no enters-the-battlefield ability, so it should be slightly above average."
+   "ja": "威迫を持つ大型だが、出たときの能力を持たないため、平均をやや上回る見込み。",
+   "en": "A large menace creature, though it has no enters-the-battlefield ability, so it should be slightly above average."
   },
   {
    "id": "2pFJWtD1c9jJjYPszmOGm5",
@@ -1596,8 +1596,8 @@
   {
    "id": "1XKE9B8DY991P7iWQBF2dz",
    "name": "Combadge",
-   "ja": "装備品で盤面に直接影響せず、マナ効率も悪くAIの評価も低いため、平均を大きく下回る勝率が見込まれる。",
-   "en": "Equipment that does not affect the board directly, is mana-inefficient and has a low AI grade, so a win rate well below average is expected."
+   "ja": "装備品で盤面に直接影響せず、マナ効率も悪いため、平均を大きく下回る勝率が見込まれる。",
+   "en": "Equipment that does not affect the board directly and is mana-inefficient, so a win rate well below average is expected."
   },
   {
    "id": "1gZUWzVsqAFfIYsoasvqEq",
@@ -1608,8 +1608,8 @@
   {
    "id": "d0ymnMd0AQAMK4VzVbUnl",
    "name": "Pet Sehlat",
-   "ja": "単独で攻撃できない制約付きのクリーチャーで、AIの評価が低いため、平均をやや下回る見込み。",
-   "en": "A creature that cannot attack alone, with a low AI grade, so it should be slightly below average."
+   "ja": "単独で攻撃できない制約付きのクリーチャーのため、平均をやや下回る見込み。",
+   "en": "A creature that cannot attack alone, so it should be slightly below average."
   },
   {
    "id": "7pTzLxwJXvQqDF7aduKfYx",
@@ -1620,8 +1620,8 @@
   {
    "id": "6XknNwsrDi0gwuCaPXXicW",
    "name": "Oberth-Class Starship",
-   "ja": "軽く、出たときに基本土地を手札に加えて損をしない一方、AIの評価が低いため、平均並みの勝率と予測される。",
-   "en": "Cheap and replaces itself by fetching a basic land on entry, but its AI grade is low, so an average win rate is forecast."
+   "ja": "軽く、出たときに基本土地を手札に加えて損をしないため、平均並みの勝率と予測される。",
+   "en": "Cheap and replaces itself by fetching a basic land on entry, so an average win rate is forecast."
   },
   {
    "id": "6TaKvpGAa6w2ZivNs2MPHW",
@@ -1632,8 +1632,8 @@
   {
    "id": "6s8UKXjgdCdciXFNHJRnMm",
    "name": "Starfleet Security",
-   "ja": "軽く、死亡時に手掛かりを残せる一方、AIの評価が低いため、平均並みの勝率と予測される。",
-   "en": "Cheap and can leave a Clue when it dies, but its AI grade is low, so an average win rate is forecast."
+   "ja": "軽く、死亡時に手掛かりを残せるため、平均並みの勝率と予測される。",
+   "en": "Cheap and able to leave a Clue when it dies, so an average win rate is forecast."
   },
   {
    "id": "5rctuKikMRfiNIB65SEGoe",
@@ -1644,8 +1644,8 @@
   {
    "id": "5ecThikrC5WrwGPYvIiGn0",
    "name": "Pattern Buffer Preservation",
-   "ja": "軽く墓地から再び唱えることもできる一方、AIの評価が低いため、平均をやや下回る勝率と予測される。",
-   "en": "Cheap and castable again from the graveyard, but its AI grade is low, so a slightly below-average win rate is forecast."
+   "ja": "軽く墓地から再び唱えることもできるものの、平均をやや下回る勝率と予測される。",
+   "en": "Cheap and castable again from the graveyard, but a slightly below-average win rate is still forecast."
   },
   {
    "id": "5CAYeibC6XlSnzuIkMV3Fh",
@@ -1662,14 +1662,14 @@
   {
    "id": "3Ergd02TjAT5nXskLpmJ7V",
    "name": "Obsidian Order Operative",
-   "ja": "マナに見合うサイズがなく重いうえ、AIの評価も低いため、平均を大きく下回る見込み。",
-   "en": "It is undersized for its cost, expensive, and has a low AI grade, so it is expected to fall well below average."
+   "ja": "マナに見合うサイズがなく重いため、平均を大きく下回る見込み。",
+   "en": "It is undersized for its cost and expensive, so it is expected to fall well below average."
   },
   {
    "id": "2LjIq1UzT4296e87AUIATl",
    "name": "Sickbay",
-   "ja": "戦闘ごとに自軍を強化できる置物としてAIの評価は高いものの、他に目立つ要因はないため、平均並みの勝率と予測される。",
-   "en": "An artifact that pumps your creatures each combat earns a high AI grade, but nothing else stands out, so an average win rate is forecast."
+   "ja": "戦闘ごとに自軍を強化できる置物ではあるが、他に目立つ要因はないため、平均並みの勝率と予測される。",
+   "en": "An artifact that pumps your creatures each combat, but nothing else stands out, so an average win rate is forecast."
   },
   {
    "id": "1t6YhINpsAkQmLhbvXUK2D",
@@ -1680,8 +1680,8 @@
   {
    "id": "1sAPDMcU2ZpyjXPITtZHYN",
    "name": "Starfleet Spanner Jockey",
-   "ja": "軽くサイズも十分だが、非クリーチャー呪文を唱えないと攻撃できず、AIの評価も低いため、平均を大きく下回る見込み。",
-   "en": "Cheap with a solid body, but it cannot attack unless you cast a noncreature spell and has a low AI grade, so it should be well below average."
+   "ja": "軽くサイズも十分だが、非クリーチャー呪文を唱えないと攻撃できないため、平均を大きく下回る見込み。",
+   "en": "Cheap with a solid body, but it cannot attack unless you cast a noncreature spell, so it should be well below average."
   },
   {
    "id": "1lldowUMJ5EFP5mx7jG2vz",
@@ -1692,8 +1692,8 @@
   {
    "id": "sRXZCNwcu0PLiWBTQ6Jqh",
    "name": "U.S.S. Cerritos, Following Up",
-   "ja": "戦場に出るだけで複数のトークンを生み、育てば飛行を持つ機体でAIの評価も高いため、平均をやや上回る勝率が見込まれる。",
-   "en": "It makes multiple tokens on entry and becomes a flyer once stationed, and the AI rates it highly, so a slightly above-average win rate is expected."
+   "ja": "戦場に出るだけで複数のトークンを生み、育てば飛行を持つ機体のため、平均をやや上回る勝率が見込まれる。",
+   "en": "It makes multiple tokens on entry and becomes a flyer once stationed, so a slightly above-average win rate is expected."
   },
   {
    "id": "7qQ97iZhNelKzkARTmxnGj",
@@ -1740,8 +1740,8 @@
   {
    "id": "5detBDjqU6DkO1rmMzdoWs",
    "name": "Warp Core",
-   "ja": "土地を探せる以外は機体にカウンターを置くだけのアーティファクトでAIの評価も低いため、平均をやや下回る見込み。",
-   "en": "Beyond fetching a land it only adds counters to Spacecraft, and the AI rates it low, so it is expected slightly below average."
+   "ja": "土地を探せる以外は機体にカウンターを置くだけのアーティファクトのため、平均をやや下回る見込み。",
+   "en": "Beyond fetching a land it only adds counters to Spacecraft, so it is expected slightly below average."
   },
   {
    "id": "2maR3ar4H0URU6504LCIyA",
@@ -1758,8 +1758,8 @@
   {
    "id": "2D2iFPil976v3Iq8WRHRUQ",
    "name": "The Naked Time",
-   "ja": "AIの評価が特に低く、最後に土地を失ううえクリーチャーも出ないエンチャントのため、平均を大きく下回る見込み。",
-   "en": "The AI rates it very low, and it is a creatureless enchantment that ends by costing you a land, so it is expected well below average."
+   "ja": "最後に土地を失ううえクリーチャーも出ないエンチャントのため、平均を大きく下回る見込み。",
+   "en": "It is a creatureless enchantment that ends by costing you a land, so it is expected well below average."
   },
   {
    "id": "1PDzxIXLgq4gnDvrxiZvEe",
@@ -1776,20 +1776,20 @@
   {
    "id": "1hbv83sj0FnOBiJEtpBA0Y",
    "name": "Tal Shiar Analyst",
-   "ja": "サイズ効率は良いが、能力は非クリーチャー呪文頼みで本体への小さなダメージのみ、AIの評価も低いため、平均をやや下回る見込み。",
-   "en": "Efficiently sized, but its ability pings players only and relies on noncreature spells, and the AI rates it low, so it is expected slightly below average."
+   "ja": "サイズ効率は良いが、能力は非クリーチャー呪文頼みで本体への小さなダメージのみのため、平均をやや下回る見込み。",
+   "en": "Efficiently sized, but its ability pings players only and relies on noncreature spells, so it is expected slightly below average."
   },
   {
    "id": "6nkgxLstrK8UJViWmP15Xc",
    "name": "The Needs of the Many",
-   "ja": "クリーチャーの生け贄を要する守り専用のインスタントで、AIの評価も特に低いため、平均を大きく下回る見込み。",
-   "en": "A purely defensive instant that requires sacrificing a creature, and the AI rates it very low, so it is expected well below average."
+   "ja": "クリーチャーの生け贄を要する守り専用のインスタントであるため、平均を大きく下回る見込み。",
+   "en": "A purely defensive instant that requires sacrificing a creature, so it is expected well below average."
   },
   {
    "id": "1JQffnqwXBbQsHnV2u8Yla",
    "name": "Cloak and Phaser",
-   "ja": "複数のトークンとカードを得られる一方、AIの評価が低いため、平均並みの勝率と予測される。",
-   "en": "It makes multiple tokens and draws cards, but the AI rates it low, so an average win rate is forecast."
+   "ja": "複数のトークンとカードを得られるが、平均並みの勝率と予測される。",
+   "en": "It makes multiple tokens and draws cards, but an average win rate is forecast."
   },
   {
    "id": "1FwRva6JYhe2t3jtWecQNm",
@@ -1800,14 +1800,14 @@
   {
    "id": "3PnQ0PbUf6eXxSy7JoSrwS",
    "name": "The Destruction of Praxis",
-   "ja": "全体を縮める除去にトークン生成も付きAIの評価が高いため、条件次第で空振りしやすい点を差し引いても平均を大きく上回る見込み。",
-   "en": "A sweeper that can also make tokens and is rated highly by the AI; despite being prone to whiffing, it is expected well above average."
+   "ja": "全体を縮める除去にトークン生成も付くため、条件次第で空振りしやすい点を差し引いても平均を大きく上回る見込み。",
+   "en": "A sweeper that can also make tokens; despite being prone to whiffing, it is expected well above average."
   },
   {
    "id": "6cfZMQRChxokb6f4BLMeeS",
    "name": "Vengeance Mission",
-   "ja": "盤面に影響せず少しずつライフを削るだけのエンチャントで、AIの評価も特に低いため、平均を大きく下回る見込み。",
-   "en": "An enchantment that only drains a little life without affecting the board, and the AI rates it very low, so it is expected well below average."
+   "ja": "盤面に影響せず少しずつライフを削るだけのエンチャントのため、平均を大きく下回る見込み。",
+   "en": "An enchantment that only drains a little life without affecting the board, so it is expected well below average."
   },
   {
    "id": "1K627UreQcMM6ZtdtgdUFB",
@@ -1836,20 +1836,20 @@
   {
    "id": "2eBxFeoNJ3OrYMpiivu6Ed",
    "name": "Dr. Leonard \"Bones\" McCoy",
-   "ja": "瞬速で出て、戦場に出たときに回収か蘇生の予約を選べる柔軟さがありAIの評価も高いため、平均をやや上回る見込み。",
-   "en": "It has flash and a flexible enter trigger (recursion or a death-insurance return), and the AI rates it highly, so it is expected slightly above average."
+   "ja": "瞬速で出て、戦場に出たときに回収か蘇生の予約を選べる柔軟さがあるため、平均をやや上回る見込み。",
+   "en": "It has flash and a flexible enter trigger (recursion or a death-insurance return), so it is expected slightly above average."
   },
   {
    "id": "26vkC0bKyG4l3qV3XE5D8Q",
    "name": "Genesis Device",
-   "ja": "土地を探すだけで盤面に影響しにくいアーティファクトで、AIの評価が特に低いため、平均を大きく下回る見込み。",
-   "en": "An artifact that mostly fetches lands and barely affects the board, and the AI rates it very low, so it is expected well below average."
+   "ja": "土地を探すだけで盤面に影響しにくいアーティファクトのため、平均を大きく下回る見込み。",
+   "en": "An artifact that mostly fetches lands and barely affects the board, so it is expected well below average."
   },
   {
    "id": "5X4pqcYWMzZ2aFz5TJNTb6",
    "name": "MACO Strike Team",
-   "ja": "とても軽いマナで出せる効率の良い小型でトークンも生める一方、AIの評価は低いため、平均をやや上回る程度と予測される。",
-   "en": "A very cheap, efficient creature that can make tokens, though the AI rates it low, so it is forecast only slightly above average."
+   "ja": "とても軽いマナで出せる効率の良い小型でトークンも生められるが、平均をやや上回る程度と予測される。",
+   "en": "A very cheap, efficient creature that can make tokens, though it is forecast only slightly above average."
   },
   {
    "id": "4dAfMLEfnBIWt18zppjJST",
@@ -1860,14 +1860,14 @@
   {
    "id": "3nwk1de5ii7qmUyW28AICf",
    "name": "Warp Speed",
-   "ja": "土地を探しカードも引ける柔軟さがある一方、クリーチャーを出さないエンチャントでAIの評価も低いため、平均をやや下回る見込み。",
-   "en": "It fetches a land and can draw cards, but it is a creatureless enchantment the AI rates low, so it is expected slightly below average."
+   "ja": "土地を探しカードも引ける柔軟さがある一方、クリーチャーを出さないエンチャントのため、平均をやや下回る見込み。",
+   "en": "It fetches a land and can draw cards, but it is a creatureless enchantment, so it is expected slightly below average."
   },
   {
    "id": "2kUsZCxDZ7WkKIEp69JAD9",
    "name": "Dathon, His Heart Open",
-   "ja": "エンチャント呪文を唱えないと働かず、AIの評価も低いため、平均をやや下回ると予測される。",
-   "en": "It does nothing without enchantment spells and the AI rates it low, so it is forecast slightly below average."
+   "ja": "エンチャント呪文を唱えないと働かないため、平均をやや下回ると予測される。",
+   "en": "It does nothing without enchantment spells, so it is forecast slightly below average."
   },
   {
    "id": "5nGuJfubFvxT8JDqURSVPo",
@@ -1884,20 +1884,20 @@
   {
    "id": "7Cs1QMkqOFwidwmqlygoG1",
    "name": "Loot, Exuberant Explorer",
-   "ja": "毎ターン追加の土地を置けてAIの評価も高いため、平均をやや上回る勝率が見込まれる。",
-   "en": "It lets you play an extra land each turn and the AI rates it highly, so a slightly above-average win rate is expected."
+   "ja": "毎ターン追加の土地を置けるため、平均をやや上回る勝率が見込まれる。",
+   "en": "It lets you play an extra land each turn, so a slightly above-average win rate is expected."
   },
   {
    "id": "6ttFme0LY4swQJVUd7jTVR",
    "name": "Mogis, God of Slaughter",
-   "ja": "破壊不能で毎ターン相手にダメージか生け贄を迫り、AIの評価も特に高いため、平均を大きく上回る見込み。",
-   "en": "Indestructible and forces damage or a sacrifice every turn, and the AI rates it very highly, so it is expected well above average."
+   "ja": "破壊不能で毎ターン相手にダメージか生け贄を迫るため、平均を大きく上回る見込み。",
+   "en": "Indestructible and forces damage or a sacrifice every turn, so it is expected well above average."
   },
   {
    "id": "6pFa6517b66THzq03Q15Q8",
    "name": "Decree of Pain",
-   "ja": "全体除去に引きが付き、サイクリングでも全体を縮められる柔軟な呪文でAIの評価も特に高いため、平均を大きく上回る見込み。",
-   "en": "A board wipe that draws cards and can be cycled for a smaller sweep; the AI rates it very highly, so it is expected well above average."
+   "ja": "全体除去に引きが付き、サイクリングでも全体を縮められる柔軟な呪文のため、平均を大きく上回る見込み。",
+   "en": "A board wipe that draws cards and can be cycled for a smaller sweep, so it is expected well above average."
   },
   {
    "id": "6M3PQeQaGgj4GBMy9H9uH",
@@ -1908,86 +1908,86 @@
   {
    "id": "6J8Pd58t5gVMXKozFHiVHx",
    "name": "Jhoira, Weatherlight Captain",
-   "ja": "歴史的な呪文を唱えるたびにカードを引け、AIの評価も特に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It draws a card whenever you cast a historic spell, and the AI rates it very highly, so a well above-average win rate is expected."
+   "ja": "歴史的な呪文を唱えるたびにカードを引けるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It draws a card whenever you cast a historic spell, so a well above-average win rate is expected."
   },
   {
    "id": "5G8cMuIHBkws9YyXJPqdoT",
    "name": "Drivnod, Carnage Dominus",
-   "ja": "AIの評価は高い一方、マナが重く戦場に出ても即座の効果がないため、平均並みの勝率と予測される。",
-   "en": "The AI rates it highly, but it is expensive and does nothing on entry, so an average win rate is forecast."
+   "ja": "マナが重く戦場に出ても即座の効果がないため、平均並みの勝率と予測される。",
+   "en": "It is expensive and does nothing on entry, so an average win rate is forecast."
   },
   {
    "id": "5dST2gtsUeK3HTvwZmlBEp",
    "name": "Shizo, Death's Storehouse",
-   "ja": "黒マナが出る以外は伝説のクリーチャー限定の能力しかない土地で、AIの評価も低いため、平均をやや下回る見込み。",
-   "en": "A land whose only extra is an ability for legendary creatures, and the AI rates it low, so it is expected slightly below average."
+   "ja": "黒マナが出る以外は伝説のクリーチャー限定の能力しかない土地のため、平均をやや下回る見込み。",
+   "en": "A land whose only extra is an ability for legendary creatures, so it is expected slightly below average."
   },
   {
    "id": "4vi9j8xFsR4ZwWIsObGZpL",
    "name": "Flare of Fortitude",
-   "ja": "そのターンだけ味方を守る呪文で、AIによる評価が特に低いため、平均を大きく下回る勝率が見込まれる。",
-   "en": "It only protects your side for a single turn, and the AI rates it very poorly, so its win rate is expected to be well below average."
+   "ja": "そのターンだけ味方を守る呪文のため、平均を大きく下回る勝率が見込まれる。",
+   "en": "It only protects your side for a single turn, so its win rate is expected to be well below average."
   },
   {
    "id": "4i16Cahw20dzWClW8uQeEG",
    "name": "Bruvac the Grandiloquent",
-   "ja": "クリーチャーではあるが、相手の切削を倍にするだけで効果が出るまで遅く、AIの評価も特に低いため、平均を大きく下回る見込み。",
-   "en": "It is a creature, but it only doubles the opponent's milling, takes a long time to matter, and the AI rates it very low, so it should be well below average."
+   "ja": "クリーチャーではあるが、相手の切削を倍にするだけで効果が出るまで遅いため、平均を大きく下回る見込み。",
+   "en": "It is a creature, but it only doubles the opponent's milling and takes a long time to matter, so it should be well below average."
   },
   {
    "id": "3tE06ujtTKOhkH6MpnMaaJ",
    "name": "Sen Triplets",
-   "ja": "相手の行動を封じて手札まで使え、サイズ効率も高くAIの評価が特に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It locks the opponent out of their turn and lets you play from their hand, with good stats for its cost and a very high AI grade, so it should be well above average."
+   "ja": "相手の行動を封じて手札まで使え、サイズ効率も高いため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It locks the opponent out of their turn and lets you play from their hand, with good stats for its cost, so it should be well above average."
   },
   {
    "id": "3rk92GxK1wgdeqb9rWIx1V",
    "name": "Ertai Resurrected",
-   "ja": "瞬速で呪文の打ち消しかクリーチャーやプレインズウォーカーの破壊を選べ、AIの評価も特に高いため、平均を大きく上回る見込み。",
-   "en": "It has flash and either counters a spell or destroys a creature or planeswalker, and the AI rates it very highly, so it should be well above average."
+   "ja": "瞬速で呪文の打ち消しかクリーチャーやプレインズウォーカーの破壊を選べるため、平均を大きく上回る見込み。",
+   "en": "It has flash and either counters a spell or destroys a creature or planeswalker, so it should be well above average."
   },
   {
    "id": "3lCNRE0uYxxG6pSsJSY8lh",
    "name": "Empress Galina",
-   "ja": "伝説のパーマネントを奪える点でAIの評価は高い一方、重く本体も小さいため、平均並みの勝率と予測される。",
-   "en": "The AI rates it well for stealing legendary permanents, but it is expensive with a small body, so an average win rate is expected."
+   "ja": "伝説のパーマネントを奪える一方、重く本体も小さいため、平均並みの勝率と予測される。",
+   "en": "It can steal legendary permanents, but it is expensive with a small body, so an average win rate is expected."
   },
   {
    "id": "3LBD1HmtDpzjAOg9P1SDgu",
    "name": "Hull Breach",
-   "ja": "アーティファクトかエンチャントしか壊せないソーサリーで、AIの評価も低いため、平均を大きく下回る見込み。",
-   "en": "It is a sorcery that only destroys artifacts or enchantments, and the AI rates it low, so it should be well below average."
+   "ja": "アーティファクトかエンチャントしか壊せないソーサリーのため、平均を大きく下回る見込み。",
+   "en": "It is a sorcery that only destroys artifacts or enchantments, so it should be well below average."
   },
   {
    "id": "3FZKBNIj4nkPWlcRr0kybY",
    "name": "Phyrexian Tower",
-   "ja": "土地として置ける一方、クリーチャーを生け贄にしないと追加のマナが出ず、AIの評価も特に低いため、平均を大きく下回る見込み。",
-   "en": "It is a land you can play for free, but it needs to sacrifice a creature for extra mana and the AI rates it very low, so it should be well below average."
+   "ja": "土地として置ける一方、クリーチャーを生け贄にしないと追加のマナが出ないため、平均を大きく下回る見込み。",
+   "en": "It is a land you can play for free, but it needs to sacrifice a creature for extra mana, so it should be well below average."
   },
   {
    "id": "3bNAhSgc5olsQuRI1hib2B",
    "name": "Riku of Many Paths",
-   "ja": "飛行トークンや強化を生みAIの評価も高い一方、モードを持つ呪文が必要で無駄になりやすいため、平均をやや上回ると予測される。",
-   "en": "It creates flying tokens or grows itself with trample and gets a good AI grade, but it needs modal spells and often does nothing, so slightly above average."
+   "ja": "飛行トークンや強化を生む一方、モードを持つ呪文が必要で無駄になりやすいため、平均をやや上回ると予測される。",
+   "en": "It creates flying tokens or grows itself with trample, but it needs modal spells and often does nothing, so slightly above average."
   },
   {
    "id": "31ZToIECuvVIkLH8UIToUD",
    "name": "Mikaeus, the Lunarch",
-   "ja": "自身にカウンターを溜めて味方全体に配れる点でAIの評価が特に高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It builds up +1/+1 counters on itself and spreads them across your team, earning a very high AI grade, so it should be well above average."
+   "ja": "自身にカウンターを溜めて味方全体に配れるため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It builds up +1/+1 counters on itself and spreads them across your team, so it should be well above average."
   },
   {
    "id": "2mE1cVv7iQjWgvzO43SRA6",
    "name": "Isshin, Two Heavens as One",
-   "ja": "攻撃による誘発を増やすだけで効果が出るまで遅く、AIの評価も低いため、平均を大きく下回る見込み。",
-   "en": "It only makes attack triggers happen an additional time, is slow to have an effect, and has a low AI grade, so it should be well below average."
+   "ja": "攻撃による誘発を増やすだけで効果が出るまで遅いため、平均を大きく下回る見込み。",
+   "en": "It only makes attack triggers happen an additional time and is slow to have an effect, so it should be well below average."
   },
   {
    "id": "1qeVCavBtD5OGcEOBBG4qd",
    "name": "Rishkar, Peema Renegade",
-   "ja": "味方に強化カウンターを配りつつマナも生めてマナ効率が良く、AIの評価も高いため、平均を大きく上回る勝率が見込まれる。",
-   "en": "It hands out +1/+1 counters, turns those creatures into mana sources, and is efficient for its cost with a high AI grade, so it should be well above average."
+   "ja": "味方に強化カウンターを配りつつマナも生めてマナ効率が良いため、平均を大きく上回る勝率が見込まれる。",
+   "en": "It hands out +1/+1 counters, turns those creatures into mana sources, and is efficient for its cost, so it should be well above average."
   },
   {
    "id": "2Cc26yrlnZCbJKN3lPnAod",
