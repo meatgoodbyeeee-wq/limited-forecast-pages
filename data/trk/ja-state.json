@@ -1,9 +1,9 @@
 {
- "checked_at": "2026-10-31T05:13:46.634Z",
+ "checked_at": "2026-10-31T05:17:15.598Z",
  "gallery": "https://magic.wizards.com/ja/products/star-trek/card-image-gallery",
- "read": true,
- "cards": 336,
+ "read": false,
+ "cards": 0,
  "with_own_image": 0,
- "error": null,
+ "error": "公開カードが0枚のため更新を中止しました。(取得1323件、収録商品: 統率者デッキ, 統率者デッキ「上陸班」, 統率者デッキCollector's Edition, Landing Party Collector's Edition, ワイルドカード（MTGアリーナ）, コレクター・ブースター, プレイ・ブースター, プレリリース・パック, ストアパック（MTGアリーナ）, リミテッド用パック（MTGアリーナ）, カード・スタイル（MTGアリーナ）, Klingon Fury Collector's Edition, 統率者デッキ「クリンゴンの激情」, バンドルセット , Federation Fleet Collector's Edition, 統率者デッキ「惑星連邦宇宙艦隊」, 統率者デッキ「我々はボーグ」, We are the Borg Collector's Edition, Beam Me Up Bundle, プロモパック, Draft Night, ウェルカム・デッキ, 基本土地（MTGアリーナ）, Enterprise-Q Scene Box, Divergent Timeline Scene Box)",
  "names_ja": 0
 }
