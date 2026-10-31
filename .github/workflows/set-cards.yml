@@ -44,7 +44,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           dir="data/$(echo "$SET_CODE" | tr A-Z a-z)"
-          git add "$dir/target.json.gz" "$dir/collect-state.json" "$dir/card-images.json" "$dir/images" 2>/dev/null || true
+          git add "$dir/target.json.gz" "$dir/collect-state.json" "$dir/card-images.json" "$dir/ja-state.json" "$dir/images" 2>/dev/null || true
           if git diff --cached --quiet; then echo 'nothing to save'; exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
