@@ -26,6 +26,8 @@ jobs:
             assets/fra/ja
             live
       - run: mkdir -p public/cards/fra/ja && cp -R image-source/assets/fra/ja/. public/cards/fra/ja/
+      - name: Copy downloaded card images of other sets
+        run: for d in data/*/images; do [ -d "$d" ] || continue; c=$(basename "$(dirname "$d")"); mkdir -p "public/cards/$c" && cp -R "$d"/. "public/cards/$c/"; done
       - run: mkdir -p public/live && cp image-source/live/fra-public-game.json public/live/fra-public-game.json
       - uses: actions/setup-node@v4
         with:

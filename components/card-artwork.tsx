@@ -5,11 +5,13 @@ import type {Card} from '@/lib/types';
 import {useLang,type Lang} from '@/lib/i18n';
 import cardTextJa from '@/data/card-text-ja.json';
 
-type ImageEntry={name:string;name_ja?:string;path:string;source_url:string;back_path?:string};
-const catalog=images as Record<string,ImageEntry>;
+type ImageEntry={name:string;name_ja?:string;path:string;source_url:string;back_path?:string;lang?:'ja'|'en'};
+// Card images are downloaded ahead of time (never hot-linked): FRA from the data repository, other sets from data/<code>/card-images.json.
+const setImages=import.meta.glob('../data/*/card-images.json',{eager:true,import:'default'}) as Record<string,Record<string,ImageEntry>>;
+const catalog:Record<string,ImageEntry>={...(images as Record<string,ImageEntry>),...Object.assign({},...Object.values(setImages))};
 const byName=new Map(Object.values(catalog).map(entry=>[entry.name,entry]));
 export function japaneseCardImage(card:Pick<Card,'id'|'name'|'set'>){
-  if(card.set.toUpperCase()!=='FRA')return undefined;
+  if(card.set.toUpperCase()!=='FRA')return catalog[card.id];
   return catalog[card.id]||byName.get(card.name);
 }
 /** Card name in the display language (Japanese falls back to English when no Japanese name is known). */
@@ -39,11 +41,12 @@ export function CardArtwork({card}:{card:Card}){
   const path=back?entry?.back_path:entry?.path;
   const src=path?import.meta.env.BASE_URL+path.replace(/^\//,''):undefined;
   const name=cardName(card,lang);
+  const cardLang=entry?.lang||'ja';
   return <figure className="min-w-0 space-y-3">
     {entry&&src&&!failed?<a href={src} target="_blank" rel="noreferrer" aria-label={tr(`${name}の画像を拡大`,`Enlarge the image of ${name}`)} className="block mx-auto max-w-[360px] rounded-xl focus-visible:outline-2 focus-visible:outline-primary">
-      <img src={src} alt={tr(`${name}（日本語カード画像${back?'・裏面':''}）`,`${name} (Japanese card image${back?', back face':''})`)} width={672} height={936} decoding="async" onError={()=>setFailed(true)} className="w-full h-auto rounded-xl"/>
+      <img src={src} alt={tr(`${name}（${cardLang==='ja'?'日本語':'英語'}カード画像${back?'・裏面':''}）`,`${name} (${cardLang==='ja'?'Japanese':'English'} card image${back?', back face':''})`)} width={672} height={936} decoding="async" onError={()=>setFailed(true)} className="w-full h-auto rounded-xl"/>
     </a>:<p role="status" className="rounded-lg border border-border p-6 text-sm text-muted-foreground">{failed?tr('画像を読み込めませんでした。','Could not load the image.'):card.set.toUpperCase()==='FRA'?tr('このカードの日本語画像はまだ登録されていません。','No Japanese image is registered for this card yet.'):tr('このセットのカード画像は準備中です。','Card images for this set are coming soon.')}</p>}
     {entry?.back_path&&<button type="button" className="text-sm text-primary underline" onClick={()=>{setBack(!back);setFailed(false);}}>{back?tr('表面を表示','Show front face'):tr('裏面を表示','Show back face')}</button>}
-    {entry&&<figcaption className="text-sm text-muted-foreground text-center"><a href={entry.source_url} target="_blank" rel="noreferrer" className="underline underline-offset-4">{tr('日本語カード画像：Wizards公式','Japanese card image: Wizards of the Coast')}</a><span className="block mt-1">© Wizards of the Coast</span></figcaption>}
+    {entry&&<figcaption className="text-sm text-muted-foreground text-center"><a href={entry.source_url} target="_blank" rel="noreferrer" className="underline underline-offset-4">{cardLang==='ja'?tr('日本語カード画像：Wizards公式','Japanese card image: Wizards of the Coast'):tr('英語カード画像：Wizards公式（日本語版は公開され次第差し替え）','English card image: Wizards of the Coast (replaced by the Japanese version once published)')}</a><span className="block mt-1">© Wizards of the Coast</span></figcaption>}
   </figure>;
 }
