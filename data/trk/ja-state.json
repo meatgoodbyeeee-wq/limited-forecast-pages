@@ -1,9 +1,10 @@
 {
- "checked_at": "2026-10-31T05:18:15.939Z",
+ "checked_at": "2026-10-31T05:28:31.435Z",
  "gallery": "https://magic.wizards.com/ja/products/star-trek/card-image-gallery",
  "read": true,
- "cards": 811,
- "with_own_image": 307,
+ "cards": 1313,
+ "with_own_image": 336,
  "error": null,
- "names_ja": 307
+ "unmatched": [],
+ "names_ja": 336
 }
