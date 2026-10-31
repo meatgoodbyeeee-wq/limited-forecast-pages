@@ -1,23 +1,16 @@
 name: Collect set cards
 # (preview branch trk-b10-preview: collection also runs on pushes that touch this file; re-run 2026-10-26 for new previews)
+# NOTE: automatic runs are stopped for TRK (every card is published); manual runs only.
 # Reads the revealed cards of a set that is not out yet (TRK) from Wizards' official card gallery into data/<code>/target.json.gz.
 # GitHub Actions only: the cloud sandbox cannot reach Wizards. The daily run is at 05:37 JST, before the 06:07 JST site build.
 # Failures keep the stored cards (see data/<code>/collect-state.json for the reason and the gallery used).
 on:
-  schedule:
-    - cron: '37 20 * * *'
+  # All TRK cards are out (2026-10-31): the daily run and the push trigger are off. Run it by hand (workflow_dispatch) for a future set.
   workflow_dispatch:
     inputs:
       set:
         description: 'Set code (see lib/set-config.mjs)'
         default: 'TRK'
-  push:
-    paths:
-      - 'scripts/collect-set-cards.mjs'
-      - 'lib/official.mjs'
-      - 'lib/set-config.mjs'
-      - 'scripts/fetch-set-images.mjs'
-      - '.github/workflows/set-cards.yml'
 permissions:
   contents: write
   actions: write
