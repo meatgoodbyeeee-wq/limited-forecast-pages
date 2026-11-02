@@ -21,7 +21,9 @@ export function cardName(card:{name:string;id?:string;set?:string},lang:Lang){
   return entry?.name_ja||card.name;
 }
 type TextJa={name:string;type_line:string;oracle_text:string};
-const fraJa=(cardTextJa as {fra?:Record<string,TextJa>}).fra||{};
+// Japanese type line and rules text: FRA from data/card-text-ja.json, sets not out yet (TRK) from data/<code>/card-text-ja.json.
+const setTextJa=import.meta.glob('../data/*/card-text-ja.json',{eager:true,import:'default'}) as Record<string,{cards?:Record<string,TextJa>}>;
+const fraJa:Record<string,TextJa>={...((cardTextJa as {fra?:Record<string,TextJa>}).fra||{}),...Object.assign({},...Object.values(setTextJa).map(f=>f.cards||{}))};
 const similarJa=(cardTextJa as {similar?:Record<string,string>}).similar||{};
 /** Contentful mana codes ({oT}, {oCoC}, {o2o(r/g)}) as ordinary symbols ({T}, {C}{C}, {2}{R/G}). */
 export const manaSymbols=(t:string)=>t.replace(/\{((?:o[^o}]+)+)\}/g,(_,codes:string)=>codes.split('o').filter(Boolean).map(c=>'{'+c.replace(/[()]/g,'').toUpperCase()+'}').join(''));
