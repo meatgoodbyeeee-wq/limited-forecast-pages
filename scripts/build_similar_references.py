@@ -129,7 +129,7 @@ if COMPACT:
                 'id': info.get('id', f'{code}:{name}'), 'name': name, 'set': code,
                 'rarity': info.get('rarity') or 'common',
                 'colors': info.get('colors') or [], 'cmc': float(info.get('cmc') or 0), 'mana_cost': info.get('mana_cost', ''),
-                'type_line': info.get('type_line', ''), 'oracle_text': info.get('oracle_text', ''), 'power': num(info.get('power')), 'toughness': num(info.get('toughness')),
+                'type_line': info.get('type_line', ''), 'oracle_text': info.get('oracle_text', ''), 'power': str(info.get('power') or ''), 'toughness': str(info.get('toughness') or ''),
                 'source': info.get('source') or 'https://scryfall.com/search?q=' + urllib.parse.quote('!"%s"' % name),
                 'gih': float(r['gih_wr_pct']), 'gih_n': int(float(r['gih_games'])),
                 'alsa': a[0] if a else None, 'alsa_n': a[1] if a else 0,
