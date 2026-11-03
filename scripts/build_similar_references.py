@@ -24,7 +24,7 @@ UA = {'User-Agent': 'Sakiyomi/1.0 (limited forecast research)', 'Accept': 'appli
 RARITY = {0: 'common', 1: 'uncommon', 2: 'rare', 3: 'mythic'}
 stats, errors = {}, []
 
-def get(url, tries=3):
+def get(url, tries=3, wait=2):
     for i in range(tries):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=90) as r:
@@ -34,7 +34,7 @@ def get(url, tries=3):
             if i == tries - 1: raise
         except Exception:
             if i == tries - 1: raise
-        time.sleep(2 * (i + 1))
+        time.sleep(wait * (i + 1))
 
 csv.field_size_limit(10**7)
 rows = list(csv.DictReader(io.TextIOWrapper(gzip.open(SRC), encoding='utf-8')))
@@ -56,8 +56,8 @@ def scryfall_set(code):
     return out
 
 def scryfall_named(name, code):
-    d = get(f"https://api.scryfall.com/cards/named?exact={urllib.parse.quote(name)}")
-    time.sleep(0.12)
+    d = get(f"https://api.scryfall.com/cards/named?exact={urllib.parse.quote(name)}", tries=6, wait=5)
+    time.sleep(0.2)
     if not d: return None
     face = (d.get('card_faces') or [d])[0]
     return {'id': d['id'], 'mana_cost': d.get('mana_cost') or face.get('mana_cost', ''), 'colors': d.get('colors') if d.get('colors') is not None else face.get('colors', []),
@@ -121,7 +121,7 @@ if COMPACT:
             if int(float(r['gih_games'])) < MIN_GIH_GAMES: continue
             seen.add(front)
             try: info = scryfall_named(name, code)
-            except Exception: info = None
+            except Exception as e: info = None; errors.append(f'scryfall named {code} {name}: {e}'[:200])
             if not info: miss_sf += 1
             info = info or {}
             a = als[code].get(name) or als[code].get(front)
