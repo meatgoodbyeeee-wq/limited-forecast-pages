@@ -13,12 +13,12 @@ let changed = 0;
 doc.forecast.cards = pool.map(c => {
   const similar = labels ? similarCardsLabelled(c, index, model.models.gih, pool, labels) : similarCards(c, index, model.models.gih, pool);
   if (similar.map(s => s.set + s.name).join() !== (c.similar || []).map(s => s.set + s.name).join()) changed++;
-  const same_name = sameNameCards(c, index);
+  const same_name = sameNameCards(c, index, refs.name_only || []);
   if (same_name.length) return {...c, similar, same_name};
   const {same_name: _drop, ...rest} = c;
   return {...rest, similar};
 });
 fs.writeFileSync(FORECAST, gzipSync(JSON.stringify(doc)));
 const sets = {}; for (const c of doc.forecast.cards) for (const s of c.similar) sets[s.set] = (sets[s.set] || 0) + 1;
-console.log(`similar cards recomputed for ${pool.length} cards (${changed} changed) from ${refs.cards.length} references`);
+console.log(`similar cards recomputed for ${pool.length} cards (${changed} changed) from ${refs.cards.length} references (+${(refs.name_only || []).length} same-name only)`);
 console.log('sets used:', JSON.stringify(sets));

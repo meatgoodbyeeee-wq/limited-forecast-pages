@@ -17,7 +17,7 @@ fs.writeFileSync(new URL('../public/forecast.json',import.meta.url),JSON.stringi
 const original=read('target'),incumbent=read('model');
 // Similar-card candidates: the 22-set reference list when present (data/similar-references.json.gz)
 const refsFile=new URL('../data/similar-references.json.gz',import.meta.url);
-if(fs.existsSync(refsFile))incumbent.references={...incumbent.references,gih:JSON.parse(gunzipSync(fs.readFileSync(refsFile))).cards};
+if(fs.existsSync(refsFile)){const r=JSON.parse(gunzipSync(fs.readFileSync(refsFile)));incumbent.references={...incumbent.references,gih:r.cards,name_only:r.name_only||[]};}
 const labelsFile=new URL('../data/similar-labels.json.gz',import.meta.url);
 if(fs.existsSync(labelsFile))incumbent.similar_labels=JSON.parse(gunzipSync(fs.readFileSync(labelsFile)));
 let incoming;
