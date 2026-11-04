@@ -11,8 +11,9 @@ export const oracleOf = c => c?.oracle_id || (c?.card_faces || []).find(f => f.o
 // (Identity is already settled by the oracle_id, so no face is picked by its English name.)
 function printedJa(c) {
   const faces = c.card_faces || [];
-  if (faces.length > 1) return faces.every(f => f.printed_name) ? faces.map(f => f.printed_name).join(' // ') : null;
-  return c.printed_name || faces[0]?.printed_name || null;
+  const names = faces.length > 1 ? faces.map(f => f.printed_name) : [c.printed_name || faces[0]?.printed_name];
+  // a face still printed in English (some special prints) is not a Japanese name
+  return names.every(n => n && /[ぁ-ヿ一-鿿]/.test(n)) ? names.join(' // ') : null;
 }
 
 /**

@@ -48,3 +48,10 @@ test('a print whose furigana cannot be stripped cleanly is skipped (next print, 
   assert.equal(japaneseName([broken, swords()], ref), '剣を鍬に');
   assert.equal(japaneseName([broken], ref), null);
 });
+
+test('a print whose face is still in English is skipped', () => {
+  const en = {id: 'e1', lang: 'ja', oracle_id: D, name: 'Front Face // Back Face', set: 'otj', released_at: '2024-04-19', card_faces: [{name: 'Front Face', printed_name: 'Front Face'}, {name: 'Back Face', printed_name: '裏の名前'}]};
+  const ok = {...en, id: 'e2', set: 'old', released_at: '2020-01-01', card_faces: [{name: 'Front Face', printed_name: '表の名前'}, {name: 'Back Face', printed_name: '裏の名前'}]};
+  assert.equal(japaneseName([en, ok], {name: 'Front Face', set: 'OTJ', oracle_id: D}), '表の名前 // 裏の名前');
+  assert.equal(japaneseName([en], {name: 'Front Face', set: 'OTJ', oracle_id: D}), null);
+});
