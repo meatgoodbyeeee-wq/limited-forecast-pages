@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T10:30:00.940Z",
+ "generated_at": "2026-11-04T10:35:10.188Z",
  "sources": {
   "fra": "https://magic.wizards.com/ja/products/reality-fracture/card-image-gallery (Contentful locale ja)",
   "similar_lookup": "v6",
@@ -90,7 +90,7 @@
   "similar_sos": "1/1",
   "similar_msh": "1/1",
   "similar_partial": 58,
-  "similar_one_by_one": "65/90",
+  "similar_one_by_one": "60/85",
   "similar_gate_empty": {
    "count": 25,
    "examples": [
@@ -7817,6 +7817,11 @@
   "DOM|Tatyova, Benthic Druid": "水底のドルイド、タトヨヴァ",
   "M20|Unsummon": "送還",
   "ELD|Torbran, Thane of Red Fell": "朱地洞の族長、トーブラン",
+  "KLR|Chandra, Torch of Defiance": "反逆の先導者、チャンドラ",
+  "KLR|Rishkar, Peema Renegade": "ピーマの改革派、リシュカー",
+  "HBG|Prosper, Tome-Bound": "秘本に縛られし者、プロスパー",
+  "PIO|Consider": "考慮",
+  "FIN|Kenrith, the Returned King": "帰還した王、ケンリス",
   "EOE|Breeding Pool": "繁殖池",
   "EOE|Godless Shrine": "神無き祭殿",
   "EOE|Sacred Foundry": "聖なる鋳造所",
@@ -7830,12 +7835,7 @@
   "SOS|Last Gasp": "最後の喘ぎ",
   "MSH|Blazing Crescendo": "猛火の最高潮",
   "LCI|Growing Rites of Itlimoc": "イトリモクの成長儀式 // 太陽の揺籃の地、イトリモク",
-  "LCI|Treasure Map": "宝物の地図 // 宝物の入り江",
-  "KLR|Chandra, Torch of Defiance": "反逆の先導者、チャンドラ",
-  "KLR|Rishkar, Peema Renegade": "ピーマの改革派、リシュカー",
-  "HBG|Prosper, Tome-Bound": "秘本に縛られし者、プロスパー",
-  "PIO|Consider": "考慮",
-  "FIN|Kenrith, the Returned King": "帰還した王、ケンリス"
+  "LCI|Treasure Map": "宝物の地図 // 宝物の入り江"
  },
  "similar_oracle": {
   "AFR|Aberrant Mind Sorcerer": "753ead8c-f3f8-42fe-931d-79f5ee3ece54",
@@ -14094,6 +14094,11 @@
   "DOM|Tatyova, Benthic Druid": "0715e860-3b3b-4331-9718-207973e94fee",
   "M20|Unsummon": "837182db-1bf3-4a2c-bd01-1af9d9873561",
   "ELD|Torbran, Thane of Red Fell": "8c3495bf-02e7-4ad9-949d-92eb3d2b662a",
+  "KLR|Chandra, Torch of Defiance": "12cc800c-c7be-4811-8207-fd01a99cc892",
+  "KLR|Rishkar, Peema Renegade": "761021ce-4559-464e-aa03-85c2fe78e267",
+  "HBG|Prosper, Tome-Bound": "1e9b0fd6-5aae-401a-8df5-d94ce6442696",
+  "PIO|Consider": "4c9bcba6-87b5-4fb3-97ee-6fe5b739337d",
+  "FIN|Kenrith, the Returned King": "d209b948-9afb-4fd1-a961-72c87282878c",
   "EOE|Breeding Pool": "20283c4a-f1f0-42f0-bc08-6da87474426b",
   "EOE|Godless Shrine": "73864fcc-1bde-4bc0-831e-2b93e546e417",
   "EOE|Sacred Foundry": "45181cb8-2090-4471-ba90-e5a8f04d525f",
@@ -14107,12 +14112,7 @@
   "SOS|Last Gasp": "a82c3860-4dd6-4ffd-aa8f-ab8df687db6c",
   "MSH|Blazing Crescendo": "6344c96a-efa5-4125-8219-d333228391cf",
   "LCI|Growing Rites of Itlimoc": "ea9c459a-6047-43aa-968f-a582be4000e8",
-  "LCI|Treasure Map": "0b55eac6-a745-4bf4-8926-5ce83bc38d7d",
-  "KLR|Chandra, Torch of Defiance": "12cc800c-c7be-4811-8207-fd01a99cc892",
-  "KLR|Rishkar, Peema Renegade": "761021ce-4559-464e-aa03-85c2fe78e267",
-  "HBG|Prosper, Tome-Bound": "1e9b0fd6-5aae-401a-8df5-d94ce6442696",
-  "PIO|Consider": "4c9bcba6-87b5-4fb3-97ee-6fe5b739337d",
-  "FIN|Kenrith, the Returned King": "d209b948-9afb-4fd1-a961-72c87282878c"
+  "LCI|Treasure Map": "0b55eac6-a745-4bf4-8926-5ce83bc38d7d"
  },
  "similar_partial": [
   "LCI|Kellan, Daring Traveler",
