@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {japaneseLines} from './ja-lines.mjs';
-import {japaneseName, oracleOf, stripRuby} from './ja-name.mjs';
+import {japaneseNameInfo, oracleOf, stripRuby} from './ja-name.mjs';
 
 const OUT = new URL('../data/card-text-ja.json', import.meta.url);
 const UA = {'User-Agent': 'Sakiyomi/1.0 (limited forecast research)', Accept: 'application/json'};
@@ -110,7 +110,7 @@ try {
 
 // ---- Past sets: Japanese printed names from Scryfall, matched by oracle_id (see ja-name.mjs)
 // Candidate list = every card of the similar-card references (any forecast can show any of them) with its Scryfall oracle_id.
-const LOOKUP = 'v5'; // when it changes, every stored name is fetched again
+const LOOKUP = 'v6'; // when it changes, every stored name is fetched again
 const refsFile = new URL('../data/similar-references.json.gz', import.meta.url);
 const refDoc = fs.existsSync(refsFile) ? JSON.parse(gunzipSync(fs.readFileSync(refsFile))) : {};
 const refs = [];
@@ -123,6 +123,8 @@ const shown = new Set(forecast.cards.flatMap(c => (c.similar || []).map(s => `${
 const cacheOk = previous.sources?.similar_lookup === LOOKUP;
 const prevOracle = cacheOk ? previous.similar_oracle || {} : {};
 out.similar = {}; out.similar_oracle = {};
+const partial = new Set(cacheOk ? previous.similar_partial || [] : []); // names with a face that no Japanese print has yet (shown in English)
+const needOne = new Set(); // printing is in another Scryfall set than the 17Lands set: the set search cannot see it
 const put = (c, ja) => { const key = `${c.set}|${c.name}`; out.similar[key] = ja; out.similar_oracle[key] = c.oracle_id; };
 for (const c of refs) { // names stored by an earlier run stay while they belong to the same oracle_id
   const key = `${c.set}|${c.name}`;
@@ -145,29 +147,37 @@ for (const [set, list] of Object.entries(bySet)) {
       await sleep(sleepMs);
     }
     let n = 0;
-    for (const c of list) { const ja = japaneseName(prints.get(c.oracle_id), c); if (ja) { put(c, ja); n++; } else { delete out.similar[`${c.set}|${c.name}`]; delete out.similar_oracle[`${c.set}|${c.name}`]; } } // not found here: looked up one by one below
+    for (const c of list) {
+      const key = `${c.set}|${c.name}`;
+      if (c.print_set && String(c.print_set).toLowerCase() !== set.toLowerCase()) { needOne.add(key); continue; }
+      const info = japaneseNameInfo(prints.get(c.oracle_id), c);
+      if (info) { put(c, info.name); n++; if (info.complete) partial.delete(key); else partial.add(key); }
+      else { delete out.similar[key]; delete out.similar_oracle[key]; partial.delete(key); } // not found here: looked up one by one below
+    }
     out.stats[`similar_${set.toLowerCase()}`] = `${n}/${list.length}`;
   } catch (e) { if (!/^404 /.test(e.message)) out.errors.push(`similar ${set}: ${e.message}`); } // 404 = no Japanese prints in this set
 }
 // 2) one by one by oracle_id for what the set search missed (the 17Lands set differs from Scryfall's, double-faced cards, ...):
 //    names on display and every name_only card
 const nameOnly = new Set(refDoc.name_only || []); // all of them can show up (same-name slot, similar candidates)
-const oneByOne = refs.filter(c => c.oracle_id && !out.similar[`${c.set}|${c.name}`] && (shown.has(`${c.set}|${c.name}`) || nameOnly.has(c)));
+const oneByOne = refs.filter(c => { const k = `${c.set}|${c.name}`; return c.oracle_id && (partial.has(k) || !out.similar[k] && (shown.has(k) || nameOnly.has(c) || needOne.has(k))); });
 const deadline = Date.now() + 20 * 60 * 1000;
 let looked = 0, empty = [];
 for (const c of oneByOne) {
   if (Date.now() > deadline) { out.errors.push('similar: one-by-one lookups stopped at the time limit'); break; }
   try {
     const d = await get(`https://api.scryfall.com/cards/search?q=${encodeURIComponent(`oracleid:${c.oracle_id} lang:ja`)}&unique=prints`);
-    const ja = japaneseName(d.data, c);
+    const info = japaneseNameInfo(d.data, c), key = `${c.set}|${c.name}`;
     looked++;
-    if (ja) put(c, ja); else empty.push(`${c.set}|${c.name}`);
+    if (info) { put(c, info.name); if (info.complete) partial.delete(key); else partial.add(key); } else { empty.push(key); partial.delete(key); }
   } catch (e) {
     if (/^404 /.test(e.message)) empty.push(`${c.set}|${c.name}`); // no Japanese print
     else out.errors.push(`similar lookup ${c.set}|${c.name}: ${e.message}`);
   }
   await sleep(sleepMs);
 }
+out.similar_partial = [...partial].filter(k => out.similar[k]).sort();
+out.stats.similar_partial = out.similar_partial.length;
 out.stats.similar_one_by_one = `${oneByOne.length - empty.length}/${oneByOne.length}`;
 if (empty.length) out.stats.similar_gate_empty = {count: empty.length, examples: empty.slice(0, 10)}; // no Japanese print of this oracle_id with matching faces: English name is shown
 for (const k of Object.keys(out.similar)) out.similar[k] = stripRuby(out.similar[k]);
