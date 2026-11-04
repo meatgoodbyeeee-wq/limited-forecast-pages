@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {japaneseLines} from './ja-lines.mjs';
 import {japaneseNameInfo, oracleOf, stripRuby} from './ja-name.mjs';
+import {targetFronts, lookupRefs} from './ja-targets.mjs';
 
 const OUT = new URL('../data/card-text-ja.json', import.meta.url);
 const UA = {'User-Agent': 'Sakiyomi/1.0 (limited forecast research)', Accept: 'application/json'};
@@ -113,12 +114,11 @@ try {
 const LOOKUP = 'v6'; // when it changes, every stored name is fetched again
 const refsFile = new URL('../data/similar-references.json.gz', import.meta.url);
 const refDoc = fs.existsSync(refsFile) ? JSON.parse(gunzipSync(fs.readFileSync(refsFile))) : {};
-const refs = [];
+// Extra same-name-only sets (~10,000 cards) are looked up only for cards that share a name with a forecast-set card (FRA, TRK, ...); the 22 reference sets are looked up in full.
+const {refs, skipped: extraSkipped} = lookupRefs(refDoc, targetFronts(new URL('../', import.meta.url), forecast.cards));
+out.stats.same_name_extra_not_looked_up = extraSkipped;
 const refByKey = new Map(); // `SET|name` (full name and front name) -> reference card
-for (const c of [...(refDoc.cards || []), ...(refDoc.name_only || [])]) {
-  refs.push(c);
-  for (const k of new Set([c.name, c.name.split(' // ')[0]])) if (!refByKey.has(`${c.set}|${k}`)) refByKey.set(`${c.set}|${k}`, c);
-}
+for (const c of refs) for (const k of new Set([c.name, c.name.split(' // ')[0]])) if (!refByKey.has(`${c.set}|${k}`)) refByKey.set(`${c.set}|${k}`, c);
 const shown = new Set(forecast.cards.flatMap(c => (c.similar || []).map(s => `${String(s.set).toUpperCase()}|${s.name}`)));
 const cacheOk = previous.sources?.similar_lookup === LOOKUP;
 const prevOracle = cacheOk ? previous.similar_oracle || {} : {};
@@ -159,7 +159,7 @@ for (const [set, list] of Object.entries(bySet)) {
 }
 // 2) one by one by oracle_id for what the set search missed (the 17Lands set differs from Scryfall's, double-faced cards, ...):
 //    names on display and every name_only card
-const nameOnly = new Set(refDoc.name_only || []); // all of them can show up (same-name slot, similar candidates)
+const inRefs = new Set(refs), nameOnly = new Set((refDoc.name_only || []).filter(c => inRefs.has(c))); // the 22 sets' name_only and the extra ones that can show up in a same-name slot
 const oneByOne = refs.filter(c => { const k = `${c.set}|${c.name}`; return c.oracle_id && (partial.has(k) || !out.similar[k] && (shown.has(k) || nameOnly.has(c) || needOne.has(k))); });
 const deadline = Date.now() + 20 * 60 * 1000;
 let looked = 0, empty = [];
