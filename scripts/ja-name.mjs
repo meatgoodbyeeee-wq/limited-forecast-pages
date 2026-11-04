@@ -34,7 +34,7 @@ export function japaneseName(prints, ref) {
     if (c.lang && c.lang !== 'ja') continue;
     if (oracleOf(c) !== ref.oracle_id) continue; // gate: same card, not just the same face name
     const ja = faceJa(c, parts);
-    if (ja) ok.push({c, ja});
+    if (ja && !/[（）()]/.test(stripRuby(ja))) ok.push({c, ja}); // furigana we could not strip cleanly: not usable
   }
   if (!ok.length) return null;
   const own = x => (String(x.c.set).toLowerCase() === set ? 0 : 1);

@@ -126,7 +126,7 @@ out.similar = {}; out.similar_oracle = {};
 const put = (c, ja) => { const key = `${c.set}|${c.name}`; out.similar[key] = ja; out.similar_oracle[key] = c.oracle_id; };
 for (const c of refs) { // names stored by an earlier run stay while they belong to the same oracle_id
   const key = `${c.set}|${c.name}`;
-  if (c.oracle_id && previous.similar?.[key] && prevOracle[key] === c.oracle_id) put(c, previous.similar[key]);
+  if (c.oracle_id && previous.similar?.[key] && !/[（）()]/.test(previous.similar[key]) && prevOracle[key] === c.oracle_id) put(c, previous.similar[key]);
 }
 const noOracle = refs.filter(c => !c.oracle_id);
 out.stats.similar_no_oracle_id = noOracle.length;
@@ -145,13 +145,14 @@ for (const [set, list] of Object.entries(bySet)) {
       await sleep(sleepMs);
     }
     let n = 0;
-    for (const c of list) { const ja = japaneseName(prints.get(c.oracle_id), c); if (ja) { put(c, ja); n++; } }
+    for (const c of list) { const ja = japaneseName(prints.get(c.oracle_id), c); if (ja) { put(c, ja); n++; } else { delete out.similar[`${c.set}|${c.name}`]; delete out.similar_oracle[`${c.set}|${c.name}`]; } } // not found here: looked up one by one below
     out.stats[`similar_${set.toLowerCase()}`] = `${n}/${list.length}`;
   } catch (e) { if (!/^404 /.test(e.message)) out.errors.push(`similar ${set}: ${e.message}`); } // 404 = no Japanese prints in this set
 }
 // 2) one by one by oracle_id for what the set search missed (the 17Lands set differs from Scryfall's, double-faced cards, ...):
-//    names on display and 3,000+ game cards that can be similar-card candidates
-const oneByOne = refs.filter(c => c.oracle_id && !out.similar[`${c.set}|${c.name}`] && (shown.has(`${c.set}|${c.name}`) || (refDoc.name_only || []).includes(c) && c.gih_n >= 3000));
+//    names on display and every name_only card
+const nameOnly = new Set(refDoc.name_only || []); // all of them can show up (same-name slot, similar candidates)
+const oneByOne = refs.filter(c => c.oracle_id && !out.similar[`${c.set}|${c.name}`] && (shown.has(`${c.set}|${c.name}`) || nameOnly.has(c)));
 const deadline = Date.now() + 20 * 60 * 1000;
 let looked = 0, empty = [];
 for (const c of oneByOne) {

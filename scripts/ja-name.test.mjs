@@ -41,3 +41,9 @@ test('furigana is removed', () => {
   assert.equal(stripRuby('旅（たび）路（じ）の続（つづ）き'), '旅路の続き');
   assert.equal(japaneseName([swords({printed_name: '不（ふ）屈（くつ）の追（つい）跡（せき）者（しゃ）'})], ref), '不屈の追跡者');
 });
+
+test('a print whose furigana cannot be stripped cleanly is skipped (next print, else empty)', () => {
+  const broken = swords({id: 'y1', printed_name: '用（よう）心じん）棒', released_at: '2025-01-01'});
+  assert.equal(japaneseName([broken, swords()], ref), '剣を鍬に');
+  assert.equal(japaneseName([broken], ref), null);
+});
