@@ -10,7 +10,7 @@ Inputs
 - compact_28d/<SET>_gih_28d.csv (optional 3rd argument): 17Lands 28-day GIH of every card. Cards that have a measurement there
   but are missing from the pool above (Scryfall lists them under another set: bonus sheets, reprint slots) are written to
   "name_only". They are shown in the "same-name cards" slot, and those with label vectors and 3,000+ GIH games are also similar-card candidates.
-- Extra past sets (scripts/extra_sets.py): 17Lands PremierDraft sets outside the 22 (HBG, ELD, ZNR, ... except OM1/DBL/MAT, Y-sets, cubes, FRA) are measured over the same 28-day
+- Extra past sets (scripts/extra_sets.py; a change there is picked up by this workflow only through this file): 17Lands PremierDraft sets outside the 22 (HBG, ELD, ZNR, ... except OM1/DBL/MAT, Y-sets, cubes, FRA) are measured over the same 28-day
   window (shorter if the set is newer; recorded in stats) and written to "name_only" only. They have no labels and are never similar-card candidates, never in "cards".
 - Every card carries its Scryfall oracle_id and the printing it was read from (print_set, collector_number: for `cards` the printing in the 17Lands set, for `name_only` the representative printing Scryfall returned); Japanese names are matched by it (scripts/fetch-japanese-text.mjs), never by name.
 
