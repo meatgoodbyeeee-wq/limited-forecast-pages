@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {japaneseLines} from './ja-lines.mjs';
+import {japaneseNameInfo, oracleOf, stripRuby} from './ja-name.mjs';
 
 const OUT = new URL('../data/card-text-ja.json', import.meta.url);
 const UA = {'User-Agent': 'Sakiyomi/1.0 (limited forecast research)', Accept: 'application/json'};
@@ -22,7 +23,7 @@ const get = async (url, json = true) => {
 
 const forecast = JSON.parse(gunzipSync(fs.readFileSync(new URL('../public/forecast.json.gz', import.meta.url)))).forecast;
 const previous = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
-const out = {generated_at: new Date().toISOString(), sources: {}, stats: {}, errors: [], fra: previous.fra || {}, similar: previous.similar || {}};
+const out = {generated_at: new Date().toISOString(), sources: {}, stats: {}, errors: [], fra: previous.fra || {}, similar: {}};
 const entities = s => s.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&');
 // Paragraph/line tags become newlines; escaped markup (&lt;i&gt;) is decoded first so it is stripped too.
 const clean = s => entities(entities(s || ''))
@@ -107,47 +108,81 @@ try {
   delete out.scryfall_fra;
 }
 
-// ---- Past sets: Japanese printed names from Scryfall
-const wanted = {};
-// Every card of the similar-card candidate list (any forecast, FRA or a preview set, can show any of them), plus what the FRA forecast shows now.
+// ---- Past sets: Japanese printed names from Scryfall, matched by oracle_id (see ja-name.mjs)
+// Candidate list = every card of the similar-card references (any forecast can show any of them) with its Scryfall oracle_id.
+const LOOKUP = 'v6'; // when it changes, every stored name is fetched again
 const refsFile = new URL('../data/similar-references.json.gz', import.meta.url);
 const refDoc = fs.existsSync(refsFile) ? JSON.parse(gunzipSync(fs.readFileSync(refsFile))) : {};
-const refCards = [...(refDoc.cards || []), ...(refDoc.name_only || [])];
-for (const c of refCards) (wanted[c.set.toLowerCase()] ||= new Set()).add(c.name);
-for (const c of forecast.cards) for (const s of c.similar || []) (wanted[s.set.toLowerCase()] ||= new Set()).add(s.name);
-const shown = new Set(forecast.cards.flatMap(c => (c.similar || []).map(s => `${s.set.toLowerCase()}|${s.name}`)));
-const similar = {};
-for (const [set, names] of Object.entries(wanted)) {
+const refs = [];
+const refByKey = new Map(); // `SET|name` (full name and front name) -> reference card
+for (const c of [...(refDoc.cards || []), ...(refDoc.name_only || [])]) {
+  refs.push(c);
+  for (const k of new Set([c.name, c.name.split(' // ')[0]])) if (!refByKey.has(`${c.set}|${k}`)) refByKey.set(`${c.set}|${k}`, c);
+}
+const shown = new Set(forecast.cards.flatMap(c => (c.similar || []).map(s => `${String(s.set).toUpperCase()}|${s.name}`)));
+const cacheOk = previous.sources?.similar_lookup === LOOKUP;
+const prevOracle = cacheOk ? previous.similar_oracle || {} : {};
+out.similar = {}; out.similar_oracle = {};
+const partial = new Set(cacheOk ? previous.similar_partial || [] : []); // names with a face that no Japanese print has yet (shown in English)
+const needOne = new Set(); // printing is in another Scryfall set than the 17Lands set: the set search cannot see it
+const put = (c, ja) => { const key = `${c.set}|${c.name}`; out.similar[key] = ja; out.similar_oracle[key] = c.oracle_id; };
+for (const c of refs) { // names stored by an earlier run stay while they belong to the same oracle_id
+  const key = `${c.set}|${c.name}`;
+  if (c.oracle_id && previous.similar?.[key] && !/[（）()]/.test(previous.similar[key]) && prevOracle[key] === c.oracle_id) put(c, previous.similar[key]);
+}
+const noOracle = refs.filter(c => !c.oracle_id);
+out.stats.similar_no_oracle_id = noOracle.length;
+const bySet = {};
+for (const c of refs) if (c.oracle_id) (bySet[c.set] ||= []).push(c);
+const sleepMs = 500;
+// 1) per set: all Japanese prints of the set, grouped by oracle_id
+for (const [set, list] of Object.entries(bySet)) {
   try {
-    let url = `https://api.scryfall.com/cards/search?q=${encodeURIComponent(`set:${set} lang:ja`)}&unique=prints`, n = 0;
+    const prints = new Map();
+    let url = `https://api.scryfall.com/cards/search?q=${encodeURIComponent(`set:${set.toLowerCase()} lang:ja`)}&unique=prints`;
     while (url) {
       const d = await get(url);
-      for (const c of d.data) {
-        const ja = c.printed_name || (c.card_faces || []).map(f => f.printed_name).filter(Boolean).join(' // ');
-        if (!ja) continue;
-        const keys = [c.name, c.name.split(' // ')[0]];
-        for (const k of keys) if (names.has(k) && !similar[`${set.toUpperCase()}|${k}`]) { similar[`${set.toUpperCase()}|${k}`] = ja; n++; }
-      }
+      for (const c of d.data) { const o = oracleOf(c); if (o) (prints.get(o) || prints.set(o, []).get(o)).push(c); }
       url = d.has_more ? d.next_page : null;
-      await sleep(500);
+      await sleep(sleepMs);
     }
-    out.stats[`similar_${set}`] = `${n}/${names.size}`;
-  } catch (e) { out.errors.push(`similar ${set}: ${e.message}`); }
+    let n = 0;
+    for (const c of list) {
+      const key = `${c.set}|${c.name}`;
+      if (c.print_set && String(c.print_set).toLowerCase() !== set.toLowerCase()) { needOne.add(key); continue; }
+      const info = japaneseNameInfo(prints.get(c.oracle_id), c);
+      if (info) { put(c, info.name); n++; if (info.complete) partial.delete(key); else partial.add(key); }
+      else { delete out.similar[key]; delete out.similar_oracle[key]; partial.delete(key); } // not found here: looked up one by one below
+    }
+    out.stats[`similar_${set.toLowerCase()}`] = `${n}/${list.length}`;
+  } catch (e) { if (!/^404 /.test(e.message)) out.errors.push(`similar ${set}: ${e.message}`); } // 404 = no Japanese prints in this set
 }
-// Names the per-set search missed (e.g. some double-faced cards): look them up one by one.
-for (const [set, names] of Object.entries(wanted)) for (const name of names) {
-  const key = `${set.toUpperCase()}|${name}`;
-  if (similar[key] || previous.similar?.[key]) continue;
-  if (!shown.has(`${set}|${name}`)) continue; // one-by-one lookups only for names on display
+// 2) one by one by oracle_id for what the set search missed (the 17Lands set differs from Scryfall's, double-faced cards, ...):
+//    names on display and every name_only card
+const nameOnly = new Set(refDoc.name_only || []); // all of them can show up (same-name slot, similar candidates)
+const oneByOne = refs.filter(c => { const k = `${c.set}|${c.name}`; return c.oracle_id && (partial.has(k) || !out.similar[k] && (shown.has(k) || nameOnly.has(c) || needOne.has(k))); });
+const deadline = Date.now() + 20 * 60 * 1000;
+let looked = 0, empty = [];
+for (const c of oneByOne) {
+  if (Date.now() > deadline) { out.errors.push('similar: one-by-one lookups stopped at the time limit'); break; }
   try {
-    const d = await get(`https://api.scryfall.com/cards/search?q=${encodeURIComponent(`!"${name}" lang:ja`)}&unique=prints`);
-    const c = d.data.find(x => x.printed_name || x.card_faces?.some(f => f.printed_name));
-    const ja = c && (c.printed_name || c.card_faces.map(f => f.printed_name).filter(Boolean).join(' // '));
-    if (ja) similar[key] = ja;
-  } catch { /* not printed in Japanese */ }
-  await sleep(500);
+    const d = await get(`https://api.scryfall.com/cards/search?q=${encodeURIComponent(`oracleid:${c.oracle_id} lang:ja`)}&unique=prints`);
+    const info = japaneseNameInfo(d.data, c), key = `${c.set}|${c.name}`;
+    looked++;
+    if (info) { put(c, info.name); if (info.complete) partial.delete(key); else partial.add(key); } else { empty.push(key); partial.delete(key); }
+  } catch (e) {
+    if (/^404 /.test(e.message)) empty.push(`${c.set}|${c.name}`); // no Japanese print
+    else out.errors.push(`similar lookup ${c.set}|${c.name}: ${e.message}`);
+  }
+  await sleep(sleepMs);
 }
-if (Object.keys(similar).length) { out.similar = {...out.similar, ...similar}; out.sources.similar = 'Scryfall (lang:ja printed_name)'; }
+out.similar_partial = [...partial].filter(k => out.similar[k]).sort();
+out.stats.similar_partial = out.similar_partial.length;
+out.stats.similar_one_by_one = `${oneByOne.length - empty.length}/${oneByOne.length}`;
+if (empty.length) out.stats.similar_gate_empty = {count: empty.length, examples: empty.slice(0, 10)}; // no Japanese print of this oracle_id with matching faces: English name is shown
+for (const k of Object.keys(out.similar)) out.similar[k] = stripRuby(out.similar[k]);
+if (!out.errors.length) out.sources.similar_lookup = LOOKUP; // keep redoing until a run finishes without errors
+if (Object.keys(out.similar).length) out.sources.similar = 'Scryfall (lang:ja printed_name, matched by oracle_id)';
 
 // Only rewrite when something other than the timestamp changed, so reruns don't create empty commits.
 const {generated_at: _a, ...nextBody} = out, {generated_at: _b, ...prevBody} = previous;

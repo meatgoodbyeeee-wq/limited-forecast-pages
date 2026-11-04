@@ -9,7 +9,8 @@ Inputs
 
 - compact_28d/<SET>_gih_28d.csv (optional 3rd argument): 17Lands 28-day GIH of every card. Cards that have a measurement there
   but are missing from the pool above (Scryfall lists them under another set: bonus sheets, reprint slots) are written to
-  "name_only". They are shown only in the "same-name cards" slot and are never similar-card candidates.
+  "name_only". They are shown in the "same-name cards" slot, and those with label vectors and 3,000+ GIH games are also similar-card candidates.
+- Every card carries its Scryfall oracle_id and the printing it was read from (print_set, collector_number: for `cards` the printing in the 17Lands set, for `name_only` the representative printing Scryfall returned); Japanese names are matched by it (scripts/fetch-japanese-text.mjs), never by name.
 
 Usage: python3 scripts/build_similar_references.py <dev_feature_22.csv.gz> [out] [compact_28d dir]
 """
@@ -40,6 +41,10 @@ csv.field_size_limit(10**7)
 rows = list(csv.DictReader(io.TextIOWrapper(gzip.open(SRC), encoding='utf-8')))
 sets = sorted({r['set'] for r in rows})
 
+def oracle_of(c):
+    """Scryfall oracle_id of a card object (top level; for layouts that only carry it per face, the first face)."""
+    return c.get('oracle_id') or next((f.get('oracle_id') for f in c.get('card_faces') or [] if f.get('oracle_id')), None)
+
 def scryfall_set(code):
     out, url = {}, f"https://api.scryfall.com/cards/search?q={urllib.parse.quote(f'e:{code.lower()}')}&unique=cards"
     while url:
@@ -47,7 +52,7 @@ def scryfall_set(code):
         if not d: break
         for c in d['data']:
             face = (c.get('card_faces') or [c])[0]
-            info = {'id': c['id'], 'mana_cost': c.get('mana_cost') or face.get('mana_cost', ''),
+            info = {'id': c['id'], 'oracle_id': oracle_of(c), 'print_set': c.get('set'), 'collector_number': c.get('collector_number'), 'mana_cost': c.get('mana_cost') or face.get('mana_cost', ''),
                     'colors': c.get('colors') if c.get('colors') is not None else face.get('colors', []),
                     'rarity': c.get('rarity'), 'source': c.get('scryfall_uri', '').split('?')[0]}
             for k in (c['name'], c['name'].split(' // ')[0]): out.setdefault(k, info)
@@ -57,7 +62,7 @@ def scryfall_set(code):
 
 def card_info(d):
     face = (d.get('card_faces') or [d])[0]
-    return {'id': d['id'], 'mana_cost': d.get('mana_cost') or face.get('mana_cost', ''), 'colors': d.get('colors') if d.get('colors') is not None else face.get('colors', []),
+    return {'id': d['id'], 'oracle_id': oracle_of(d), 'print_set': d.get('set'), 'collector_number': d.get('collector_number'), 'mana_cost': d.get('mana_cost') or face.get('mana_cost', ''), 'colors': d.get('colors') if d.get('colors') is not None else face.get('colors', []),
             'rarity': d.get('rarity'), 'source': d.get('scryfall_uri', '').split('?')[0],
             'cmc': d.get('cmc'), 'type_line': face.get('type_line') or d.get('type_line', ''), 'oracle_text': face.get('oracle_text') or d.get('oracle_text', ''),
             'power': face.get('power') or d.get('power'), 'toughness': face.get('toughness') or d.get('toughness')}
@@ -118,7 +123,7 @@ for code in sets:
         if not a: miss_al += 1
         colors = (info or {}).get('colors') or [c for c in 'WUBRG' if r.get(f'color_{c}') == '1']
         refs.append({
-            'id': (info or {}).get('id', f'{code}:{name}'), 'name': name, 'set': code,
+            'id': (info or {}).get('id', f'{code}:{name}'), 'oracle_id': (info or {}).get('oracle_id'), 'print_set': (info or {}).get('print_set'), 'collector_number': (info or {}).get('collector_number'), 'name': name, 'set': code,
             'rarity': (info or {}).get('rarity') or RARITY.get(int(float(r['rarity_ord'] or 0)), 'common'),
             'colors': colors, 'cmc': float(r['mv'] or 0), 'mana_cost': (info or {}).get('mana_cost', ''),
             'type_line': r['type_line'], 'oracle_text': r['oracle_text'], 'power': num(r['power']), 'toughness': num(r['toughness']),
@@ -126,7 +131,7 @@ for code in sets:
             'gih': float(r['gih_wr_pct']), 'gih_n': int(float(r['gih_games'])),
             'alsa': a[0] if a else None, 'alsa_n': a[1] if a else 0,
         })
-    stats[code] = {'cards': len(srows), 'scryfall_missing': miss_sf, 'alsa_missing': miss_al}
+    stats[code] = {'cards': len(srows), 'scryfall_missing': miss_sf, 'alsa_missing': miss_al, 'oracle_id_missing': sum(1 for x in refs if x['set'] == code and not x['oracle_id'])}
     print(code, stats[code], flush=True)
 
 # Cards with a 17Lands measurement that the Scryfall set listing dropped: same-name slot only.
@@ -161,7 +166,7 @@ if COMPACT:
         info = info or {}
         a = als[code].get(name) or als[code].get(front)
         name_only.append({
-            'id': info.get('id', f'{code}:{name}'), 'name': name, 'set': code,
+            'id': info.get('id', f'{code}:{name}'), 'oracle_id': info.get('oracle_id'), 'print_set': info.get('print_set'), 'collector_number': info.get('collector_number'), 'name': name, 'set': code,
             'rarity': info.get('rarity') or 'common',
             'colors': info.get('colors') or [], 'cmc': float(info.get('cmc') or 0), 'mana_cost': info.get('mana_cost', ''),
             'type_line': info.get('type_line', ''), 'oracle_text': info.get('oracle_text', ''), 'power': str(info.get('power') or ''), 'toughness': str(info.get('toughness') or ''),
@@ -171,8 +176,11 @@ if COMPACT:
         })
     for code in sets:
         stats[code].setdefault('name_only', 0); stats[code].setdefault('name_only_scryfall_missing', 0)
+        stats[code]['name_only_oracle_id_missing'] = sum(1 for x in name_only if x['set'] == code and not x['oracle_id'])
         print(code, 'name_only', stats[code]['name_only'], 'scryfall_missing', stats[code]['name_only_scryfall_missing'], flush=True)
 
+missing = sum(1 for x in refs + name_only if not x['oracle_id'])
+if missing: errors.append(f'oracle_id missing for {missing} cards (names fall back to English)')
 body = {'sets': sets, 'stats': stats, 'errors': errors, 'cards': refs}
 if COMPACT: body['name_only'] = name_only
 try:
