@@ -10,11 +10,15 @@ Inputs
 - compact_28d/<SET>_gih_28d.csv (optional 3rd argument): 17Lands 28-day GIH of every card. Cards that have a measurement there
   but are missing from the pool above (Scryfall lists them under another set: bonus sheets, reprint slots) are written to
   "name_only". They are shown in the "same-name cards" slot, and those with label vectors and 3,000+ GIH games are also similar-card candidates.
+- Extra past sets (scripts/extra_sets.py): 17Lands PremierDraft sets outside the 22 (HBG, ELD, ZNR, ... except OM1/DBL/MAT, Y-sets, cubes, FRA) are measured over the same 28-day
+  window (shorter if the set is newer; recorded in stats) and written to "name_only" only. They have no labels and are never similar-card candidates, never in "cards".
 - Every card carries its Scryfall oracle_id and the printing it was read from (print_set, collector_number: for `cards` the printing in the 17Lands set, for `name_only` the representative printing Scryfall returned); Japanese names are matched by it (scripts/fetch-japanese-text.mjs), never by name.
 
 Usage: python3 scripts/build_similar_references.py <dev_feature_22.csv.gz> [out] [compact_28d dir]
 """
-import csv, gzip, io, json, os, sys, time, urllib.parse, urllib.request
+import csv, datetime, gzip, io, json, os, sys, time, urllib.parse, urllib.request
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import extra_sets
 
 SRC = sys.argv[1]
 OUT = sys.argv[2] if len(sys.argv) > 2 else 'data/similar-references.json.gz'
@@ -179,10 +183,25 @@ if COMPACT:
         stats[code]['name_only_oracle_id_missing'] = sum(1 for x in name_only if x['set'] == code and not x['oracle_id'])
         print(code, 'name_only', stats[code]['name_only'], 'scryfall_missing', stats[code]['name_only_scryfall_missing'], flush=True)
 
+# Extra past sets: same-name slot only (see scripts/extra_sets.py). One failing set never stops the rest.
+def _post_collection(body):
+    req = urllib.request.Request('https://api.scryfall.com/cards/collection', data=json.dumps(body).encode(), headers={**UA, 'Content-Type': 'application/json'})
+    with urllib.request.urlopen(req, timeout=30) as r: return json.load(r)
+def _card_data(code, start, end):
+    q = urllib.parse.urlencode({'expansion': code, 'event_type': 'PremierDraft', 'start_date': start, 'end_date': end})
+    d = get('https://www.17lands.com/api/card_data?' + q); time.sleep(1.0); return d
+extra_summary = []
+try:
+    extra_no, extra_stats, extra_summary = extra_sets.build_extra(get, _card_data, _post_collection, datetime.date.today(), time.time() + 20 * 60, errors)
+    name_only += extra_no; stats.update(extra_stats)
+    for row in extra_summary: print('extra', row, flush=True)
+except Exception as e: errors.append(f'extra sets: {e}'[:200])
+
 missing = sum(1 for x in refs + name_only if not x['oracle_id'])
 if missing: errors.append(f'oracle_id missing for {missing} cards (names fall back to English)')
 body = {'sets': sets, 'stats': stats, 'errors': errors, 'cards': refs}
-if COMPACT: body['name_only'] = name_only
+if COMPACT or name_only: body['name_only'] = name_only
+if extra_summary: body['extra_sets'] = extra_summary
 try:
     with gzip.open(OUT, 'rt', encoding='utf-8') as f: prev = json.load(f); prev.pop('built_at', None)
 except (FileNotFoundError, ValueError): prev = None
