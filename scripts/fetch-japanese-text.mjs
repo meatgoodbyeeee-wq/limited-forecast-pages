@@ -168,6 +168,7 @@ for (const [set, names] of Object.entries(wanted)) for (const name of names) {
   else if (redo && !failed && out.similar[key]) delete out.similar[key]; // unverifiable old value: show the English name instead
   await sleep(500);
 }
+for (const k of Object.keys(out.similar)) out.similar[k] = stripRuby(out.similar[k]); // also old entries
 if (!out.errors.length) out.sources.similar_lookup = LOOKUP; // keep redoing until a run finishes without errors
 if (Object.keys(similar).length) { out.similar = {...out.similar, ...similar}; out.sources.similar = 'Scryfall (lang:ja printed_name)'; }
 
