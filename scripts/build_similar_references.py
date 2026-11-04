@@ -9,7 +9,8 @@ Inputs
 
 - compact_28d/<SET>_gih_28d.csv (optional 3rd argument): 17Lands 28-day GIH of every card. Cards that have a measurement there
   but are missing from the pool above (Scryfall lists them under another set: bonus sheets, reprint slots) are written to
-  "name_only". They are shown only in the "same-name cards" slot and are never similar-card candidates.
+  "name_only". They are shown in the "same-name cards" slot, and those with label vectors and 3,000+ GIH games are also similar-card candidates.
+- Every card carries its Scryfall oracle_id; Japanese names are matched by it (scripts/fetch-japanese-text.mjs), never by name.
 
 Usage: python3 scripts/build_similar_references.py <dev_feature_22.csv.gz> [out] [compact_28d dir]
 """
