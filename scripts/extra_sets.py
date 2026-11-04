@@ -120,16 +120,20 @@ def lookup(identifiers, post, deadline, errors, label):
 def build_set(p, fetch_cards, post, deadline, errors):
     """One planned set -> (name_only entries, stats). Raises on failure (the caller records it and goes on with the next set)."""
     code, scry = p['code'], p['scryfall_set']
-    rows = measured_cards(card_rows(fetch_cards(code, p['window_start'], p['window_end'])))
-    if not rows: raise RuntimeError('17Lands returned no card with 500+ GIH games')
+    payload = fetch_cards(code, p['window_start'], p['window_end'])
+    rows = measured_cards(card_rows(payload))
+    if not rows:
+        raw = card_rows(payload)
+        raise RuntimeError(f"17Lands returned no card with 500+ GIH games ({p['window_start']}..{p['window_end']}, {len(raw)} rows, most GIH games {max([int(c.get('ever_drawn_game_count') or 0) for c in raw] or [0])})")
     # 1) the printing in the set itself (A- names: as 17Lands writes them first, then without the prefix); 2) by name only for the rest
-    ids = [{'name': r['name'], 'set': scry} for r in rows] + [{'name': unalchemy(r['name']), 'set': scry} for r in rows if r['name'].startswith('A-')]
+    # Scryfall's collection endpoint does not always resolve a split / adventure card by its full "A // B" name: its front name is asked for too.
+    ids = [{'name': r['name'], 'set': scry} for r in rows] + [{'name': unalchemy(r['name']), 'set': scry} for r in rows if r['name'].startswith('A-')] + [{'name': front_of(r['name']), 'set': scry} for r in rows if ' // ' in r['name']]
     in_set = lookup(ids, post, deadline, f'extra {code}', errors)
     hit = lambda r: in_set.get((r['name'].lower(), scry)) or in_set.get((front_of(r['name']).lower(), scry)) or in_set.get((unalchemy(r['name']).lower(), scry))
     n_hit = sum(1 for r in rows if hit(r))
     if n_hit < MIN_SET_HIT_RATE * len(rows): raise RuntimeError(f'only {n_hit}/{len(rows)} cards found in Scryfall set {scry}; not added')
     rest = [r for r in rows if not hit(r)]
-    rest_names = sorted({n for r in rest for n in {r['name'], unalchemy(r['name'])}})
+    rest_names = sorted({n for r in rest for n in {r['name'], unalchemy(r['name']), front_of(unalchemy(r['name']))}})
     by_name = lookup([{'name': n} for n in rest_names], post, deadline, f'extra {code}', errors) if rest else {}
     out, fallback, missing = [], 0, 0
     for r in rows:

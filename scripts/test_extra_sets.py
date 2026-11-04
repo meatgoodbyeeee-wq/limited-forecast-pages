@@ -19,6 +19,7 @@ CARDS = {  # (name lowercase, set) -> scryfall card
     ('kenrith, the returned king', 'eld'): {'id': 'k1', 'oracle_id': 'O-KEN', 'name': 'Kenrith, the Returned King', 'set': 'eld', 'collector_number': '303', 'mana_cost': '{4}{W}', 'colors': ['W'], 'rarity': 'mythic', 'scryfall_uri': 'https://scryfall.com/card/eld/303/k', 'cmc': 5, 'type_line': 'Legendary Creature', 'oracle_text': 'k'},
     ('bonecrusher giant', 'eld'): {'id': 'b1', 'oracle_id': 'O-BONE', 'name': 'Bonecrusher Giant // Stomp', 'set': 'eld', 'collector_number': '115', 'rarity': 'rare', 'scryfall_uri': 'https://scryfall.com/card/eld/115/b', 'cmc': 3,
                                   'card_faces': [{'name': 'Bonecrusher Giant', 'type_line': 'Creature', 'oracle_text': 'giant', 'mana_cost': '{2}{R}', 'power': '4', 'toughness': '3'}, {'name': 'Stomp', 'type_line': 'Instant', 'oracle_text': 's'}], 'colors': None},
+    ('connive', 'hbg'): {'id': 's1', 'oracle_id': 'O-SPLIT', 'name': 'Connive // Concoct', 'set': 'hbg', 'collector_number': '5', 'rarity': 'uncommon', 'scryfall_uri': 'https://scryfall.com/card/hbg/5/s', 'cmc': 2, 'colors': ['B', 'U']},
     ('alchemy thing', 'hbg'): {'id': 'a1', 'oracle_id': 'O-A', 'name': 'A-Alchemy Thing', 'set': 'hbg', 'collector_number': '9', 'rarity': 'rare', 'scryfall_uri': 'https://scryfall.com/card/hbg/9/a', 'cmc': 1},
     ('a-alchemy thing', 'hbg'): {'id': 'a1', 'oracle_id': 'O-A', 'name': 'A-Alchemy Thing', 'set': 'hbg', 'collector_number': '9', 'rarity': 'rare', 'scryfall_uri': 'https://scryfall.com/card/hbg/9/a', 'cmc': 1},
     ('avatar card', 'tla'): {'id': 't1', 'oracle_id': 'O-T', 'name': 'Avatar Card', 'set': 'tla', 'collector_number': '1', 'rarity': 'common', 'scryfall_uri': 'https://scryfall.com/card/tla/1/t', 'cmc': 1},
@@ -26,7 +27,7 @@ CARDS = {  # (name lowercase, set) -> scryfall card
 }
 for k in list(CARDS): CARDS[k].setdefault('card_faces', None)
 POOLS = {
-    'HBG': [row('Prosper, Tome-Bound', 4000, 0.60), row('A-Alchemy Thing', 900), row('Plains', 9000), row('Tiny', 499), row('Bonus Card', 600), row('Ghost', 700)],
+    'HBG': [row('Prosper, Tome-Bound', 4000, 0.60), row('A-Alchemy Thing', 900), row('Plains', 9000), row('Tiny', 499), row('Bonus Card', 600), row('Ghost', 700), row('Connive // Concoct', 800)],
     'ELD': [row('Kenrith, the Returned King', 5000, 0.62), row('Bonecrusher Giant // Stomp', 8000, 0.65), row('Swamp', 9000), {'name': 'NoWR', 'ever_drawn_game_count': 900, 'ever_drawn_win_rate': None}],
     'FIN': [row('Nope', 900)], 'TLA': [row('Avatar Card', 900)],
 }
@@ -37,7 +38,7 @@ def make_post(log):
         data = []
         for i in body['identifiers']:
             k = (i['name'].lower(), i.get('set'))
-            c = CARDS.get(k) or (CARDS.get((i['name'].lower().split(' // ')[0], i.get('set'))) if i.get('set') else None)
+            c = CARDS.get(k)  # exact names only: the full "A // B" of a split card is not found, its front name is
             if c and (i.get('set') is None or c['set'] == i['set']): data.append(c)
         return {'data': data}
     return post
@@ -62,7 +63,7 @@ class T(unittest.TestCase):
 
     def test_filters(self):
         rows = ex.measured_cards(POOLS['HBG'])
-        self.assertEqual([r['name'] for r in rows], ['Prosper, Tome-Bound', 'A-Alchemy Thing', 'Bonus Card', 'Ghost'])  # no basics, 500+ games
+        self.assertEqual([r['name'] for r in rows], ['Prosper, Tome-Bound', 'A-Alchemy Thing', 'Bonus Card', 'Ghost', 'Connive // Concoct'])  # no basics, 500+ games
         self.assertAlmostEqual(rows[0]['gih'], 60.0); self.assertEqual(rows[0]['gih_n'], 4000); self.assertEqual(rows[0]['alsa'], 3.5); self.assertEqual(rows[0]['alsa_n'], 2000)
         self.assertEqual([r['name'] for r in ex.measured_cards(POOLS['ELD'])], ['Kenrith, the Returned King', 'Bonecrusher Giant // Stomp'])
 
@@ -81,11 +82,12 @@ class T(unittest.TestCase):
         self.assertEqual(p['source'], 'https://scryfall.com/card/hbg/1/x')
         self.assertEqual(by[('ELD', 'Kenrith, the Returned King')]['oracle_id'], 'O-KEN')
         b = by[('ELD', 'Bonecrusher Giant // Stomp')]
-        self.assertEqual((b['type_line'], b['colors'], b['mana_cost']), ('Creature', [], '{2}{R}'))
+        self.assertEqual((b['type_line'], b['colors'], b['mana_cost'], b['oracle_id']), ('Creature', [], '{2}{R}', 'O-BONE'))
         self.assertIn(('HBG', 'A-Alchemy Thing'), by)                                    # printed name kept
         self.assertEqual(by[('HBG', 'Bonus Card')]['print_set'], 'sta')                  # not in the set: found by name
         g = by[('HBG', 'Ghost')]; self.assertIsNone(g['oracle_id']); self.assertEqual(g['rarity'], 'common')
-        self.assertEqual(stats['HBG']['name_only'], 4); self.assertEqual(stats['HBG']['scryfall_in_set'], 2 + 0); self.assertEqual(stats['HBG']['scryfall_by_name'], 1)
+        self.assertEqual(by[('HBG', 'Connive // Concoct')]['oracle_id'], 'O-SPLIT'); self.assertEqual(by[('HBG', 'Connive // Concoct')]['name'], 'Connive // Concoct')
+        self.assertEqual(stats['HBG']['name_only'], 5); self.assertEqual(stats['HBG']['scryfall_in_set'], 3); self.assertEqual(stats['HBG']['scryfall_by_name'], 1)
         self.assertEqual(stats['HBG']['name_only_scryfall_missing'], 1); self.assertEqual(stats['HBG']['alchemy_a_prefix'], 1)
         self.assertTrue(all(s['extra'] for s in stats.values()))
         self.assertEqual(stats['TLA']['window_days'], 15); self.assertFalse(stats['TLA']['window_complete'])
