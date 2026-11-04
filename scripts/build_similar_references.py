@@ -24,10 +24,10 @@ UA = {'User-Agent': 'Sakiyomi/1.0 (limited forecast research)', 'Accept': 'appli
 RARITY = {0: 'common', 1: 'uncommon', 2: 'rare', 3: 'mythic'}
 stats, errors = {}, []
 
-def get(url, tries=3, wait=2):
+def get(url, tries=3, wait=2, timeout=90):
     for i in range(tries):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=90) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
             if e.code == 404: return None
@@ -55,15 +55,38 @@ def scryfall_set(code):
         time.sleep(0.12)
     return out
 
-def scryfall_named(name, code):
-    d = get(f"https://api.scryfall.com/cards/named?exact={urllib.parse.quote(name)}", tries=6, wait=5)
-    time.sleep(0.2)
-    if not d: return None
+def card_info(d):
     face = (d.get('card_faces') or [d])[0]
     return {'id': d['id'], 'mana_cost': d.get('mana_cost') or face.get('mana_cost', ''), 'colors': d.get('colors') if d.get('colors') is not None else face.get('colors', []),
             'rarity': d.get('rarity'), 'source': d.get('scryfall_uri', '').split('?')[0],
             'cmc': d.get('cmc'), 'type_line': face.get('type_line') or d.get('type_line', ''), 'oracle_text': face.get('oracle_text') or d.get('oracle_text', ''),
             'power': face.get('power') or d.get('power'), 'toughness': face.get('toughness') or d.get('toughness')}
+
+def scryfall_named(name, code, tries=3, timeout=90, wait=2):
+    d = get(f"https://api.scryfall.com/cards/named?exact={urllib.parse.quote(name)}", tries=tries, timeout=timeout, wait=wait)
+    time.sleep(0.12)
+    return card_info(d) if d else None
+
+def scryfall_collection(names, deadline):
+    """Batch lookup (POST /cards/collection, 75 names per request). Returns {requested name: info}; names Scryfall does not know are absent."""
+    out = {}
+    for i in range(0, len(names), 75):
+        if time.time() > deadline: errors.append('scryfall collection: deadline reached'); break
+        chunk = names[i:i + 75]
+        body = json.dumps({'identifiers': [{'name': n} for n in chunk]}).encode()
+        for t in range(2):
+            try:
+                req = urllib.request.Request('https://api.scryfall.com/cards/collection', data=body, headers={**UA, 'Content-Type': 'application/json'})
+                with urllib.request.urlopen(req, timeout=30) as r: d = json.load(r)
+                for c in d.get('data', []):
+                    info = card_info(c)
+                    for k in (c['name'], c['name'].split(' // ')[0]): out.setdefault(k, info)
+                break
+            except Exception as e:
+                if t == 1: errors.append(f'scryfall collection batch {i // 75}: {e}'[:200])
+                else: time.sleep(3)
+        time.sleep(0.2)
+    return out
 
 def alsa_17lands(code, start, end):
     q = urllib.parse.urlencode({'expansion': code, 'event_type': 'PremierDraft', 'start_date': start[:10], 'end_date': end[:10]})
@@ -109,34 +132,46 @@ for code in sets:
 # Cards with a 17Lands measurement that the Scryfall set listing dropped: same-name slot only.
 name_only = []
 if COMPACT:
+    deadline = time.time() + 12 * 60  # whole name_only lookup phase; cards still unresolved afterwards keep the minimal fallback
+    pending = []  # (set, row)
     for code in sets:
         path = os.path.join(COMPACT, f'{code}_gih_28d.csv')
         if not os.path.exists(path):
             errors.append(f'compact_28d {code}: file missing'); continue
-        seen, added, miss_sf = set(), 0, 0
+        seen = set()
         for r in csv.DictReader(open(path, encoding='utf-8')):
             name = r['card_name']
             front = name.split(' // ')[0]
             if front in BASIC_LANDS or name in pool_names[code] or front in pool_names[code] or front in seen: continue
             if int(float(r['gih_games'])) < MIN_GIH_GAMES: continue
             seen.add(front)
-            try: info = scryfall_named(name, code)
-            except Exception as e: info = None; errors.append(f'scryfall named {code} {name}: {e}'[:200])
-            if not info: miss_sf += 1
-            info = info or {}
-            a = als[code].get(name) or als[code].get(front)
-            name_only.append({
-                'id': info.get('id', f'{code}:{name}'), 'name': name, 'set': code,
-                'rarity': info.get('rarity') or 'common',
-                'colors': info.get('colors') or [], 'cmc': float(info.get('cmc') or 0), 'mana_cost': info.get('mana_cost', ''),
-                'type_line': info.get('type_line', ''), 'oracle_text': info.get('oracle_text', ''), 'power': str(info.get('power') or ''), 'toughness': str(info.get('toughness') or ''),
-                'source': info.get('source') or 'https://scryfall.com/search?q=' + urllib.parse.quote('!"%s"' % name),
-                'gih': float(r['gih_wr_pct']), 'gih_n': int(float(r['gih_games'])),
-                'alsa': a[0] if a else None, 'alsa_n': a[1] if a else 0,
-            })
-            added += 1
-        stats[code].update({'name_only': added, 'name_only_scryfall_missing': miss_sf})
-        print(code, 'name_only', added, 'scryfall_missing', miss_sf, flush=True)
+            pending.append((code, r))
+    names = sorted({r['card_name'] for _, r in pending})
+    try: found = scryfall_collection(names, deadline)
+    except Exception as e: found = {}; errors.append(f'scryfall collection: {e}'[:200])
+    indiv_fail = 0
+    for code, r in pending:
+        name = r['card_name']; front = name.split(' // ')[0]
+        info = found.get(name) or found.get(front)
+        if not info and time.time() < deadline and indiv_fail < 10:  # fallback for names the batch did not resolve; stop early if Scryfall does not answer
+            try: info = scryfall_named(name, code, tries=2, timeout=20, wait=2)
+            except Exception as e: indiv_fail += 1; errors.append(f'scryfall named {code} {name}: {e}'[:200])
+        stats[code]['name_only'] = stats[code].get('name_only', 0) + 1
+        if not info: stats[code]['name_only_scryfall_missing'] = stats[code].get('name_only_scryfall_missing', 0) + 1
+        info = info or {}
+        a = als[code].get(name) or als[code].get(front)
+        name_only.append({
+            'id': info.get('id', f'{code}:{name}'), 'name': name, 'set': code,
+            'rarity': info.get('rarity') or 'common',
+            'colors': info.get('colors') or [], 'cmc': float(info.get('cmc') or 0), 'mana_cost': info.get('mana_cost', ''),
+            'type_line': info.get('type_line', ''), 'oracle_text': info.get('oracle_text', ''), 'power': str(info.get('power') or ''), 'toughness': str(info.get('toughness') or ''),
+            'source': info.get('source') or 'https://scryfall.com/search?q=' + urllib.parse.quote('!"%s"' % name),
+            'gih': float(r['gih_wr_pct']), 'gih_n': int(float(r['gih_games'])),
+            'alsa': a[0] if a else None, 'alsa_n': a[1] if a else 0,
+        })
+    for code in sets:
+        stats[code].setdefault('name_only', 0); stats[code].setdefault('name_only_scryfall_missing', 0)
+        print(code, 'name_only', stats[code]['name_only'], 'scryfall_missing', stats[code]['name_only_scryfall_missing'], flush=True)
 
 body = {'sets': sets, 'stats': stats, 'errors': errors, 'cards': refs}
 if COMPACT: body['name_only'] = name_only
