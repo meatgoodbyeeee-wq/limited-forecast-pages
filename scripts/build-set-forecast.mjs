@@ -34,7 +34,7 @@ const target = readGz(targetPath), pool = draftPool(target.cards);
 if (!pool.length) throw Error('公開カードが0枚です');
 const incumbent = readGz(url('../data/model.json.gz'));
 const refs = url('../data/similar-references.json.gz');
-if (fs.existsSync(refs)) incumbent.references = {...incumbent.references, gih: readGz(refs).cards};
+if (fs.existsSync(refs)) { const r = readGz(refs); incumbent.references = {...incumbent.references, gih: r.cards, name_only: r.name_only || []}; }
 const simLabels = url('../data/similar-labels.json.gz');
 if (fs.existsSync(simLabels)) incumbent.similar_labels = readGz(simLabels);
 

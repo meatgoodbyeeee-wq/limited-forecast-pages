@@ -23,11 +23,13 @@ jobs:
         with:
           repository: meatgoodbyeeee-wq/17lands-limited-forecast-data
           path: data-source
-          sparse-checkout: data/features
+          sparse-checkout: |
+            data/features
+            data/compact_28d
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python scripts/build_similar_references.py data-source/data/features/dev_feature_22.csv.gz data/similar-references.json.gz
+      - run: python scripts/build_similar_references.py data-source/data/features/dev_feature_22.csv.gz data/similar-references.json.gz data-source/data/compact_28d
       - uses: actions/setup-node@v4
         with:
           node-version: 22

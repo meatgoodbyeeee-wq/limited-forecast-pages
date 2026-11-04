@@ -111,7 +111,8 @@ try {
 const wanted = {};
 // Every card of the similar-card candidate list (any forecast, FRA or a preview set, can show any of them), plus what the FRA forecast shows now.
 const refsFile = new URL('../data/similar-references.json.gz', import.meta.url);
-const refCards = fs.existsSync(refsFile) ? JSON.parse(gunzipSync(fs.readFileSync(refsFile))).cards : [];
+const refDoc = fs.existsSync(refsFile) ? JSON.parse(gunzipSync(fs.readFileSync(refsFile))) : {};
+const refCards = [...(refDoc.cards || []), ...(refDoc.name_only || [])];
 for (const c of refCards) (wanted[c.set.toLowerCase()] ||= new Set()).add(c.name);
 for (const c of forecast.cards) for (const s of c.similar || []) (wanted[s.set.toLowerCase()] ||= new Set()).add(s.name);
 const shown = new Set(forecast.cards.flatMap(c => (c.similar || []).map(s => `${s.set.toLowerCase()}|${s.name}`)));
