@@ -110,7 +110,7 @@ try {
 
 // ---- Past sets: Japanese printed names from Scryfall, matched by oracle_id (see ja-name.mjs)
 // Candidate list = every card of the similar-card references (any forecast can show any of them) with its Scryfall oracle_id.
-const LOOKUP = 'v3'; // when it changes, every stored name is fetched again
+const LOOKUP = 'v4'; // when it changes, every stored name is fetched again
 const refsFile = new URL('../data/similar-references.json.gz', import.meta.url);
 const refDoc = fs.existsSync(refsFile) ? JSON.parse(gunzipSync(fs.readFileSync(refsFile))) : {};
 const refs = [];

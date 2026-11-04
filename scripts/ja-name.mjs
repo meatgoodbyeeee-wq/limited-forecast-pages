@@ -7,33 +7,27 @@ export const stripRuby = t => t.replace(/(?<=[一-鿿々])（[ぁ-ゖー]+）/g,
 
 export const oracleOf = c => c?.oracle_id || (c?.card_faces || []).find(f => f.oracle_id)?.oracle_id || null;
 
-// Japanese name of the faces whose English name equals the reference name ("A" or "A // B"); null when any of them has no printed name.
-function faceJa(c, parts) {
+// Japanese name of a print: the printed names of all faces joined with " // " (single-faced: its printed name); null when a face has none.
+// (Identity is already settled by the oracle_id, so no face is picked by its English name.)
+function printedJa(c) {
   const faces = c.card_faces || [];
-  const names = [];
-  for (const part of parts) {
-    let ja;
-    if (faces.length > 1) { const f = faces.find(x => x.name === part); ja = f?.printed_name; }
-    else if (c.name === part) ja = c.printed_name || faces[0]?.printed_name;
-    if (!ja) return null;
-    names.push(ja);
-  }
-  return names.join(' // ');
+  if (faces.length > 1) return faces.every(f => f.printed_name) ? faces.map(f => f.printed_name).join(' // ') : null;
+  return c.printed_name || faces[0]?.printed_name || null;
 }
 
 /**
  * prints: Scryfall card objects (any set / language). ref: {name, set, oracle_id} of the reference card.
  * Returns the Japanese name, or null (-> the page shows the English name) when no Japanese print of the same oracle_id
- * has printed names for the faces. Choice among valid prints is deterministic: a print in the reference card's own set
+ * has printed names for all faces. Choice among valid prints is deterministic: a print in the reference card's own set
  * first, otherwise the newest (released_at, then id).
  */
 export function japaneseName(prints, ref) {
   if (!ref?.oracle_id) return null;
-  const parts = String(ref.name).split(' // '), set = String(ref.set).toLowerCase(), ok = [];
+  const set = String(ref.set).toLowerCase(), ok = [];
   for (const c of prints || []) {
     if (c.lang && c.lang !== 'ja') continue;
     if (oracleOf(c) !== ref.oracle_id) continue; // gate: same card, not just the same face name
-    const ja = faceJa(c, parts);
+    const ja = printedJa(c);
     if (ja && !/[（）()]/.test(stripRuby(ja))) ok.push({c, ja}); // furigana we could not strip cleanly: not usable
   }
   if (!ok.length) return null;

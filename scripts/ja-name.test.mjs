@@ -21,13 +21,14 @@ test('only the other card available: empty (English name is shown)', () => {
   assert.equal(japaneseName([swords({lang: 'en'})], ref), null);
 });
 
-test('double-faced cards: only the faces that match the reference name', () => {
+test('double-faced cards: all faces joined, whichever name the reference uses', () => {
   const dfc = {id: 'd1', lang: 'ja', oracle_id: D, name: 'Front Face // Back Face', set: 'tdm', released_at: '2025-04-01',
     card_faces: [{name: 'Front Face', printed_name: '表の名前'}, {name: 'Back Face', printed_name: '裏の名前'}]};
   assert.equal(japaneseName([dfc], {name: 'Front Face // Back Face', set: 'TDM', oracle_id: D}), '表の名前 // 裏の名前');
-  assert.equal(japaneseName([dfc], {name: 'Front Face', set: 'TDM', oracle_id: D}), '表の名前');
-  assert.equal(japaneseName([dfc], {name: 'Back Face', set: 'TDM', oracle_id: D}), '裏の名前');
-  assert.equal(japaneseName([{...dfc, card_faces: [dfc.card_faces[0], {name: 'Back Face'}]}], {name: 'Front Face // Back Face', set: 'TDM', oracle_id: D}), null);
+  assert.equal(japaneseName([dfc], {name: 'Front Face', set: 'TDM', oracle_id: D}), '表の名前 // 裏の名前');
+  assert.equal(japaneseName([{...dfc, card_faces: [dfc.card_faces[0], {name: 'Back Face'}]}], {name: 'Front Face', set: 'TDM', oracle_id: D}), null);
+  // another card that has the same face name is still excluded by the oracle_id
+  assert.equal(japaneseName([emeritus()], {name: 'Swords to Plowshares', set: 'SOS', oracle_id: A}), null);
 });
 
 test('same set first, otherwise the newest print', () => {
