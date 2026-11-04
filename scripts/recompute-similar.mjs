@@ -9,7 +9,7 @@ const FORECAST = new URL('../public/forecast.json.gz', import.meta.url);
 const doc = read('../public/forecast.json.gz'), model = read('../data/model.json.gz'), refs = read('../data/similar-references.json.gz');
 const labels = fs.existsSync(new URL('../data/similar-labels.json.gz', import.meta.url)) ? read('../data/similar-labels.json.gz') : null;
 const index = similarityIndex(refs.cards, model.models.gih), pool = doc.forecast.cards;
-const extra = extraIndex(refs.name_only || [], index, model.models.gih, labels);  // name_only cards with label vectors are label-aware candidates too
+const extra = extraIndex(refs.name_only || [], index, model.models.gih, labels);  // name_only cards with label vectors and 3,000+ GIH games are label-aware candidates too
 let changed = 0;
 doc.forecast.cards = pool.map(c => {
   const similar = labels ? similarCardsLabelled(c, index, model.models.gih, pool, labels, 3, extra) : similarCards(c, index, model.models.gih, pool);

@@ -9,13 +9,16 @@ const model = read('../data/model.json.gz').models.gih, refs = read('../data/sim
 const front = n => String(n).split(' // ')[0].trim().toLowerCase();
 const index = similarityIndex(refs.cards, model), extra = extraIndex(refs.name_only, index, model, labels);
 
-test('extraIndex: only labelled name_only cards, one per set and front name, none already in the main list', () => {
+test('extraIndex: only labelled name_only cards with 3,000+ GIH games, one per set and front name, none already in the main list', () => {
   const keys = extra.map(r => `${r.c.set}|${front(r.c.name)}`);
   assert.equal(new Set(keys).size, keys.length);
   assert.ok(extra.every(r => labels.refs[`${r.c.set}|${r.c.name}`]));
   const main = new Set(refs.cards.map(c => `${c.set}|${front(c.name)}`));
   assert.ok(keys.every(k => !main.has(k)));
   assert.ok(extra.length > 0);
+  assert.ok(extra.every(r => Number(r.c.gih_n) >= 3000));
+  const small = refs.name_only.filter(c => labels.refs[`${c.set}|${c.name}`] && !(Number(c.gih_n) >= 3000));
+  assert.ok(small.length > 0 && small.every(c => !extra.some(r => r.c === c)));
   assert.deepEqual(extraIndex(refs.name_only, index, model, null), []);
   assert.deepEqual(extraIndex(refs.name_only, index, model, {...labels, refs: {}}), []);
 });

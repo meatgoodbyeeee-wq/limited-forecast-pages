@@ -117,14 +117,34 @@ for (const c of refCards) (wanted[c.set.toLowerCase()] ||= new Set()).add(c.name
 for (const c of forecast.cards) for (const s of c.similar || []) (wanted[s.set.toLowerCase()] ||= new Set()).add(s.name);
 const shown = new Set(forecast.cards.flatMap(c => (c.similar || []).map(s => `${s.set.toLowerCase()}|${s.name}`)));
 const similar = {};
+// Lookup logic version: when it changes, one-by-one results of older runs are discarded and fetched again.
+const LOOKUP = 'v2';
+const redo = previous.sources?.similar_lookup !== LOOKUP;
+// Printed names sometimes carry furigana in full-width parentheses after a kanji (e.g. 旅（たび）路（じ）); drop them.
+const stripRuby = t => t.replace(/(?<=[\u4e00-\u9fff々])（[ぁ-ゖー]+）/g, '');
+const jaName = c => stripRuby(c.printed_name || (c.card_faces || []).map(f => f.printed_name).filter(Boolean).join(' // '));
+// The usual Japanese name of a card over all its Japanese prints: the most common printed name, ignoring
+// Mystical Archive (sta) alternate names, ties to the newest print. (First print was wrong, e.g. Swords to Plowshares.)
+function standardJa(prints) {
+  const votes = new Map();
+  prints.forEach((c, i) => {
+    if (c.set === 'sta') return;
+    const ja = jaName(c);
+    if (!ja) return;
+    const v = votes.get(ja) || {n: 0, newest: ''};
+    v.n++; if ((c.released_at || '') > v.newest) v.newest = c.released_at || '';
+    votes.set(ja, v);
+  });
+  return [...votes].sort((a, b) => b[1].n - a[1].n || (b[1].newest > a[1].newest ? 1 : -1))[0]?.[0];
+}
 for (const [set, names] of Object.entries(wanted)) {
   try {
     let url = `https://api.scryfall.com/cards/search?q=${encodeURIComponent(`set:${set} lang:ja`)}&unique=prints`, n = 0;
     while (url) {
       const d = await get(url);
       for (const c of d.data) {
-        const ja = c.printed_name || (c.card_faces || []).map(f => f.printed_name).filter(Boolean).join(' // ');
-        if (!ja) continue;
+        const ja = jaName(c);
+        if (!ja || c.set === 'sta') continue;
         const keys = [c.name, c.name.split(' // ')[0]];
         for (const k of keys) if (names.has(k) && !similar[`${set.toUpperCase()}|${k}`]) { similar[`${set.toUpperCase()}|${k}`] = ja; n++; }
       }
@@ -137,16 +157,18 @@ for (const [set, names] of Object.entries(wanted)) {
 // Names the per-set search missed (e.g. some double-faced cards): look them up one by one.
 for (const [set, names] of Object.entries(wanted)) for (const name of names) {
   const key = `${set.toUpperCase()}|${name}`;
-  if (similar[key] || previous.similar?.[key]) continue;
+  if (similar[key] || (!redo && previous.similar?.[key])) continue;
   if (!shown.has(`${set}|${name}`)) continue; // one-by-one lookups only for names on display
+  let ja, failed = false;
   try {
     const d = await get(`https://api.scryfall.com/cards/search?q=${encodeURIComponent(`!"${name}" lang:ja`)}&unique=prints`);
-    const c = d.data.find(x => x.printed_name || x.card_faces?.some(f => f.printed_name));
-    const ja = c && (c.printed_name || c.card_faces.map(f => f.printed_name).filter(Boolean).join(' // '));
-    if (ja) similar[key] = ja;
-  } catch { /* not printed in Japanese */ }
+    ja = standardJa(d.data);
+  } catch (e) { if (!/^404 /.test(e.message)) { failed = true; out.errors.push(`similar lookup ${key}: ${e.message}`); } } // 404 = not printed in Japanese
+  if (ja) similar[key] = ja;
+  else if (redo && !failed && out.similar[key]) delete out.similar[key]; // unverifiable old value: show the English name instead
   await sleep(500);
 }
+if (!out.errors.length) out.sources.similar_lookup = LOOKUP; // keep redoing until a run finishes without errors
 if (Object.keys(similar).length) { out.similar = {...out.similar, ...similar}; out.sources.similar = 'Scryfall (lang:ja printed_name)'; }
 
 // Only rewrite when something other than the timestamp changed, so reruns don't create empty commits.
