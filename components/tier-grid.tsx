@@ -10,8 +10,9 @@ const COLS:{key:ColKey;ja:string;en:string}[]=[
   {key:'M',ja:'多色',en:'Multi'},{key:'C',ja:'無色',en:'Colorless'},
 ];
 export const colKey=(c:Pick<Card,'colors'>):ColKey=>{const ks=c.colors||[];return ks.length>1?'M':ks.length===1?(ks[0] as ColKey):'C';};
-/** Grade bands: how far a forecast GIH WR sits above / below the set average, in standard deviations (lower bound of each grade). */
-const GRADES:[string,number][]=[['A+',1.75],['A',1.25],['A-',0.75],['B+',0.25],['B',-0.25],['B-',-0.75],['C+',-1.25],['C',-1.75],['C-',-2.25],['D+',-2.75],['D',-3.25],['D-',-Infinity]];
+/** Grade bands (17Lands-style A+ to F): how far a forecast GIH WR sits above / below the set average, in standard deviations
+ *  (lower bound of each grade). 0.5-SD steps with C at the centre (-0.25 to +0.25); F is everything below D-. */
+const GRADES:[string,number][]=[['A+',3.25],['A',2.75],['A-',2.25],['B+',1.75],['B',1.25],['B-',0.75],['C+',0.25],['C',-0.25],['C-',-0.75],['D+',-1.25],['D',-1.75],['D-',-2.25],['F',-Infinity]];
 export function makeGrader(all:{gih:number}[]){
   const xs=all.map(c=>c.gih).filter(Number.isFinite),n=xs.length||1,mean=xs.reduce((s,v)=>s+v,0)/n,sd=Math.sqrt(xs.reduce((s,v)=>s+(v-mean)**2,0)/n)||1;
   return (gih:number)=>{const z=(gih-mean)/sd;return GRADES.find(([,lo])=>z>=lo)![0];};
