@@ -45,7 +45,7 @@ export function TierGrid({cards,all,lang,selectedId,onSelect,onOpen,narrowHint}:
           {r.cells[c.key].map(card=>{
             const entry=japaneseCardImage(card),src=entry?.path?import.meta.env.BASE_URL+entry.path.replace(/^\//,''):'',name=cardName(card,lang);
             return <button key={card.id} type="button" title={`${card.name} · GIH WR ${f1(card.gih)}% · ALSA ${card.alsa.toFixed(2)}`}
-              onClick={e=>{if(e.detail===0)onOpen(card.id);else onSelect(card.id);}} onDoubleClick={()=>onOpen(card.id)}
+              onClick={()=>onOpen(card.id)}
               className={'relative flex w-full min-h-11 items-center justify-between gap-1.5 overflow-hidden rounded-sm pl-2.5 pr-1.5 py-1 text-left text-white focus-visible:outline-2 focus-visible:outline-primary '+(selectedId===card.id?'ring-2 ring-primary':'hover:brightness-125')}
               style={{boxShadow:`inset 3px 0 0 ${RARITY_EDGE[card.rarity]||RARITY_EDGE.common}`,backgroundColor:'#1f2430',backgroundImage:`linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.25) 100%)${src?`,${ART_DIM},url("${src}")`:''}`,backgroundSize:'100% 100%,100% 100%,130% auto',backgroundPosition:'0 0,0 0,50% 31%',backgroundRepeat:'no-repeat'}}>
               <span className="text-[13px] font-semibold leading-tight underline underline-offset-2 [text-shadow:0_1px_2px_#000] min-w-0 break-words">{name}</span>
