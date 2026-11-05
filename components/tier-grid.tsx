@@ -17,6 +17,8 @@ export function makeGrader(all:{gih:number}[]){
   return (gih:number)=>{const z=(gih-mean)/sd;return GRADES.find(([,lo])=>z>=lo)![0];};
 }
 const RARITY_EDGE:Record<string,string>={common:'#4b5563',uncommon:'#9fb3c8',rare:'#d4b04a',mythic:'#e8592f',land:'#6b7280'};
+/** Card art at 70% of its brightness: a 30% black layer directly over the image (text stays at full brightness). */
+const ART_DIM='linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3))';
 const f1=(n:number)=>Number.isFinite(n)?n.toFixed(1):'—';
 
 export function TierGrid({cards,all,lang,selectedId,onSelect,onOpen,narrowHint}:{cards:Card[];all:Card[];lang:Lang;selectedId?:string;onSelect:(id:string)=>void;onOpen:(id:string)=>void;narrowHint?:boolean}){
@@ -45,7 +47,7 @@ export function TierGrid({cards,all,lang,selectedId,onSelect,onOpen,narrowHint}:
             return <button key={card.id} type="button" title={`${card.name} · GIH WR ${f1(card.gih)}% · ALSA ${card.alsa.toFixed(2)}`}
               onClick={e=>{if(e.detail===0)onOpen(card.id);else if(e.detail===1)onSelect(card.id);}} onDoubleClick={()=>onOpen(card.id)}
               className={'relative flex w-full min-h-11 items-center justify-between gap-1.5 overflow-hidden rounded-sm pl-2.5 pr-1.5 py-1 text-left text-white focus-visible:outline-2 focus-visible:outline-primary '+(selectedId===card.id?'ring-2 ring-primary':'hover:brightness-125')}
-              style={{boxShadow:`inset 3px 0 0 ${RARITY_EDGE[card.rarity]||RARITY_EDGE.common}`,backgroundColor:'#1f2430',backgroundImage:`linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.25) 100%)${src?`,url("${src}")`:''}`,backgroundSize:'100% 100%,130% auto',backgroundPosition:'0 0,50% 31%',backgroundRepeat:'no-repeat'}}>
+              style={{boxShadow:`inset 3px 0 0 ${RARITY_EDGE[card.rarity]||RARITY_EDGE.common}`,backgroundColor:'#1f2430',backgroundImage:`linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.25) 100%)${src?`,${ART_DIM},url("${src}")`:''}`,backgroundSize:'100% 100%,100% 100%,130% auto',backgroundPosition:'0 0,0 0,50% 31%',backgroundRepeat:'no-repeat'}}>
               <span className="text-[13px] font-semibold leading-tight underline underline-offset-2 [text-shadow:0_1px_2px_#000] min-w-0 break-words">{name}</span>
               <span className="shrink-0 text-xs number [text-shadow:0_1px_2px_#000]">{f1(card.gih)}%</span>
             </button>;
