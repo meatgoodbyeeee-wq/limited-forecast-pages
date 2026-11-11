@@ -1,6 +1,6 @@
 import type {Card, Forecast} from '@/lib/types';
 
-// Applies the observed-values snapshot (public/data/fra-actual-card-data.json) to the forecast.
+// Applies the observed-values snapshot (public/data/<code>-actual-card-data.json, e.g. fra-actual-card-data.json) to the forecast.
 // The snapshot format is source-agnostic (source_type "Card Data" today, possibly "Public Dataset"
 // later), so switching the producer does not require UI changes. Values are shown only — they are
 // never blended into the forecast. When the Public Dataset is already applied (live phase),
@@ -9,13 +9,13 @@ import type {Card, Forecast} from '@/lib/types';
 type Row = {id: string; gih: number | null; gih_n: number; alsa: number | null; seen_n: number};
 type Doc = {schema: number; source_type: string; expansion: string; window_start: string; window_end: string; fetched_date_jst: string; cards: Row[]};
 
-const ok = (d: any): d is Doc => d && d.schema === 1 && d.expansion === 'FRA' && typeof d.source_type === 'string' &&
+const ok = (d: any, code: string): d is Doc => d && d.schema === 1 && d.expansion === code && typeof d.source_type === 'string' &&
   /^\d{4}-\d{2}-\d{2}$/.test(d.window_start) && /^\d{4}-\d{2}-\d{2}$/.test(d.window_end) && /^\d{4}-\d{2}-\d{2}$/.test(d.fetched_date_jst) && Array.isArray(d.cards);
 const count = (v: unknown) => (Number.isSafeInteger(v) && (v as number) > 0 ? (v as number) : 0);
 const md = (d: string) => `${+d.slice(5, 7)}/${+d.slice(8, 10)}`;
 
-export function applyActuals(forecast: Forecast, doc: unknown): Forecast {
-  if (!ok(doc)) return forecast;
+export function applyActuals(forecast: Forecast, doc: unknown, code = 'FRA'): Forecast {
+  if (!ok(doc, code)) return forecast;
   const rows = new Map<string, Row>();
   for (const r of doc.cards) if (r && typeof r.id === 'string') rows.set(r.id, r);
   if (!rows.size) return forecast;
