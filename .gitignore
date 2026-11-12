@@ -2,3 +2,10 @@ node_modules/
 dist/
 
 public/forecast-trk.json
+
+# Build inputs of the private TRK preview (scripts/preview-trk.sh). Never commit these.
+# To publish TRK observed values on the public site later, remove the trk-actual line first (owner's decision).
+data/live-policy.json
+public/forecast.json
+public/cards/
+public/data/trk-actual-card-data.json
