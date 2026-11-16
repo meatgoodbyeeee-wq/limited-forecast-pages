@@ -110,7 +110,7 @@ export default function Home(){
   }
  }catch{ /* Dataset check failures retain the last valid prediction. */ }
  if(live||set.actuals)try{const res=await fetch(import.meta.env.BASE_URL+'data/'+set.code.toLowerCase()+'-actual-card-data.json',{cache:'no-store'});if(res.ok)d.forecast=applyActuals(d.forecast,await res.json(),set.code);}catch{ /* Observed values are optional; forecasts still show. */ }
- if(live)try{const res=await fetch(import.meta.env.BASE_URL+'deviation-notes.json',{cache:'no-store'});if(res.ok)d.notes=await res.json();}catch{ /* Notes are optional. */ }
+ if(live||set.actuals)try{const res=await fetch(import.meta.env.BASE_URL+(live?'deviation-notes.json':'data/'+set.code.toLowerCase()+'-deviation-notes.json'),{cache:'no-store'});if(res.ok){const j=await res.json();if(!j?.set||j.set===set.code)d.notes=j;}}catch{ /* Notes are optional. */ }
  if(live)try{const res=await fetch(import.meta.env.BASE_URL+'data/fra-actual-color-ratings.json',{cache:'no-store'});if(res.ok){const j=await res.json();const ok=j?.source==='17Lands'&&j.pairs&&Object.values(j.pairs).every((v:any)=>Number.isFinite(v?.wr_pct)&&v.wr_pct>0&&v.wr_pct<100&&v.games>0);if(ok){(d as any).colorActual=j.pairs;(d as any).colorActualInfo={window_end:String(j.window_end||'')};}}}catch{ /* Observed pair win rates are optional. */ }
  setData(d);}
  useEffect(()=>{setData(null);setError('');setSelected(null);setTab('cards');setColor([]);setRare('all');load().catch(e=>setError(e.message));},[setCode]);

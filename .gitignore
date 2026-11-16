@@ -9,3 +9,5 @@ data/live-policy.json
 public/forecast.json
 public/cards/
 public/data/trk-actual-card-data.json
+# Reasons for TRK cards outside the forecast range (private until the owner approves publishing).
+public/data/trk-deviation-notes.json
