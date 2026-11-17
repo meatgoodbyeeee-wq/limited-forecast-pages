@@ -1,0 +1,52 @@
+name: Set actuals (daily, sets other than FRA)
+# Copies the 17Lands Card Data snapshot that the data repository already fetched (all users) into
+# public/data/<code>-actual-card-data.json and redeploys the site. No 17Lands access here.
+# The daily Claude task dispatches this after the data repository's 14:00 JST fetch; the schedule is only a backup
+# (GitHub's scheduled runs have been starting hours late). scripts/update-set-actuals.mjs does nothing before a set's
+# embargo end (actuals_public_from) or before its first observed-values file was merged by a reviewed PR.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 8 * * *' # 17:23 JST, backup
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: set-actuals
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: meatgoodbyeeee-wq/17lands-limited-forecast-data
+          path: data-source
+          sparse-checkout: live
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: gunzip -kf public/forecast.json.gz && gunzip -kf data/live-policy.json.gz
+      - run: node scripts/update-set-actuals.mjs
+        env:
+          DATA_LIVE: data-source/live
+      - name: Save and redeploy the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add public/data/*-actual-card-data.json
+          if git diff --cached --quiet; then echo 'nothing to save'; exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Update observed values (17Lands Card Data) for sets other than FRA'
+          pushed=0
+          for i in 1 2 3 4; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then pushed=1; break; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 5))
+          done
+          [ "$pushed" = 1 ] || { echo 'push failed after retries' >&2; exit 1; }
+          # A push made with GITHUB_TOKEN does not start other workflows, so start the deploy explicitly.
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then gh workflow run pages.yml --ref main; fi
