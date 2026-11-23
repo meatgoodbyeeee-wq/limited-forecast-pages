@@ -1,0 +1,875 @@
+{
+ "set": "TRK",
+ "cards": {
+  "Tell Me What You See": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "登場時にドローか相手のライフ減少のどちらかを必ず得られる軽いカードとして、モデルは平均に近く見積もりました。",
+     "どちらを得るかは相手が選ぶため、いつも小さい方の効果になりやすく、手札に戻して繰り返す動きも勝率の低い青黒のデッキでしか生きなかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model saw a cheap card that always yields either a card or life loss, and forecast it near average.",
+     "The opponent picks the outcome, so you usually get the weaker one, and replaying it via dilemmas only works in Dimir, the weakest pair (estimate)."
+    ]
+   }
+  },
+  "Support Mission": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "クリーチャーを強化し続けるエンチャントとして、モデルは平均並みと見積もりました。",
+     "出したターンには何もせず、後から出すクリーチャーにしか効かないため、速めの環境では間に合わず、盤面に触れない1枚になりやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model forecast this ongoing creature-pump enchantment around average.",
+     "It does nothing the turn it comes down and only helps creatures cast later, so in a fairly fast format it was often too slow to matter (estimate)."
+    ]
+   }
+  },
+  "Test of Conviction": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "軽いソーサリーで、全体強化とドローを選べる柔軟さを、モデルは平均並みと見積もりました。",
+     "全体強化は小さく、ドローは相手にも1枚引かせるため、どちらのモードも盤面への影響が小さかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model rated this cheap, flexible sorcery (team pump or card draw) around average.",
+     "The pump is small and the draw mode also gives the opponent a card, so neither mode moved the board much (estimate)."
+    ]
+   }
+  },
+  "Saavik, Stoic Student": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "瞬速で戦闘中のクリーチャーを焼ける除去付きのクリーチャーとして、モデルは平均をやや上回ると見積もりました。",
+     "与えるダメージは自軍のクリーチャー・タイプの数に左右されて小さくなりやすく、重いわりに除去としても体としても力不足だったと考えられます。白のカードが全体に予測より低かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model saw a flash creature that shoots a creature in combat and forecast it slightly above average.",
+     "The damage depends on your creature types and is often small, so for its cost it was weak both as removal and as a body (estimate). White as a whole also ran below forecast."
+    ]
+   }
+  },
+  "The Doctor, EMH": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "登場時にカウンターを配って盤面を底上げできる点を、モデルは平均をやや上回ると評価しました。",
+     "このカードを使う緑白のデッキが環境で勝率の低い組み合わせだったことが、主な理由と考えられます。"
+    ],
+    "reasons_en": [
+     "The model valued spreading +1/+1 counters on entry and forecast it slightly above average.",
+     "The main reason is likely that Selesnya, the deck that plays it, is one of the weakest pairs in this format (estimate)."
+    ]
+   }
+  },
+  "Enterprise NX-01": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "登場時に相手のクリーチャーを麻痺させる効果を、モデルは高く評価しました。",
+     "宇宙船として戦うには他のクリーチャーをタップしてカウンターを貯める必要があり、展開が遅れます。宇宙船を使う白青のデッキの勝率も低く、一時的な麻痺だけでは補えなかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model rated the enter-the-battlefield stun highly.",
+     "Becoming a creature means tapping your other creatures to charge it, which slows you down, and Azorius spacecraft decks performed poorly; a temporary stun did not make up for it (estimate)."
+    ]
+   }
+  },
+  "Pure Energy": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "軽いマナで強化カウンターを配れる呪文として、モデルは平均をやや下回る程度と見積もりました。",
+     "カード1枚に対して強化が小さく、墓地から唱え直すには自分のクリーチャーを手札に戻す必要があるため、損をしやすかったと考えられます。カウンターを使う緑白のデッキの勝率が低いことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model forecast this cheap counter spell slightly below average.",
+     "The boost is small for a whole card, and recasting it from the graveyard means bouncing your own creature, so it often cost you tempo (estimate). Selesnya counters, its home, also performed poorly."
+    ]
+   }
+  },
+  "Gabriel Lorca, Mirror Menace": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "威迫を持つ5マナの大型として、モデルは平均をやや下回る程度と見積もりました。",
+     "墓地から戻す能力はジレンマ(モードの選択)が必要で、それを活かす青黒のデッキが環境で最も勝率が低かったため、重いだけの体になりやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model saw a five-mana menace body and forecast it slightly below average.",
+     "Its graveyard recursion needs dilemmas, and Dimir, the deck built around them, is the weakest pair, so it was usually just an expensive body (estimate)."
+    ]
+   }
+  },
+  "Obsidian Order Operative": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "マナに見合うサイズがないため、モデルは平均を大きく下回ると見積もり、向きは合っていました。",
+     "それでも予測の幅より低くなったのは、ジレンマで少しずつライフを奪う効果を活かす青黒のデッキが、環境で最も勝率が低かったためと考えられます。"
+    ],
+    "reasons_en": [
+     "The model forecast it well below average because the body is small for the cost, so the direction was right.",
+     "It fell even further because Dimir, the dilemma deck that uses its drain, is the weakest pair in the format (estimate)."
+    ]
+   }
+  },
+  "Hive Mind Coprocessor": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "5マナで出たときの効果がないため、モデルは平均を大きく下回ると見積もり、向きは合っていました。",
+     "カードを引くにはアーティファクト・クリーチャーで攻撃を通す必要があり、白黒の Borg のデッキが期待ほど勝てなかったため、さらに低くなったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model forecast it well below average as a five-drop with no entry effect, so the direction was right.",
+     "Drawing cards requires artifact creatures to connect, and the Orzhov Borg deck won less than expected, pushing it lower still (estimate)."
+    ]
+   }
+  },
+  "Phlox, Unorthodox Doctor": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "トランプルとドローを持つ効率の良い体として、モデルは平均並みと見積もりました。",
+     "カウンターの乗ったクリーチャーで攻撃を通す必要があり、それを担う緑白のデッキの勝率が環境で低かったことが、主な理由と考えられます。"
+    ],
+    "reasons_en": [
+     "The model saw an efficient trampler with card draw and forecast it around average.",
+     "It needs countered creatures to connect, and Selesnya, the deck that provides them, is one of the weakest pairs (estimate)."
+    ]
+   }
+  },
+  "Erica Ortegas, Plucky Pilot": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "速攻を持つ4マナとして、モデルは平均を大きく下回ると見積もり、向きは合っていました。",
+     "赤は全体に予測より勝率が高い色でしたが、このカードは土地を出し入れする能力が攻撃力に結びつかず、赤の中でも弱い4マナだったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model forecast this four-mana haste creature well below average, so the direction was right.",
+     "Red overall beat its forecasts, but the land shuffling does not add to its attack, so it was one of red's weaker four-drops (estimate)."
+    ]
+   }
+  },
+  "Organic Avulsion Unit": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "アーティファクト・クリーチャーに威迫を与える能力頼みのため、モデルは平均を大きく下回ると見積もり、向きは合っていました。",
+     "黒のカード、特に白黒のアーティファクトのデッキが全体に予測より低かったため、幅の外まで下がったと考えられます。先行プレイでは期待以上という声もありましたが、実測では支持されていません。"
+    ],
+    "reasons_en": [
+     "The model forecast it well below average because it relies on giving artifact creatures menace, so the direction was right.",
+     "Black, and the Orzhov artifact deck in particular, ran below forecast, pushing it out of range (estimate). Some early-access players praised it, but the data does not back that up."
+    ]
+   }
+  },
+  "A Good Day to Die": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "小さな強化と死亡時のドローだけのため、モデルは平均を大きく下回ると見積もり、向きは合っていました。",
+     "黒のカードが全体に予測より低かったことに加え、相手の除去に合わせにくい戦闘トリックで、カードを失う場面が多かったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model forecast it well below average as a small pump with a death-trigger draw, so the direction was right.",
+     "Black ran below forecast overall, and this combat trick often just traded a card away (estimate)."
+    ]
+   }
+  },
+  "Neelix, Moral Support": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "2マナで食物トークンも生む伝説のクリーチャーとして、モデルは平均を大きく上回ると見積もりました。",
+     "1/1の体はライフを得ないと育たず、ライフ回復の手段が少ない環境では小さいまま終わりやすかったと考えられます。緑は全体に予測より勝率が高い色なので、このカード自体の力不足が大きいと見られます。"
+    ],
+    "reasons_en": [
+     "The model saw a two-drop that also makes a Food and forecast it well above average.",
+     "The 1/1 only grows when you gain life, and with few lifegain sources it usually stayed small (estimate). Green overall beat its forecasts, so this is mostly the card itself."
+    ]
+   }
+  },
+  "Emergency Holographic Crew": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "諜報か宇宙船の回収を選べる4マナとして、モデルは平均をやや下回る程度と見積もりました。",
+     "宇宙船が墓地に落ちる場面は少なく、実際には4マナの3/4に諜報が付くだけになりやすかったため、速めの環境では遅すぎたと考えられます。"
+    ],
+    "reasons_en": [
+     "The model forecast this four-drop with surveil or spacecraft recursion slightly below average.",
+     "Spacecraft rarely hit the graveyard, so it was usually a 3/4 with surveil, which was too slow for a fairly fast format (estimate)."
+    ]
+   }
+  },
+  "Seven of Nine": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "4マナで2/4の体を見て、モデルは平均をやや下回ると見積もり、向きは合っていました。",
+     "ジレンマでカードを引く能力を活かす青黒のデッキが、環境で最も勝率の低い組み合わせだったことが、主な理由と考えられます。"
+    ],
+    "reasons_en": [
+     "The model saw a four-mana 2/4 and forecast it slightly below average, so the direction was right.",
+     "The main reason is likely that Dimir, the dilemma deck that turns it into a card engine, is the weakest pair (estimate)."
+    ]
+   }
+  },
+  "Set Phasers to . . .": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "1マナで攻撃クリーチャーを焼くか麻痺させる柔軟さを、モデルは平均並みと評価しました。",
+     "焼けるのは攻撃してきたクリーチャーだけなので、攻める側の白のデッキでは除去として使いにくく、白のカードが全体に予測より低かったことも重なったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model valued a one-mana spell that shoots an attacker or stuns, and forecast it around average.",
+     "It can only kill an attacking creature, which is awkward for white's aggressive decks, and white overall ran below forecast (estimate)."
+    ]
+   }
+  },
+  "Commander Raffi Musiker": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "3マナで墓地対策か手がかりを選べる点を、モデルは平均をやや上回ると評価しました。",
+     "黒のカードが全体に予測より低かったことに加え、3/2の体と遅いカード補充は、速めの環境で戦況に影響しにくかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model valued a three-drop with graveyard hate or a Clue and forecast it slightly above average.",
+     "Black ran below forecast overall, and a 3/2 with slow card advantage did little in a fairly fast format (estimate)."
+    ]
+   }
+  },
+  "Free Borg Revolutionaries": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "5マナの4/5で、基本土地サイクリングもある使いやすさを、モデルは平均並みと見積もりました。",
+     "白のカードが全体に予測より低かったことが、主な理由と考えられます。重い体は速めの環境で間に合いにくかったと見られます。"
+    ],
+    "reasons_en": [
+     "The model forecast this flexible five-mana 4/5 with basic landcycling around average.",
+     "The main reason is likely that white overall ran below forecast (estimate). A heavy body was also often too slow."
+    ]
+   }
+  },
+  "Federation Field Medic": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "警戒と、強化かドローを選べる点を、モデルは平均並みと見積もりました。",
+     "白のカードが全体に予測より低かったことが、主な理由と考えられます。ドローにはカウンターの乗ったパーマネントが必要で、4マナの3/2は速めの環境で見劣りしました。"
+    ],
+    "reasons_en": [
+     "The model forecast this vigilant four-drop with a pump or draw mode around average.",
+     "The main reason is likely that white overall ran below forecast (estimate). The draw needs a countered permanent, and a four-mana 3/2 looked weak in a fairly fast format."
+    ]
+   }
+  },
+  "Andromedan Automatons": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "同名カードを探せる3マナの3/1として、モデルは平均をやや下回る程度と見積もりました。",
+     "白のカードが全体に予測より低かったことが、主な理由と考えられます。タフネス1の体は交換されやすく、複数枚そろえないと価値が上がりにくいと見られます。"
+    ],
+    "reasons_en": [
+     "The model forecast this three-mana 3/1 that fetches copies of itself slightly below average.",
+     "The main reason is likely that white overall ran below forecast (estimate). A one-toughness body trades off easily and needs multiple copies to shine."
+    ]
+   }
+  },
+  "Andoria": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "過去のセットでは、タップ状態で出る2色土地は平均並みかやや下だったため、モデルもそう見積もりました。",
+     "このセットには名前の違う土地の数を参照するカードがあり、色も足しやすい作りのため、2色土地の価値が過去のセットより高かったと考えられます。発売後の評価でも、勝率のわりに遅くまで残るカードとして挙げられています。"
+    ],
+    "reasons_en": [
+     "The model forecast it slightly below average, as tapped dual lands were in past sets.",
+     "This set rewards having differently named lands and makes splashing easy, so dual lands were worth more than in past sets (estimate). Post-release write-ups also list it as a card that wheels despite its win rate."
+    ]
+   }
+  },
+  "Breeding Pool": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "過去のセットでも2色土地は平均並みで、マナ以外の効果がないため、モデルは平均をわずかに下回ると見積もりました。",
+     "このセットには名前の違う土地の数を参照するカードがあり、色も足しやすい作りのため、2色土地の価値が過去のセットより高かったと考えられます。名前の違う土地を数える青緑のデッキでも使われます。"
+    ],
+    "reasons_en": [
+     "Dual lands were around average in past sets and this one does nothing else, so the model forecast it slightly below average.",
+     "This set rewards having differently named lands and makes splashing easy, so dual lands were worth more than in past sets (estimate). Simic, the lands-matter deck, also wants it."
+    ]
+   }
+  },
+  "Orion": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "過去のセットでは、タップ状態で出る2色土地は平均並みかやや下だったため、モデルもそう見積もりました。",
+     "このセットには名前の違う土地の数を参照するカードがあり、色も足しやすい作りのため、2色土地の価値が過去のセットより高かったと考えられます。環境で最も勝率の高い赤緑の色であることも重なりました。"
+    ],
+    "reasons_en": [
+     "The model forecast it slightly below average, as tapped dual lands were in past sets.",
+     "This set rewards having differently named lands and makes splashing easy, so dual lands were worth more than in past sets (estimate). It also fits Gruul, the strongest pair."
+    ]
+   }
+  },
+  "Stomping Ground": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "過去のセットでも2色土地は平均並みで、マナ以外の効果がないため、モデルは平均をわずかに下回ると見積もりました。",
+     "このセットには名前の違う土地の数を参照するカードがあり、色も足しやすい作りのため、2色土地の価値が過去のセットより高かったと考えられます。環境で最も勝率の高い赤緑の色であることも重なりました。"
+    ],
+    "reasons_en": [
+     "Dual lands were around average in past sets and this one does nothing else, so the model forecast it slightly below average.",
+     "This set rewards having differently named lands and makes splashing easy, so dual lands were worth more than in past sets (estimate). It also fits Gruul, the strongest pair."
+    ]
+   }
+  },
+  "Earth, Sector 001": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "過去のセットでは、タップ状態で出る2色土地は平均並みかやや下だったため、モデルもそう見積もりました。",
+     "このセットには名前の違う土地の数を参照するカードがあり、色も足しやすい作りのため、2色土地の価値が過去のセットより高かったと考えられます。名前の違う土地を数える青緑のデッキで特に求められました。発売後の評価でも、勝率が高いのに遅くまで残るカードとして挙げられています。"
+    ],
+    "reasons_en": [
+     "The model forecast it slightly below average, as tapped dual lands were in past sets.",
+     "This set rewards having differently named lands and makes splashing easy, so dual lands were worth more than in past sets (estimate). Simic, the lands-matter deck, especially wanted it. Post-release write-ups also call it underdrafted for its win rate."
+    ]
+   }
+  },
+  "Xenobotanist": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "任意の色のマナを出すだけの2マナとして、モデルは平均並みと見積もりました。",
+     "色を足して強いカードを使う緑のデッキが多い環境で、序盤のマナ加速と色の補助を兼ねる価値が高かったと考えられます。緑のカードが全体に予測より高かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model forecast this two-mana creature that taps for any color around average.",
+     "Many green decks splash for their best cards, so early ramp plus fixing was worth more (estimate). Green as a whole also beat its forecasts."
+    ]
+   }
+  },
+  "Interstellar Effigy": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "5マナでバウンスが付くだけと見て、モデルは平均をやや下回ると見積もりました。",
+     "速めの環境では、相手のクリーチャーを戻して攻撃を通すテンポの価値が高かったと考えられます。手間をかけて育てた宇宙船やカウンターの乗ったクリーチャーを戻せることも、価値を上げたと見られます。"
+    ],
+    "reasons_en": [
+     "The model saw a five-drop with a bounce effect and forecast it slightly below average.",
+     "In a fairly fast format, bouncing a blocker to push damage was worth more (estimate). Bouncing a charged spacecraft or a creature with counters also undoes a lot of work."
+    ]
+   }
+  },
+  "Common Goal": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "自軍のクリーチャーを使うソーサリーの除去として、モデルは平均並みと見積もりました。",
+     "緑で数少ないコモンの除去で、2体のパワーを合わせて大型も倒せるため、緑のデッキで予測以上に重要だったと考えられます。緑のカードが全体に予測より高かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model forecast this sorcery-speed bite spell around average.",
+     "It is green's main common removal and can combine two creatures to kill big threats, so it mattered more than expected (estimate). Green as a whole also beat its forecasts."
+    ]
+   }
+  },
+  "Astute Terraformer": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "強化能力は名前の違う土地をそろえないと重いと見て、モデルは平均をやや下回ると見積もりました。",
+     "このセットは2色土地や土地トークンを出すカードが多く、強化のコストが予想より早く下がったと考えられます。緑のカードが全体に予測より高かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model saw a pump that is expensive until you have differently named lands, and forecast it slightly below average.",
+     "This set has many dual lands and land tokens, so the pump got cheap sooner than expected (estimate). Green as a whole also beat its forecasts."
+    ]
+   }
+  },
+  "Planetary Patrol": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "土地が出たターンしか強くならないと見て、モデルは平均をやや下回ると見積もりました。",
+     "速めの環境で2マナの攻撃役の価値が高く、追加の土地を出す効果も多いため、予測以上に働いたと考えられます。赤のカードが全体に予測より高かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model saw a two-drop that only grows on landfall turns and forecast it slightly below average.",
+     "Cheap attackers were valuable in a fairly fast format, and extra land drops are common, so it overperformed (estimate). Red as a whole also beat its forecasts."
+    ]
+   }
+  },
+  "Q Continuum": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "緑を出す土地として、モデルは平均並みと見積もりました。",
+     "条件を満たせばアンタップで出て、強化か諜報のおまけも付くため、緑のデッキで損なく使えたと考えられます。緑のカードが全体に予測より高かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model forecast this green land around average.",
+     "It usually enters untapped with a small pump or surveil, so green decks played it at no cost (estimate). Green as a whole also beat its forecasts."
+    ]
+   }
+  },
+  "David and Carol Marcus, Creators": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "3マナで1/3の体を見て、モデルは平均をやや下回ると見積もりました。",
+     "任意の色を出す土地トークンを生むため、色を足すデッキとマナ加速の両方で価値が高かったと考えられます。プレリリース後の評価でも、優れた色の補助として挙げられています。"
+    ],
+    "reasons_en": [
+     "The model saw a three-mana 1/3 and forecast it slightly below average.",
+     "It makes an any-color land token, which is valuable both for splashing and for ramp (estimate). Prerelease write-ups also single it out as excellent fixing."
+    ]
+   }
+  },
+  "Munitions Enthusiast": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "2マナの3/2トランプルとして、モデルは平均をやや上回ると見積もりました。",
+     "速めの環境で2マナの攻撃役の価値が高く、死亡時のダメージで相打ち後も価値が残るため、赤の攻撃的なデッキで予測以上に活躍したと考えられます。"
+    ],
+    "reasons_en": [
+     "The model forecast this two-mana 3/2 trampler slightly above average.",
+     "Cheap attackers were valuable in a fairly fast format, and the death ping keeps value after a trade, so it overperformed in aggressive red decks (estimate)."
+    ]
+   }
+  },
+  "Ravenous Cosmozoan": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "6マナの3/3と見て、モデルは平均を大きく下回ると見積もりました。",
+     "墓地の呪文の数だけ軽くなるため、実際にはずっと軽く唱えられることが多く、飛行が少ない環境で速攻の飛行の価値が高かったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model saw a six-mana 3/3 and forecast it well below average.",
+     "Its cost drops with each spell in your graveyard, so it was usually much cheaper, and a hasty flier is valuable in a format with few fliers (estimate)."
+    ]
+   }
+  },
+  "Captain Jonathan Archer": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "3マナで2体のクリーチャーを並べる点を、モデルはすでに平均を大きく上回ると評価していました。",
+     "緑のカードが全体に予測より高かったことに加え、起動型の強化を毎ターン使え、戦闘を有利にし続けたと考えられます。"
+    ],
+    "reasons_en": [
+     "The model already forecast this three-drop that brings a token friend well above average.",
+     "Green beat its forecasts overall, and the repeatable pump kept winning combat every turn (estimate)."
+    ]
+   }
+  },
+  "Cantankerous Captain": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "毎ターン味方を小さく強化する程度と見て、モデルは平均をやや下回ると見積もりました。",
+     "3マナの2/3は相打ちしにくく、パワーの合計が8以上なら威迫も付くため、赤の攻撃的なデッキで毎ターン攻撃を通せたと考えられます。発売後の評価でも、最強クラスのコモンとして挙げられています。"
+    ],
+    "reasons_en": [
+     "The model saw only a small pump each turn and forecast it slightly below average.",
+     "A 2/3 is hard to trade with, and the menace at total power 8 lets aggressive red decks push damage every turn (estimate). Post-release write-ups also rank it among the best commons."
+    ]
+   }
+  },
+  "Captain's Tutelage": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "体を増やさない強化のオーラと見て、モデルは平均を大きく下回ると見積もりました。",
+     "瞬速で唱えられるため戦闘中の不意打ちになり、先制攻撃で一方的に勝つ場面が多かったと考えられます。速めの環境で赤の攻撃的なデッキが勝っていることも重なりました。"
+    ],
+    "reasons_en": [
+     "The model saw a pump Aura that adds no body and forecast it well below average.",
+     "With flash it works as a combat trick, and the first strike often wins combat outright (estimate). Aggressive red decks winning in a fairly fast format also helped."
+    ]
+   }
+  },
+  "Cloak and Phaser": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "本来のマナ総量が非常に重いため、モデルは平均並みと見積もりました。",
+     "名前の違う土地が増えやすいこのセットでは実際にはずっと軽く唱えられ、2体のトークンとカードの入れ替えを一度に得られたと考えられます。発売後の評価でも、勝率のわりに遅くまで残るカードとして挙げられています。"
+    ],
+    "reasons_en": [
+     "Its printed cost is very high, so the model forecast it around average.",
+     "Differently named lands pile up easily in this set, so it was usually far cheaper and gave two tokens plus card filtering at once (estimate). Post-release write-ups also list it as a card that wheels despite its win rate."
+    ]
+   }
+  },
+  "Storied Veteran": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "ブロックできない2/1で、墓地から出すと最後は追放されると見て、モデルは平均をやや下回ると見積もりました。",
+     "速めの環境で1マナの攻撃役の価値が高く、墓地からもう一度唱えられるため、生け贄や相打ちに使っても損をしにくかったと考えられます。発売後の評価でも、最も過小評価されたカードとして挙げられています。"
+    ],
+    "reasons_en": [
+     "The model saw a 2/1 that can't block and gets exiled after one return, and forecast it slightly below average.",
+     "One-drop attackers were valuable in a fairly fast format, and recasting it from the graveyard makes sacrifices and trades cheap (estimate). Post-release write-ups also call it the most underrated card."
+    ]
+   }
+  },
+  "Primary Unimatrix Adjunct": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "本体が小さく、能力はアーティファクト・クリーチャー頼みと見て、モデルは平均並みと見積もりました。",
+     "このセットにはアーティファクト・クリーチャーが多く、全体に二段攻撃を与えると一気に勝負を決められるため、予測以上に強かったと考えられます。プレリリースでも、試合の決め手になったという声がありました。"
+    ],
+    "reasons_en": [
+     "The model saw a small body whose ability depends on artifact creatures and forecast it around average.",
+     "This set has many artifact creatures, and giving them all double strike ends games quickly (estimate). Prerelease reports also describe it deciding games."
+    ]
+   }
+  },
+  "Hologram Stalker": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "6マナで本体が2/2と小さいため、モデルは平均並みと見積もりました。",
+     "墓地のパーマネントを回収すると同時に3/3のトークンも出るため、実際には一度に複数の体とカードを得られたと考えられます。墓地を使う黒緑が強い環境だったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model saw a six-mana 2/2 and forecast it around average.",
+     "Returning a permanent from the graveyard also triggers the 3/3 token, so it delivers two bodies and a card at once (estimate). Golgari, the graveyard deck, being strong also helped."
+    ]
+   }
+  },
+  "Will Riker, First in the Field": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "4マナで出たときの効果がないと見て、モデルは平均並みと見積もりました。",
+     "戦闘のたびに土地を一時的に複数出すため、上陸の誘発やマナ加速、名前の違う土地の数を一度に満たせ、赤緑の上陸デッキで強かったと考えられます。発売後の評価でも、勝率の高い赤緑のデッキで使われていると挙げられています。"
+    ],
+    "reasons_en": [
+     "The model saw a four-drop with no entry effect and forecast it around average.",
+     "Each combat it puts several lands onto the battlefield temporarily, triggering landfall, ramping and counting as differently named lands, which made it strong in Gruul landfall (estimate). Post-release write-ups also note it in winning Gruul decks."
+    ]
+   }
+  },
+  "U.S.S. Discovery, at Black Alert": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-16",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "出たときと攻撃時に呪文をただで唱えられる点を、モデルはすでに平均を大きく上回ると評価していました。",
+     "一度に複数のカード分の働きをするうえ、飛行で攻撃するたびに繰り返すため、予測をさらに上回ったと考えられます。緑のカードが全体に予測より高かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model already forecast it well above average for casting free spells on entry and attack.",
+     "It is worth several cards at once and repeats with every flying attack, so it beat even that forecast (estimate). Green as a whole also beat its forecasts."
+    ]
+   }
+  },
+  "70,000 Light-Years from Home": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "2マナで条件なくクリーチャーか宇宙船を追放できる除去として、モデルは平均並みと見積もりました。",
+     "相手に基本土地を渡すため、土地が出るたびに得をする赤緑などの強い色の組に対しては損が大きく、ソーサリーの遅さもあって除去としての価値が下がったと考えられます。白のカードが全体に予測より低かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model saw a two-mana exile for any creature or Spacecraft and forecast it around average.",
+     "Handing the opponent a basic land feeds landfall decks such as Gruul, the strongest pair, and sorcery speed hurts, so it was worth less as removal (estimate). White as a whole also ran below forecast."
+    ]
+   }
+  },
+  "Sacred Foundry": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "過去のセットでも2色土地は平均並みで、マナ以外の効果がないため、モデルは平均をわずかに下回ると見積もりました。",
+     "このセットには名前の違う土地の数を参照するカードがあり、色も足しやすい作りのため、2色土地の価値が過去のセットより高かったと考えられます。勝率の高い赤白の色であることも重なりました。"
+    ],
+    "reasons_en": [
+     "Dual lands were around average in past sets and this one does nothing else, so the model forecast it slightly below average.",
+     "This set rewards having differently named lands and makes splashing easy, so dual lands were worth more than in past sets (estimate). It also fits Boros, one of the stronger pairs."
+    ]
+   }
+  },
+  "In the Pale Moonlight": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "相手に生け贄を強い、手掛かりやトークンも生み出す多機能な英雄譚として、モデルは平均を大きく上回ると見積もりました。",
+     "相手は自分で一番弱いクリーチャーを選んで生け贄にでき、残りの効果も数ターンかけて少しずつ出るため、速い環境では5マナに見合わなかったと考えられます。発売後の評価でも、勝率のわりに早く取られすぎているカードとして挙げられています。"
+    ],
+    "reasons_en": [
+     "The model saw a versatile Saga that forces a sacrifice and makes a Clue and tokens, and forecast it well above average.",
+     "The opponent sacrifices their weakest creature and the rest trickles in over several turns, too slow for five mana in a fast format (estimate). Post-release write-ups also list it as overdrafted for its win rate."
+    ]
+   }
+  },
+  "Cleveland Booker, Empath": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "土地が出るたびに攻撃役のトークンを生む4マナとして、モデルは平均を大きく上回ると見積もりました。",
+     "本体は2/2と小さく、出た後に置いた土地の分しかトークンを生まないうえ、トークンはブロックできないため、速い環境では守りに回れず、価値を出す前に除去されやすかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model saw a four-drop that makes an attacking token with each land drop and forecast it well above average.",
+     "The body is a small 2/2, it only pays off for lands played after it, and the tokens can't block, so in a fast format it was often removed before generating value (estimate)."
+    ]
+   }
+  },
+  "The Traveler": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "土地の種類に応じて大きくなる2マナとして、モデルは平均をやや上回る程度と見積もりました。",
+     "このセットは名前の違う土地がそろいやすく、2マナでも試合の中盤には大きなパワーと到達・警戒を持つ体になったと考えられます。緑のカードが全体に予測より高かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model saw a two-drop that grows with your differently named lands and forecast it only slightly above average.",
+     "Differently named lands pile up easily in this set, so by midgame this two-drop was a large body with reach and vigilance (estimate). Green as a whole also ran above forecast."
+    ]
+   }
+  },
+  "There's Coffee in that Nebula": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "軽いマナで手札を探せる呪文として、モデルは平均をやや下回る程度と見積もりました。",
+     "カードの枚数は増えず盤面にも触れないうえ、墓地から唱え直すには自分のクリーチャーを手札に戻す必要があり、速い環境ではテンポを失いやすかったと考えられます。白のカードが全体に予測より低かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model forecast this cheap card-selection spell slightly below average.",
+     "It neither adds cards nor affects the board, and recasting it from the graveyard means bouncing your own creature, so it cost tempo in a fast format (estimate). White as a whole also ran below forecast."
+    ]
+   }
+  },
+  "Ensign Pavel Chekov": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "登場時に相手の土地を奪って使えるが、重さに見合う攻撃力がない4マナとして、モデルは平均をやや下回ると見積もりました。",
+     "タフネス5の体は攻撃の速い環境で地上をよく止め、相手の土地を自分の土地として使えるため、名前の違う土地を数えるカードやマナの重いカードとも噛み合ったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model saw a four-drop that lets you play the opponent's lands but has little attack, and forecast it slightly below average.",
+     "A five-toughness body walls the ground well in a fast format, and playing the opponent's lands adds differently named lands and mana for expensive cards (estimate)."
+    ]
+   }
+  },
+  "Type-2 Phaser": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "登場時に相手のクリーチャーを止められ、修整も大きい装備品として、モデルは平均をやや下回る程度と見積もりました。",
+     "登場時の効果は相手を1ターン止めるだけで、その後は装備に3マナかかり、タフネスも上がらないため、速い環境ではマナに見合う働きをしにくかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model saw an Equipment that stuns a creature on entry with a big boost, and forecast it slightly below average.",
+     "The stun only buys one turn, equipping costs three mana, and it adds no toughness, so it rarely earned its mana in a fast format (estimate)."
+    ]
+   }
+  },
+  "Grand Nagus Zek": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "クリーチャーが死ぬたびに宝物を生んで育つ3マナとして、モデルは平均並みと見積もりました。",
+     "本体は1/1から始まり、宝物は1ターンに1つしか出ないため、育つ前に除去や戦闘で失われやすく、速い環境では間に合わなかったと考えられます。黒のカードが全体に予測より低かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model saw a three-drop that grows by making Treasure as creatures die, and forecast it around average.",
+     "It starts as a 1/1 and makes at most one Treasure per turn, so it was often killed before it grew in a fast format (estimate). Black as a whole also ran below forecast."
+    ]
+   }
+  },
+  "Lwaxana Troi, Charming Guest": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "誘発型能力を増やす補助的な2マナとして、モデルは平均を大きく下回ると見積もり、向きは合っていました。",
+     "能力を使うには2マナと自身のタップが必要で、対象にして得をする誘発型能力を持つクリーチャーも限られるため、赤が全体に予測より高かった中でも力を出しにくかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model forecast this two-drop that doubles triggered abilities well below average, so the direction was right.",
+     "Using it costs two mana and tapping it, and few creatures have triggers worth doubling, so it lagged even though red overall beat its forecasts (estimate)."
+    ]
+   }
+  },
+  "Assembly Specialist": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "登場時にトークンを生み、2体のクリーチャーを並べられる2マナとして、モデルは平均をやや上回ると見積もりました。",
+     "1/1が2体では攻撃にも守りにも力が足りず、この体を生かす白黒の Borg のデッキも期待ほど勝てなかったため、低くなったと考えられます。白のカードが全体に予測より低かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model saw a two-drop that brings a token along and forecast it slightly above average.",
+     "Two 1/1s are too small to attack or defend well, and Orzhov Borg, the deck that wants them, won less than expected (estimate). White as a whole also ran below forecast."
+    ]
+   }
+  },
+  "The Measure of a Man": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "後で戻る除去と調査を1枚でこなす英雄譚として、モデルは平均をやや上回ると見積もりました。",
+     "追放したカードは3章で相手の戦場に戻り、出たときの効果も再び使われるため、実際には2ターンほど時間を稼ぐだけで、カード1枚分の働きに届かなかったと考えられます。白のカードが全体に予測より低かったことも重なりました。"
+    ],
+    "reasons_en": [
+     "The model saw a Saga that combines temporary removal with Investigate and forecast it slightly above average.",
+     "The exiled card returns on chapter III and its entry effect fires again, so it only buys about two turns and falls short of a full card (estimate). White as a whole also ran below forecast."
+    ]
+   }
+  },
+  "Red Alert!": {
+   "gih": {
+    "source": "ai",
+    "written_at": "2026-11-23",
+    "data_as_of": "2026-11-23",
+    "reasons": [
+     "その場限りで自軍のパワーを上げるだけの呪文として、モデルは平均を大きく下回ると見積もり、向きは合っていました。",
+     "攻撃されているときしか安くならず、タフネスも上がらないため守りに使いにくく、赤が全体に予測より高かった中でも、カード1枚分の働きをしにくかったと考えられます。"
+    ],
+    "reasons_en": [
+     "The model forecast this one-turn power boost well below average, so the direction was right.",
+     "It is only cheap while you are being attacked and adds no toughness, so it is poor on defense and rarely worth a card, even though red overall beat its forecasts (estimate)."
+    ]
+   }
+  }
+ }
+}
