@@ -1,6 +1,7 @@
 name: Set actuals (daily, sets other than FRA)
 # Copies the 17Lands Card Data snapshot that the data repository already fetched (all users) into
-# public/data/<code>-actual-card-data.json and redeploys the site. No 17Lands access here.
+# public/data/<code>-actual-card-data.json, and the two-color win rates (17Lands Color Ratings) into
+# public/data/<code>-actual-color-ratings.json, and redeploys the site. No 17Lands access here.
 # The daily Claude task dispatches this after the data repository's 14:00 JST fetch; the schedule is only a backup
 # (GitHub's scheduled runs have been starting hours late). scripts/update-set-actuals.mjs does nothing before a set's
 # embargo end (actuals_public_from) or before its first observed-values file was merged by a reviewed PR.
@@ -37,10 +38,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           git add public/data/*-actual-card-data.json
+          for f in public/data/*-actual-color-ratings.json; do [ "$f" = public/data/fra-actual-color-ratings.json ] || git add "$f"; done
           if git diff --cached --quiet; then echo 'nothing to save'; exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Update observed values (17Lands Card Data) for sets other than FRA'
+          git commit -m 'Update observed values (17Lands Card Data, Color Ratings) for sets other than FRA'
           pushed=0
           for i in 1 2 3 4; do
             if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then pushed=1; break; fi
