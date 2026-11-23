@@ -22,8 +22,32 @@ const RARITY_EDGE:Record<string,string>={common:'#4b5563',uncommon:'#9fb3c8',rar
 const ART_DIM='linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3))';
 const f1=(n:number)=>Number.isFinite(n)?n.toFixed(1):'—';
 
-export function TierGrid({cards,all,lang,selectedId,onSelect,onOpen,narrowHint}:{cards:Card[];all:Card[];lang:Lang;selectedId?:string;onSelect:(id:string)=>void;onOpen:(id:string)=>void;narrowHint?:boolean}){
+/** Sort keys that the grade table cannot show (it is always ordered by forecast GIH WR): these get a flat grid in the given order. */
+const FLAT_SORTS=new Set(['gih_obs','gih_err','alsa','alsa_obs','alsa_err']);
+const PINK='#FF5C8A';
+
+export function TierGrid({cards,all,lang,selectedId,onSelect,onOpen,narrowHint,sort}:{cards:Card[];all:Card[];lang:Lang;selectedId?:string;onSelect:(id:string)=>void;onOpen:(id:string)=>void;narrowHint?:boolean;sort?:string}){
   const grade=makeGrader(all),ja=lang==='ja';
+  const tile=(card:Card,rank?:number)=>{
+    const entry=japaneseCardImage(card),src=entry?.path?import.meta.env.BASE_URL+entry.path.replace(/^\//,''):'',name=cardName(card,lang);
+    const alsa=!!sort&&sort.startsWith('alsa'),obs=alsa?(card.observed_seen_n?card.observed_alsa:null):(card.observed_gih_n?card.observed_gih:null);
+    const pred=alsa?card.alsa.toFixed(2):f1(card.gih)+'%',obsText=obs==null?'—':alsa?obs.toFixed(2):f1(obs)+'%';
+    return <button key={card.id} type="button" title={`${card.name} · GIH WR ${f1(card.gih)}% · ALSA ${card.alsa.toFixed(2)}`}
+      onClick={()=>onOpen(card.id)}
+      className={'relative flex w-full min-h-11 items-center justify-between gap-1.5 overflow-hidden rounded-sm pl-2.5 pr-1.5 py-1 text-left text-white focus-visible:outline-2 focus-visible:outline-primary '+(selectedId===card.id?'ring-2 ring-primary':'hover:brightness-125')}
+      style={{boxShadow:`inset 3px 0 0 ${RARITY_EDGE[card.rarity]||RARITY_EDGE.common}`,backgroundColor:'#1f2430',backgroundImage:`linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.25) 100%)${src?`,${ART_DIM},url("${src}")`:''}`,backgroundSize:'100% 100%,100% 100%,130% auto',backgroundPosition:'0 0,0 0,50% 31%',backgroundRepeat:'no-repeat'}}>
+      <span className="text-[13px] font-semibold leading-tight underline underline-offset-2 [text-shadow:0_1px_2px_#000] min-w-0 break-words">{rank!=null&&<span className="no-underline inline-block mr-1 text-[11px] font-normal opacity-80 number">{rank}.</span>}{name}</span>
+      {rank==null?<span className="shrink-0 text-xs number [text-shadow:0_1px_2px_#000]">{f1(card.gih)}%</span>
+        :<span className="shrink-0 text-right text-[11px] leading-tight number [text-shadow:0_1px_2px_#000]"><span className="block">{ja?'予測 ':'Fcst '}{pred}</span><span className="block font-semibold" style={{color:PINK}}>{ja?'実測 ':'Obs '}{obsText}</span></span>}
+    </button>;
+  };
+  if(sort&&FLAT_SORTS.has(sort)){
+    if(!cards.length)return <p className="p-8 text-muted-foreground rounded-xl border border-border bg-card">{ja?'該当するカードがありません。検索条件を変更してください。':'No cards match. Try different filters.'}</p>;
+    return <section id="cards-table" aria-label={ja?'並び替えの順のカード一覧':'Cards in the selected order'} className="rounded-xl border border-border bg-card p-2">
+      <p className="px-1 pb-2 text-xs text-muted-foreground">{ja?'選んだ並び替えの順に、左上から右へ表示しています。A+〜F のランク別の表示は「予測GIH WRの高い順」のときだけです。':'Cards are shown in the selected order, left to right. The A+ to F grade table is used only for "Highest forecast GIH WR".'}</p>
+      <div className="grid gap-1" style={{gridTemplateColumns:'repeat(auto-fill,minmax(210px,1fr))'}}>{cards.map((c,i)=>tile(c,i+1))}</div>
+    </section>;
+  }
   const rows=GRADES.map(([g])=>g).map(g=>({g,cells:Object.fromEntries(COLS.map(c=>[c.key,[] as Card[]])) as Record<ColKey,Card[]>}));
   const byGrade=new Map(rows.map(r=>[r.g,r]));
   for(const c of [...cards].sort((a,b)=>b.gih-a.gih))byGrade.get(grade(c.gih))!.cells[colKey(c)].push(c);
@@ -43,16 +67,7 @@ export function TierGrid({cards,all,lang,selectedId,onSelect,onOpen,narrowHint}:
       {shown.map(r=><div key={r.g} className="grid border-b border-border last:border-0" style={grid}>
         <div className="flex items-start justify-center pt-3 text-base font-semibold text-primary number">{r.g}</div>
         {COLS.map(c=><div key={c.key} className="p-1 space-y-1 min-w-0">
-          {r.cells[c.key].map(card=>{
-            const entry=japaneseCardImage(card),src=entry?.path?import.meta.env.BASE_URL+entry.path.replace(/^\//,''):'',name=cardName(card,lang);
-            return <button key={card.id} type="button" title={`${card.name} · GIH WR ${f1(card.gih)}% · ALSA ${card.alsa.toFixed(2)}`}
-              onClick={()=>onOpen(card.id)}
-              className={'relative flex w-full min-h-11 items-center justify-between gap-1.5 overflow-hidden rounded-sm pl-2.5 pr-1.5 py-1 text-left text-white focus-visible:outline-2 focus-visible:outline-primary '+(selectedId===card.id?'ring-2 ring-primary':'hover:brightness-125')}
-              style={{boxShadow:`inset 3px 0 0 ${RARITY_EDGE[card.rarity]||RARITY_EDGE.common}`,backgroundColor:'#1f2430',backgroundImage:`linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.25) 100%)${src?`,${ART_DIM},url("${src}")`:''}`,backgroundSize:'100% 100%,100% 100%,130% auto',backgroundPosition:'0 0,0 0,50% 31%',backgroundRepeat:'no-repeat'}}>
-              <span className="text-[13px] font-semibold leading-tight underline underline-offset-2 [text-shadow:0_1px_2px_#000] min-w-0 break-words">{name}</span>
-              <span className="shrink-0 text-xs number [text-shadow:0_1px_2px_#000]">{f1(card.gih)}%</span>
-            </button>;
-          })}
+          {r.cells[c.key].map(card=>tile(card))}
         </div>)}
       </div>)}
     </div>
